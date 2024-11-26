@@ -1,4 +1,4 @@
-# OGC Styles & Symbology
+# OGC Cartographic Symbology
 
 This repository hosts the working draft documents for the multi-part OGC Cartographic Symbology Standard. **Part 1: Core model and encodings** is available as [HTML](https://docs.ogc.org/DRAFTS/18-067r4.html) or [PDF](https://docs.ogc.org/DRAFTS/18-067r4.pdf) and is to be considered version **2.0** of "SymCore".
 The following extensions are also planned:
@@ -100,9 +100,9 @@ The following requirements classes are planned for the next parts of the standar
 
 ## Communication
 
-Join the OGC Styles & Symbology [mailing list](https://lists.ogc.org/mailman/listinfo/styles-se.swg).
+Join the OGC Cartographic Symbology [mailing list](https://lists.ogc.org/mailman/listinfo/styles-se.swg).
 
-Visit the OGC Styles & Symbology [project on the OGC portal](https://portal.ogc.org/files/?artifact_id=37164) after signing the [Observer Agreement](https://portal.ogc.org/files/?artifact_id=92169).
+Visit the OGC Cartographic Symbology [project on the OGC portal](https://portal.ogc.org/files/?artifact_id=37164) after signing the [Observer Agreement](https://portal.ogc.org/files/?artifact_id=92169).
 
 Most work on the specification takes place in [GitHub issues](https://github.com/opengeospatial/styles-and-symbology/issues),
 so browse there to get a good idea of what is happening, as well as past decisions.
@@ -111,7 +111,7 @@ so browse there to get a good idea of what is happening, as well as past decisio
 
 The contributor understands that any contributions, if accepted by the OGC Membership, shall be incorporated into OGC standards documents and that all copyright and intellectual property shall be vested to the OGC.
 
-The OGC Styles & Symbology Standards Working Group (SWG) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
+The OGC Cartographic Symbology Standards Working Group (SWG) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
 
 * [Open issues](https://github.com/opengeospatial/styles-and-symbology/issues)
 * [Copy of License Language](https://raw.githubusercontent.com/opengeospatial/styles-and-symbology/main/LICENSE)
