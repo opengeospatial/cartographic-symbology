@@ -91,6 +91,13 @@ Fill *-- Stipple
 Stipple : ratio
 ....
 
+.Fill class extended for stippling
+[width="90%",options="header"]
+|===
+| Name           | Definition                                       | Type                  | Multiplicity
+| stipplingRatio | Ratio of stippling dots according to area filled | float (betwwen 0 an 1)| 0..1
+|===
+
 ==== Requirements
 
 include::../requirements/rc-stipples.adoc[]
