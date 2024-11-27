@@ -11,7 +11,7 @@ subject:: Style encodings and Renderers
 ====
 
 [[req-stipples]]
-===== Stipple fills
+===== Stipple ratio property
 
 [requirement]
 ====
