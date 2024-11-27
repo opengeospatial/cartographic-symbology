@@ -15,7 +15,7 @@ to the logical and/or conceptual model defined in this Standard. The granularity
 are interoperable with other encodings or rendering engines implementing this Standard.
 Most Encodings and Rendering engines are expected to easily conform to the requirements classes for basic portrayal.
 
-Requirements and conformance test URIs defined in this document are relative to http://www.opengis.net/spec/symbology-2/1.0.
+Requirements and conformance test URIs defined in this document are relative to http://www.opengis.net/spec/cartosym-2/1.0.
 
 === Requirements classes for common portrayal capabilities
 

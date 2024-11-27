@@ -15,31 +15,31 @@ to the logical and/or conceptual model defined in this Standard. The granularity
 are interoperable with other encodings or rendering engines implementing this Standard.
 Most Encodings and Rendering engines are expected to easily conform to the requirements classes for basic portrayal.
 
-Requirements and conformance test URIs defined in this document are relative to http://www.opengis.net/spec/symbology-4/1.0.
+Requirements and conformance test URIs defined in this document are relative to http://www.opengis.net/spec/cartosym-4/1.0.
 
 === Requirements Classes for additional coverage styling capabilities
 
-*<<rc-coverage-as-points,Requirements Class "Coverage as points">>* (http://www.opengis.net/spec/symbology-4/1.0/conf/coverageaspoints)
+*<<rc-coverage-as-points,Requirements Class "Coverage as points">>* (http://www.opengis.net/spec/cartosym-4/1.0/conf/coverageaspoints)
 
 The Coverage as points Requirements Class specifies requirements for portraiing a coverage as point geometry.
 
-*<<rc-coverage-as-contours,Requirements Class "Coverage as contours">>* (http://www.opengis.net/spec/symbology-4/1.0/conf/coverageascontours)
+*<<rc-coverage-as-contours,Requirements Class "Coverage as contours">>* (http://www.opengis.net/spec/cartosym-4/1.0/conf/coverageascontours)
 
 The Coverage as contours Requirements Class specifies requirements for portraying a coverage as contour lines.
 
-*<<rc-contrast-enhancement,Requirements Class "Contrast Enhancement">>* (http://www.opengis.net/spec/symbology-4/1.0/conf/contrastenhancement)
+*<<rc-contrast-enhancement,Requirements Class "Contrast Enhancement">>* (http://www.opengis.net/spec/cartosym-4/1.0/conf/contrastenhancement)
 
 The Contrast Enhancement Requirements Class specifies requirements for allowing to enhance to contrast of a converage.
 
-*<<rc-hsv-modifier,Requirements Class "Hue, Saturation, Value Modifier">>* (http://www.opengis.net/spec/symbology-4/1.0/conf/hsvmodifier)
+*<<rc-hsv-modifier,Requirements Class "Hue, Saturation, Value Modifier">>* (http://www.opengis.net/spec/cartosym-4/1.0/conf/hsvmodifier)
 
 The Hue, Saturation, Value Modifier Requirements Class specifies requirements for allowing to apply a modifier on the hue, saturation and/or value of a converage.
 
-*<<rc-aggregation,Requirements Class "Aggregation">>* (http://www.opengis.net/spec/symbology-4/1.0/conf/aggregation)
+*<<rc-aggregation,Requirements Class "Aggregation">>* (http://www.opengis.net/spec/cartosym-4/1.0/conf/aggregation)
 
 The Aggregation Requirements Class specifies requirements for defining aggregation functions to be used with numeric properties.
 
-*<<rc-bitwise,Requirements Class "Bitwise Operators">>* (http://www.opengis.net/spec/symbology-4/1.0/req/bitwise)
+*<<rc-bitwise,Requirements Class "Bitwise Operators">>* (http://www.opengis.net/spec/cartosym-4/1.0/req/bitwise)
 
 The Bitwise Operators Requirements Class specifies requirements for defining bitwise operation expressions.
 
@@ -64,10 +64,10 @@ is declared by appending `-partial-concept` to the conformance URI.
 [cols="30,70",options="header"]
 |===
 | Conformance class                                               |URI
-|<<rc-coverage-as-points,Coverage as points>>                     |http://www.opengis.net/spec/symbology-4/1.0/conf/coverageaspoints
-|<<rc-coverage-as-contours,Coverage as contours>>                 |http://www.opengis.net/spec/symbology-4/1.0/conf/coverageascontours
-|<<rc-contrast-enhancement,Contrast Enhancement>>                 |http://www.opengis.net/spec/symbology-4/1.0/conf/contrastenhancement
-|<<rc-hsv-modifier,Hue, Saturation, Value Modifier>>              |http://www.opengis.net/spec/symbology-4/1.0/conf/hsvmodifier
-|<<rc-aggregation,Aggregation>>                                   |http://www.opengis.net/spec/symbology-4/1.0/conf/aggregation
-|<<rc-bitwise,Bitwise Operators>>                                 |http://www.opengis.net/spec/symbology-4/1.0/conf/bitwise
+|<<rc-coverage-as-points,Coverage as points>>                     |http://www.opengis.net/spec/cartosym-4/1.0/conf/coverageaspoints
+|<<rc-coverage-as-contours,Coverage as contours>>                 |http://www.opengis.net/spec/cartosym-4/1.0/conf/coverageascontours
+|<<rc-contrast-enhancement,Contrast Enhancement>>                 |http://www.opengis.net/spec/cartosym-4/1.0/conf/contrastenhancement
+|<<rc-hsv-modifier,Hue, Saturation, Value Modifier>>              |http://www.opengis.net/spec/cartosym-4/1.0/conf/hsvmodifier
+|<<rc-aggregation,Aggregation>>                                   |http://www.opengis.net/spec/cartosym-4/1.0/conf/aggregation
+|<<rc-bitwise,Bitwise Operators>>                                 |http://www.opengis.net/spec/cartosym-4/1.0/conf/bitwise
 |===
