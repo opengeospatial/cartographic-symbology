@@ -16,55 +16,55 @@ to the logical and/or conceptual model defined in this Standard. The granularity
 are interoperable with other encodings or rendering engines implementing this Standard.
 Most Encodings and Rendering engines are expected to easily conform to the requirements classes for basic portrayal.
 
-This document establishes a core requirements class with a URI of http://www.opengis.net/spec/symbology-1/2.0/req/core.
+This document establishes a core requirements class with a URI of http://www.opengis.net/spec/cartosym-1/2.0/req/core.
 
-Requirements and conformance test URIs defined in this document are relative to http://www.opengis.net/spec/symbology-1/2.0.
+Requirements and conformance test URIs defined in this document are relative to http://www.opengis.net/speccartosym-12.0.
 
 === Requirements classes for basic portrayal
 
-*<<rc-core,Requirements Class "Core">>* (http://www.opengis.net/spec/symbology-1/2.0/req/core)
+*<<rc-core,Requirements Class "Core">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/core)
 
 The Core Requirements Class specifies requirements that all encodings and rendering engines must support if claiming conformance with this Standard.
 The Core class defines how a Style is defined as a list of StylingRules consisting of a Symbolizer and an optional Selector expression,
 as well as a minimal set Symbolizer properties applicable to all types of geospatial data.
 
-*<<rc-vector,Requirements Class "Basic Vector Features Styling">>* (http://www.opengis.net/spec/symbology-1/2.0/req/vector)
+*<<rc-vector,Requirements Class "Basic Vector Features Styling">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/vector)
 
 The Basic Vector Features Styling Requirements Class specifies requirements for styling vector features data, including referencing feature properties,
 specifying a fill and stroke to style vector geometry, as well as defining image, text or dot markers to symbolize points.
 
-*<<rc-coverage,Requirements Class "Basic Coverage Styling">>* (http://www.opengis.net/spec/symbology-1/2.0/req/coverage)
+*<<rc-coverage,Requirements Class "Basic Coverage Styling">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/coverage)
 
 The Basic Coverage Styling Requirements Class specifies requirements for styling coverage data, including referencing coverage range values (e.g., bands),
 mapping them to color channels as well as defining colormaps.
 
-*<<rc-labels,Requirements Class "Basic Labeling">>* (http://www.opengis.net/spec/symbology-1/2.0/req/labels)
+*<<rc-labels,Requirements Class "Basic Labeling">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/labels)
 
 The Basic Labeling Requirements Class specifies requirements for defining labels to be managed by a placement engine and rendered as a final pass on top of the map.
 
 === Requirements classes for common portrayal capabilities
 
-*<<rc-hillshading,Requirements Class "Hill Shading">>* (http://www.opengis.net/spec/symbology-1/2.0/req/hillshading)
+*<<rc-hillshading,Requirements Class "Hill Shading">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/hillshading)
 
 The Hill Shading Requirements Class specifies requirements for styling elevation coverage data with a hill-shaded style.
 
-*<<rc-font-outlines,Requirements Class "Font Outlines">>* (http://www.opengis.net/spec/symbology-1/2.0/req/fontoutlines)
+*<<rc-font-outlines,Requirements Class "Font Outlines">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/fontoutlines)
 
 The Font Outlines Requirements Class specifies requirements for displaying fonts with outlines so that text can be legible on any background.
 
-*<<rc-hatches,Requirements Class "Hatch Fills">>* (http://www.opengis.net/spec/symbology-1/2.0/req/hatches)
+*<<rc-hatches,Requirements Class "Hatch Fills">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/hatches)
 
 The Hatch Filles Requirements Class specifies requirements for defining fils using hatches
 
-*<<rc-stipples,Requirements Class "Stipple Fills">>* (http://www.opengis.net/spec/symbology-1/2.0/req/stipples)
+*<<rc-stipples,Requirements Class "Stipple Fills">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/stipples)
 
 The Stipple Fills Requirements Class specifies requirements for defining fils using stipples
 
-*<<rc-dashes,Requirements Class "Dashed Stroke">>* (http://www.opengis.net/spec/symbology-1/2.0/req/dashes)
+*<<rc-dashes,Requirements Class "Dashed Stroke">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/dashes)
 
 The Dashes Requirements Class specifies requirements for defining dashed strokes.
 
-*<<rc-casing,Requirements Class "Casing and Centerline">>* (http://www.opengis.net/spec/symbology-1/2.0/req/casing)
+*<<rc-casing,Requirements Class "Casing and Centerline">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/casing)
 
 The Casing and Centerline Requirements Class specifies requirements for defining strokes with built-in casing and centerline.
 
@@ -74,51 +74,51 @@ TODO: Clarify how this differs to using a Stroke with a casing on the Shape, and
 
 === Requirements classes for additional expression capabilities
 
-*<<rc-parameter-values,Requirements Class "Parameter Values">>* (http://www.opengis.net/spec/symbology-1/2.0/req/parametervalues)
+*<<rc-parameter-values,Requirements Class "Parameter Values">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/parametervalues)
 
 The Parameter Values Requirements Class specifies requirements for using an Expression to define any property of a Symbolizer.
 
-*<<rc-righthand,Requirements Class "Right-hand Identifiers">>* (http://www.opengis.net/spec/symbology-1/2.0/req/righthand)
+*<<rc-righthand,Requirements Class "Right-hand Identifiers">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/righthand)
 
 The Right-hand Identifiers Requirements Class specifies requirements for defining operation expressions with identifiers on the right-hand side.
 
-*<<rc-conditional,Requirements Class "Conditional Expressions">>* (http://www.opengis.net/spec/symbology-1/2.0/req/conditional)
+*<<rc-conditional,Requirements Class "Conditional Expressions">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/conditional)
 
 The Conditional Expressions Requirements Class specifies requirements for defining conditional operation using a ternary `[if] ? [then] : [else]` structure.
 
-*<<rc-variables,Requirements Class "Variables">>* (http://www.opengis.net/spec/symbology-1/2.0/req/variables)
+*<<rc-variables,Requirements Class "Variables">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/variables)
 
 The Variables Requirements Class specifies requirements for defining variables which can be mapped to a dynamic value controlled by an application, or used to facilitate customizing a style.
 
-*<<rc-arithmetic,Requirements Class "Arithmetic Operators">>* (http://www.opengis.net/spec/symbology-1/2.0/req/arithmetic)
+*<<rc-arithmetic,Requirements Class "Arithmetic Operators">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/arithmetic)
 
 The Arithmetic Operators Requirements Class specifies requirements for defining arithmetic operation expressions.
 
-*<<rc-text-relation,Requirements Class "Text Relation Operators">>* (http://www.opengis.net/spec/symbology-1/2.0/req/textrelation)
+*<<rc-text-relation,Requirements Class "Text Relation Operators">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/textrelation)
 
 The Text Relation Operators Requirements Class specifies requirements for defining text relation operation expressions.
 
-*<<rc-functions,Requirements Class "Function Expressions">>* (http://www.opengis.net/spec/symbology-1/2.0/req/functions)
+*<<rc-functions,Requirements Class "Function Expressions">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/functions)
 
 The Functions Requirements Class specifies requirements for defining function call expressions.
 
-**<<rc-math,Requirements Class "Math Functions">>** (http://www.opengis.net/spec/symbology-1/2.0/conf/rc-math)
+**<<rc-math,Requirements Class "Math Functions">>** (http://www.opengis.net/spec/cartosym-1/2.0/conf/rc-math)
 
 The Math Functions Requirements Class specifies requirements for defining math functions to be used with numeric properties.
 
-*<<rc-array-relations,Requirements Class "Array Relation Functions">>* (http://www.opengis.net/spec/symbology-1/2.0/req/arrayrelations)
+*<<rc-array-relations,Requirements Class "Array Relation Functions">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/arrayrelations)
 
 The Array Relation Requirements Class specifies requirements for standardized array relation functions to be used with array properties.
 
-*<<rc-text-manipulation,Requirements Class "Text Manipulation Functions">>* (http://www.opengis.net/spec/symbology-1/2.0/req/textmanipulation)
+*<<rc-text-manipulation,Requirements Class "Text Manipulation Functions">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/textmanipulation)
 
 The Text Manipulation Requirements Class specifies requirements for standardized text manipulation functions to be used with text properties.
 
 === Requirements classes defining encodings
 
-*<<rc-json,Requirements Class "JSON Styles and Symbology">>* (http://www.opengis.net/spec/symbology-1/2.0/req/json)
+*<<rc-json,Requirements Class "JSON Styles and Symbology">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/json)
 
-*<<rc-cscss,Requirements Class "Cartographic Symbology Cascading Style Sheets">>* (http://www.opengis.net/spec/symbology-1/2.0/req/cscss)
+*<<rc-cscss,Requirements Class "Cartographic Symbology Cascading Style Sheets">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/cscss)
 
 === Declaration of conformance
 
@@ -141,26 +141,26 @@ is declared by appending `-partial-concept` to the conformance URI.
 [cols="30,70",options="header"]
 |===
 | Conformance class                                               |URI
-|<<rc-core,Core>>                                                 |http://www.opengis.net/spec/symbology-1/2.0/conf/core
-|<<rc-vector,Basic Vector Features Styling>>                      |http://www.opengis.net/spec/symbology-1/2.0/conf/vector
-|<<rc-coverage,Basic Coverage Styling>>                           |http://www.opengis.net/spec/symbology-1/2.0/conf/coverage
-|<<rc-hillshading,Hill Shading>>                                  |http://www.opengis.net/spec/symbology-1/2.0/conf/hillshading
-|<<rc-labels,Basic Labeling>>                                     |http://www.opengis.net/spec/symbology-1/2.0/conf/labels
-|<<rc-font-outlines,Font Outlines>>                                |http://www.opengis.net/spec/symbology-1/2.0/conf/fontoutlines
-|<<rc-dashes,Dashed Strokes>>                                     |http://www.opengis.net/spec/symbology-1/2.0/conf/dashes
-|<<rc-casing,Casing and Centerline>>                              |http://www.opengis.net/spec/symbology-1/2.0/conf/casing
-|<<rc-hatches,Hatch Fills>>                                       |http://www.opengis.net/spec/symbology-1/2.0/conf/hatches
-|<<rc-stipples, Stipple Fills>>                                   |http://www.opengis.net/spec/symbology-1/2.0/conf/stipples
-|<<rc-parameter-values,Parameter Values>>                          |http://www.opengis.net/spec/symbology-1/2.0/conf/parametervalues
-|<<rc-righthand,Any right-hand operands>>                         |http://www.opengis.net/spec/symbology-1/2.0/conf/righthand
-|<<rc-conditional,Conditional Expressions>>                       |http://www.opengis.net/spec/symbology-1/2.0/conf/conditional
-|<<rc-variables,Variables>>                                       |http://www.opengis.net/spec/symbology-1/2.0/conf/variables
-|<<rc-arithmetic,Arithmetic Operators>>                           |http://www.opengis.net/spec/symbology-1/2.0/conf/arithmetic
-|<<rc-text-relation,Text Relation Operators>>                      |http://www.opengis.net/spec/symbology-1/2.0/conf/textrelation
-|<<rc-functions,Function Expressions>>                            |http://www.opengis.net/spec/symbology-1/2.0/conf/functions
-|<<rc-math,Math Functions>>                                       |http://www.opengis.net/spec/symbology-1/2.0/conf/math
-|<<rc-array-relations,Array Relation Functions>>                   |http://www.opengis.net/spec/symbology-1/2.0/conf/arrayrelations
-|<<rc-text-manipulation,Text Manipulation Functions>>              |http://www.opengis.net/spec/symbology-1/2.0/conf/textmanipulation
-|<<rc-json,JSON Styles and Symbology>>                            |http://www.opengis.net/spec/symbology-1/2.0/conf/json
-|<<rc-cscss,Cartographic Symbology Cascading Style Sheets>>       |http://www.opengis.net/spec/symbology-1/2.0/conf/cscss
+|<<rc-core,Core>>                                                 |http://www.opengis.net/spec/cartosym-1/2.0/conf/core
+|<<rc-vector,Basic Vector Features Styling>>                      |http://www.opengis.net/spec/cartosym-1/2.0/conf/vector
+|<<rc-coverage,Basic Coverage Styling>>                           |http://www.opengis.net/spec/cartosym-1/2.0/conf/coverage
+|<<rc-hillshading,Hill Shading>>                                  |http://www.opengis.net/spec/cartosym-1/2.0/conf/hillshading
+|<<rc-labels,Basic Labeling>>                                     |http://www.opengis.net/spec/cartosym-1/2.0/conf/labels
+|<<rc-font-outlines,Font Outlines>>                                |http://www.opengis.net/spec/cartosym-1/2.0/conf/fontoutlines
+|<<rc-dashes,Dashed Strokes>>                                     |http://www.opengis.net/spec/cartosym-1/2.0/conf/dashes
+|<<rc-casing,Casing and Centerline>>                              |http://www.opengis.net/spec/cartosym-1/2.0/conf/casing
+|<<rc-hatches,Hatch Fills>>                                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/hatches
+|<<rc-stipples, Stipple Fills>>                                   |http://www.opengis.net/spec/cartosym-1/2.0/conf/stipples
+|<<rc-parameter-values,Parameter Values>>                          |http://www.opengis.net/spec/cartosym-1/2.0/conf/parametervalues
+|<<rc-righthand,Any right-hand operands>>                         |http://www.opengis.net/spec/cartosym-1/2.0/conf/righthand
+|<<rc-conditional,Conditional Expressions>>                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/conditional
+|<<rc-variables,Variables>>                                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/variables
+|<<rc-arithmetic,Arithmetic Operators>>                           |http://www.opengis.net/spec/cartosym-1/2.0/conf/arithmetic
+|<<rc-text-relation,Text Relation Operators>>                      |http://www.opengis.net/spec/cartosym-1/2.0/conf/textrelation
+|<<rc-functions,Function Expressions>>                            |http://www.opengis.net/spec/cartosym-1/2.0/conf/functions
+|<<rc-math,Math Functions>>                                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/math
+|<<rc-array-relations,Array Relation Functions>>                   |http://www.opengis.net/spec/cartosym-1/2.0/conf/arrayrelations
+|<<rc-text-manipulation,Text Manipulation Functions>>              |http://www.opengis.net/spec/cartosym-1/2.0/conf/textmanipulation
+|<<rc-json,JSON Styles and Symbology>>                            |http://www.opengis.net/spec/cartosym-1/2.0/conf/json
+|<<rc-cscss,Cartographic Symbology Cascading Style Sheets>>       |http://www.opengis.net/spec/cartosym-1/2.0/conf/cscss
 |===

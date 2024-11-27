@@ -6,7 +6,8 @@
 
 [#img-uml-class-dashes]
 
-This requirements class adds capabilities for strokes with the possibility to define :
+This requirements class adds capabilities for strokes with the possibility to define:
+
 * the pattern of dashes and gaps used to paint the stroke
 * an offset on the rendering of the associated dash array.
 

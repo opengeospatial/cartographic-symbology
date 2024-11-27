@@ -5,8 +5,8 @@
 .Hill Shading
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/symbology-1/2.0/req/hillshading
-inherit:: http://www.opengis.net/spec/symbology-1/2.0/req/coverage
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/hillshading
+inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/coverage
 subject:: Style encodings and Renderers
 ====
 

@@ -3,7 +3,7 @@
 [conformance_class]
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/symbology-1/2.0/conf/coverage
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/conf/coverage
 subject:: <<rc-core,Requirements Class "Basic Coverage Styling">>
 classification:: Target Type:Encoding,Rendering engine
 ====

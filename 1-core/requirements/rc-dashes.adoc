@@ -7,8 +7,8 @@
 .Dashes
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/symbology-1/2.0/req/dashes
-inherit:: http://www.opengis.net/spec/symbology-1/2.0/req/core
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashes
+inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
@@ -36,8 +36,8 @@ Stroke : dashOffset: float [0..1]
 [requirement]
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/symbology-1/2.0/req/dashPattern
-inherit:: http://www.opengis.net/spec/symbology-1/2.0/req/dashes
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashPattern
+inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashes
 part:: An Encoding SHALL support defining a dashPattern property for the stroke symbolizer.
 part:: A Renderer SHALL support dashing vector geometry based on a dashPattern property.
 
@@ -51,8 +51,8 @@ image::figures/stroke_dashPattern.png[]
 [requirement]
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/symbology-1/2.0/req/dashOffset
-inherit:: http://www.opengis.net/spec/symbology-1/2.0/req/dashes
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashOffset
+inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashes
 part:: An Encoding SHALL support defining a dashOffset property for the stroke symbolizer.
 part:: A Renderer SHALL support dashing vector geometry based on a dashOffset property.
 

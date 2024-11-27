@@ -7,8 +7,8 @@
 .Casing and Centerline
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/symbology-1/2.0/req/casing
-inherit:: http://www.opengis.net/spec/symbology-1/2.0/req/core
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/casing
+inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 

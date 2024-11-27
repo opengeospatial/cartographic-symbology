@@ -3,7 +3,7 @@
 [conformance_class]
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/symbology-1/2.0/conf/vector
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/conf/vector
 subject:: <<rc-core,Requirements Class "Basic Vector Features Styling">>
 classification:: Target Type:Encoding,Rendering engine
 ====

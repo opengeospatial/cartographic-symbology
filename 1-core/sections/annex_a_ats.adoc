@@ -7,7 +7,7 @@ and optionally the abstract tests of any number of additional conformance classe
 
 The root OGC URI identifier for the conformance classes of this Abstract Tests Suite is:
 
-http://www.opengis.net/spec/symbology-1/2.0/conf/
+http://www.opengis.net/spec/cartosym-1/2.0/conf/
 
 include::../abstract_tests/ats-core.adoc[]
 

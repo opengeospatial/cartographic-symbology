@@ -393,13 +393,12 @@ A Text is one type of Graphic defined by this requirements class that can be use
 [width="90%",options="header"]
 |===
 | Name           | Definition                        | Data type and value   | Multiplicity
-| text           | The character string for the text | string (unicode)*     | 1
+| text           | The character string for the text | string (unicode)^1^     | 1
 | font           | The font to use for the text      | Font                  | 0..1
 | alignment      | The alignment to use for the text | TextAlignment         | 0..1
-|===
-
-This requirements class requires support for identifier parameter value expression for the `text` property without any additional requirements class.
+4+|^1^ This requirements class requires support for identifier parameter value expression for the `text` property without any additional requirements class.
 This allows to display the value of feature properties with a Text Marker.
+|===
 
 .TextAlignment
 [width="90%",options="header"]

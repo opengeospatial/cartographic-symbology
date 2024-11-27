@@ -3,7 +3,7 @@
 [conformance_class]
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/symbology-1/2.0/conf/core
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/conf/core
 subject:: <<rc-core,Requirements Class "Core">>
 classification:: Target Type:Encoding,Rendering engine
 ====
