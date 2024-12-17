@@ -67,6 +67,9 @@ part:: An Encoding SHALL support defining a `fill` Symbolizer property as an obj
 part:: A Renderer SHALL support filling vector geometry based on a `fill` property specifying a `color` and an `opacity`.
 ====
 
+.A shape area with fill properties (on the left a green color and 100% opacity, on the right 50% opacity)
+image::figures/fill_opacity.png[]
+
 [[req-vector-stroke]]
 ===== Symbolizer `stroke` property
 
