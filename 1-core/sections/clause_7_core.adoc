@@ -1,5 +1,14 @@
 [[rc-core]]
 == Requirements Class "Core"
+[[rc_table-core]]
+
+[requirements_class]
+.Core
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
+subject:: Style encodings and Renderers
+====
 
 === Overview
 The requirements described in this section define the symbology core requirement class. The following UML diagram (<<img-uml-class-core>>) shows the fundamental concepts of the Symbology Conceptual and Logical Model:
@@ -37,7 +46,7 @@ and how to relate to encodings where the visual priority order
 comes from the order of the rules.'/
 ....
 
-==== Metadata
+=== Metadata
 
 Metadata is a container for descriptive information about a Style. It might includes a title, an abstract, a description, a list of authors, a list of keywords, and a list of geoDataClasses. All metadata elements are prefixed by a dot (`.`) as the first character of a line.
 
@@ -53,7 +62,7 @@ Metadata is a container for descriptive information about a Style. It might incl
 | geoDataClasses | Comma-separated URIs of GeoDataClasses allowing to identify data sources for which the style is suitable         | string              | 0..*
 |===
 
-==== Styles
+=== Styles
 
 A Style is the root concept of the Styles and Symbology Conceptual Model and consists of an ordered list of StylingRules.
 The StylingRules are to be applied in order so that rules selected later override earlier ones.
@@ -74,7 +83,20 @@ Please note that the graphic pipeline of the rendering engine must be expressed 
 | stylingRules | Styling rules defining the style   | StylingRule         | 0..*
 |===
 
-==== Styling Rules
+[[req-core-rules]]
+==== Style `stylingRules` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/rules
+part:: An Encoding SHALL support individually storing and preserving the order of each StylingRule constituting a Style.
+part:: A Renderer SHALL support considering in order each individual StylingRule constituting a style.
+part:: The Symbolizer properties specified in a StylingRule appearing later in a Style's list of rules and whose Selector
+evaluates to true SHALL be interpreted as overriding all Symbolizer properties set by earlier rules.
+====
+
+=== Styling Rules
 
 A StylingRule specifies that a particular Symbolizer (defining how to portray data) should be applied if the rule is selected based on a Selector expression (e.g., feature-property conditions or map scales).
 A StylingRule can contain nested rules, which will only be applied if the the parent rule's Selector is evaluated to true, and whose Symbolizers will inherit from and override the parent StylingRule's Symbolizer.
@@ -110,6 +132,10 @@ What actually needs i18n? Rule labels for legends? The choice between feature pr
 | nestedRules  | Additional styling rules to consider if this rule is selected partially overriding this rule's symbolizer | StylingRule              | 0..*
 |===
 
+
+[[req-core-selector]]
+===== StylingRule `selector` property
+
 The selector (also sometimes called a _filter_), for the rule is defined as a predicate expression evaluating to either true or false.
 
 .Example showcasing a Style made of StylingRules using CSCSS encoding
@@ -137,9 +163,31 @@ Roads    // Selector for this second rule
 ----
 ====
 
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/selector
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+[[req-core-nested]]
+===== StylingRule `nestedRules` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/nested
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+
 // TODO: Illustrate above example with two pictures at different scales
 
-==== Symbolizers
+
+[[symbolizers]]
+=== Symbolizers
 
 A Symbolizer describes how to portray geographic data (e.g., vector features or gridded coverage data) based on a set of properties.
 This core requirements class only defines three basic properties relevant to most portrayal use cases.
@@ -198,7 +246,48 @@ Depending on the type of geographical object, a set of symbolizer extensions can
 LabelSymbolizer to render the road name along a line.
 ////
 
-==== Expressions
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/symbolizer
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+[[req-core-visibility]]
+==== Symbolizer `visibility` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/visibility
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+[[req-core-opacity]]
+==== Symbolizer `opacity` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/opacity
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+[[req-core-zorder]]
+==== Symbolizer `zOrder` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/zorder
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+=== Expressions
 
 Expressions are a syntactic entity that may be evaluated to determine its value (from https://en.wikipedia.org/wiki/Expression_(computer_science)[Wikipedia]).
 The concept has similar meaning to Expressions as defined in the OGC Filter Encoding 2.0 standard, and can also be implemented with the OGC Common Query Language (CQL2),
@@ -242,7 +331,8 @@ OperationExpression *-- Expression
 'class ExpressionList -- Expression with multiplicity?
 ....
 
-===== Parameter Values
+[[req-core-parameters]]
+==== Parameter Values
 
 The use of an expression as a Symbolizer property is called a _Parameter Value_, where an Expression can be substituted
 where a particular data type is expected, in which case the Expression will be resolved to that expected data type.
@@ -251,13 +341,31 @@ this core conformance class, and specific requirements classes such as the "Symb
 requirements class enable this behavior. Without a requirements class specifying otherwise, only <<literal-expressions,Literal Expressions>>
 compatible with the expected data type are allowed as _Parameter Values_.
 
-===== Identifier Expressions
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/parameters
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+==== Identifier Expressions
 
 An Identifier Expression is represented by a textual property that gets resolved at runtime.
 
+===== Properties / Fields Identifiers
+
 Typical example of identifier expressions include feature properties (e.g., `population`) and coverage range values (e.g., a particular imagery band `B8`).
 
-====== System Identifiers
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/expressions-field-identifiers
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+===== System Identifiers
 
 [#img-uml-class-systemIDs]
 .System Identifiers UML Diagram
@@ -586,8 +694,40 @@ TODO: In other req classes:
 * feature.geometry                      -- for spatial operators
 ////
 
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/expressions-system-identifiers
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/scale
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/time
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/layers
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
 [[literal-expressions]]
-===== Literal Expressions
+==== Literal Expressions
 
 [#img-uml-class-literals]
 .Literal Classes UML Diagram
@@ -637,7 +777,15 @@ The following types of literals are defined:
 * Array literals (see <<array-expressions,Array Expressions>>) (CSCSS example: `(1, 2, 3)`)
 * Instance literals (see <<instance-expressions,Instance Expressions>>) (CSCSS examples: `Color(20, 100, 80)` or `Color(r: 20, g: 100, b: 80)`)
 
-===== Operation Expressions
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/literals
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+==== Operation Expressions
 
 An Operation Expression performs an operation specified by an Operator on one, two or three operand expressions, depending on whether they unary, binary or ternary operators.
 This core requirements class defines only Logical and Relational operators.
@@ -729,8 +877,33 @@ Roads
 ----
 ====
 
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/operations
+part:: An Encoding SHALL support defining operation expressions consisting of operands and an operator for unary, binary and ternary operators.
+part:: An Encoding SHALL support defining the priority of expressions using multiple operators (e.g., using parentheses: `(` `)`).
+part:: A Renderer SHALL support evaluating operation expressions while respecting the priority of operations.
+====
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/logical
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/relational
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
 [[array-expressions]]
-===== Array Expressions
+==== Array Expressions
 
 An array expressions defines zero, one, or more element expressions forming an ordered set.
 
@@ -738,8 +911,16 @@ CSCSS example: `(123.0, viz.sd)`.
 
 An _array literal_ is a special type of array expression whose elements are all literals.
 
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/arrays
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
 [[instance-expressions]]
-===== Instance Expressions
+==== Instance Expressions
 
 An instance expressions instantiates an object of a class while optionally specifying values for member components.
 The default values for any member if not explicitly overridden can is specified by the class member definitions.
@@ -779,8 +960,16 @@ Roads
 
 // TODO: Insert pretty picture here
 
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/instances
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
 [[cscss-default-values]]
-==== Default class member values
+=== Default class member values
 
 The following default values are defined by this encoding.
 
@@ -831,7 +1020,15 @@ The following default values are defined by this encoding.
 | color          | white
 |===
 
-==== Vendor Extensions
+[requirement]
+====
+[%metadata]
+identifier:: /req/core/default-values
+part:: An Encoding SHALL support ...
+part:: A Renderer SHALL support ...
+====
+
+=== Vendor Extensions
 
 This core requirements class specifies two ways to extend the model to custom vendor extensions. First, new Symbolizer properties can be defined. Second, System Identifiers can be extended with new identifiers.
 
@@ -850,7 +1047,3 @@ If a custom property is used in the Parameter Value of a Symbolizer property, th
 The same principle applies for requirements clases that are not understood, whether defined in this core standard or additional extensions.
 
 NOTE: For this reason, the same property might be assigned different Parameter Values in the same Rule to provide for a fallback mechanism.
-
-=== Requirements
-
-include::../requirements/rc-core.adoc[]
