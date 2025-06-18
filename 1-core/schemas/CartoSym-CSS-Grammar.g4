@@ -5,7 +5,7 @@ options { tokenVocab=CartoSymCSSLexer; }
 // High level style sheet rules
 ///////////////////////////////
 
-styleSheet: metadata* stylingRuleList;
+styleSheet: metadata* stylingRuleList?;
 
 metadata:
     '.' IDENTIFIER CHARACTER_LITERAL;
