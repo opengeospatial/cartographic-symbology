@@ -17,6 +17,7 @@ The requirements described in this section define the symbology core requirement
 .Symbology Core Classes UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Style : stylingRules: StylingRule[0..*]
 Style *-- StylingRule
 Style : metadata: Metadata[0..1]
@@ -44,6 +45,7 @@ Symbolizer --> Expression : parameter values
 /'Note: zOrder needs discussion on whether it should be relative or float
 and how to relate to encodings where the visual priority order
 comes from the order of the rules.'/
+@enduml
 ....
 
 === Metadata
@@ -300,6 +302,7 @@ as to define the values of Symbolizer properties.
 .Expression Classes UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 abstract class Expression
 
 abstract class LiteralExpression
@@ -329,6 +332,7 @@ OperationExpression *-- Expression
 'class SubExpression
 'SubExpression --|> Expression -- Parentheses could be purely an encoding concept based on the need to maintain priority...
 'class ExpressionList -- Expression with multiplicity?
+@enduml
 ....
 
 [[req-core-parameters]]
@@ -371,6 +375,7 @@ part:: A Renderer SHALL support ...
 .System Identifiers UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 enum SystemIdentifierExpression
 SystemIdentifierExpression --|> IdentifierExpression
 SystemIdentifierExpression : visualization
@@ -440,6 +445,7 @@ Month : september
 Month : october
 Month : november
 Month : december
+@enduml
 ....
 
 One specific type of identifier expressions use System Identifiers.
@@ -453,6 +459,7 @@ A capability System Identifier declares available capabilities of the rendering 
 .Capability System Identifiers UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Class Capabilities
 Capabilities   : vector: bool
 Capabilities   : coverage: bool
@@ -474,6 +481,7 @@ Capabilities   : righthand: bool
 Capabilities   : conditional: bool
 Capabilities   : variables: bool
 Capabilities   : vendor: VendorCapabilities
+@enduml
 ....
 
 .System Identifier capabilities
@@ -733,6 +741,7 @@ part:: A Renderer SHALL support ...
 .Literal Classes UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 abstract LiteralExpression
 
 TextLiteral --|> LiteralExpression
@@ -761,6 +770,7 @@ ArrayLiteral --|> LiteralExpression
 
 InstanceLiteral --|> InstanceExpression
 InstanceLiteral --|> LiteralExpression
+@enduml
 ....
 
 A literal expression is an expression that has a fixed value in the encoding of the style.
@@ -806,6 +816,7 @@ Without support for the _Any right-hand operand_ requirements class, the right-h
 .Core Logic and Relational Operators UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 enum Operator
 enum LogicOperator
 LogicOperator --|> Operator
@@ -827,6 +838,7 @@ RelationalOperator : between
 RelationalOperator : notBetween
 RelationalOperator : in -- right operand is array
 RelationalOperator : notIn -- right operand is array
+@enduml
 ....
 
 This requirements class defines the following Logical Operators :

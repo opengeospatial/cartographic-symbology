@@ -12,6 +12,7 @@ This requirements class adds support for function call expressions.
 .Functions UML Class Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 abstract class Expression
 
 FunctionCallExpression --|> Expression
@@ -23,6 +24,7 @@ FunctionCallExpression *-- Expression
 Function : name: string
 Function : parameters: map < string, type >
 Function : returnType: type
+@enduml
 ....
 
 .FunctionCallExpression class
@@ -66,6 +68,7 @@ include::../requirements/rc-functions.adoc[]
 .Math Functions UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 interface MathFunctions
 MathFunctions --|> Function : standard functions
 MathFunctions : abs(x : double) double
@@ -91,6 +94,7 @@ MathFunctions : sinh(x : double) double
 MathFunctions : sqrt(x : double) double
 MathFunctions : tan(x : double) double
 MathFunctions : tanh(x : double) double
+@enduml
 ....
 
 ==== Requirements
@@ -104,6 +108,7 @@ include::../requirements/rc-math.adoc[]
 .Array Relation Functions UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 interface ArrayRelationFunctions
 ArrayRelationFunctions --|> Function : standard functions
 ArrayRelationFunctions : a_containedBy(array a, array b) bool
@@ -111,6 +116,7 @@ ArrayRelationFunctions : a_contains(array a, array b) bool
 ArrayRelationFunctions : a_equals(array a, array b) bool
 ArrayRelationFunctions : a_overlaps(array a, array b) bool
 ArrayRelationFunctions --> ArrayExpression
+@enduml
 ....
 
 .Array relation functions
@@ -135,6 +141,7 @@ include::../requirements/rc-array-relations.adoc[]
 .Text Manipulation Functions UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 interface TextManipulationFunctions
 TextManipulationFunctions --|> Function : standard functions
 TextManipulationFunctions : caseInsensitize(string s) string
@@ -144,6 +151,7 @@ TextManipulationFunctions : upperCase(string s) string
 TextManipulationFunctions : concatenate(string a, string b) string
 TextManipulationFunctions : substitute(string s, string a, string b) string
 TextManipulationFunctions : format(string f, ...) string
+@enduml
 ....
 
 .Text manipulation functions

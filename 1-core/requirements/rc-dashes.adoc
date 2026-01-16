@@ -17,9 +17,11 @@ Implementations shall support all properties in the below table for style encodi
 .Dashed strokes class UML diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class Stroke <<extended>>
 Stroke : dashPattern: integer [*]
 Stroke : dashOffset: float [0..1]
+@enduml
 ....
 
 .Extended Stroke class for dashes

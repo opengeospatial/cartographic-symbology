@@ -14,6 +14,7 @@ This requirements class adds capabilities for defining hatch fills as a pattern 
 .Hatches Fills UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class Fill <<extended>>
 Fill : hatch: Hatch
 Fill *-- Hatch
@@ -21,6 +22,7 @@ Fill *-- Hatch
 Hatch : width: float
 Hatch : angle: float
 Hatch : distance: float
+@enduml
 ....
 
 ==== Requirements
@@ -35,6 +37,7 @@ include::../requirements/rc-hatches.adoc[]
 .Dotpattern Fills UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class Fill <<extended>>
 Fill : dotpattern: Dotpattern
 Fill *-- Dotpattern
@@ -44,6 +47,7 @@ Dotpattern *-- Distance
 
 Distance : horizontal: float
 Distance : vertical: float
+@enduml
 ....
 
 This requirements class extends Fill capabilities by adding support for dot fills with a point-based pattern.
@@ -84,11 +88,13 @@ This requirements class adds support for stipple fills. A stipple fill is a patt
 .Stipple Fills UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class Fill <<extended>>
 Fill : stipple: Stipple
 Fill *-- Stipple
 
 Stipple : ratio
+@enduml
 ....
 
 ==== Requirements

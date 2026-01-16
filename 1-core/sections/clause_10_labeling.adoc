@@ -8,6 +8,7 @@
 .Label Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class Symbolizer <<extended>>
 Symbolizer : label: Label [0..1]
 Symbolizer *-- Label
@@ -19,6 +20,7 @@ Label *-- LabelPlacement
 LabelPlacement : priority: float
 LabelPlacement : minSpacing: float
 LabelPlacement : maxSpacing: float
+@enduml
 ....
 
 This requirements class adds support for labels that are placed using a placement algorithm (and may not always be placed)
@@ -63,6 +65,7 @@ include::../requirements/rc-labels.adoc[]
 .Font outlines UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Font *-- FontOutline
 Font : outline: FontOutline
 
@@ -70,6 +73,7 @@ FontOutline : size: float
 FontOutline : opacity: float
 FontOutline : color: Color
 FontOutline *-- Color
+@enduml
 ....
 
 This requirements class adds support for Text font outlines to improve readability on any background.

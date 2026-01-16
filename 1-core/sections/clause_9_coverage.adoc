@@ -12,6 +12,7 @@ as providing an option to apply a color and/or opacity map based on the values.
 .Basic Coverage Symbolizer Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class Symbolizer <<extended>>
 Symbolizer : colorChannels: Color -- IdentifierExpressions
 Symbolizer : alphaChannel: double -- IdentifierExpression
@@ -35,6 +36,7 @@ ValueOpacity : label: text
 Color : r: float
 Color : g: float
 Color : b: float
+@enduml
 ....
 
 ===== Extended Identifiers
@@ -111,6 +113,7 @@ include::../requirements/rc-coverage.adoc[]
 .HillShading Symbolizer Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 AzimuthElevation : azimuth: Angle
 AzimuthElevation : elevation: Angle
 AzimuthElevation --* Angle
@@ -126,6 +129,7 @@ HillShading *-- ValueOpacity
 class Symbolizer <<extended>>
 Symbolizer : hillShading: HillShading
 Symbolizer *-- HillShading
+@enduml
 ....
 
 This requirements classand adds the capability to portray elevation coverages with a hill shading style.

@@ -31,12 +31,14 @@ include::../requirements/rc-righthand.adoc[]
 .Conditional Expressions UML Class Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 abstract class Expression
 ConditionalExpression --|> Expression
 ConditionalExpression : condition: Expression
 ConditionalExpression : thenExp: Expression
 ConditionalExpression : elseExp: Expression
 ConditionalExpression *-- Expression
+@enduml
 ....
 
 .ConditionalExpression class
@@ -60,9 +62,11 @@ include::../requirements/rc-conditional.adoc[]
 .Variable Expressions UML Class Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 abstract class Expression
 VariableExpression --|> Expression
 VariableExpression : name: string
+@enduml
 ....
 
 This requirements class adds support for defining variables that can be used

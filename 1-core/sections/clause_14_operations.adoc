@@ -10,6 +10,7 @@ This requirements class adds support for arithmetic operations.
 .Arithmetic Operators UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 enum ArithmeticOperator
 ArithmeticOperator --|> Operator
 ArithmeticOperator : add
@@ -19,6 +20,7 @@ ArithmeticOperator : div
 ArithmeticOperator : intDiv
 ArithmeticOperator : mod
 ArithmeticOperator : pow
+@enduml
 ....
 
 .arithmetic
@@ -46,6 +48,7 @@ include::../requirements/rc-arithmetic.adoc[]
 .TextRelation Operators UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 enum TextRelationOperator
 TextRelationOperator --|> Operator
 TextRelationOperator : like
@@ -56,6 +59,7 @@ TextRelationOperator : endsWith
 TextRelationOperator : notContains
 TextRelationOperator : notStartsWith
 TextRelationOperator : notEndsWith
+@enduml
 ....
 
 This requirements class adds more advanced support for evaluating the relation between text values, including the _like_ operator,

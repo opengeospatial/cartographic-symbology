@@ -23,9 +23,11 @@ include::../requirements/rc-dashes.adoc[]
 .Casing and centerline strokes class UML diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class Stroke <<extended>>
 Stroke : center: StrokeStyling [0..1]
 Stroke : casing: StrokeStyling [0..1]
+@enduml
 ....
 
 This requirements class adds support for Strokes with a casing and centerline.

@@ -13,6 +13,7 @@ rendered at the exact location of point geometry, at the centroid of polygon geo
 .Basic Vector Features Extended Symbolizer Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class Symbolizer <<extended>>
 Symbolizer : fill: Fill [0..1]
 Symbolizer : stroke: Stroke [0..1]
@@ -20,6 +21,7 @@ Symbolizer : marker: Marker [0..1]
 Symbolizer *-- Fill
 Symbolizer *-- Stroke
 Symbolizer *-- Marker
+@enduml
 ....
 
 The following three new Symbolizer properties are defined by this requirements class:
@@ -45,6 +47,7 @@ An encoding must support an escaping mechanism in cases where the name of a feat
 .Vector Features System Identifiers UML Class Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 class SystemIdentifierExpression <<extended>>
 SystemIdentifierExpression : feature
 SystemIdentifierExpression : feature.identifier
@@ -61,6 +64,7 @@ Feature : geometryDimensions: int
 DataLayer : features: Feature[*]
 DataLayer : featuresGeometryDimensions: int
 DataLayer *-- Feature
+@enduml
 ....
 
 In addition, the following new System Identifiers are defined by this requirements class:
@@ -91,9 +95,11 @@ with different symbolizers.
 .RGB Color class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Color : r: float
 Color : g: float
 Color : b: float
+@enduml
 ....
 
 .RGB Color class
@@ -111,9 +117,11 @@ Color : b: float
 .UML Class Diagram of the Symbology Fill
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Fill : color: Color
 Fill : opacity: float
 Fill *-- Color
+@enduml
 ....
 
 A Fill defines the graphical symbolizing parameters required to draw the filling of a two-dimensional shape such as a polygon.
@@ -133,6 +141,7 @@ Separate conformance classes can extend this Fill class with additional properti
 .Stroke Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Stroke --|> StrokeStyling
 Stroke *-- StrokeStyling
 
@@ -142,6 +151,7 @@ StrokeStyling : width: float
 StrokeStyling : widthUnit: GraphicalUnit
 StrokeStyling *-- Color
 StrokeStyling *-- GraphicalUnit
+@enduml
 ....
 
 A Stroke defines the graphical symbolizing parameters for drawing an outline (e.g., for linear geometries or the exterior of a polygon geometry). As an abstract class and part of the base of the core graphical concepts, StrokeClass is a global point of extension to specify concrete ways to draw outlines. The StrokeClass properties are documented in the following table. By default the end of open subpaths are butt caped and at the corners of paths are miter joined when they are stroked.
@@ -163,6 +173,7 @@ A Stroke object inherits from a base _StrokeStyling_ class, which is re-used in 
 .Graphical Units Enumeration UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 enum GraphicalUnit
 GraphicalUnit : pixels
 GraphicalUnit : meters
@@ -173,6 +184,7 @@ GraphicalUnit : em
 GraphicalUnit : screenInches
 GraphicalUnit : screenCM
 GraphicalUnit : screenMM
+@enduml
 ....
 
 For styling parameters that define sizing and positioning of graphical objects (width, displacement, etc.), a specific unit of measure needs to be provided for the rendering engine.
@@ -203,6 +215,7 @@ Consequently, either the unit of measure is determined through the uom code dire
 .Marker Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Marker --|> MultiGraphic
 
 MultiGraphic : elements: Graphic [0..*]
@@ -210,6 +223,7 @@ MultiGraphic *-- Graphic
 
 Graphic : position: UnitPoint
 Graphic : opacity: float
+@enduml
 ....
 
 A Marker inherits from a MultiGraphic which can contain multiple graphical elements:
@@ -276,6 +290,7 @@ or by a three-dimensional cube. The GraphicSize properties are documented in the
 .Dot Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Dot --|> Shape
 Dot : point: UnitPoint
 Dot *-- UnitPoint
@@ -284,6 +299,7 @@ abstract class Shape
 Shape --|> Graphic
 Shape : stroke: Stroke [0..1]
 Shape *-- Stroke
+@enduml
 ....
 
 A round Dot is one type of Graphic defined by this requirements class that can be used as part of a Marker.
@@ -303,6 +319,7 @@ A Dot inherits from a Shape class allowing to define a `stroke` which controls t
 .Image Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Image --|> Graphic
 Image  : image: Resource
 Image  : hotSpot: UnitPoint
@@ -319,6 +336,7 @@ Resource : id: string[0..1]
 Resource : type: string[0..1]
 Resource : ext: string[0..1]
 Resource : sprite: string[0..1]
+@enduml
 ....
 
 An Image is one type of graphic defined by this requirements class that can be used as part of a Marker.
@@ -354,6 +372,7 @@ The actual image content is defined by a Resource, which can be specified by one
 .Text Class UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
+@startuml
 Text --|> Graphic
 Text : text: string -- IdentifierExpression
 Text : font: Font
@@ -385,6 +404,7 @@ enum VAlignment
 VAlignment : top
 VAlignment : middle
 VAlignment : bottom
+@enduml
 ....
 
 A Text is one type of Graphic defined by this requirements class that can be used as part of a Marker.
