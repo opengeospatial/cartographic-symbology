@@ -848,19 +848,24 @@
                 "factor": { "$ref": "#/$defs/numericExpression" },
                 "sun": { "$ref": "#/$defs/azimuthElevation" },
                 "colorMap": {
-                  "allOf": [
-                   {"$ref": "#/$defs/colorMap"},
-                   {"items": [
-                     {"type": "array",
-                      "minItems": 2,
-                      "maxItems": 3,
-                      "prefixItems": [
-                         { "$ref": "#/$defs/zeroToOne" },
-                         { "$ref": "#/$defs/color" },
-                         { "type": "string" }
-                      ]
-                     }
-                   ]}]
+                  "oneOf": [
+                    { "$ref": "#/$defs/idOrFnExpression" },
+                    {
+                       "type": "array",
+                       "items":
+                       {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 3,
+                          "prefixItems": [
+                             { "$ref": "#/$defs/zeroToOne" },
+                             { "$ref": "#/$defs/color" },
+                             { "type": "string" }
+                          ]
+                       },
+                       "minItems": 1
+                    }
+                  ]
                 },
                 "opacityMap": { "$ref": "#/$defs/hsOpacityMap" },
                 "alter": { "type": "boolean" }
@@ -917,7 +922,7 @@
           { "$ref": "#/$defs/geomExpression" },
           { "$ref": "#/$defs/temporalExpression" },
           { "$ref": "#/$defs/array" },
-          { "type": null }
+          { "type": "null" }
        ]
     },
     "systemIdentifier": {
