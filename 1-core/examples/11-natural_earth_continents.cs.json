@@ -1,0 +1,1038 @@
+{
+  "stylingRules": [
+    {
+      "symbolizer": {
+        "visibility": false
+      }
+    },
+    {
+      "name": "ne_10m_admin_0_countries",
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Africa"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "color": [
+                226,
+                145,
+                118
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Antartica"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "color": [
+                58,
+                15,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Asia"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "color": [
+                58,
+                15,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Europe"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "color": [
+                210,
+                200,
+                92
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "North America"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "color": [
+                21,
+                237,
+                75
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Oceania"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "color": [
+                58,
+                211,
+                198
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "South America"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "color": [
+                239,
+                75,
+                143
+              ]
+            }
+          }
+        }
+      ],
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_admin_0_countries"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "opacity": 0.3686275,
+        "zOrder": 1,
+        "label": {
+          "elements": [
+            {
+              "type": "Text",
+              "text": {
+                "property": "name"
+              },
+              "font": {
+                "face": "Tahoma",
+                "size": 14,
+                "outline": {
+                  "size": 3,
+                  "opacity": 0.75,
+                  "color": "white"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ne_10m_urban_areas",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_urban_areas"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 31,
+        "fill": {
+          "color": [
+            255,
+            228,
+            105
+          ],
+          "opacity": 0.8
+        },
+        "stroke": {
+          "color": "yellow",
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_graticules_10",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_graticules_10"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 3,
+        "stroke": {
+          "color": "gainsboro",
+          "width": 0.1
+        }
+      }
+    },
+    {
+      "name": "ne_10m_graticules_30",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_graticules_30"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 4,
+        "stroke": {
+          "color": "gray",
+          "width": 0.1
+        }
+      }
+    },
+    {
+      "name": "ne_10m_populated_places",
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "SCALERANK"
+              },
+              0
+            ]
+          },
+          "symbolizer": {
+            "label": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "color": "white",
+                  "size": "10"
+                },
+                {
+                  "type": "Dot",
+                  "color": "darkOrange",
+                  "size": "6"
+                },
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "NAME"
+                  },
+                  "position2D": "{ 10, -4 }",
+                  "font": {
+                    "face": "Tahoma",
+                    "size": 12,
+                    "outline": {
+                      "color": "white",
+                      "size": 3.5,
+                      "opacity": 0.75
+                    }
+                  },
+                  "alignment": [
+                    "left",
+                    "middle"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_populated_places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 24
+      }
+    },
+    {
+      "name": "ne_10m_geography_regions_polys",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_geography_regions_polys"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 64,
+        "fill": {
+          "opacity": 0.0
+        },
+        "stroke": {
+          "width": 0.0
+        },
+        "label": {
+          "elements": [
+            {
+              "type": "Text",
+              "text": {
+                "property": "name"
+              },
+              "font": {
+                "face": "Times New Roman",
+                "size": 12,
+                "italic": true,
+                "color": "papayaWhip",
+                "outline": {
+                  "size": 3,
+                  "color": "black",
+                  "opacity": 0.35
+                }
+              },
+              "alignment": [
+                "center",
+                "middle"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_I_2000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_I_2000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 3,
+        "fill": {
+          "color": [
+            149,
+            188,
+            230
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_L_0",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_L_0"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 0,
+        "fill": {
+          "color": [
+            209,
+            233,
+            255
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_K_200",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_K_200"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 1,
+        "fill": {
+          "color": [
+            191,
+            224,
+            255
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_J_1000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_J_1000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 2,
+        "fill": {
+          "color": [
+            170,
+            207,
+            242
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_H_3000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_H_3000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 4,
+        "fill": {
+          "color": [
+            134,
+            179,
+            235
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_G_4000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_G_4000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 5,
+        "fill": {
+          "color": [
+            98,
+            159,
+            217
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_F_5000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_F_5000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 6,
+        "fill": {
+          "color": [
+            82,
+            143,
+            204
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_E_6000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_E_6000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 7,
+        "fill": {
+          "color": [
+            66,
+            124,
+            179
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_D_7000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_D_7000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 8,
+        "fill": {
+          "color": [
+            43,
+            102,
+            166
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_C_8000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_C_8000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 9,
+        "fill": {
+          "color": [
+            56,
+            91,
+            140
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_B_9000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_B_9000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 10,
+        "fill": {
+          "color": [
+            42,
+            50,
+            104
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_bathymetry_A_10000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_bathymetry_A_10000"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 11,
+        "fill": {
+          "color": [
+            30,
+            28,
+            71
+          ]
+        },
+        "stroke": {
+          "opacity": 0.0,
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_playas",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_playas"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "opacity": 0.4235294,
+        "zOrder": 75,
+        "fill": {
+          "color": "burlyWood"
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_ocean",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_ocean"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 4,
+        "fill": {
+          "color": [
+            228,
+            244,
+            247
+          ]
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_admin_1_states_provinces",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_admin_1_states_provinces"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 3,
+        "fill": {
+          "opacity": 0.0
+        },
+        "stroke": {
+          "color": "silver",
+          "width": 0.5
+        }
+      }
+    },
+    {
+      "name": "ne_10m_rivers_lake_centerlines",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_rivers_lake_centerlines"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 36,
+        "stroke": {
+          "color": "dodgerBlue",
+          "width": 0.5
+        }
+      }
+    },
+    {
+      "name": "ne_10m_rivers_europe",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_rivers_europe"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 25,
+        "stroke": {
+          "color": "dodgerBlue",
+          "width": 0.5
+        }
+      }
+    },
+    {
+      "name": "ne_10m_reefs",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_reefs"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 35,
+        "stroke": {
+          "color": [
+            0,
+            175,
+            122
+          ]
+        }
+      }
+    },
+    {
+      "name": "ne_10m_lakes_pluvial",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_lakes_pluvial"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 22,
+        "fill": {
+          "color": "dodgerBlue"
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_lakes_north_america",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_lakes_north_america"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 70,
+        "fill": {
+          "color": "dodgerBlue"
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_lakes_europe",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_lakes_europe"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 68,
+        "fill": {
+          "color": "dodgerBlue"
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_lakes",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_lakes"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 67,
+        "fill": {
+          "color": "dodgerBlue"
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_glaciated_areas",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_glaciated_areas"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 65,
+        "fill": {
+          "color": "aqua",
+          "opacity": 0.16
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_geography_marine_polys",
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "SCALERANK"
+              },
+              0
+            ]
+          },
+          "symbolizer": {
+            "label": {
+              "elements": [
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "font": {
+                    "face": "Tahoma",
+                    "size": 12,
+                    "color": "dodgerBlue",
+                    "italic": true,
+                    "outline": {
+                      "size": 3,
+                      "opacity": 0.75,
+                      "color": [
+                        16,
+                        80,
+                        139
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_geography_marine_polys"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 87,
+        "fill": {
+          "opacity": 0.0
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      }
+    },
+    {
+      "name": "ne_10m_roads",
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "<=",
+            "args": [
+              {
+                "property": "SCALERANK"
+              },
+              3
+            ]
+          },
+          "symbolizer": {
+            "stroke": {
+              "color": [
+                196,
+                46,
+                49
+              ],
+              "width": 0.66
+            }
+          }
+        }
+      ],
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 86
+      }
+    }
+  ]
+}
