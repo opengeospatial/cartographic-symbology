@@ -18,12 +18,12 @@ Amenities[dataLayer.type = 'vector' and dataLayer.featuresGeometryDimensions = 0
          marker: { elements: [
             Dot {  // larger white dot underneath
                size: 10 px; // Alias for base Shape class stroke width
-               alignment: center middle;
+               position: 0 0;
                color: white;
             },
             Dot {  // smaller orange dot in center
                size: 8 px; // Alias for base Shape class stroke width
-               alignment: center middle;
+               position: 0 0;
                color: orange;
             }
          ]};
