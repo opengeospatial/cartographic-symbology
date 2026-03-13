@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "title": "Styling line vector features",
+    "abstract": "Basic vector features styling (lines)"
+  },
+  "stylingRules": [
+    {
+      "name": "Roads",
+      "nestedRules": [
+        {
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "<",
+                "args": [
+                  {
+                    "sysId": "viz.sd"
+                  },
+                  10000
+                ]
+              },
+              "symbolizer": {
+                "stroke": {
+                  "width": {
+                    "m": 8.0
+                  }
+                },
+                "marker": {
+                  "elements": [
+                    {
+                      "type": "Dot",
+                      "size": {
+                        "m": 10
+                      },
+                      "color": "white"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "<",
+                "args": [
+                  {
+                    "sysId": "viz.sd"
+                  },
+                  200000
+                ]
+              },
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": ">=",
+                    "args": [
+                      {
+                        "property": "validDate"
+                      },
+                      {
+                        "sysId": "viz.timeInterval.start.date"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "<=",
+                    "args": [
+                      {
+                        "property": "validDate"
+                      },
+                      {
+                        "sysId": "viz.timeInterval.end.date"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.8,
+            "zOrder": 2,
+            "stroke": {
+              "color": "gray",
+              "opacity": 1.0,
+              "width": {
+                "px": 5.0
+              }
+            }
+          }
+        }
+      ],
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Roads"
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "sysId": "dataLayer.type"
+                  },
+                  "vector"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "sysId": "dataLayer.featuresGeometryDimensions"
+                  },
+                  1
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      }
+    }
+  ]
+}

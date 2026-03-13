@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "title": "Styling a land use layer",
+    "abstract": "Styling land use data with Style & Symbology Core",
+    "description": "This is a simple example of how to style a land use layer using Style & Symbology Core."
+  },
+  "stylingRules": [
+    {
+      "name": "Landuse",
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "<",
+                "args": [
+                  {
+                    "sysId": "viz.sd"
+                  },
+                  200000
+                ]
+              },
+              {
+                "op": ">",
+                "args": [
+                  {
+                    "sysId": "viz.date"
+                  },
+                  {
+                    "function": "DATE",
+                    "args": [
+                      "2020-13-01"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.5,
+            "zOrder": 1
+          }
+        }
+      ],
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Landuse"
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.type"
+              },
+              "vector"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      }
+    }
+  ]
+}
