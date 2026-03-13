@@ -5,9 +5,17 @@ options { tokenVocab=CartoSymCSSLexer; }
 // High level style sheet rules
 ///////////////////////////////
 
-styleSheet: metadata* stylingRuleList?;
+styleSheet: metadata* variableDef* stylingRuleList?;
+
+variable: AT_SIGN IDENTIFIER;
+
+variableDef: variable EQ expression SEMI;
 
 metadata:
+    '.' IDENTIFIER CHARACTER_LITERAL;
+
+// NOTE: Only .name is valid for stylingRuleName
+stylingRuleName:
     '.' IDENTIFIER CHARACTER_LITERAL;
 
 stylingRuleList:
@@ -17,6 +25,7 @@ stylingRuleList:
 stylingRule:
    ( selector )*
    LCBR
+      stylingRuleName?
       (propertyAssignmentList SEMI)?
       stylingRuleList?
    RCBR;
@@ -63,6 +72,8 @@ expression:
    | unaryArithmeticOperator expression
 
    | tuple
+
+   | variable
    ;
 
 expConstant: NUMERIC_LITERAL UNIT? | HEX_LITERAL;

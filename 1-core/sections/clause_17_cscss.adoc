@@ -7,6 +7,7 @@ This requirements class defines an encoding for the Styles and Symbology Logical
 The primary objective of this encoding is expressiveness so as to facilitate hand-edition by cartographers.
 Parsing this encoding requires a custom parser.
 
+[[cscss]]
 ==== Cascading Style Sheets
 
 A style is encoded as a series of styling rules into a _style sheet_ document.
@@ -37,6 +38,7 @@ The grammar for specifying a rule in this encoding is:
 
 [<selector>]*
 '`{`'
+   ['`.name`' <single-quoted styling rule name>]
    [<symbolizer property assignment>]*
    [<nested rule>]*
 '`}`'
@@ -56,7 +58,14 @@ A selector is either:
 
 <data layer name>
 
-[[cscss]]
+==== Variables
+
+Variables can be defined before styling rule names with this syntax:
+
+`@` <identifier> '`=`' <expression> '`;`'
+
+A variable (`@` <identifier>) can then be used as an expression.
+
 ==== Expressions
 
 ===== CQL2-Text encoding
