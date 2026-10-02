@@ -228,11 +228,11 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 [width="90%",options="header"]
 |===
 | Construct                   | SE Equivalent
-| Text (inside Marker)        | `<WellKnownName>` pointing to a TrueType Font with a `<MarkIndex>` identifiying the character inside the font inside a `<Mark>` inside a `<Graphic>` in a `<PointSymbolizer>` (only for single characters text)
+| Text (inside Marker)        | `<OnlineResource>` pointing to a TrueType Font, with `<Format>` and a `<MarkIndex>` identifying the character inside the font, inside a `<Mark>` inside a `<Graphic>` in a `<PointSymbolizer>` (only for single characters text)
 | Font                        | `<Font>` with `<SvgParameter name="font-family">`, `<SvgParameter name="font-size">`, `<SvgParameter name="font-style">`, `<SvgParameter name="font-weight">`
-| TextAlignment               | `<AnchorPoint>` inside `<PointSymbolizer>`, or `<AnchorPoint>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>`
+| TextAlignment               | `<AnchorPoint>` inside `<Graphic>` inside `<PointSymbolizer>`, or `<AnchorPoint>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>`
 | Image                       | `<Graphic>`
-| Image hotSpot               | `<AnchorPoint>` inside `<PointSymbolizer>`, or `<AnchorPoint>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>`
+| Image hotSpot               | `<AnchorPoint>` inside `<Graphic>` inside `<PointSymbolizer>`, or `<AnchorPoint>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>`
 | Dot                         | `<WellKnownName>` inside a `<Mark>` inside a `<Graphic>` inside a `<PointSymbolizer>`
 | Marker                      | `<PointSymbolizer>`
 | Marker opacity              | `<SvgParameter name="fill-opacity">` for SE 1.1.0, `<CssParameter name="fill-opacity">` for SLD 1.0.0 inside a <PointSymbolizer>
