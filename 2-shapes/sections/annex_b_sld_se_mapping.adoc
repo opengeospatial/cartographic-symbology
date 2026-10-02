@@ -205,8 +205,8 @@ Standard.
 |===
 | Construct                    | SE Equivalent
 | pattern                      | `<Stroke>` with '<GraphicStroke>', `<Graphic>`, `<Mark>` and `<WellKnownName>` or `<Stroke>` with '<GraphicStroke>', `<Graphic>`, `<Mark>`, `<OnlineResource>` and `<MarkIndex>`
-| patternGap                   | `<Stroke>` with `<CssParameter>` (stroke-dasharray)
-| patternInitialGap            | `<Stroke>` with `<CssParameter>` (stroke-dashoffset)
+| patternGap                   | `<Gap>` inside `<GraphicStroke>` inside `<Stroke>`; Extended (GeoServer) `<Stroke>` with `<CssParameter>` (stroke-dasharray)
+| patternInitialGap            | `<InitialGap>` inside `<GraphicStroke>` inside `<Stroke>`; Extended (GeoServer) `<Stroke>` with `<CssParameter>` (stroke-dashoffset)
 |===
 
 .SLD Example encoding style using "Pattern Strokes" requirements class
