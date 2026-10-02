@@ -62,14 +62,15 @@ expression:
 
    // Operations
    | expression arithmeticOperatorExp expression
+   | unaryArithmeticOperator expression
    | expression arithmeticOperatorMul expression
    | expression arithmeticOperatorAdd expression
-   | expression binaryLogicalOperator expression
    | expression relationalOperator expression
    | expression betweenOperator expression AND expression
-   | expression QUESTION expression COLON expression
    | unaryLogicalOperator expression
-   | unaryArithmeticOperator expression
+   | expression AND expression
+   | expression OR expression
+   | expression QUESTION expression COLON expression
 
    | tuple
 
@@ -138,8 +139,6 @@ expCall: IDENTIFIER LPAR arguments RPAR ;
 arguments:
    expression
    | arguments COMMA expression;
-
-binaryLogicalOperator: AND | OR ;
 
 unaryLogicalOperator: NOT ;
 
