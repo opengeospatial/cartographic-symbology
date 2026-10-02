@@ -133,7 +133,7 @@ Standard.
 [width="90%",options="header"]
 |===
 | Construct                     | SE Equivalent
-| GeometryManipulationFunctions | `<ogc:Function>`
+| GeometryManipulationFunctions | N/A (`<Geometry>` only accepts an `<ogc:PropertyName>` in SE 1.1.0); Extended (GeoServer) `<ogc:Function>` inside `<Geometry>`
 | s_difference                  | N/A
 | s_symDifference               | N/A
 | s_convexHull                  | N/A
@@ -146,7 +146,7 @@ Standard.
 | s_delaunayTriangles           | N/A
 |===
 
-.SLD Example encoding style using "Geometry Manipulation Functions" requirements class
+.SLD Example encoding style using "Geometry Manipulation Functions" requirements class (Extended (GeoServer), not valid SE 1.1.0)
 ====
 [source,sld]
 ----
@@ -163,7 +163,7 @@ Standard.
             <Stroke/>
           </LineSymbolizer>
           <PointSymbolizer>
-            <Geometry><ogc:Function name="vertices"><ogc:PropertyName>the_geom</ogc:PropertyName></ogc:Function></Geometry>
+            <Geometry><ogc:Function name="centroid"><ogc:PropertyName>the_geom</ogc:PropertyName></ogc:Function></Geometry>
             <Graphic>
               <Mark>
                 <WellKnownName>square</WellKnownName>
