@@ -418,8 +418,8 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 [width="90%",options="header"]
 |===
 | Construct                    | SE Equivalent
-| dashPattern                  | `<CssParameter name="stroke-dasharray">
-| dashOffset                   | `<CssParameter name="stroke-dashoffset">`
+| dashPattern                  | `<SvgParameter name="stroke-dasharray">` for SE 1.1.0, `<CssParameter name="stroke-dasharray">` for SLD 1.0.0
+| dashOffset                   | `<SvgParameter name="stroke-dashoffset">` for SE 1.1.0, `<CssParameter name="stroke-dashoffset">` for SLD 1.0.0
 |===
 
 .SLD Example encoding style using "Dashes" requirements class
@@ -514,7 +514,7 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 [width="90%",options="header"]
 |===
 | Construct                    | SE Equivalent
-| HatchStyle                   | Extended (GeoServer) `<WellknownName>`  prefixed by shape:// (vertline, horline, slash, backslash, plus, times) inside `<Mark>` inside `<Graphic>` inside `<GraphicFill>` and CssParameter such as stroke, stroke-width etc
+| HatchStyle                   | Extended (GeoServer) `<WellknownName>`  prefixed by shape:// (vertline, horline, slash, backslash, plus, times) inside `<Mark>` inside `<Graphic>` inside `<GraphicFill>` and `<SvgParameter>` (SE 1.1.0) or `<CssParameter>` (SLD 1.0.0) such as stroke, stroke-width etc
 |===
 
 .SLD Example encoding style using "Hatch fills" requirements class
@@ -572,7 +572,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 [width="90%",options="header"]
 |===
 | Construct                    | SE Equivalent
-| StippleStyle                 | Extended (GeoServer) `<WellknownName>`  shape://dot inside `<Mark>` inside `<Graphic>` inside `<GraphicFill>` and CssParameter such as stroke, stroke-width etc
+| StippleStyle                 | Extended (GeoServer) `<WellknownName>`  shape://dot inside `<Mark>` inside `<Graphic>` inside `<GraphicFill>` and `<SvgParameter>` (SE 1.1.0) or `<CssParameter>` (SLD 1.0.0) such as stroke, stroke-width etc
 |===
 
 .SLD Example encoding style using "Stipple fills" requirements class
