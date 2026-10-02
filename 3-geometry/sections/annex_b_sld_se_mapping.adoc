@@ -84,7 +84,7 @@ Standard.
 | t_finishedBy                 | `<ogc:Function>`
 | t_finishes                   | `<ogc:Function>`
 | t_meets                      | `<ogc:Function>`
-| t_meetBy                     | `<ogc:Function>`
+| t_metBy                      | `<ogc:Function>`
 | t_overlappedBy               | `<ogc:Function>`
 | t_overlaps                   | `<ogc:Function>`
 | t_startedBy                  | `<ogc:Function>`

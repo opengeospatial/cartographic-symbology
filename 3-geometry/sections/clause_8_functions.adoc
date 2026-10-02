@@ -354,7 +354,7 @@ TemporalRelationFunctions : t_during(TimeInterval a, TimeInterval b) bool
 TemporalRelationFunctions : t_finishedBy(TimeInterval a, TimeInterval b) bool
 TemporalRelationFunctions : t_finishes(TimeInterval a, TimeInterval b) bool
 TemporalRelationFunctions : t_meets(TimeInterval a, TimeInterval b) bool
-TemporalRelationFunctions : t_meetBy(TimeInterval a, TimeInterval b) bool
+TemporalRelationFunctions : t_metBy(TimeInterval a, TimeInterval b) bool
 TemporalRelationFunctions : t_overlappedBy(TimeInterval a, TimeInterval b) bool
 TemporalRelationFunctions : t_overlaps(TimeInterval a, TimeInterval b) bool
 TemporalRelationFunctions : t_startedBy(TimeInterval a, TimeInterval b) bool
@@ -388,7 +388,7 @@ TemporalRelationFunctions --> TimeInterval
 | t_finishedBy    | (TimeInterval a, TimeInterval b)  | bool          |
 | t_finishes      | (TimeInterval a, TimeInterval b)  | bool          |
 | t_meets         | (TimeInterval a, TimeInterval b)  | bool          |
-| t_meetBy        | (TimeInterval a, TimeInterval b)  | bool          |
+| t_metBy         | (TimeInterval a, TimeInterval b)  | bool          |
 | t_overlappedBy  | (TimeInterval a, TimeInterval b)  | bool          |
 | t_overlaps      | (TimeInterval a, TimeInterval b)  | bool          |
 | t_startedBy     | (TimeInterval a, TimeInterval b)  | bool          |
