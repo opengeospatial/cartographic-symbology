@@ -1,0 +1,35 @@
+
+[[rc-table-dot-patterns]]
+
+[requirements_class]
+.Dot pattern fills
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/dot-patterns
+inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
+subject:: Style encodings and Renderers
+====
+
+[[req-dot-patterns-dotpattern]]
+===== Fill `dotpattern` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/dot-patterns/dotpattern
+part:: An Encoding SHALL support defining a `dotpattern` property within the `Fill` class, defined as a `Dotpattern` class.
+part:: A Renderer SHALL support filling vector geometry with a regular grid of points based on a `dotpattern` property.
+====
+
+[[req-dot-patterns-distance]]
+===== Dotpattern `distance` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/dot-patterns/distance
+part:: An Encoding SHALL support defining a `distance` Dotpattern property as a Distance object including a `horizontal` and a `vertical` float.
+part:: A Renderer SHALL support spacing the rendered points of a dot pattern fill horizontally by the `horizontal` distance and vertically by the `vertical` distance.
+====
+
+// TODO(review): define the size and color of the rendered points (see also #84 for stipples).

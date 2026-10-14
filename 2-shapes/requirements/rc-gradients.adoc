@@ -1,0 +1,79 @@
+
+[[rc-table-gradients]]
+
+[requirements_class]
+.Gradient Fills
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/cartosym-2/1.0/req/gradients
+inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/vector
+subject:: Style encodings and Renderers
+====
+
+[[req-gradients-gradient]]
+===== Fill `gradient` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gradients/gradient
+part:: An Encoding SHALL support defining a `gradient` property within the `Fill` class, defined as a `Gradient` class including a `type`, an `angle`, a `position`, a `size` and an array of color `keys`.
+part:: A Renderer SHALL support filling vector geometry with a gradual transition between the colors of the `keys` of a `gradient` property.
+====
+
+[[req-gradients-type]]
+===== Gradient `type` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gradients/type
+part:: An Encoding SHALL support defining a `type` Gradient property with a value of `linear`, `radial`, `repeating` or `conic`.
+part:: A Renderer SHALL support filling vector geometry with a linear, radial, repeating or conic gradient according to the `type` property.
+====
+
+[[req-gradients-keys]]
+===== Gradient `keys` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gradients/keys
+part:: An Encoding SHALL support defining a `keys` Gradient property as an array of ColorKey objects, each including a `color`, an optional `opacity` and an optional `percent` position along the gradient.
+part:: A Renderer SHALL support interpolating the color and opacity of the gradient between consecutive keys, according to their `percent` position along the gradient.
+====
+
+[[req-gradients-angle]]
+===== Gradient `angle` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gradients/angle
+part:: An Encoding SHALL support defining an `angle` Gradient property as a float.
+part:: A Renderer SHALL support orienting the gradient according to the `angle` property.
+====
+
+[[req-gradients-position]]
+===== Gradient `position` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gradients/position
+part:: An Encoding SHALL support defining a `position` Gradient property.
+part:: A Renderer SHALL support positioning the origin of the gradient according to the `position` property.
+====
+
+[[req-gradients-size]]
+===== Gradient `size` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/gradients/size
+part:: An Encoding SHALL support defining a `size` Gradient property.
+part:: A Renderer SHALL support scaling the extent of the gradient according to the `size` property.
+====
+
+// TODO(review): moved from Part 1 `/req/vector/gradient*` (see #86), rewritten against the Part 2 Gradient model. Define the units of `angle` and the reference frame of `position` and `size`.

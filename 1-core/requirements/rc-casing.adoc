@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Casing and Centerline
 
-[[rc_table-casing]]
+[[rc-table-casing]]
 
 [requirements_class]
 .Casing and Centerline
@@ -13,23 +13,25 @@ subject:: Style encodings and Renderers
 ====
 
 [[req-casing-casing]]
-===== Casing `casing` operator
+===== Stroke `casing` property
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/casing/casing
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `casing` Stroke property as a StrokeStyling object.
+part:: A Renderer SHALL support drawing the casing of a stroke along the same geometry as the stroke, using the StrokeStyling specified by the `casing` property, beneath the main stroke.
 ====
 
 [[req-casing-center]]
-===== Centerline `center` operator
+===== Stroke `center` property
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/casing/center
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `center` Stroke property as a StrokeStyling object.
+part:: A Renderer SHALL support drawing the center line of a stroke along the same geometry as the stroke, using the StrokeStyling specified by the `center` property, on top of the main stroke.
 ====
+
+// TODO(review): the JSON schema names this property `centerLine` rather than `center` (see #120).

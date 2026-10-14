@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Text Manipulation Functions
 
-[[rc_table-text-manipulation]]
+[[rc-table-text-manipulation]]
 
 [requirements_class]
 .Text Manipulation Functions
@@ -12,46 +12,46 @@ inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-text-manipulation-caseInsensitize]]
+[[req-text-manipulation-case-insensitize]]
 ===== Text `caseInsensitize` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-manipulation/caseInsensitize
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/text-manipulation/case-insensitize
+part:: An Encoding SHALL support defining a `caseInsensitize` function that makes a string suitable for case-insensitive comparison.
+part:: A Renderer SHALL support evaluating the `caseInsensitize` function such that two strings differing only in letter case compare as equal once both are case-insensitized (equivalent to the CQL2 `CASEI` function).
 ====
 
-[[req-text-manipulation-accentInsensitize]]
+[[req-text-manipulation-accent-insensitize]]
 ===== Text `accentInsensitize` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-manipulation/accentInsensitize
+identifier:: /req/text-manipulation/accent-insensitize
 part:: An Encoding SHALL support defining an `accentInsensitize` function that removes accents from a string.
-part:: A Renderer SHALL support removing accents from a string using the `accentInsensitize` function.
+part:: A Renderer SHALL support removing accents from a string using the `accentInsensitize` function (equivalent to the CQL2 `ACCENTI` function).
 ====
 
-[[req-text-manipulation-lowerCase]]
+[[req-text-manipulation-lower-case]]
 ===== Text `lowerCase` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-manipulation/lowerCase
+identifier:: /req/text-manipulation/lower-case
 part:: An Encoding SHALL support defining a `lowerCase` function that converts a string to lowercase.
 part:: A Renderer SHALL support converting a string to lowercase using the `lowerCase` function.
 ====
 
-[[req-text-manipulation-upperCase]]
+[[req-text-manipulation-upper-case]]
 ===== Text `upperCase` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-manipulation/upperCase
+identifier:: /req/text-manipulation/upper-case
 part:: An Encoding SHALL support defining an `upperCase` function that converts a string to uppercase.
 part:: A Renderer SHALL support converting a string to uppercase using the `upperCase` function.
 ====
@@ -64,7 +64,7 @@ part:: A Renderer SHALL support converting a string to uppercase using the `uppe
 [%metadata]
 identifier:: /req/text-manipulation/concatenate
 part:: An Encoding SHALL support defining a `concatenate` function that concatenates strings.
-part:: A Renderer SHALL support concatenating strings using the `concatenate` function
+part:: A Renderer SHALL support concatenating strings using the `concatenate` function.
 ====
 
 [[req-text-manipulation-substitute]]
@@ -89,5 +89,4 @@ part:: An Encoding SHALL support defining a `format` function that formats a str
 part:: A Renderer SHALL support formatting a string using the `format` function.
 ====
 
-
-
+// TODO(review): specify the syntax of the `format` format string (e.g., printf-style conversion specifiers).

@@ -4,7 +4,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/cartosym-1/2.0/conf/vector
-subject:: <<rc-core,Requirements Class "Basic Vector Features Styling">>
+subject:: <<rc-vector,Requirements Class "Basic Vector Features Styling">>
 classification:: Target Type:Encoding,Rendering engine
 ====
 

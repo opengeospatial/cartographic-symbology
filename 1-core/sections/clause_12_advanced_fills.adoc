@@ -29,7 +29,7 @@ Hatch : distance: float
 
 include::../requirements/rc-hatches.adoc[]
 
-[[rc-dotpattern]]
+[[rc-dot-patterns]]
 === Requirements Class "Dot pattern fills"
 ==== Overview
 

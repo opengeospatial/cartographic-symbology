@@ -4,7 +4,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/cartosym-1/2.0/conf/coverage
-subject:: <<rc-core,Requirements Class "Basic Coverage Styling">>
+subject:: <<rc-coverage,Requirements Class "Basic Coverage Styling">>
 classification:: Target Type:Encoding,Rendering engine
 ====
 

@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Variables
 
-[[rc_table-variables]]
+[[rc-table-variables]]
 
 [requirements_class]
 .Variables
@@ -12,13 +12,24 @@ inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-variables]]
-===== Variables
+[[req-variables-definition]]
+===== Variable definitions
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/variables
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/variables/definition
+part:: An Encoding SHALL support defining named variables, each associated with an Expression providing its value.
+part:: A Renderer SHALL support allowing an application to override the value of a defined variable at run time (e.g., from a slider or drop-down control).
+====
+
+[[req-variables-expression]]
+===== Variable expressions
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/variables/expression
+part:: An Encoding SHALL support defining a VariableExpression referencing a variable by its `name` anywhere an Expression is allowed.
+part:: A Renderer SHALL support resolving a VariableExpression to the current value of the referenced variable.
 ====

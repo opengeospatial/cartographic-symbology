@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== JSON Styles and Symbology
 
-[[rc_table-json]]
+[[rc-table-json]]
 
 [requirements_class]
 .JSON Styles and Symbology
@@ -10,4 +10,68 @@
 identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/json
 inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
+====
+
+[[req-json-schema]]
+===== JSON Schema
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/schema
+part:: A style encoded as CartoSym-JSON SHALL validate against the CartoSym-JSON JSON Schema defined in this requirements class.
+part:: A Renderer SHALL support parsing styles encoded as CartoSym-JSON.
+====
+
+[[req-json-expressions]]
+===== Expressions
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/expressions
+part:: An Encoding SHALL encode Selector and Symbolizer Parameter Value expressions based on the CQL2-JSON encoding, extended as specified by the JSON Schema to cover expressions which do not evaluate to a boolean value.
+====
+
+[[req-json-partial-update]]
+===== Partial updates of object properties
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/partial-update
+part:: An Encoding SHALL support representing a partial update of an object property by specifying an object containing only the modified properties, with an `alter` property set to `true`.
+part:: A Renderer SHALL support preserving the values of the properties not specified in an object whose `alter` property is `true`, as set by earlier rules or by default values.
+====
+
+[[req-json-array-element-update]]
+===== Updates of array elements
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/array-element-update
+part:: An Encoding SHALL support representing an update to a single element of an array property by specifying an object with an `index` property set to the zero-based index of the array element, and a `value` property set to the new value of that element.
+part:: A Renderer SHALL support updating only the array element identified by `index`, preserving the other elements of the array.
+====
+
+[[req-json-variables]]
+===== Variables
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/variables
+part:: An Encoding supporting the <<rc-variables,Variables>> requirements class SHALL encode variables as members of a top-level `$variables` object, referenced using a JSON Pointer within a `$ref` property (e.g., `{ "$ref": "#/$variables/myVariable" }`).
+====
+
+[[req-json-include]]
+===== Including style sheets
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/include
+part:: An Encoding SHALL support including base style sheets using an `$include` property in the top-level object, specified as either a single relative file path string or an array of relative file path strings.
+part:: A Renderer SHALL support considering the styling rules of included style sheets before the styling rules defined by the including file.
 ====

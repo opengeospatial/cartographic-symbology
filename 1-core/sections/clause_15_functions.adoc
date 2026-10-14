@@ -123,10 +123,10 @@ ArrayRelationFunctions --> ArrayExpression
 [width="90%",options="header"]
 |===
 | Name            | Parameters         | Return type  | Definition
-| a_containedBy   | (array a, array b) | bool         |
-| a_contains      | (array a, array b) | bool         |
-| a_equals        | (array a, array b) | bool         |
-| a_overlaps      | (array a, array b) | bool         |
+| a_containedBy   | (array a, array b) | bool         | True if every element of `a` is also an element of `b`
+| a_contains      | (array a, array b) | bool         | True if every element of `b` is also an element of `a`
+| a_equals        | (array a, array b) | bool         | True if `a` and `b` have the same elements in the same order
+| a_overlaps      | (array a, array b) | bool         | True if `a` and `b` have at least one element in common
 |===
 
 ==== Requirements
@@ -158,13 +158,13 @@ TextManipulationFunctions : format(string f, ...) string
 [width="90%",options="header"]
 |===
 | Name               | Parameters                     | Return type  | Definition
-| caseInsensitize    | (string s)                     | string       |
-| accentInsensitize  | (string s)                     | string       |
-| lowerCase          | (string s)                     | string       |
-| upperCase          | (string s)                     | string       |
-| concatenate        | (string a, string b)           | string       |
-| substitute         | (string s, string a, string b) | string       |
-| format             | (string f, ...)                | string       |
+| caseInsensitize    | (string s)                     | string       | `s` made suitable for case-insensitive comparison
+| accentInsensitize  | (string s)                     | string       | `s` with accents removed
+| lowerCase          | (string s)                     | string       | `s` converted to lowercase
+| upperCase          | (string s)                     | string       | `s` converted to uppercase
+| concatenate        | (string a, string b)           | string       | `a` followed by `b`
+| substitute         | (string s, string a, string b) | string       | `s` with occurrences of `a` replaced by `b`
+| format             | (string f, ...)                | string       | The remaining arguments formatted according to the format string `f`
 |===
 
 ==== Requirements
