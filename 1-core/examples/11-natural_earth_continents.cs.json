@@ -20,6 +20,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 226,
                 145,
@@ -40,6 +41,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 58,
                 15,
@@ -60,6 +62,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 58,
                 15,
@@ -80,6 +83,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 210,
                 200,
@@ -100,6 +104,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 21,
                 237,
@@ -120,6 +125,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 58,
                 211,
@@ -140,6 +146,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 239,
                 75,
@@ -270,19 +277,22 @@
                 {
                   "type": "Dot",
                   "color": "white",
-                  "size": "10"
+                  "size": 10
                 },
                 {
                   "type": "Dot",
                   "color": "darkOrange",
-                  "size": "6"
+                  "size": 6
                 },
                 {
                   "type": "Text",
                   "text": {
                     "property": "NAME"
                   },
-                  "position2D": "{ 10, -4 }",
+                  "position": {
+                    "x": 10.0,
+                    "y": -4.0
+                  },
                   "font": {
                     "face": "Tahoma",
                     "size": 12,

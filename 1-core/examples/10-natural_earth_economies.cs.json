@@ -24,6 +24,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 112,
                 126,
@@ -44,6 +45,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 151,
                 170,
@@ -64,6 +66,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 173,
                 170,
@@ -84,6 +87,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 208,
                 205,
@@ -104,6 +108,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 233,
                 229,
@@ -124,6 +129,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 230,
                 125,
@@ -144,6 +150,7 @@
           },
           "symbolizer": {
             "fill": {
+              "alter": true,
               "color": [
                 131,
                 71,

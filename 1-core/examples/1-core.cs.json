@@ -28,10 +28,7 @@
                     "sysId": "viz.date"
                   },
                   {
-                    "function": "DATE",
-                    "args": [
-                      "2020-13-01"
-                    ]
+                    "date": "2020-01-01"
                   }
                 ]
               }

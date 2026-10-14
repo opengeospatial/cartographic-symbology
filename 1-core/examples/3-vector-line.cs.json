@@ -21,6 +21,7 @@
               },
               "symbolizer": {
                 "stroke": {
+                  "alter": true,
                   "width": {
                     "m": 8.0
                   }

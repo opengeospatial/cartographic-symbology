@@ -23,6 +23,7 @@
                   },
                   "symbolizer": {
                     "marker": {
+                      "alter": true,
                       "elements": {
                         "index": 1,
                         "value": {

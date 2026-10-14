@@ -5,7 +5,7 @@
   },
   "stylingRules": [
     {
-      "name": "\"sentinel2-l2a\"",
+      "name": "sentinel2-l2a",
       "nestedRules": [
         {
           "nestedRules": [
@@ -75,7 +75,7 @@
               {
                 "sysId": "dataLayer.id"
               },
-              "\"sentinel2-l2a\""
+              "sentinel2-l2a"
             ]
           },
           {
