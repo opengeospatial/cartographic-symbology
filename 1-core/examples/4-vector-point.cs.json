@@ -5,11 +5,133 @@
   },
   "stylingRules": [
     {
-      "name": "Amenities",
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Amenities"
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "sysId": "dataLayer.type"
+                  },
+                  "vector"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "sysId": "dataLayer.featuresGeometryDimensions"
+                  },
+                  0
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
       "nestedRules": [
         {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "<",
+                    "args": [
+                      {
+                        "sysId": "viz.sd"
+                      },
+                      200000
+                    ]
+                  },
+                  {
+                    "op": ">=",
+                    "args": [
+                      {
+                        "property": "validDate"
+                      },
+                      {
+                        "sysId": "viz.timeInterval.start.date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "<=",
+                "args": [
+                  {
+                    "property": "validDate"
+                  },
+                  {
+                    "sysId": "viz.timeInterval.end.date"
+                  }
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.5,
+            "zOrder": 3
+          },
           "nestedRules": [
             {
+              "selector": {
+                "op": "<",
+                "args": [
+                  {
+                    "sysId": "viz.sd"
+                  },
+                  10000
+                ]
+              },
+              "symbolizer": {
+                "marker": {
+                  "elements": [
+                    {
+                      "type": "Dot",
+                      "size": {
+                        "px": 10
+                      },
+                      "position": {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      "color": "white"
+                    },
+                    {
+                      "type": "Dot",
+                      "size": {
+                        "px": 8
+                      },
+                      "position": {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      "color": "orange"
+                    }
+                  ]
+                }
+              },
               "nestedRules": [
                 {
                   "selector": {
@@ -52,134 +174,11 @@
                     }
                   }
                 }
-              ],
-              "selector": {
-                "op": "<",
-                "args": [
-                  {
-                    "sysId": "viz.sd"
-                  },
-                  10000
-                ]
-              },
-              "symbolizer": {
-                "marker": {
-                  "elements": [
-                    {
-                      "type": "Dot",
-                      "size": {
-                        "px": 10
-                      },
-                      "position": {
-                        "x": 0.0,
-                        "y": 0.0
-                      },
-                      "color": "white"
-                    },
-                    {
-                      "type": "Dot",
-                      "size": {
-                        "px": 8
-                      },
-                      "position": {
-                        "x": 0.0,
-                        "y": 0.0
-                      },
-                      "color": "orange"
-                    }
-                  ]
-                }
-              }
+              ]
             }
-          ],
-          "selector": {
-            "op": "and",
-            "args": [
-              {
-                "op": "<",
-                "args": [
-                  {
-                    "sysId": "viz.sd"
-                  },
-                  200000
-                ]
-              },
-              {
-                "op": "and",
-                "args": [
-                  {
-                    "op": ">=",
-                    "args": [
-                      {
-                        "property": "validDate"
-                      },
-                      {
-                        "sysId": "viz.timeInterval.start.date"
-                      }
-                    ]
-                  },
-                  {
-                    "op": "<=",
-                    "args": [
-                      {
-                        "property": "validDate"
-                      },
-                      {
-                        "sysId": "viz.timeInterval.end.date"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          "symbolizer": {
-            "visibility": true,
-            "opacity": 0.5,
-            "zOrder": 3
-          }
+          ]
         }
-      ],
-      "selector": {
-        "op": "and",
-        "args": [
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.id"
-              },
-              "Amenities"
-            ]
-          },
-          {
-            "op": "and",
-            "args": [
-              {
-                "op": "=",
-                "args": [
-                  {
-                    "sysId": "dataLayer.type"
-                  },
-                  "vector"
-                ]
-              },
-              {
-                "op": "=",
-                "args": [
-                  {
-                    "sysId": "dataLayer.featuresGeometryDimensions"
-                  },
-                  0
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "symbolizer": {
-        "visibility": false
-      }
+      ]
     }
   ]
 }

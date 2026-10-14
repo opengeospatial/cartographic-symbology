@@ -6,7 +6,32 @@
   },
   "stylingRules": [
     {
-      "name": "Landuse",
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Landuse"
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.type"
+              },
+              "vector"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
       "nestedRules": [
         {
           "selector": {
@@ -40,33 +65,7 @@
             "zOrder": 1
           }
         }
-      ],
-      "selector": {
-        "op": "and",
-        "args": [
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.id"
-              },
-              "Landuse"
-            ]
-          },
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.type"
-              },
-              "vector"
-            ]
-          }
-        ]
-      },
-      "symbolizer": {
-        "visibility": false
-      }
+      ]
     }
   ]
 }

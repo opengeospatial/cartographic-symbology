@@ -5,7 +5,32 @@
   },
   "stylingRules": [
     {
-      "name": "Elevation",
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Elevation"
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.type"
+              },
+              "coverage"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
       "nestedRules": [
         {
           "selector": {
@@ -69,33 +94,7 @@
             }
           }
         }
-      ],
-      "selector": {
-        "op": "and",
-        "args": [
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.id"
-              },
-              "Elevation"
-            ]
-          },
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.type"
-              },
-              "coverage"
-            ]
-          }
-        ]
-      },
-      "symbolizer": {
-        "visibility": false
-      }
+      ]
     }
   ]
 }

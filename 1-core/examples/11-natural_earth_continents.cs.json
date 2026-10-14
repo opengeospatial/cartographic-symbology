@@ -6,7 +6,39 @@
       }
     },
     {
-      "name": "ne_10m_admin_0_countries",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_admin_0_countries"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "opacity": 0.3686275,
+        "zOrder": 1,
+        "label": {
+          "elements": [
+            {
+              "type": "Text",
+              "text": {
+                "property": "name"
+              },
+              "font": {
+                "face": "Tahoma",
+                "size": 14,
+                "outline": {
+                  "size": 3,
+                  "opacity": 0.75,
+                  "color": "white"
+                }
+              }
+            }
+          ]
+        }
+      },
       "nestedRules": [
         {
           "selector": {
@@ -155,43 +187,9 @@
             }
           }
         }
-      ],
-      "selector": {
-        "op": "=",
-        "args": [
-          {
-            "sysId": "dataLayer.id"
-          },
-          "ne_10m_admin_0_countries"
-        ]
-      },
-      "symbolizer": {
-        "visibility": true,
-        "opacity": 0.3686275,
-        "zOrder": 1,
-        "label": {
-          "elements": [
-            {
-              "type": "Text",
-              "text": {
-                "property": "name"
-              },
-              "font": {
-                "face": "Tahoma",
-                "size": 14,
-                "outline": {
-                  "size": 3,
-                  "opacity": 0.75,
-                  "color": "white"
-                }
-              }
-            }
-          ]
-        }
-      }
+      ]
     },
     {
-      "name": "ne_10m_urban_areas",
       "selector": {
         "op": "=",
         "args": [
@@ -219,7 +217,6 @@
       }
     },
     {
-      "name": "ne_10m_graticules_10",
       "selector": {
         "op": "=",
         "args": [
@@ -239,7 +236,6 @@
       }
     },
     {
-      "name": "ne_10m_graticules_30",
       "selector": {
         "op": "=",
         "args": [
@@ -259,7 +255,19 @@
       }
     },
     {
-      "name": "ne_10m_populated_places",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_populated_places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 24
+      },
       "nestedRules": [
         {
           "selector": {
@@ -285,13 +293,13 @@
                   "size": 6
                 },
                 {
-                  "type": "Text",
-                  "text": {
-                    "property": "NAME"
-                  },
                   "position": {
                     "x": 10.0,
                     "y": -4.0
+                  },
+                  "type": "Text",
+                  "text": {
+                    "property": "NAME"
                   },
                   "font": {
                     "face": "Tahoma",
@@ -311,23 +319,9 @@
             }
           }
         }
-      ],
-      "selector": {
-        "op": "=",
-        "args": [
-          {
-            "sysId": "dataLayer.id"
-          },
-          "ne_10m_populated_places"
-        ]
-      },
-      "symbolizer": {
-        "visibility": true,
-        "zOrder": 24
-      }
+      ]
     },
     {
-      "name": "ne_10m_geography_regions_polys",
       "selector": {
         "op": "=",
         "args": [
@@ -374,7 +368,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_I_2000",
       "selector": {
         "op": "=",
         "args": [
@@ -401,7 +394,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_L_0",
       "selector": {
         "op": "=",
         "args": [
@@ -428,7 +420,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_K_200",
       "selector": {
         "op": "=",
         "args": [
@@ -455,7 +446,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_J_1000",
       "selector": {
         "op": "=",
         "args": [
@@ -482,7 +472,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_H_3000",
       "selector": {
         "op": "=",
         "args": [
@@ -509,7 +498,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_G_4000",
       "selector": {
         "op": "=",
         "args": [
@@ -536,7 +524,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_F_5000",
       "selector": {
         "op": "=",
         "args": [
@@ -563,7 +550,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_E_6000",
       "selector": {
         "op": "=",
         "args": [
@@ -590,7 +576,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_D_7000",
       "selector": {
         "op": "=",
         "args": [
@@ -617,7 +602,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_C_8000",
       "selector": {
         "op": "=",
         "args": [
@@ -644,7 +628,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_B_9000",
       "selector": {
         "op": "=",
         "args": [
@@ -671,7 +654,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_A_10000",
       "selector": {
         "op": "=",
         "args": [
@@ -698,7 +680,6 @@
       }
     },
     {
-      "name": "ne_10m_playas",
       "selector": {
         "op": "=",
         "args": [
@@ -721,7 +702,6 @@
       }
     },
     {
-      "name": "ne_10m_ocean",
       "selector": {
         "op": "=",
         "args": [
@@ -747,7 +727,6 @@
       }
     },
     {
-      "name": "ne_10m_admin_1_states_provinces",
       "selector": {
         "op": "=",
         "args": [
@@ -770,7 +749,6 @@
       }
     },
     {
-      "name": "ne_10m_rivers_lake_centerlines",
       "selector": {
         "op": "=",
         "args": [
@@ -790,7 +768,6 @@
       }
     },
     {
-      "name": "ne_10m_rivers_europe",
       "selector": {
         "op": "=",
         "args": [
@@ -810,7 +787,6 @@
       }
     },
     {
-      "name": "ne_10m_reefs",
       "selector": {
         "op": "=",
         "args": [
@@ -833,7 +809,6 @@
       }
     },
     {
-      "name": "ne_10m_lakes_pluvial",
       "selector": {
         "op": "=",
         "args": [
@@ -855,7 +830,6 @@
       }
     },
     {
-      "name": "ne_10m_lakes_north_america",
       "selector": {
         "op": "=",
         "args": [
@@ -877,7 +851,6 @@
       }
     },
     {
-      "name": "ne_10m_lakes_europe",
       "selector": {
         "op": "=",
         "args": [
@@ -899,7 +872,6 @@
       }
     },
     {
-      "name": "ne_10m_lakes",
       "selector": {
         "op": "=",
         "args": [
@@ -921,7 +893,6 @@
       }
     },
     {
-      "name": "ne_10m_glaciated_areas",
       "selector": {
         "op": "=",
         "args": [
@@ -944,7 +915,25 @@
       }
     },
     {
-      "name": "ne_10m_geography_marine_polys",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_geography_marine_polys"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 87,
+        "fill": {
+          "opacity": 0.0
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      },
       "nestedRules": [
         {
           "selector": {
@@ -984,29 +973,22 @@
             }
           }
         }
-      ],
+      ]
+    },
+    {
       "selector": {
         "op": "=",
         "args": [
           {
             "sysId": "dataLayer.id"
           },
-          "ne_10m_geography_marine_polys"
+          "ne_10m_roads"
         ]
       },
       "symbolizer": {
         "visibility": true,
-        "zOrder": 87,
-        "fill": {
-          "opacity": 0.0
-        },
-        "stroke": {
-          "width": 0.0
-        }
-      }
-    },
-    {
-      "name": "ne_10m_roads",
+        "zOrder": 86
+      },
       "nestedRules": [
         {
           "selector": {
@@ -1029,20 +1011,7 @@
             }
           }
         }
-      ],
-      "selector": {
-        "op": "=",
-        "args": [
-          {
-            "sysId": "dataLayer.id"
-          },
-          "ne_10m_roads"
-        ]
-      },
-      "symbolizer": {
-        "visibility": true,
-        "zOrder": 86
-      }
+      ]
     }
   ]
 }
