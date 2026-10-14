@@ -5,6 +5,7 @@
   },
   "stylingRules": [
     {
+      "$comment": "This type of intensity-based hill shading can be overlaid on top of imagery or vector maps",
       "selector": {
         "op": "and",
         "args": [

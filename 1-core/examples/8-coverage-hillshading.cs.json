@@ -43,6 +43,7 @@
             ]
           },
           "symbolizer": {
+            "$comment": "This color map is mapped from elevation values",
             "visibility": true,
             "opacity": 0.8,
             "zOrder": 1,

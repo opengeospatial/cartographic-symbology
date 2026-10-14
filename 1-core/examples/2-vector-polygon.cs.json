@@ -187,7 +187,7 @@
                 ]
               },
               "symbolizer": {
-                "$comment": "Change stroke width to 4 pixels and add a text marker (positioned at centroid + horizontal offset) showing FunctionTitle property",
+                "$comment": "Change stroke width to 4 pixels\nAdd a text marker (positioned at centroid + horizontal offset) showing FunctionTitle property",
                 "stroke": {
                   "alter": true,
                   "width": {
@@ -197,7 +197,6 @@
                 "marker": {
                   "elements": [
                     {
-                      "$comment": "Offset 20 pixels to the right",
                       "type": "Text",
                       "position": {
                         "x": 20.0,
@@ -265,7 +264,6 @@
                   }
                 },
                 {
-                  "$comment": "Add icons at centroid based on land use function code property",
                   "selector": {
                     "op": "=",
                     "args": [
@@ -306,7 +304,6 @@
                   }
                 },
                 {
-                  "$comment": "Add icons at centroid based on land use function code property",
                   "selector": {
                     "op": "=",
                     "args": [

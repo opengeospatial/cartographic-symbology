@@ -95,6 +95,7 @@
           },
           "nestedRules": [
             {
+              "$comment": "If zoomed in more than 1:10,000",
               "selector": {
                 "op": "<",
                 "args": [
@@ -105,6 +106,7 @@
                 ]
               },
               "symbolizer": {
+                "$comment": "Add a double-Dot marker (positioned at centroid)",
                 "marker": {
                   "elements": [
                     {
@@ -144,6 +146,7 @@
                     ]
                   },
                   "symbolizer": {
+                    "$comment": "Add a Text graphic to Marker at 1:5000",
                     "marker": {
                       "alter": true,
                       "elements": {

@@ -102,6 +102,7 @@
           },
           "nestedRules": [
             {
+              "$comment": "If zoomed in more than 1:10,000",
               "selector": {
                 "op": "<",
                 "args": [
@@ -112,6 +113,7 @@
                 ]
               },
               "symbolizer": {
+                "$comment": "Change stroke width to 8 meters\nAdd Dot at each segment end-point",
                 "stroke": {
                   "alter": true,
                   "width": {
