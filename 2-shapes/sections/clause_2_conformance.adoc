@@ -19,7 +19,7 @@ Requirements and conformance test URIs defined in this document are relative to 
 
 === Requirements classes for common portrayal capabilities
 
-*<<rc-gradients,Requirements Class "Gradient Fills">>* (http://www.opengis.net/spec/symbology-1/1.0/req/gradients)
+*<<rc-gradients,Requirements Class "Gradient Fills">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/gradients)
 
 The Gradient Fills Requirements Class specifies requirements for defining fils using gradients.
 
@@ -91,7 +91,7 @@ is declared by appending `-partial-concept` to the conformance URI.
 |<<rc-joins-caps,Joins and Caps>>                                  |http://www.opengis.net/spec/symbology-1/1.0/conf/joinscaps
 |<<rc-pattern-strokes,Pattern Strokes>>                            |http://www.opengis.net/spec/symbology-1/1.0/conf/patternstrokes
 |<<rc-pattern-fills,Pattern Fills>>                                |http://www.opengis.net/spec/symbology-1/1.0/conf/patternfills
-|<<rc-gradients,Gradients Fills>>                                |http://www.opengis.net/spec/symbology-1/1.0/conf/gradients
+|<<rc-gradients,Gradients Fills>>                                |http://www.opengis.net/spec/cartosym-2/1.0/conf/gradients
 |<<rc-threedim,3D Graphics, Models and Transforms>>               |http://www.opengis.net/spec/symbology-1/1.0/conf/threedim
 |<<rc-image-outlines,Image Outlines>>                              |http://www.opengis.net/spec/symbology-1/1.0/conf/imageoutlines
 |<<rc-geometry-properties,Vector Geometry Properties>>             |http://www.opengis.net/spec/symbology-1/1.0/conf/geometryproperties

@@ -77,3 +77,5 @@ identifier:: /req/coverage/gamma
 part:: An Encoding SHOULD support defining a `gamma` Symbolizer property as a float.
 part:: A Renderer SHOULD support applying a gamma correction to the portrayed color values, using the value of the `gamma` property as the exponent applied to normalized (0 to 1) color components.
 ====
+
+// TODO(review): `gamma` is not in the coverage UML, tables or JSON schema; keep it or remove it as for vector (see #86).

@@ -44,7 +44,7 @@ The Basic Labeling Requirements Class specifies requirements for defining labels
 
 === Requirements classes for common portrayal capabilities
 
-*<<rc-hillshading,Requirements Class "Hill Shading">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/hillshading)
+*<<rc-hill-shading,Requirements Class "Hill Shading">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/hill-shading)
 
 The Hill Shading Requirements Class specifies requirements for styling elevation coverage data with a hill-shaded style.
 
@@ -82,7 +82,7 @@ TODO: Clarify how this differs to using a Stroke with a casing on the Shape, and
 
 The Parameter Values Requirements Class specifies requirements for using an Expression to define any property of a Symbolizer.
 
-*<<rc-righthand,Requirements Class "Right-hand Identifiers">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/righthand)
+*<<rc-right-hand,Requirements Class "Right-hand Identifiers">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/right-hand)
 
 The Right-hand Identifiers Requirements Class specifies requirements for defining operation expressions with identifiers on the right-hand side.
 
@@ -148,7 +148,7 @@ is declared by appending `-partial-concept` to the conformance URI.
 |<<rc-core,Core>>                                                 |http://www.opengis.net/spec/cartosym-1/2.0/conf/core
 |<<rc-vector,Basic Vector Features Styling>>                      |http://www.opengis.net/spec/cartosym-1/2.0/conf/vector
 |<<rc-coverage,Basic Coverage Styling>>                           |http://www.opengis.net/spec/cartosym-1/2.0/conf/coverage
-|<<rc-hillshading,Hill Shading>>                                  |http://www.opengis.net/spec/cartosym-1/2.0/conf/hillshading
+|<<rc-hill-shading,Hill Shading>>                                  |http://www.opengis.net/spec/cartosym-1/2.0/conf/hill-shading
 |<<rc-labels,Basic Labeling>>                                     |http://www.opengis.net/spec/cartosym-1/2.0/conf/labels
 |<<rc-font-outlines,Font Outlines>>                                |http://www.opengis.net/spec/cartosym-1/2.0/conf/font-outlines
 |<<rc-dashes,Dashed Strokes>>                                     |http://www.opengis.net/spec/cartosym-1/2.0/conf/dashes
@@ -157,7 +157,7 @@ is declared by appending `-partial-concept` to the conformance URI.
 |<<rc-stipples, Stipple Fills>>                                   |http://www.opengis.net/spec/cartosym-1/2.0/conf/stipples
 |<<rc-dot-patterns,Dot Pattern Fills>>                             |http://www.opengis.net/spec/cartosym-1/2.0/conf/dot-patterns
 |<<rc-parameter-values,Parameter Values>>                          |http://www.opengis.net/spec/cartosym-1/2.0/conf/parameter-values
-|<<rc-righthand,Any right-hand operands>>                         |http://www.opengis.net/spec/cartosym-1/2.0/conf/righthand
+|<<rc-right-hand,Any right-hand operands>>                         |http://www.opengis.net/spec/cartosym-1/2.0/conf/right-hand
 |<<rc-conditional,Conditional Expressions>>                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/conditional
 |<<rc-variables,Variables>>                                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/variables
 |<<rc-arithmetic,Arithmetic Operators>>                           |http://www.opengis.net/spec/cartosym-1/2.0/conf/arithmetic
