@@ -6,44 +6,6 @@
   },
   "stylingRules": [
     {
-      "name": "Landuse",
-      "nestedRules": [
-        {
-          "selector": {
-            "op": "and",
-            "args": [
-              {
-                "op": "<",
-                "args": [
-                  {
-                    "sysId": "viz.sd"
-                  },
-                  200000
-                ]
-              },
-              {
-                "op": ">",
-                "args": [
-                  {
-                    "sysId": "viz.date"
-                  },
-                  {
-                    "function": "DATE",
-                    "args": [
-                      "2020-13-01"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          "symbolizer": {
-            "visibility": true,
-            "opacity": 0.5,
-            "zOrder": 1
-          }
-        }
-      ],
       "selector": {
         "op": "and",
         "args": [
@@ -69,7 +31,41 @@
       },
       "symbolizer": {
         "visibility": false
-      }
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "<",
+                "args": [
+                  {
+                    "sysId": "viz.sd"
+                  },
+                  200000
+                ]
+              },
+              {
+                "op": ">",
+                "args": [
+                  {
+                    "sysId": "viz.date"
+                  },
+                  {
+                    "date": "2020-01-01"
+                  }
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.5,
+            "zOrder": 1
+          }
+        }
+      ]
     }
   ]
 }

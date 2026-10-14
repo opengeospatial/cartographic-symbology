@@ -6,149 +6,6 @@
       }
     },
     {
-      "name": "ne_10m_admin_0_countries",
-      "nestedRules": [
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "CONTINENT"
-              },
-              "Africa"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "color": [
-                226,
-                145,
-                118
-              ]
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "CONTINENT"
-              },
-              "Antartica"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "color": [
-                58,
-                15,
-                200
-              ]
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "CONTINENT"
-              },
-              "Asia"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "color": [
-                58,
-                15,
-                200
-              ]
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "CONTINENT"
-              },
-              "Europe"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "color": [
-                210,
-                200,
-                92
-              ]
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "CONTINENT"
-              },
-              "North America"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "color": [
-                21,
-                237,
-                75
-              ]
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "CONTINENT"
-              },
-              "Oceania"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "color": [
-                58,
-                211,
-                198
-              ]
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "CONTINENT"
-              },
-              "South America"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "color": [
-                239,
-                75,
-                143
-              ]
-            }
-          }
-        }
-      ],
       "selector": {
         "op": "=",
         "args": [
@@ -181,10 +38,158 @@
             }
           ]
         }
-      }
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Africa"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                226,
+                145,
+                118
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Antartica"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                58,
+                15,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Asia"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                58,
+                15,
+                200
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Europe"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                210,
+                200,
+                92
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "North America"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                21,
+                237,
+                75
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "Oceania"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                58,
+                211,
+                198
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "CONTINENT"
+              },
+              "South America"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                239,
+                75,
+                143
+              ]
+            }
+          }
+        }
+      ]
     },
     {
-      "name": "ne_10m_urban_areas",
       "selector": {
         "op": "=",
         "args": [
@@ -212,7 +217,6 @@
       }
     },
     {
-      "name": "ne_10m_graticules_10",
       "selector": {
         "op": "=",
         "args": [
@@ -232,7 +236,6 @@
       }
     },
     {
-      "name": "ne_10m_graticules_30",
       "selector": {
         "op": "=",
         "args": [
@@ -252,7 +255,19 @@
       }
     },
     {
-      "name": "ne_10m_populated_places",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_populated_places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 24
+      },
       "nestedRules": [
         {
           "selector": {
@@ -270,19 +285,22 @@
                 {
                   "type": "Dot",
                   "color": "white",
-                  "size": "10"
+                  "size": 10
                 },
                 {
                   "type": "Dot",
                   "color": "darkOrange",
-                  "size": "6"
+                  "size": 6
                 },
                 {
+                  "position": {
+                    "x": 10.0,
+                    "y": -4.0
+                  },
                   "type": "Text",
                   "text": {
                     "property": "NAME"
                   },
-                  "position2D": "{ 10, -4 }",
                   "font": {
                     "face": "Tahoma",
                     "size": 12,
@@ -301,23 +319,9 @@
             }
           }
         }
-      ],
-      "selector": {
-        "op": "=",
-        "args": [
-          {
-            "sysId": "dataLayer.id"
-          },
-          "ne_10m_populated_places"
-        ]
-      },
-      "symbolizer": {
-        "visibility": true,
-        "zOrder": 24
-      }
+      ]
     },
     {
-      "name": "ne_10m_geography_regions_polys",
       "selector": {
         "op": "=",
         "args": [
@@ -364,7 +368,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_I_2000",
       "selector": {
         "op": "=",
         "args": [
@@ -391,7 +394,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_L_0",
       "selector": {
         "op": "=",
         "args": [
@@ -418,7 +420,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_K_200",
       "selector": {
         "op": "=",
         "args": [
@@ -445,7 +446,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_J_1000",
       "selector": {
         "op": "=",
         "args": [
@@ -472,7 +472,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_H_3000",
       "selector": {
         "op": "=",
         "args": [
@@ -499,7 +498,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_G_4000",
       "selector": {
         "op": "=",
         "args": [
@@ -526,7 +524,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_F_5000",
       "selector": {
         "op": "=",
         "args": [
@@ -553,7 +550,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_E_6000",
       "selector": {
         "op": "=",
         "args": [
@@ -580,7 +576,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_D_7000",
       "selector": {
         "op": "=",
         "args": [
@@ -607,7 +602,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_C_8000",
       "selector": {
         "op": "=",
         "args": [
@@ -634,7 +628,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_B_9000",
       "selector": {
         "op": "=",
         "args": [
@@ -661,7 +654,6 @@
       }
     },
     {
-      "name": "ne_10m_bathymetry_A_10000",
       "selector": {
         "op": "=",
         "args": [
@@ -688,7 +680,6 @@
       }
     },
     {
-      "name": "ne_10m_playas",
       "selector": {
         "op": "=",
         "args": [
@@ -711,7 +702,6 @@
       }
     },
     {
-      "name": "ne_10m_ocean",
       "selector": {
         "op": "=",
         "args": [
@@ -737,7 +727,6 @@
       }
     },
     {
-      "name": "ne_10m_admin_1_states_provinces",
       "selector": {
         "op": "=",
         "args": [
@@ -760,7 +749,6 @@
       }
     },
     {
-      "name": "ne_10m_rivers_lake_centerlines",
       "selector": {
         "op": "=",
         "args": [
@@ -780,7 +768,6 @@
       }
     },
     {
-      "name": "ne_10m_rivers_europe",
       "selector": {
         "op": "=",
         "args": [
@@ -800,7 +787,6 @@
       }
     },
     {
-      "name": "ne_10m_reefs",
       "selector": {
         "op": "=",
         "args": [
@@ -823,7 +809,6 @@
       }
     },
     {
-      "name": "ne_10m_lakes_pluvial",
       "selector": {
         "op": "=",
         "args": [
@@ -845,7 +830,6 @@
       }
     },
     {
-      "name": "ne_10m_lakes_north_america",
       "selector": {
         "op": "=",
         "args": [
@@ -867,7 +851,6 @@
       }
     },
     {
-      "name": "ne_10m_lakes_europe",
       "selector": {
         "op": "=",
         "args": [
@@ -889,7 +872,6 @@
       }
     },
     {
-      "name": "ne_10m_lakes",
       "selector": {
         "op": "=",
         "args": [
@@ -911,7 +893,6 @@
       }
     },
     {
-      "name": "ne_10m_glaciated_areas",
       "selector": {
         "op": "=",
         "args": [
@@ -934,7 +915,25 @@
       }
     },
     {
-      "name": "ne_10m_geography_marine_polys",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ne_10m_geography_marine_polys"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 87,
+        "fill": {
+          "opacity": 0.0
+        },
+        "stroke": {
+          "width": 0.0
+        }
+      },
       "nestedRules": [
         {
           "selector": {
@@ -974,29 +973,22 @@
             }
           }
         }
-      ],
+      ]
+    },
+    {
       "selector": {
         "op": "=",
         "args": [
           {
             "sysId": "dataLayer.id"
           },
-          "ne_10m_geography_marine_polys"
+          "ne_10m_roads"
         ]
       },
       "symbolizer": {
         "visibility": true,
-        "zOrder": 87,
-        "fill": {
-          "opacity": 0.0
-        },
-        "stroke": {
-          "width": 0.0
-        }
-      }
-    },
-    {
-      "name": "ne_10m_roads",
+        "zOrder": 86
+      },
       "nestedRules": [
         {
           "selector": {
@@ -1019,20 +1011,7 @@
             }
           }
         }
-      ],
-      "selector": {
-        "op": "=",
-        "args": [
-          {
-            "sysId": "dataLayer.id"
-          },
-          "ne_10m_roads"
-        ]
-      },
-      "symbolizer": {
-        "visibility": true,
-        "zOrder": 86
-      }
+      ]
     }
   ]
 }
