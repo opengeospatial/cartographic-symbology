@@ -147,7 +147,7 @@
                     "marker": {
                       "alter": true,
                       "elements": {
-                        "index": 1,
+                        "index": 2,
                         "value": {
                           "type": "Text",
                           "position": {
