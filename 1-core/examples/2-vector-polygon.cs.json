@@ -43,7 +43,7 @@
                "nestedRules": [
                   {
                      "$comment": "Select different fill and stroke color based on FunctionCode property",
-                     "selector": { "op": "=", "args": [ { "property": "FuntionCode" }, "parking" ] },
+                     "selector": { "op": "=", "args": [ { "property": "FunctionCode" }, "parking" ] },
                      "symbolizer":
                      {
                         "fill": { "alter": true, "color": "darkGray" },
@@ -51,7 +51,7 @@
                      }
                   },
                   {
-                     "selector": { "op": "=", "args": [ { "property": "FuntionCode" }, "park" ] },
+                     "selector": { "op": "=", "args": [ { "property": "FunctionCode" }, "park" ] },
                      "symbolizer":
                      {
                         "fill": { "alter": true, "color": "darkGreen" },
@@ -59,7 +59,7 @@
                      }
                   },
                   {
-                     "selector": { "op": "=", "args": [ { "property": "FuntionCode" }, "commercial" ] },
+                     "selector": { "op": "=", "args": [ { "property": "FunctionCode" }, "commercial" ] },
                      "symbolizer":
                      {
                         "fill": { "alter": true, "color": "lightGray" },
@@ -96,7 +96,7 @@
                      "nestedRules": [
                         {
                            "$comment": "Add icons at centroid based on land use function code property",
-                           "selector": { "op": "=", "args": [ { "property": "FuntionCode" }, "parking" ] },
+                           "selector": { "op": "=", "args": [ { "property": "FunctionCode" }, "parking" ] },
                            "symbolizer":
                            {
                               "marker": {
@@ -124,7 +124,7 @@
                         },
                         {
                            "$comment": "Add icons at centroid based on land use function code property",
-                           "selector": { "op": "=", "args": [ { "property": "FuntionCode" }, "park" ] },
+                           "selector": { "op": "=", "args": [ { "property": "FunctionCode" }, "park" ] },
                            "symbolizer":
                            {
                               "marker": {
@@ -151,7 +151,7 @@
                         },
                         {
                            "$comment": "Add icons at centroid based on land use function code property",
-                           "selector": { "op": "=", "args": [ { "property": "FuntionCode" }, "commercial" ] },
+                           "selector": { "op": "=", "args": [ { "property": "FunctionCode" }, "commercial" ] },
                            "symbolizer":
                            {
                               "marker": {
