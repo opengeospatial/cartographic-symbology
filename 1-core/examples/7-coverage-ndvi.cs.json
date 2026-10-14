@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "title": "sentinel-2 NDVI",
+    "abstract": "Styling a Sentinel-2A coverage for NDVI with Style & Symbology Basic Coverage Styling"
+  },
+  "stylingRules": [
+    {
+      "name": "\"sentinel2-l2a\"",
+      "nestedRules": [
+        {
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "SCL"
+                  },
+                  8
+                ]
+              },
+              "symbolizer": {
+                "alphaChannel": 0.5
+              }
+            },
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "SCL"
+                  },
+                  9
+                ]
+              },
+              "symbolizer": {
+                "alphaChannel": 0.0
+              }
+            }
+          ],
+          "selector": {
+            "op": "<",
+            "args": [
+              {
+                "sysId": "viz.sd"
+              },
+              200000
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.8,
+            "zOrder": 1,
+            "alphaChannel": 1.0,
+            "singleChannel": {
+              "op": "/",
+              "args": [
+                {
+                  "op": "-",
+                  "args": [
+                    {
+                      "property": "B08"
+                    },
+                    {
+                      "property": "B04"
+                    }
+                  ]
+                },
+                {
+                  "op": "+",
+                  "args": [
+                    {
+                      "property": "B08"
+                    },
+                    {
+                      "property": "B04"
+                    }
+                  ]
+                }
+              ]
+            },
+            "colorMap": [
+              [
+                -1.0,
+                "saddleBrown"
+              ],
+              [
+                0.0,
+                "peru"
+              ],
+              [
+                0.2,
+                "goldenrod"
+              ],
+              [
+                0.5,
+                "olive"
+              ],
+              [
+                0.6,
+                "yellowGreen"
+              ],
+              [
+                0.8,
+                "greenYellow"
+              ],
+              [
+                1.0,
+                "lime"
+              ]
+            ]
+          }
+        }
+      ],
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "\"sentinel2-l2a\""
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.type"
+              },
+              "coverage"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      }
+    }
+  ]
+}

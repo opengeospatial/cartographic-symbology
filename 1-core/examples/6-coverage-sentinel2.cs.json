@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "title": "sentinel-2 natural color",
+    "abstract": "Styling a Sentinel-2A coverage with Style & Symbology Basic Coverage Styling"
+  },
+  "stylingRules": [
+    {
+      "name": "\"sentinel2-l2a\"",
+      "nestedRules": [
+        {
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "SCL"
+                  },
+                  8
+                ]
+              },
+              "symbolizer": {
+                "alphaChannel": 0.5
+              }
+            },
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "SCL"
+                  },
+                  9
+                ]
+              },
+              "symbolizer": {
+                "alphaChannel": 0.0
+              }
+            }
+          ],
+          "selector": {
+            "op": "<",
+            "args": [
+              {
+                "sysId": "viz.sd"
+              },
+              200000
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.8,
+            "zOrder": 1,
+            "colorChannels": [
+              {
+                "property": "B04"
+              },
+              {
+                "property": "B03"
+              },
+              {
+                "property": "B02"
+              }
+            ],
+            "alphaChannel": 1.0
+          }
+        }
+      ],
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "\"sentinel2-l2a\""
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.type"
+              },
+              "coverage"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      }
+    }
+  ]
+}
