@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Basic Labeling
 
-[[rc_table-labels]]
+[[rc-table-labels]]
 
 [requirements_class]
 .Basic Labeling
@@ -12,13 +12,28 @@ inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-labels]]
-===== Basic Labeling
+[[req-labels-label]]
+===== Symbolizer `label` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/labels
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/labels/label
+part:: An Encoding SHALL support defining a `label` Symbolizer property as a Label, which is a MultiGraphic that can contain multiple graphical elements.
+part:: A Renderer SHALL support drawing the graphical elements of the labels as a separate pass on top of all styled vector features and coverages.
+part:: A Renderer SHALL support omitting labels which cannot be placed without overlapping other labels.
 ====
+
+[[req-labels-placement]]
+===== Label `placement` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/labels/placement
+part:: An Encoding SHALL support defining a `placement` Label property as a LabelPlacement object including a `priority`, a `minSpacing` and a `maxSpacing`.
+part:: A Renderer SHALL support placing labels so that a label with a higher `priority` is placed in preference to a conflicting label with a lower `priority`.
+part:: A Renderer SHALL support repeating a label so that the distance between repetitions of that label is at least `minSpacing` and, where space allows, at most `maxSpacing`.
+====
+
+// TODO(review): confirm the units of `minSpacing` / `maxSpacing` and whether a higher `priority` value means higher priority.

@@ -10,7 +10,7 @@ This requirements class adds support for using **ParameterValues** i.e., arbitra
 
 include::../requirements/rc-parameter-values.adoc[]
 
-[[rc-righthand]]
+[[rc-right-hand]]
 === Requirements Class "Any right-hand operands"
 ==== Overview
 

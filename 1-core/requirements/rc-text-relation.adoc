@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Text Relation Operators
 
-[[rc_table-text-relation]]
+[[rc-table-text-relation]]
 
 [requirements_class]
 .Text Relation Operators
@@ -19,19 +19,19 @@ subject:: Style encodings and Renderers
 ====
 [%metadata]
 identifier:: /req/text-relation/like
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `like` operation expression taking a text operand and a text pattern operand, where `%` in the pattern matches any sequence of zero or more characters and `_` matches exactly one character.
+part:: A Renderer SHALL support evaluating a `like` operation expression to true if and only if the first operand matches the pattern specified by the second operand.
 ====
 
-[[req-text-relation-notLike]]
+[[req-text-relation-not-like]]
 ===== Text `notLike` operator
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-relation/notLike
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/text-relation/not-like
+part:: An Encoding SHALL support defining a `notLike` operation expression taking a text operand and a text pattern operand, using the same pattern syntax as the `like` operator.
+part:: A Renderer SHALL support evaluating a `notLike` operation expression to the logical negation of the equivalent `like` operation expression.
 ====
 
 [[req-text-relation-contains]]
@@ -41,64 +41,63 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/text-relation/contains
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `contains` operation expression taking two text operands.
+part:: A Renderer SHALL support evaluating a `contains` operation expression to true if and only if the second operand occurs as a substring of the first operand.
 ====
 
-[[req-text-relation-startsWith]]
+[[req-text-relation-starts-with]]
 ===== Text `startsWith` operator
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-relation/startsWith
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/text-relation/starts-with
+part:: An Encoding SHALL support defining a `startsWith` operation expression taking two text operands.
+part:: A Renderer SHALL support evaluating a `startsWith` operation expression to true if and only if the first operand begins with the second operand.
 ====
 
-[[req-text-relation-endsWith]]
+[[req-text-relation-ends-with]]
 ===== Text `endsWith` operator
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-relation/endsWith
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/text-relation/ends-with
+part:: An Encoding SHALL support defining an `endsWith` operation expression taking two text operands.
+part:: A Renderer SHALL support evaluating an `endsWith` operation expression to true if and only if the first operand ends with the second operand.
 ====
 
-[[req-text-relation-notContains]]
+[[req-text-relation-not-contains]]
 ===== Text `notContains` operator
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-relation/notContains
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/text-relation/not-contains
+part:: An Encoding SHALL support defining a `notContains` operation expression taking two text operands.
+part:: A Renderer SHALL support evaluating a `notContains` operation expression to the logical negation of the equivalent `contains` operation expression.
 ====
 
-[[req-text-relation-notStartsWith]]
+[[req-text-relation-not-starts-with]]
 ===== Text `notStartsWith` operator
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-relation/notStartsWith
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/text-relation/not-starts-with
+part:: An Encoding SHALL support defining a `notStartsWith` operation expression taking two text operands.
+part:: A Renderer SHALL support evaluating a `notStartsWith` operation expression to the logical negation of the equivalent `startsWith` operation expression.
 ====
 
-[[req-text-relation-notEndsWith]]
+[[req-text-relation-not-ends-with]]
 ===== Text `notEndsWith` operator
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/text-relation/notEndsWith
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/text-relation/not-ends-with
+part:: An Encoding SHALL support defining a `notEndsWith` operation expression taking two text operands.
+part:: A Renderer SHALL support evaluating a `notEndsWith` operation expression to the logical negation of the equivalent `endsWith` operation expression.
 ====
 
-
-
+// TODO(review): the JSON schema has `like`, `contains`, `startsWith` and `endsWith`, but no `notLike`, `notContains`, `notStartsWith` or `notEndsWith`. Either add them to the schema, or state that they are encoded as `not` applied to the positive form.

@@ -1,5 +1,5 @@
 
-[[rc_table-hatches]]
+[[rc-table-hatches]]
 
 [requirements_class]
 .Hatch fills
@@ -10,15 +10,15 @@ inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-===== Hatch fills
-
-[[req-hatches]]
+[[req-hatches-hatch]]
+===== Fill `hatch` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/hatch-fills
-part:: Encodings and Renderers SHALL support a `hatch` property within the `Fill` class, defined as a `Hatch` class.
+identifier:: /req/hatches/hatch
+part:: An Encoding SHALL support defining a `hatch` property within the `Fill` class, defined as a `Hatch` class.
+part:: A Renderer SHALL support filling vector geometry with a pattern of parallel lines based on a `hatch` property.
 ====
 
 .Fill class extended for hatches
@@ -43,14 +43,13 @@ image::figures/hatches_empty.png[]
 .Default hatch properties (width : 1 px, angle : 45 °, distance : 10 px)
 image::figures/hatches_default.png[]
 
-===== Width
-
 [[req-hatches-width]]
+===== Hatch `width` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/hatch-width
+identifier:: /req/hatches/width
 part:: An Encoding SHALL support defining a `width` property for the hatch fill symbolizer.
 part:: A Renderer SHALL support fill hatching vector geometry based on a width property.
 ====
@@ -58,14 +57,13 @@ part:: A Renderer SHALL support fill hatching vector geometry based on a width p
 .A hatch lines with a width of 5px
 image::figures/hatches_width_5px.png[]
 
-===== Angle
-
 [[req-hatches-angle]]
+===== Hatch `angle` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/hatch-angle
+identifier:: /req/hatches/angle
 part:: An Encoding SHALL support defining an `angle` property for the hatch fill symbolizer.
 part:: A Renderer SHALL support fill hatching vector geometry based on an angle property.
 ====
@@ -73,14 +71,13 @@ part:: A Renderer SHALL support fill hatching vector geometry based on an angle 
 .A hatch lines with an angle of 0 degree
 image::figures/hatches_angle_0.png[]
 
-===== Distance
-
 [[req-hatches-distance]]
+===== Hatch `distance` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/hatch-distance
+identifier:: /req/hatches/distance
 part:: An Encoding SHALL support defining a `distance` property for the hatch fill symbolizer.
 part:: A Renderer SHALL support fill hatching vector geometry based on a distance property.
 ====

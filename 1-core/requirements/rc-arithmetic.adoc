@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Arithmetic Operators
 
-[[rc_table-arithmetic]]
+[[rc-table-arithmetic]]
 
 [requirements_class]
 .Arithmetic Operators
@@ -19,8 +19,8 @@ subject:: Style encodings and Renderers
 ====
 [%metadata]
 identifier:: /req/arithmetic/add
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining an `add` operation expression taking two numeric operands.
+part:: A Renderer SHALL support evaluating an `add` operation expression as the sum of its two operands.
 ====
 
 [[req-arithmetic-sub]]
@@ -30,8 +30,8 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/arithmetic/sub
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `sub` operation expression taking two numeric operands.
+part:: A Renderer SHALL support evaluating a `sub` operation expression as the first operand minus the second operand.
 ====
 
 [[req-arithmetic-mul]]
@@ -41,8 +41,8 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/arithmetic/mul
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `mul` operation expression taking two numeric operands.
+part:: A Renderer SHALL support evaluating a `mul` operation expression as the product of its two operands.
 ====
 
 [[req-arithmetic-div]]
@@ -52,19 +52,19 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/arithmetic/div
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `div` operation expression taking two numeric operands.
+part:: A Renderer SHALL support evaluating a `div` operation expression as the real-valued quotient of the first operand divided by the second operand, including when both operands are integers.
 ====
 
-[[req-arithmetic-intDiv]]
+[[req-arithmetic-int-div]]
 ===== Arithmetic `intDiv` operator
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/arithmetic/intDiv
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/arithmetic/int-div
+part:: An Encoding SHALL support defining an `intDiv` operation expression taking two numeric operands.
+part:: A Renderer SHALL support evaluating an `intDiv` operation expression as the integer quotient of the first operand divided by the second operand, truncated toward zero.
 ====
 
 [[req-arithmetic-mod]]
@@ -74,8 +74,8 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/arithmetic/mod
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `mod` operation expression taking two numeric operands.
+part:: A Renderer SHALL support evaluating a `mod` operation expression as the remainder of the first operand divided by the second operand, consistent with the `intDiv` operator (i.e., the result has the sign of the first operand).
 ====
 
 [[req-arithmetic-pow]]
@@ -85,8 +85,6 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/arithmetic/pow
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `pow` operation expression taking two numeric operands.
+part:: A Renderer SHALL support evaluating a `pow` operation expression as the first operand raised to the power of the second operand.
 ====
-
-

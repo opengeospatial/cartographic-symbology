@@ -1,264 +1,266 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
-==== Functions
+==== Math Functions
 
-[[rc_table-math-functions]]
+[[rc-table-math]]
+
+[requirements_class]
 .Math Functions
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/math-functions
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/math
 inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-math-functions-abs]]
+[[req-math-abs]]
 ===== Math `abs` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/abs
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/abs
+part:: An Encoding SHALL support defining a call to the `abs` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `abs(x)` as the absolute value of `x`.
 ====
 
-[[req-math-functions-acos]]
+[[req-math-acos]]
 ===== Math `acos` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/acos
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/acos
+part:: An Encoding SHALL support defining a call to the `acos` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `acos(x)` as the arc cosine of `x`, in radians, in the range [0, π].
 ====
 
-[[req-math-functions-asin]]
+[[req-math-asin]]
 ===== Math `asin` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/asin
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/asin
+part:: An Encoding SHALL support defining a call to the `asin` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `asin(x)` as the arc sine of `x`, in radians, in the range [-π/2, π/2].
 ====
 
-[[req-math-functions-atan]]
+[[req-math-atan]]
 ===== Math `atan` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/atan
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/atan
+part:: An Encoding SHALL support defining a call to the `atan` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `atan(x)` as the arc tangent of `x`, in radians, in the range [-π/2, π/2].
 ====
 
-[[req-math-functions-atan2]]
+[[req-math-atan2]]
 ===== Math `atan2` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/atan2
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/atan2
+part:: An Encoding SHALL support defining a call to the `atan2` standard function taking two numeric arguments.
+part:: A Renderer SHALL support evaluating `atan2(y, x)` as the angle, in radians in the range [-π, π], between the positive x axis and the point (`x`, `y`).
 ====
 
-[[req-math-functions-ceil]]
+[[req-math-ceil]]
 ===== Math `ceil` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/ceil
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/ceil
+part:: An Encoding SHALL support defining a call to the `ceil` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `ceil(x)` as the smallest integral value greater than or equal to `x`.
 ====
 
-[[req-math-functions-cos]]
+[[req-math-cos]]
 ===== Math `cos` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/cos
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/cos
+part:: An Encoding SHALL support defining a call to the `cos` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `cos(x)` as the cosine of `x` expressed in radians.
 ====
 
-[[req-math-functions-cosh]]
+[[req-math-cosh]]
 ===== Math `cosh` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/cosh
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/cosh
+part:: An Encoding SHALL support defining a call to the `cosh` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `cosh(x)` as the hyperbolic cosine of `x`.
 ====
 
-[[req-math-functions-exp]]
+[[req-math-exp]]
 ===== Math `exp` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/exp
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/exp
+part:: An Encoding SHALL support defining a call to the `exp` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `exp(x)` as Euler's number _e_ raised to the power of `x`.
 ====
 
-[[req-math-functions-floor]]
+[[req-math-floor]]
 ===== Math `floor` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/floor
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/floor
+part:: An Encoding SHALL support defining a call to the `floor` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `floor(x)` as the largest integral value less than or equal to `x`.
 ====
 
-[[req-math-functions-log]]
+[[req-math-log]]
 ===== Math `log` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/log
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/log
+part:: An Encoding SHALL support defining a call to the `log` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `log(x)` as the natural (base _e_) logarithm of `x`.
 ====
 
-[[req-math-functions-log10]]
+[[req-math-log10]]
 ===== Math `log10` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/log10
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/log10
+part:: An Encoding SHALL support defining a call to the `log10` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `log10(x)` as the base 10 logarithm of `x`.
 ====
 
-[[req-math-functions-max]]
+[[req-math-max]]
 ===== Math `max` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/max
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/max
+part:: An Encoding SHALL support defining a call to the `max` standard function taking two numeric arguments.
+part:: A Renderer SHALL support evaluating `max(x, y)` as the greater of `x` and `y`.
 ====
 
-[[req-math-functions-min]]
+[[req-math-min]]
 ===== Math `min` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/min
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/min
+part:: An Encoding SHALL support defining a call to the `min` standard function taking two numeric arguments.
+part:: A Renderer SHALL support evaluating `min(x, y)` as the smaller of `x` and `y`.
 ====
 
-[[req-math-functions-pow]]
+[[req-math-pow]]
 ===== Math `pow` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/pow
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/pow
+part:: An Encoding SHALL support defining a call to the `pow` standard function taking two numeric arguments.
+part:: A Renderer SHALL support evaluating `pow(x, y)` as `x` raised to the power of `y`.
 ====
 
-[[req-math-functions-random]]
+[[req-math-random]]
 ===== Math `random` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/random
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/random
+part:: An Encoding SHALL support defining a call to the `random` standard function taking no argument.
+part:: A Renderer SHALL support evaluating `random()` as a pseudo-random real number greater than or equal to 0 and less than 1.
 ====
 
-[[req-math-functions-rint]]
+[[req-math-rint]]
 ===== Math `rint` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/rint
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/rint
+part:: An Encoding SHALL support defining a call to the `rint` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `rint(x)` as the integral value closest to `x`, rounding halfway cases to the even integral value.
 ====
 
-[[req-math-functions-round]]
+[[req-math-round]]
 ===== Math `round` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/round
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/round
+part:: An Encoding SHALL support defining a call to the `round` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `round(x)` as the integer closest to `x`, rounding halfway cases toward positive infinity.
 ====
 
-[[req-math-functions-sin]]
+[[req-math-sin]]
 ===== Math `sin` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/sin
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/sin
+part:: An Encoding SHALL support defining a call to the `sin` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `sin(x)` as the sine of `x` expressed in radians.
 ====
 
-[[req-math-functions-sinh]]
+[[req-math-sinh]]
 ===== Math `sinh` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/sinh
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/sinh
+part:: An Encoding SHALL support defining a call to the `sinh` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `sinh(x)` as the hyperbolic sine of `x`.
 ====
 
-[[req-math-functions-sqrt]]
+[[req-math-sqrt]]
 ===== Math `sqrt` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/sqrt
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/sqrt
+part:: An Encoding SHALL support defining a call to the `sqrt` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `sqrt(x)` as the positive square root of `x`.
 ====
 
-[[req-math-functions-tan]]
+[[req-math-tan]]
 ===== Math `tan` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/tan
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/tan
+part:: An Encoding SHALL support defining a call to the `tan` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `tan(x)` as the tangent of `x` expressed in radians.
 ====
 
-[[req-math-functions-tanh]]
+[[req-math-tanh]]
 ===== Math `tanh` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/math-functions/tanh
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/math/tanh
+part:: An Encoding SHALL support defining a call to the `tanh` standard function taking one numeric argument.
+part:: A Renderer SHALL support evaluating `tanh(x)` as the hyperbolic tangent of `x`.
 ====

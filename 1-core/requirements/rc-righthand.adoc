@@ -1,26 +1,26 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Any right-hand operands
 
-[[rc_table-righthand]]
+[[rc-table-right-hand]]
 
 [requirements_class]
 .Any right-hand operands
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/righthand
+identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/right-hand
 inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-righthand-literal]]
+[[req-right-hand-operands]]
 ===== Any right-hand operands
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/righthand
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/right-hand/operands
+part:: An Encoding SHALL support defining the right-hand operands of RelationExpressions using any type of Expression (e.g., Identifier Expressions or Function call Expressions), not only Literal Expressions.
+part:: A Renderer SHALL support evaluating RelationExpressions whose right-hand operands are any type of Expression.
 ====
 
-//TODO: add part for condition, thenExp, elseExp
+// TODO(review): the CSCSS examples write selectors such as `[dataLayer.type = coverage]`, where the bare word `coverage` is meant as a string. If right-hand operands can be identifiers, `coverage` would be read as a property. Specify how a bare word on the right-hand side is read, or quote the strings in the examples.

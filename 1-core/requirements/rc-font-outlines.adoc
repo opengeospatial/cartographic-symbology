@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Font Outlines
 
-[[rc_table-font-outlines]]
+[[rc-table-font-outlines]]
 
 [requirements_class]
 .Font Outlines
@@ -12,15 +12,46 @@ inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-font-outlines]]
-===== Font Outlines
+[[req-font-outlines-outline]]
+===== Font `outline` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/font-outlines
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/font-outlines/outline
+part:: An Encoding SHALL support defining an `outline` Font property as a FontOutline object including a `size`, an `opacity` and a `color`.
+part:: A Renderer SHALL support drawing an outline around the glyphs of text drawn with a Font specifying an `outline`, beneath the glyphs themselves.
 ====
 
-// TODO: Define Encoding & Render parts for outline, size, opacity, color
+[[req-font-outlines-size]]
+===== FontOutline `size` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/font-outlines/size
+part:: An Encoding SHALL support defining a `size` FontOutline property as a float.
+part:: A Renderer SHALL support drawing the outline extending outward from the glyph contours by the thickness specified by the `size` property.
+====
+
+[[req-font-outlines-opacity]]
+===== FontOutline `opacity` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/font-outlines/opacity
+part:: An Encoding SHALL support defining an `opacity` FontOutline property as a float between 0 (fully transparent) and 1 (fully opaque).
+part:: A Renderer SHALL support drawing the outline with the opacity specified by the `opacity` property.
+====
+
+[[req-font-outlines-color]]
+===== FontOutline `color` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/font-outlines/color
+part:: An Encoding SHALL support defining a `color` FontOutline property as a Color.
+part:: A Renderer SHALL support drawing the outline in the color specified by the `color` property.
+====

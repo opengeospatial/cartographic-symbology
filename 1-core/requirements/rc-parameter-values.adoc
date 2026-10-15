@@ -1,5 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
-[[rc_table-parameter-values]]
+==== Parameter Values
+
+[[rc-table-parameter-values]]
 
 [requirements_class]
 .Parameter Values
@@ -10,13 +12,13 @@ inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-parameter-values]]
-===== Parameter Values
+[[req-parameter-values-expressions]]
+===== Expressions as Parameter Values
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/parameter-values
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/parameter-values/expressions
+part:: An Encoding SHALL support defining the value of any Symbolizer property, including members of object properties, using any type of Expression, not only Literal Expressions.
+part:: A Renderer SHALL support evaluating Expressions used as Parameter Values for each feature or coverage cell being portrayed, and resolving the result to the data type expected by the Symbolizer property.
 ====

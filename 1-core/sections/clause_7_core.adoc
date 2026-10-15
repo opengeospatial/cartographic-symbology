@@ -1,6 +1,6 @@
 [[rc-core]]
 == Requirements Class "Core"
-[[rc_table-core]]
+[[rc-table-core]]
 
 [requirements_class]
 .Core
@@ -169,8 +169,8 @@ Roads    // Selector for this second rule
 ====
 [%metadata]
 identifier:: /req/core/selector
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining an optional `selector` for a StylingRule as an Expression evaluating to a boolean value.
+part:: A Renderer SHALL support applying the Symbolizer of a StylingRule to a feature or coverage cell only if the rule has no `selector` or if its `selector` evaluates to true for that feature or coverage cell.
 ====
 
 [[req-core-nested]]
@@ -180,8 +180,9 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/core/nested
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a StylingRule with an ordered list of nested StylingRules.
+part:: A Renderer SHALL support considering the nested rules of a StylingRule only if that parent rule is selected.
+part:: A Renderer SHALL support the Symbolizer of a selected nested rule inheriting from, and overriding, the Symbolizer properties of its parent rule.
 ====
 
 
@@ -248,12 +249,13 @@ Depending on the type of geographical object, a set of symbolizer extensions can
 LabelSymbolizer to render the road name along a line.
 ////
 
+[[req-core-symbolizer]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/symbolizer
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a Symbolizer for a StylingRule, specifying any subset of the Symbolizer properties.
+part:: A Renderer SHALL support portraying data using the Symbolizer properties resulting from all selected StylingRules, using the default values for properties not set by any selected rule.
 ====
 
 [[req-core-visibility]]
@@ -263,8 +265,8 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/core/visibility
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a `visibility` Symbolizer property as a boolean.
+part:: A Renderer SHALL support not portraying a feature or coverage cell for which the resolved `visibility` property is false.
 ====
 
 [[req-core-opacity]]
@@ -274,19 +276,19 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/core/opacity
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining an `opacity` Symbolizer property as a float between 0 (fully transparent) and 1 (fully opaque).
+part:: A Renderer SHALL support portraying a feature or coverage cell with the opacity specified by the resolved `opacity` property, applied to the portrayal as a whole.
 ====
 
-[[req-core-zorder]]
+[[req-core-z-order]]
 ==== Symbolizer `zOrder` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/core/zorder
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/core/z-order
+part:: An Encoding SHALL support defining a `zOrder` Symbolizer property as an integer.
+part:: A Renderer SHALL support portraying features and coverage cells of a single rendering pass in increasing order of their resolved `zOrder` property, so that portrayals with a higher `zOrder` are drawn on top of those with a lower `zOrder`.
 ====
 
 === Expressions
@@ -349,8 +351,8 @@ compatible with the expected data type are allowed as _Parameter Values_.
 ====
 [%metadata]
 identifier:: /req/core/parameters
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining Symbolizer properties as Parameter Values using Literal Expressions compatible with the data type expected by the property.
+part:: A Renderer SHALL support resolving Parameter Values to the data type expected by the Symbolizer property.
 ====
 
 ==== Identifier Expressions
@@ -361,12 +363,13 @@ An Identifier Expression is represented by a textual property that gets resolved
 
 Typical example of identifier expressions include feature properties (e.g., `population`) and coverage range values (e.g., a particular imagery band `B8`).
 
+[[req-core-expressions-field-identifiers]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/expressions-field-identifiers
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining Identifier Expressions referring to feature properties or coverage range fields by name.
+part:: A Renderer SHALL support resolving an Identifier Expression to the value of the named feature property or coverage range field for the feature or coverage cell being portrayed.
 ====
 
 ===== System Identifiers
@@ -492,7 +495,7 @@ Capabilities   : vendor: VendorCapabilities
 | capabilities.vector                           | Support for <<rc-vector,Basic Vector Features Styling>>         | Boolean (true if supported, false otherwise)
 | capabilities.coverage                         | Support for <<rc-coverage,Basic Coverage Styling>>              | Boolean (true if supported, false otherwise)
 | capabilities.labels                           | Support for <<rc-labels,Basic Labeling>>                        | Boolean (true if supported, false otherwise)
-| capabilities.hillshading                      | Support for <<rc-hillshading,Hill Shading>>                     | Boolean (true if supported, false otherwise)
+| capabilities.hillshading                      | Support for <<rc-hill-shading,Hill Shading>>                     | Boolean (true if supported, false otherwise)
 | capabilities.fontoutlines                     | Support for <<rc-font-outlines,Font Outlines>>                   | Boolean (true if supported, false otherwise)
 | capabilities.hatches                          | Support for <<rc-hatches,Hatch Fills>>                          | Boolean (true if supported, false otherwise)
 | capabilities.stipples                         | Support for <<rc-stipples, Stipple Fills>>                      | Boolean (true if supported, false otherwise)
@@ -505,7 +508,7 @@ Capabilities   : vendor: VendorCapabilities
 | capabilities.textmanipulation                 | Support for <<rc-text-manipulation,Text Manipulation Functions>> | Boolean (true if supported, false otherwise)
 | capabilities.arithmetic                       | Support for <<rc-arithmetic,Arithmetic Operators>>              | Boolean (true if supported, false otherwise)
 | capabilities.textrelation                     | Support for <<rc-text-relation,Text Relation Operators>>         | Boolean (true if supported, false otherwise)
-| capabilities.righthand                        | Support for <<rc-righthand,Any right-hand operands>>            | Boolean (true if supported, false otherwise)
+| capabilities.righthand                        | Support for <<rc-right-hand,Any right-hand operands>>            | Boolean (true if supported, false otherwise)
 | capabilities.conditional                      | Support for <<rc-conditional,Conditional Expressions>>          | Boolean (true if supported, false otherwise)
 | capabilities.variables                        | Support for <<rc-variables,Variables>>                          | Boolean (true if supported, false otherwise)
 | capabilities.vendor.<vendorName>.<capability> | Support for a capability defined by a vendor extension          | Boolean (true if supported, false otherwise)
@@ -702,36 +705,40 @@ TODO: In other req classes:
 * feature.geometry                      -- for spatial operators
 ////
 
+[[req-core-expressions-system-identifiers]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/expressions-system-identifiers
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining System Identifier Expressions referring to the System Identifiers defined in this requirements class, including the `capabilities` System Identifiers.
+part:: A Renderer SHALL support resolving System Identifier Expressions to the corresponding state of the system, with each `capabilities` System Identifier resolving to true if and only if the Renderer supports the corresponding requirements class.
 ====
 
+[[req-core-scale]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/scale
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining expressions using the `visualization.scaleDenominator` System Identifier.
+part:: A Renderer SHALL support resolving the `visualization.scaleDenominator` System Identifier to the scale denominator of the map being rendered.
 ====
 
+[[req-core-time]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/time
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining expressions using the `visualization.dateTime`, `visualization.date`, `visualization.timeOfDay` and `visualization.timeInterval` System Identifiers.
+part:: A Renderer SHALL support resolving the visualization time System Identifiers to the time instant or interval of the map being rendered.
 ====
 
+[[req-core-layers]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/layers
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining expressions using the `dataLayer.identifier` and `dataLayer.type` System Identifiers.
+part:: A Renderer SHALL support resolving the `dataLayer.identifier` System Identifier to the identifier of the data layer being portrayed, and the `dataLayer.type` System Identifier to its type (`map`, `vector` or `coverage`).
 ====
 
 [[literal-expressions]]
@@ -787,12 +794,13 @@ The following types of literals are defined:
 * Array literals (see <<array-expressions,Array Expressions>>) (CSCSS example: `(1, 2, 3)`)
 * Instance literals (see <<instance-expressions,Instance Expressions>>) (CSCSS examples: `Color(20, 100, 80)` or `Color(r: 20, g: 100, b: 80)`)
 
+[[req-core-literals]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/literals
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining integer, real, text, null, enumeration value, boolean, array and instance literals.
+part:: A Renderer SHALL support resolving literal expressions to their fixed value.
 ====
 
 ==== Operation Expressions
@@ -889,6 +897,7 @@ Roads
 ----
 ====
 
+[[req-core-operations]]
 [requirement]
 ====
 [%metadata]
@@ -898,20 +907,22 @@ part:: An Encoding SHALL support defining the priority of expressions using mult
 part:: A Renderer SHALL support evaluating operation expressions while respecting the priority of operations.
 ====
 
+[[req-core-logical]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/logical
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining operation expressions using the `and`, `or` and `not` logical operators.
+part:: A Renderer SHALL support evaluating the `and`, `or` and `not` logical operators as defined in the Logical Operators table.
 ====
 
+[[req-core-relational]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/relational
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining operation expressions using the relational operators `equal`, `notEqual`, `is`, `isNot`, `lesser`, `greater`, `lesserEqual`, `greaterEqual`, `in`, `notIn`, `between` and `notBetween`.
+part:: A Renderer SHALL support evaluating the relational operators as defined in the Relational Operators table.
 ====
 
 [[array-expressions]]
@@ -923,12 +934,13 @@ CSCSS example: `(123.0, viz.sd)`.
 
 An _array literal_ is a special type of array expression whose elements are all literals.
 
+[[req-core-arrays]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/arrays
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining array expressions as an ordered list of zero or more element expressions.
+part:: A Renderer SHALL support resolving array expressions to an ordered array of the values of their element expressions.
 ====
 
 [[instance-expressions]]
@@ -972,12 +984,14 @@ Roads
 
 // TODO: Insert pretty picture here
 
+[[req-core-instances]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/instances
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining instance expressions of a class, optionally specifying values for its members.
+part:: An Encoding SHALL support overriding a single member of an object Symbolizer property without replacing the other members.
+part:: A Renderer SHALL support resolving instance expressions to an object of the specified class, using default values for members which are not specified.
 ====
 
 [[cscss-default-values]]
@@ -1032,13 +1046,16 @@ The following default values are defined by this encoding.
 | color          | white
 |===
 
+[[req-core-default-values]]
 [requirement]
 ====
 [%metadata]
 identifier:: /req/core/default-values
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support omitting Symbolizer properties and object members for which a default value is defined in this section.
+part:: A Renderer SHALL support using the default values defined in this section for Symbolizer properties and object members which are not set by any selected StylingRule.
 ====
+
+// TODO(review): the default Marker (a single default Dot, white, 10 px) would draw a dot at every point, line vertex and polygon centroid of a style that sets no marker. Confirm this is intended. The Dot defaults also give a size and a color, while a Dot is drawn with the width and color of its Stroke.
 
 === Vendor Extensions
 

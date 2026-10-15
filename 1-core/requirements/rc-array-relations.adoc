@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Array Relation Functions
 
-[[rc_table-array-relations]]
+[[rc-table-array-relations]]
 
 [requirements_class]
 .Array Relation Functions
@@ -12,47 +12,46 @@ inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-array-relations-a_containedBy]]
-===== Array `a_containedBy` operator
+[[req-array-relations-a-contained-by]]
+===== Array `a_containedBy` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/array-relations/a_containedBy
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/array-relations/a-contained-by
+part:: An Encoding SHALL support defining a call to the `a_containedBy` standard function taking two array arguments.
+part:: A Renderer SHALL support evaluating `a_containedBy(a, b)` to true if and only if every element of array `a` is also an element of array `b`.
 ====
 
-[[req-array-relations-a_contains]]
-===== Array `a_contains` operator
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/array-relations/a_contains
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
-====
-
-[[req-array-relations-a_equals]]
-===== Array `a_equals` operator
+[[req-array-relations-a-contains]]
+===== Array `a_contains` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/array-relations/a_equals
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/array-relations/a-contains
+part:: An Encoding SHALL support defining a call to the `a_contains` standard function taking two array arguments.
+part:: A Renderer SHALL support evaluating `a_contains(a, b)` to true if and only if every element of array `b` is also an element of array `a`.
 ====
 
-[[req-array-relations-a_overlaps]]
-===== Array `a_overlaps` operator
+[[req-array-relations-a-equals]]
+===== Array `a_equals` function
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/array-relations/a_overlaps
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/array-relations/a-equals
+part:: An Encoding SHALL support defining a call to the `a_equals` standard function taking two array arguments.
+part:: A Renderer SHALL support evaluating `a_equals(a, b)` to true if and only if arrays `a` and `b` have the same number of elements and each element of `a` is equal to the element of `b` at the same position.
 ====
 
+[[req-array-relations-a-overlaps]]
+===== Array `a_overlaps` function
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/array-relations/a-overlaps
+part:: An Encoding SHALL support defining a call to the `a_overlaps` standard function taking two array arguments.
+part:: A Renderer SHALL support evaluating `a_overlaps(a, b)` to true if and only if arrays `a` and `b` have at least one element in common.
+====

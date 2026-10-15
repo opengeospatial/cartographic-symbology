@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Dashes
 
-[[rc_table-dashes]]
+[[rc-table-dashes]]
 
 [requirements_class]
 .Dashes
@@ -32,14 +32,13 @@ Stroke : dashOffset: float [0..1]
 | dashOffset    | Dash offset        | UnitValue    | 0..1
 |===
 
-[[req-dashes-dashPattern]]
-===== Dash Pattern
+[[req-dashes-dash-pattern]]
+===== Stroke `dashPattern` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashPattern
-inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashes
+identifier:: /req/dashes/dash-pattern
 part:: An Encoding SHALL support defining a dashPattern property for the stroke symbolizer.
 part:: A Renderer SHALL support dashing vector geometry based on a dashPattern property.
 
@@ -47,14 +46,15 @@ part:: A Renderer SHALL support dashing vector geometry based on a dashPattern p
 image::figures/stroke_dashPattern.png[]
 ====
 
-[[req-dashes-dashOffset]]
-===== Dash Offset
+// TODO(review): state the unit of the `dashPattern` values: the unit of measure of the stroke, pixels by default (as SE `stroke-dasharray`), or multiples of the stroke width (as MapLibre `line-dasharray`).
+
+[[req-dashes-dash-offset]]
+===== Stroke `dashOffset` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashOffset
-inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/dashes
+identifier:: /req/dashes/dash-offset
 part:: An Encoding SHALL support defining a dashOffset property for the stroke symbolizer.
 part:: A Renderer SHALL support dashing vector geometry based on a dashOffset property.
 

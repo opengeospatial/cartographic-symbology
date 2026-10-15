@@ -1,5 +1,5 @@
 
-[[rc_table-stipples]]
+[[rc-table-stipples]]
 
 [requirements_class]
 .Stipple fills
@@ -10,25 +10,27 @@ inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
 subject:: Style encodings and Renderers
 ====
 
-[[req-stipples]]
-===== Stipple fills
-
 Implementations shall support all properties in the below table for style encodings and renderers.
 
-.Fill class extended for stippling
+.Stipple class
 [width="90%",options="header"]
 |===
-| Name           | Definition                                       | Type                  | Multiplicity
-| stipplingRatio | Ratio of stippling dots according to area filled | float (betwwen 0 an 1)| 0..1
+| Name   | Definition                                       | Type                   | Multiplicity
+| ratio  | Ratio of stippling dots according to area filled | float (between 0 and 1) | 0..1
 |===
+
+[[req-stipples-ratio]]
+===== Stipple `ratio` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/stippling-ratio
+identifier:: /req/stipples/ratio
 part:: An Encoding SHALL support defining a ratio property for the stipple fill symbolizer.
 part:: A Renderer SHALL support stipple fill vector geometry based on a ratio property.
 ====
+
+// TODO(review): define the size and color of the stipple dots (see #84).
 
 .Fill a shape area with dots defined by a ratio (0.2, 0.5, 0.8)
 image::figures/stipples.png[]
