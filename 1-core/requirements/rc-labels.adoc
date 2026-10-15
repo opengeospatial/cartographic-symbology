@@ -36,4 +36,4 @@ part:: A Renderer SHALL support placing labels so that a label with a higher `pr
 part:: A Renderer SHALL support repeating a label so that the distance between repetitions of that label is at least `minSpacing` and, where space allows, at most `maxSpacing`.
 ====
 
-// TODO(review): confirm the units of `minSpacing` / `maxSpacing` and whether a higher `priority` value means higher priority (see also #80).
+// TODO(review): confirm the units of `minSpacing` / `maxSpacing` and whether a higher `priority` value means higher priority.

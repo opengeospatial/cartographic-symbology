@@ -23,6 +23,10 @@ part:: An Encoding SHALL support defining a `casing` Stroke property as a Stroke
 part:: A Renderer SHALL support drawing the casing of a stroke along the same geometry as the stroke, using the StrokeStyling specified by the `casing` property, beneath the main stroke.
 ====
 
+// TODO(review): state whether the casing `width` is the total width of the casing or how far it extends beyond each side of the main stroke. With the total-width reading, a casing narrower than the stroke is hidden.
+
+// TODO(review): state whether the casings of all features are drawn before any main stroke, so that crossing and joining lines merge, or each feature's casing is drawn together with its own stroke.
+
 [[req-casing-center]]
 ===== Stroke `center` property
 

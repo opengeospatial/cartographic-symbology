@@ -21,6 +21,8 @@ part:: An Encoding SHALL support defining a `colorChannels` Symbolizer property 
 part:: A Renderer SHALL support portraying each coverage cell with the red, green and blue components resolved from the `colorChannels` property for that cell.
 ====
 
+// TODO(review): example 6 sets `colorChannels` to Sentinel-2 bands (digital numbers, 0 to 10000), while the JSON schema types `colorChannels` as 0 to 1. Define how channel values are scaled to color components, or scale them in the example.
+
 [[req-coverage-alpha-channel]]
 ===== Symbolizer `alphaChannel` property
 
@@ -78,4 +80,4 @@ part:: An Encoding SHOULD support defining a `gamma` Symbolizer property as a fl
 part:: A Renderer SHOULD support applying a gamma correction to the portrayed color values, using the value of the `gamma` property as the exponent applied to normalized (0 to 1) color components.
 ====
 
-// TODO(review): `gamma` is not in the coverage UML, tables or JSON schema; keep it or remove it as for vector (see #86).
+// TODO(review): `gamma` is not in the coverage UML, tables or JSON schema; keep it or remove it as for vector (see #86). If kept, note that the exponent as written darkens for values above 1, while SE `GammaValue` brightens for values above 1.

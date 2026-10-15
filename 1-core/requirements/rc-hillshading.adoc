@@ -32,6 +32,8 @@ part:: An Encoding SHALL support defining a `factor` HillShading property as a f
 part:: A Renderer SHALL support scaling the intensity of the shading by the `factor` property.
 ====
 
+// TODO(review): examples 8 and 9 use `factor: 56`, which does not work as an intensity multiplier (almost every cell renders black). Confirm the intended meaning (e.g., vertical exaggeration or a percentage), and the range of the computed shade value used by the HillShading `colorMap` and `opacityMap` (example 9's maps stop at 0.55).
+
 [[req-hill-shading-sun]]
 ===== HillShading `sun` property
 
@@ -42,6 +44,8 @@ identifier:: /req/hill-shading/sun
 part:: An Encoding SHALL support defining a `sun` HillShading property as an object consisting of `azimuth` and `elevation` angle members representing the orientation of the sun relative to the terrain.
 part:: A Renderer SHALL support computing the shade of each cell for a light source at the `azimuth` angle (relative to North) and `elevation` angle (relative to the ground) specified by the `sun` property.
 ====
+
+// TODO(review): state the direction of `azimuth` (e.g., clockwise from North, as a compass bearing). Both examples use 45, which is north-east under either convention.
 
 [[req-hill-shading-color-map]]
 ===== HillShading `colorMap` property

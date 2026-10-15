@@ -1055,6 +1055,8 @@ part:: An Encoding SHALL support omitting Symbolizer properties and object membe
 part:: A Renderer SHALL support using the default values defined in this section for Symbolizer properties and object members which are not set by any selected StylingRule.
 ====
 
+// TODO(review): the default Marker (a single default Dot, white, 10 px) would draw a dot at every point, line vertex and polygon centroid of a style that sets no marker. Confirm this is intended. The Dot defaults also give a size and a color, while a Dot is drawn with the width and color of its Stroke.
+
 === Vendor Extensions
 
 This core requirements class specifies two ways to extend the model to custom vendor extensions. First, new Symbolizer properties can be defined. Second, System Identifiers can be extended with new identifiers.

@@ -34,6 +34,8 @@ part:: An Encoding SHALL support defining an `accentInsensitize` function that r
 part:: A Renderer SHALL support removing accents from a string using the `accentInsensitize` function (equivalent to the CQL2 `ACCENTI` function).
 ====
 
+// TODO(review): the model names these functions `caseInsensitize` and `accentInsensitize`, while the JSON schema and libCartoSym use the CQL2 names `casei` and `accenti`. Align the names. Also define what counts as an accent: letters such as `Ø` do not decompose in Unicode, so `accentInsensitize('Øre')` is not `Ore` in libCartoSym or in the draft renderer (cartosym-draft-check).
+
 [[req-text-manipulation-lower-case]]
 ===== Text `lowerCase` function
 

@@ -22,3 +22,5 @@ identifier:: /req/right-hand/operands
 part:: An Encoding SHALL support defining the right-hand operands of RelationExpressions using any type of Expression (e.g., Identifier Expressions or Function call Expressions), not only Literal Expressions.
 part:: A Renderer SHALL support evaluating RelationExpressions whose right-hand operands are any type of Expression.
 ====
+
+// TODO(review): the CSCSS examples write selectors such as `[dataLayer.type = coverage]`, where the bare word `coverage` is meant as a string. If right-hand operands can be identifiers, `coverage` would be read as a property. Specify how a bare word on the right-hand side is read, or quote the strings in the examples.

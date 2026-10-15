@@ -99,3 +99,5 @@ identifier:: /req/text-relation/not-ends-with
 part:: An Encoding SHALL support defining a `notEndsWith` operation expression taking two text operands.
 part:: A Renderer SHALL support evaluating a `notEndsWith` operation expression to the logical negation of the equivalent `endsWith` operation expression.
 ====
+
+// TODO(review): the JSON schema has `like`, `contains`, `startsWith` and `endsWith`, but no `notLike`, `notContains`, `notStartsWith` or `notEndsWith`. Either add them to the schema, or state that they are encoded as `not` applied to the positive form.

@@ -46,6 +46,8 @@ part:: A Renderer SHALL support dashing vector geometry based on a dashPattern p
 image::figures/stroke_dashPattern.png[]
 ====
 
+// TODO(review): state the unit of the `dashPattern` values: the unit of measure of the stroke, pixels by default (as SE `stroke-dasharray`), or multiples of the stroke width (as MapLibre `line-dasharray`).
+
 [[req-dashes-dash-offset]]
 ===== Stroke `dashOffset` property
 
