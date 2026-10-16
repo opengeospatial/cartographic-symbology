@@ -16,22 +16,38 @@ LT: '<';
 LTEQ: '<=';
 GT: '>';
 GTEQ: '>=';
-IN: 'in';
-NOT: 'not';
-IS: 'is';
-LIKE: 'like';
-BETWEEN: 'between';
+IN: I N;
+NOT: N O T;
+IS: I S;
+LIKE: L I K E;
+BETWEEN: B E T W E E N;
 QUESTION: '?';
 COLON: ':';
-AND: 'and';
-OR: 'or';
+AND: A N D;
+OR: O R;
 MUL: '*';
 DIV: '/';
-IDIV: 'div';
+IDIV: D I V;
 MOD: '%';
 POW: '^';
 MINUS: '-';
 PLUS: '+';
+
+// CQL2 keywords are case-insensitive (CQL2-Text BNF); one fragment per letter.
+fragment A: [aA];
+fragment B: [bB];
+fragment D: [dD];
+fragment E: [eE];
+fragment I: [iI];
+fragment K: [kK];
+fragment L: [lL];
+fragment N: [nN];
+fragment O: [oO];
+fragment R: [rR];
+fragment S: [sS];
+fragment T: [tT];
+fragment V: [vV];
+fragment W: [wW];
 
 // Numeric Literals
 
@@ -52,7 +68,7 @@ HEX_LITERAL :
 NUMERIC_LITERAL :
         ( [0-9]+ ('.' ([0-9]+)? )? |
         '.' [0-9]+ )
-    ('E' ('+'|'-')? [0-9]+)?;
+    (E ('+'|'-')? [0-9]+)?;
 
 // Character Literals
 
