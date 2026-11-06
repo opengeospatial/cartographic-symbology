@@ -5,7 +5,33 @@
   },
   "stylingRules": [
     {
-      "name": "Elevation",
+      "$comment": "This type of intensity-based hill shading can be overlaid on top of imagery or vector maps",
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Elevation"
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.type"
+              },
+              "coverage"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
       "nestedRules": [
         {
           "selector": {
@@ -69,33 +95,7 @@
             }
           }
         }
-      ],
-      "selector": {
-        "op": "and",
-        "args": [
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.id"
-              },
-              "Elevation"
-            ]
-          },
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.type"
-              },
-              "coverage"
-            ]
-          }
-        ]
-      },
-      "symbolizer": {
-        "visibility": false
-      }
+      ]
     }
   ]
 }

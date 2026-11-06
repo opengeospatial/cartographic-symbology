@@ -5,95 +5,6 @@
   },
   "stylingRules": [
     {
-      "name": "Roads",
-      "nestedRules": [
-        {
-          "nestedRules": [
-            {
-              "selector": {
-                "op": "<",
-                "args": [
-                  {
-                    "sysId": "viz.sd"
-                  },
-                  10000
-                ]
-              },
-              "symbolizer": {
-                "stroke": {
-                  "width": {
-                    "m": 8.0
-                  }
-                },
-                "marker": {
-                  "elements": [
-                    {
-                      "type": "Dot",
-                      "size": {
-                        "m": 10
-                      },
-                      "color": "white"
-                    }
-                  ]
-                }
-              }
-            }
-          ],
-          "selector": {
-            "op": "and",
-            "args": [
-              {
-                "op": "<",
-                "args": [
-                  {
-                    "sysId": "viz.sd"
-                  },
-                  200000
-                ]
-              },
-              {
-                "op": "and",
-                "args": [
-                  {
-                    "op": ">=",
-                    "args": [
-                      {
-                        "property": "validDate"
-                      },
-                      {
-                        "sysId": "viz.timeInterval.start.date"
-                      }
-                    ]
-                  },
-                  {
-                    "op": "<=",
-                    "args": [
-                      {
-                        "property": "validDate"
-                      },
-                      {
-                        "sysId": "viz.timeInterval.end.date"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          "symbolizer": {
-            "visibility": true,
-            "opacity": 0.8,
-            "zOrder": 2,
-            "stroke": {
-              "color": "gray",
-              "opacity": 1.0,
-              "width": {
-                "px": 5.0
-              }
-            }
-          }
-        }
-      ],
       "selector": {
         "op": "and",
         "args": [
@@ -133,7 +44,98 @@
       },
       "symbolizer": {
         "visibility": false
-      }
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "<",
+                    "args": [
+                      {
+                        "sysId": "viz.sd"
+                      },
+                      200000
+                    ]
+                  },
+                  {
+                    "op": ">=",
+                    "args": [
+                      {
+                        "property": "validDate"
+                      },
+                      {
+                        "sysId": "viz.timeInterval.start.date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "<=",
+                "args": [
+                  {
+                    "property": "validDate"
+                  },
+                  {
+                    "sysId": "viz.timeInterval.end.date"
+                  }
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.8,
+            "zOrder": 2,
+            "stroke": {
+              "color": "gray",
+              "opacity": 1.0,
+              "width": {
+                "px": 5.0
+              }
+            }
+          },
+          "nestedRules": [
+            {
+              "$comment": "If zoomed in more than 1:10,000",
+              "selector": {
+                "op": "<",
+                "args": [
+                  {
+                    "sysId": "viz.sd"
+                  },
+                  10000
+                ]
+              },
+              "symbolizer": {
+                "$comment": "Change stroke width to 8 meters\nAdd Dot at each segment end-point",
+                "stroke": {
+                  "alter": true,
+                  "width": {
+                    "m": 8.0
+                  }
+                },
+                "marker": {
+                  "elements": [
+                    {
+                      "type": "Dot",
+                      "size": {
+                        "m": 10
+                      },
+                      "color": "white"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

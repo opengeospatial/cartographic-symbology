@@ -5,39 +5,34 @@
   },
   "stylingRules": [
     {
-      "name": "\"sentinel2-l2a\"",
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "sentinel2-l2a"
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.type"
+              },
+              "coverage"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
       "nestedRules": [
         {
-          "nestedRules": [
-            {
-              "selector": {
-                "op": "=",
-                "args": [
-                  {
-                    "property": "SCL"
-                  },
-                  8
-                ]
-              },
-              "symbolizer": {
-                "alphaChannel": 0.5
-              }
-            },
-            {
-              "selector": {
-                "op": "=",
-                "args": [
-                  {
-                    "property": "SCL"
-                  },
-                  9
-                ]
-              },
-              "symbolizer": {
-                "alphaChannel": 0.0
-              }
-            }
-          ],
           "selector": {
             "op": "<",
             "args": [
@@ -109,35 +104,39 @@
                 "lime"
               ]
             ]
-          }
-        }
-      ],
-      "selector": {
-        "op": "and",
-        "args": [
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.id"
-              },
-              "\"sentinel2-l2a\""
-            ]
           },
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.type"
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "SCL"
+                  },
+                  8
+                ]
               },
-              "coverage"
-            ]
-          }
-        ]
-      },
-      "symbolizer": {
-        "visibility": false
-      }
+              "symbolizer": {
+                "alphaChannel": 0.5
+              }
+            },
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "SCL"
+                  },
+                  9
+                ]
+              },
+              "symbolizer": {
+                "alphaChannel": 0.0
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -5,9 +5,60 @@
   },
   "stylingRules": [
     {
-      "name": "\"sentinel2-l2a\"",
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "sentinel2-l2a"
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.type"
+              },
+              "coverage"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
       "nestedRules": [
         {
+          "selector": {
+            "op": "<",
+            "args": [
+              {
+                "sysId": "viz.sd"
+              },
+              200000
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.8,
+            "zOrder": 1,
+            "colorChannels": [
+              {
+                "property": "B04"
+              },
+              {
+                "property": "B03"
+              },
+              {
+                "property": "B02"
+              }
+            ],
+            "alphaChannel": 1.0
+          },
           "nestedRules": [
             {
               "selector": {
@@ -37,61 +88,9 @@
                 "alphaChannel": 0.0
               }
             }
-          ],
-          "selector": {
-            "op": "<",
-            "args": [
-              {
-                "sysId": "viz.sd"
-              },
-              200000
-            ]
-          },
-          "symbolizer": {
-            "visibility": true,
-            "opacity": 0.8,
-            "zOrder": 1,
-            "colorChannels": [
-              {
-                "property": "B04"
-              },
-              {
-                "property": "B03"
-              },
-              {
-                "property": "B02"
-              }
-            ],
-            "alphaChannel": 1.0
-          }
+          ]
         }
-      ],
-      "selector": {
-        "op": "and",
-        "args": [
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.id"
-              },
-              "\"sentinel2-l2a\""
-            ]
-          },
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.type"
-              },
-              "coverage"
-            ]
-          }
-        ]
-      },
-      "symbolizer": {
-        "visibility": false
-      }
+      ]
     }
   ]
 }

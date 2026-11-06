@@ -84,7 +84,7 @@ ne_10m_populated_places
          Dot { color: white, size: 10 },
          Dot { color: darkOrange, size: 6 },
          Text { text: NAME,
-                position2D : { 10, -4 },
+                position: 10 -4,
                 font: { face: 'Tahoma',
                         size: 12,
                         outline: { color: white,
