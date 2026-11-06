@@ -192,16 +192,32 @@
          }
        ]
     },
-    "marker": { "$ref": "#/$defs/multiGraphic" },
-    "label": {
-       "allOf": [
+    "marker": {
+       "anyOf": [
+          { "type": "null" },
           { "$ref": "#/$defs/multiGraphic" },
           {
-             "type": "object",
-             "properties":
-             {
-                "placement": { "$ref": "#/$defs/labelPlacement" }
-             }
+             "allOf": [
+                { "$ref": "#/$defs/abstractGraphic" },
+                { "not": { "required": [ "elements" ] } }
+             ]
+          }
+       ]
+    },
+    "label": {
+       "anyOf": [
+          { "type": "null" },
+          {
+             "allOf": [
+                { "$ref": "#/$defs/marker" },
+                {
+                   "type": "object",
+                   "properties":
+                   {
+                      "placement": { "$ref": "#/$defs/labelPlacement" }
+                   }
+                }
+             ]
           }
        ]
     },
@@ -224,7 +240,7 @@
        ]
     },
     "graphicArray": {
-       "oneOf": [
+       "anyOf": [
          { "$ref": "#/$defs/arrayExpression" },
          {
             "type": "array",

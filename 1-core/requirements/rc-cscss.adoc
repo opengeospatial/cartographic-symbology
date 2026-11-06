@@ -54,6 +54,7 @@ part:: A Renderer SHALL support combining multiple expression selectors of a rul
 [%metadata]
 identifier:: /req/cscss/expressions
 part:: An Encoding SHALL encode expressions using CQL2-Text, extended with instance expressions, tuples, units of measure, conditional expressions and enumeration values as specified in this requirements class.
+part:: An Encoding supporting the <<rc-text-relation,Text Relation Operators>> requirements class SHALL encode the `contains`, `startsWith` and `endsWith` operations as function calls (e.g., `contains(name, 'Oslo')`).
 part:: A Renderer SHALL support evaluating CQL2-Text expressions (including WKT geometry) used directly as a selector or symbolizer parameter value.
 ====
 
@@ -66,7 +67,10 @@ part:: A Renderer SHALL support evaluating CQL2-Text expressions (including WKT 
 identifier:: /req/cscss/include
 part:: An Encoding SHALL support including another style sheet using the `.include` directive followed by a relative path enclosed within single quotes.
 part:: A Renderer SHALL support replacing an `.include` directive by the content of the referenced style sheet, recursively, before interpreting the style.
+part:: A Renderer SHALL support including style sheets encoded as CartoSym-CSS.
 ====
+
+NOTE: A style that includes a style sheet in another encoding is not guaranteed to work with all implementations.
 
 [[req-cscss-comments]]
 ===== Comments

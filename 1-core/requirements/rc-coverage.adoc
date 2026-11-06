@@ -78,16 +78,3 @@ part:: A Renderer SHOULD interpolate the colors of a `colorMap` and the opacitie
 NOTE: The interpolation method is not specified: linear interpolation, or a smoother one, can be used. Linear interpolation, easing between the two closest entries and monotone cubic interpolation all keep the result between those entries, while a parabola fitted through three neighbouring entries can overshoot them. When all values of a coverage are equal to entries of the map (e.g., integer class codes), the cells take exactly the colors or opacities of those entries.
 
 NOTE: A `colorMap` does not define stepped classes for continuous values (e.g., one color for all values from 0 to 10). Such classes can be written with chained conditional expressions using relational operators, e.g. `colorChannels: B04 < 10 ? green : (B04 < 20 ? yellow : red)`.
-
-[[req-coverage-gamma]]
-===== Symbolizer `gamma` property
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/coverage/gamma
-part:: An Encoding SHOULD support defining a `gamma` Symbolizer property as a float.
-part:: A Renderer SHOULD support applying a gamma correction to the portrayed color values, using the value of the `gamma` property as the exponent applied to normalized (0 to 1) color components.
-====
-
-// TODO(review): `gamma` is not in the coverage UML, tables or JSON schema; keep it or remove it as for vector (see #86). If kept, note that the exponent as written darkens for values above 1, while SE `GammaValue` brightens for values above 1.

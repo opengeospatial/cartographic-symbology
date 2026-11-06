@@ -45,6 +45,8 @@ part:: An Encoding SHALL support defining a call to the `a_equals` standard func
 part:: A Renderer SHALL support evaluating `a_equals(a, b)` to true if and only if arrays `a` and `b` have the same number of elements and each element of `a` is equal to the element of `b` at the same position.
 ====
 
+// TODO(review): this compares in order, as libCartoSym does, while CQL2 Requirement 16 B evaluates arrays as sets. Jérôme prefers ordered arrays but also wants to keep the meaning of CQL2 expressions, so which one CartoSym follows is not settled (see #154).
+
 [[req-array-relations-a-overlaps]]
 ===== Array `a_overlaps` function
 

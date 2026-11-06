@@ -175,6 +175,8 @@ part:: An Encoding SHALL support defining an optional `selector` for a StylingRu
 part:: A Renderer SHALL support applying the Symbolizer of a StylingRule to a feature or coverage cell only if the rule has no `selector` or if its `selector` evaluates to true for that feature or coverage cell.
 ====
 
+NOTE: A `selector` evaluating to null does not evaluate to true, so it does not select the feature or coverage cell, the same as a `selector` evaluating to false.
+
 [[req-core-nested]]
 ===== StylingRule `nestedRules` property
 
@@ -907,7 +909,10 @@ identifier:: /req/core/operations
 part:: An Encoding SHALL support defining operation expressions consisting of operands and an operator for unary, binary and ternary operators.
 part:: An Encoding SHALL support defining the priority of expressions using multiple operators (e.g., using parentheses: `(` `)`).
 part:: A Renderer SHALL support evaluating operation expressions while respecting the priority of operations.
+part:: A Renderer SHALL support evaluating operation expressions with a null operand as specified by CQL2.
 ====
+
+// TODO(review): what a Symbolizer property does when its expression evaluates to null is not settled. Jérôme suggested that it is set to `null`, which is not the same as the default and empties graphical elements (see #155).
 
 [[req-core-logical]]
 [requirement]
@@ -1070,8 +1075,6 @@ part:: A Renderer SHALL support using the default values defined in this section
 ====
 
 NOTE: The default Marker applies to features of every geometry type, so that every feature is visible by default. A style that sets no marker therefore draws a Dot at each point, at each vertex of a line and at the centroid of each polygon. A typical base style unsets the marker for lines and polygons, unless it wants this default behavior, for example with `[dataLayer.featuresGeometryDimensions > 0] { marker: null; }` in CSCSS. An empty list of elements (`marker: { elements: [] }`) also unsets it, while an empty `marker: { }` still yields the default Dot.
-
-// TODO(review): the JSON schema rejects `marker: null`, `marker: { elements: [] }` and `marker: { }` (see #143).
 
 === Vendor Extensions
 

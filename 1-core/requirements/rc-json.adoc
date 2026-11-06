@@ -86,4 +86,7 @@ part:: An Encoding supporting the <<rc-variables,Variables>> requirements class 
 identifier:: /req/json/include
 part:: An Encoding SHALL support including base style sheets using an `$include` property in the top-level object, specified as either a single relative file path string or an array of relative file path strings.
 part:: A Renderer SHALL support considering the styling rules of included style sheets before the styling rules defined by the including file.
+part:: A Renderer SHALL support including style sheets encoded as CartoSym-JSON.
 ====
+
+NOTE: A style that includes a style sheet in another encoding is not guaranteed to work with all implementations.
