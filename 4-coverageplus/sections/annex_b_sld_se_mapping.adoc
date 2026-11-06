@@ -31,60 +31,66 @@ This requirements class is not supported by SLD/SE.
 ====
 [source,sld]
 ----
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<StyledLayerDescriptor version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se="http://www.opengis.net/se">
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Elevation</Name>
+      <se:Name>Elevation</se:Name>
       <UserStyle>
-         <Name>DEM with Contrast Enhancement</Name>
-         <Abstract>DEM with Contrast Enhancement</Abstract>
-         <CoverageStyle>
-            <Rule>
-               <Name>DEM with Contrast Enhancement</Name>
-               <Title>DEM with Contrast Enhancement</Title>
-               <MaxScaleDenominator>200000</MaxScaleDenominator>
-               <RasterSymbolizer>
-                  <Opacity>1.0</Opacity>
-                  <ChannelSelection>
-                     <RedChannel>
-                        <SourceChannelName>1</SourceChannelName>
-                        <ContrastEnhancement>
-                           <Histogram/>
-                        </ContrastEnhancement>
-                     </RedChannel>
-                     <GreenChannel>
-                        <SourceChannelName>2</SourceChannelName>
-                        <ContrastEnhancement>
-                           <GammaValue>2.5</GammaValue>
-                        </ContrastEnhancement>
-                     </GreenChannel>
-                     <BlueChannel>
-                        <SourceChannelName>3</SourceChannelName>
-                        <ContrastEnhancement>
-                           <Normalize/>
-                        </ContrastEnhancement>
-                     </BlueChannel>
-                  </ChannelSelection>
-                  <OverlapBehavior>LATEST_ON_TOP</OverlapBehavior>
-                  <ColorMap>
-                     <Interpolate>
-                        <LookupValue>Rasterdata</LookupValue>
-                        <InterpolationPoint>
-                           <Data>0</Data>
-                           <Value>#000000</Value>
-                        </InterpolationPoint>
-                        <InterpolationPoint>
-                           <Data>255</Data>
-                           <Value>#ffffff</Value>
-                        </InterpolationPoint>
-                     </Interpolate>
-                  </ColorMap>
-                  <ContrastEnhancement>
-                     <GammaValue>1.0</GammaValue>
-                  </ContrastEnhancement>
-               </RasterSymbolizer>
-            </Rule>
-         </CoverageStyle>
+         <se:Name>DEM with Contrast Enhancement</se:Name>
+         <se:Description>
+            <se:Abstract>DEM with Contrast Enhancement</se:Abstract>
+         </se:Description>
+         <se:CoverageStyle>
+            <se:Rule>
+               <se:Name>DEM with Contrast Enhancement</se:Name>
+               <se:Description>
+                  <se:Title>DEM with Contrast Enhancement</se:Title>
+               </se:Description>
+               <se:MaxScaleDenominator>200000</se:MaxScaleDenominator>
+               <se:RasterSymbolizer>
+                  <se:Opacity>1.0</se:Opacity>
+                  <se:ChannelSelection>
+                     <se:RedChannel>
+                        <se:SourceChannelName>1</se:SourceChannelName>
+                        <se:ContrastEnhancement>
+                           <se:Histogram/>
+                        </se:ContrastEnhancement>
+                     </se:RedChannel>
+                     <se:GreenChannel>
+                        <se:SourceChannelName>2</se:SourceChannelName>
+                        <se:ContrastEnhancement>
+                           <se:GammaValue>2.5</se:GammaValue>
+                        </se:ContrastEnhancement>
+                     </se:GreenChannel>
+                     <se:BlueChannel>
+                        <se:SourceChannelName>3</se:SourceChannelName>
+                        <se:ContrastEnhancement>
+                           <se:Normalize/>
+                        </se:ContrastEnhancement>
+                     </se:BlueChannel>
+                  </se:ChannelSelection>
+                  <se:OverlapBehavior>LATEST_ON_TOP</se:OverlapBehavior>
+                  <se:ColorMap>
+                     <se:Interpolate fallbackValue="#000000">
+                        <se:LookupValue>Rasterdata</se:LookupValue>
+                        <se:InterpolationPoint>
+                           <se:Data>0</se:Data>
+                           <se:Value>#000000</se:Value>
+                        </se:InterpolationPoint>
+                        <se:InterpolationPoint>
+                           <se:Data>255</se:Data>
+                           <se:Value>#ffffff</se:Value>
+                        </se:InterpolationPoint>
+                     </se:Interpolate>
+                  </se:ColorMap>
+                  <se:ContrastEnhancement>
+                     <se:GammaValue>1.0</se:GammaValue>
+                  </se:ContrastEnhancement>
+               </se:RasterSymbolizer>
+            </se:Rule>
+         </se:CoverageStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -119,31 +125,35 @@ This requirements class is not supported by SLD/SE.
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Bitwise Operators</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Bitwise Operators</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">
                         <ogc:Function name="bitAnd">
                            <ogc:PropertyName>landuse</ogc:PropertyName>
                            <ogc:Literal>parking</ogc:Literal>
                         </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                     </se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -164,21 +174,25 @@ This requirements class is not supported by SLD/SE.
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Recoding Function</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                    <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Recoding Function</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                    <se:SvgParameter name="fill">
                       <ogc:Function name="Recode">
                         <!-- Value to transform -->
                         <ogc:Function name="strTrim">
@@ -204,11 +218,11 @@ This requirements class is not supported by SLD/SE.
                         <ogc:Literal>Pacific</ogc:Literal>
                         <ogc:Literal>#87CEEB</ogc:Literal>
                       </ogc:Function>
-                    </CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                    </se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>

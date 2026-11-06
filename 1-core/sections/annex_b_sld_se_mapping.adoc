@@ -313,35 +313,48 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 ====
 [source,sld]
 ----
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<StyledLayerDescriptor version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se="http://www.opengis.net/se">
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Elevation</Name>
+      <se:Name>Elevation</se:Name>
       <UserStyle>
-         <Name>DEM with color map</Name>
-         <Abstract>Applying a color map to a Digital Elevation Model with Style &amp; Symbology Basic Coverage Styling</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>DEM with color map</Name>
-               <Title>DEM with color map</Title>
-               <MaxScaleDenominator>200000</MaxScaleDenominator>
-               <sld:RasterSymbolizer>
-                  <sld:Opacity>0.8</sld:Opacity>
-                  <sld:ChannelSelection>
-                     <sld:GrayChannel>
-                        <sld:SourceChannelName>elevation</sld:SourceChannelName>
-                     </sld:GrayChannel>
-                  </sld:ChannelSelection>
-                  <sld:ColorMap>
-                     <sld:ColorMapEntry color="#608849" quantity="0" label="0"/>
-                     <sld:ColorMapEntry color="#E2DBA7" quantity="900" label="900"/>
-                     <sld:ColorMapEntry color="#FCC575" quantity="1300" label="1300"/>
-                     <sld:ColorMapEntry color="#FCA886" quantity="1900" label="1900"/>
-                     <sld:ColorMapEntry color="#FAFAFA" quantity="2500" label="2500"/>
-                  </sld:ColorMap>
-               </sld:RasterSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+         <se:Name>DEM with color map</se:Name>
+         <se:Description>
+            <se:Abstract>Applying a color map to a Digital Elevation Model with Style &amp; Symbology Basic Coverage Styling</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>DEM with color map</se:Name>
+               <se:Description>
+                  <se:Title>DEM with color map</se:Title>
+               </se:Description>
+               <se:MaxScaleDenominator>200000</se:MaxScaleDenominator>
+               <se:RasterSymbolizer>
+                  <se:Opacity>0.8</se:Opacity>
+                  <se:ChannelSelection>
+                     <se:GrayChannel>
+                        <se:SourceChannelName>elevation</se:SourceChannelName>
+                     </se:GrayChannel>
+                  </se:ChannelSelection>
+                  <se:ColorMap>
+                     <se:Categorize fallbackValue="#FFFFFF">
+                        <se:LookupValue>Rasterdata</se:LookupValue>
+                        <se:Value>#608849</se:Value>
+                        <se:Threshold>900</se:Threshold>
+                        <se:Value>#E2DBA7</se:Value>
+                        <se:Threshold>1300</se:Threshold>
+                        <se:Value>#FCC575</se:Value>
+                        <se:Threshold>1900</se:Threshold>
+                        <se:Value>#FCA886</se:Value>
+                        <se:Threshold>2500</se:Threshold>
+                        <se:Value>#FAFAFA</se:Value>
+                     </se:Categorize>
+                  </se:ColorMap>
+               </se:RasterSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -366,46 +379,52 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 ====
 [source,sld]
 ----
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<StyledLayerDescriptor version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se="http://www.opengis.net/se">
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Basic Labeling</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <TextSymbolizer>
-                <Label>
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Basic Labeling</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:TextSymbolizer>
+                <se:Label>
                   <ogc:PropertyName>name</ogc:PropertyName>
-                </Label>
-                <Font>
-                  <CssParameter name="font-family">Arial</CssParameter>
-                  <CssParameter name="font-size">12</CssParameter>
-                  <CssParameter name="font-style">normal</CssParameter>
-                  <CssParameter name="font-weight">bold</CssParameter>
-                </Font>
-                <LabelPlacement>
-                  <PointPlacement>
-                    <AnchorPoint>
-                      <AnchorPointX>0.5</AnchorPointX>
-                      <AnchorPointY>0.0</AnchorPointY>
-                    </AnchorPoint>
-                    <Displacement>
-                      <DisplacementX>0</DisplacementX>
-                      <DisplacementY>25</DisplacementY>
-                    </Displacement>
-                    <Rotation>-45</Rotation>
-                  </PointPlacement>
-                </LabelPlacement>
-                <Fill>
-                  <CssParameter name="fill">#990099</CssParameter>
-                </Fill>
-               </TextSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                </se:Label>
+                <se:Font>
+                  <se:SvgParameter name="font-family">Arial</se:SvgParameter>
+                  <se:SvgParameter name="font-size">12</se:SvgParameter>
+                  <se:SvgParameter name="font-style">normal</se:SvgParameter>
+                  <se:SvgParameter name="font-weight">bold</se:SvgParameter>
+                </se:Font>
+                <se:LabelPlacement>
+                  <se:PointPlacement>
+                    <se:AnchorPoint>
+                      <se:AnchorPointX>0.5</se:AnchorPointX>
+                      <se:AnchorPointY>0.0</se:AnchorPointY>
+                    </se:AnchorPoint>
+                    <se:Displacement>
+                      <se:DisplacementX>0</se:DisplacementX>
+                      <se:DisplacementY>25</se:DisplacementY>
+                    </se:Displacement>
+                    <se:Rotation>-45</se:Rotation>
+                  </se:PointPlacement>
+                </se:LabelPlacement>
+                <se:Fill>
+                  <se:SvgParameter name="fill">#990099</se:SvgParameter>
+                </se:Fill>
+               </se:TextSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -427,28 +446,32 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Dashes</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <LineSymbolizer>
-                  <Stroke>
-                     <CssParameter name="stroke">#000000</CssParameter>
-                     <CssParameter name="stroke-width">1</CssParameter>
-                     <CssParameter name="stroke-dasharray">5 2 1 2</CssParameter>
-                     <CssParameter name="stroke-dashoffset">2</CssParameter>
-                  </Stroke>
-               </LineSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Dashes</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:LineSymbolizer>
+                  <se:Stroke>
+                     <se:SvgParameter name="stroke">#000000</se:SvgParameter>
+                     <se:SvgParameter name="stroke-width">1</se:SvgParameter>
+                     <se:SvgParameter name="stroke-dasharray">5 2 1 2</se:SvgParameter>
+                     <se:SvgParameter name="stroke-dashoffset">2</se:SvgParameter>
+                  </se:Stroke>
+               </se:LineSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -639,21 +662,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Conditional Expressions</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Conditional Expressions</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">
                         <ogc:Function name="if_then_else">
                            <ogc:Function name="PropertyIsEqualTo">
                               <ogc:PropertyName>landuse</ogc:PropertyName>
@@ -662,12 +689,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
                            <ogc:Literal>#FF0000</ogc:Literal>
                            <ogc:Literal>#00FF00</ogc:Literal>
                         </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                     </se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -704,31 +731,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Arithmetic Operators</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Arithmetic Operators</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">
                         <ogc:Function name="add">
                            <ogc:PropertyName>landuse</ogc:PropertyName>
                            <ogc:Literal>parking</ogc:Literal>
                         </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                     </se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -765,31 +796,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Text Relation Operators</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Text Relation Operators</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">
                         <ogc:Function name="like">
                            <ogc:PropertyName>landuse</ogc:PropertyName>
                            <ogc:Literal>parking</ogc:Literal>
                         </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                     </se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -812,30 +847,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Function Expressions</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Function Expressions</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">
                         <ogc:Function name="uri">
                            <ogc:Literal>http://www.opengis.net/ogc</ogc:Literal>
                         </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                     </se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -879,30 +918,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Math Functions</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Math Functions</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">
                         <ogc:Function name="round">
                            <ogc:PropertyName>surface</ogc:PropertyName>
                         </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                     </se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -927,31 +970,35 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Array Relation Functions</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Array Relation Functions</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">
                         <ogc:Function name="a_containedBy">
                            <ogc:PropertyName>landuse</ogc:PropertyName>
                            <ogc:Literal>parking</ogc:Literal>
                         </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                     </se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -979,27 +1026,31 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Text Manipulation Functions</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <TextSymbolizer>
-                  <Label>
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Text Manipulation Functions</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:TextSymbolizer>
+                  <se:Label>
                      <ogc:Function name="strCapitalize">
                         <ogc:PropertyName>landuse</ogc:PropertyName>
                      </ogc:Function>
-                  </Label>
-               </TextSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                  </se:Label>
+               </se:TextSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
