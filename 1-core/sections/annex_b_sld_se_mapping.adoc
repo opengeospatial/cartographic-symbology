@@ -295,10 +295,10 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 | AlphaChannel                 | N/A
 | SingleChannel                | `<ChannelSelection>` with `<GrayChannel>` for RasterSymbolizer
 | ColorMap                     | `<ColorMap>`
-| OpacityMap                   | N/A
+| OpacityMap                   | `<ColorMap>` with `<ColorMapEntry>` elements carrying an `opacity` attribute for SLD 1.0.0; N/A for SE 1.1.0 (`<ColorMap>` only holds `<Categorize>` or `<Interpolate>`, with no per-entry opacity)
 | Color                        | `<Value>` inside `<ColorMap>`
 | ValueColor                   | `<Value>` and `<Threshold>` inside `<Categorize>` inside `<ColorMap>` for SE 1.1.0, `<ColorMapEntry>` for SLD 1.0.0
-| ValueOpacity                 | `<ColorMapEntry>`
+| ValueOpacity                 | `<ColorMapEntry>` (`quantity`, `opacity` and `label` attributes) for SLD 1.0.0; N/A for SE 1.1.0
 
 |*Hill Shading*                |
 | AzimuthElevation             | N/A
