@@ -1,7 +1,7 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Conditional Expressions
 
-[[rc_table-conditional]]
+[[rc-table-conditional]]
 
 [requirements_class]
 .Conditional Expressions
@@ -13,34 +13,34 @@ subject:: Style encodings and Renderers
 ====
 
 [[req-conditional-condition]]
-===== Conditional `condition` operator
+===== Conditional `condition` property
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/conditional/condition
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support defining a ConditionalExpression with a `condition` property as an Expression evaluating to a boolean value.
+part:: A Renderer SHALL support evaluating the `condition` of a ConditionalExpression to select whether the ConditionalExpression resolves to its `thenExp` or its `elseExp` expression.
 ====
 
-[[req-conditional-thenExp]]
-===== Conditional `thenExp` operator
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/conditional/thenExp
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
-====
-
-[[req-conditional-elseExp]]
-===== Conditional `elseExp` operator
+[[req-conditional-then-exp]]
+===== Conditional `thenExp` property
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/conditional/elseExp
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/conditional/then-exp
+part:: An Encoding SHALL support defining a ConditionalExpression with a `thenExp` property as an Expression.
+part:: A Renderer SHALL support resolving a ConditionalExpression to the value of its `thenExp` expression when its `condition` evaluates to true.
+====
+
+[[req-conditional-else-exp]]
+===== Conditional `elseExp` property
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/conditional/else-exp
+part:: An Encoding SHALL support defining a ConditionalExpression with an `elseExp` property as an Expression.
+part:: A Renderer SHALL support resolving a ConditionalExpression to the value of its `elseExp` expression when its `condition` does not evaluate to true.
 ====

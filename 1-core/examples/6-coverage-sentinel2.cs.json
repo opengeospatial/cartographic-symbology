@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "sentinel-2 natural color",
-    "abstract": "Styling a Sentinel-2A coverage with Style & Symbology Basic Coverage Styling"
+    "abstract": "Styling a Sentinel-2 L2A coverage with Style & Symbology Basic Coverage Styling"
   },
   "stylingRules": [
     {
@@ -46,17 +46,36 @@
             "visibility": true,
             "opacity": 0.8,
             "zOrder": 1,
-            "colorChannels": [
-              {
-                "property": "B04"
+            "colorChannels": {
+              "alter": true,
+              "r": {
+                "op": "/",
+                "args": [
+                  {
+                    "property": "B04"
+                  },
+                  2500
+                ]
               },
-              {
-                "property": "B03"
+              "g": {
+                "op": "/",
+                "args": [
+                  {
+                    "property": "B03"
+                  },
+                  2500
+                ]
               },
-              {
-                "property": "B02"
+              "b": {
+                "op": "/",
+                "args": [
+                  {
+                    "property": "B02"
+                  },
+                  2500
+                ]
               }
-            ],
+            },
             "alphaChannel": 1.0
           },
           "nestedRules": [

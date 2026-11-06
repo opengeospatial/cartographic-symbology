@@ -1,5 +1,5 @@
 .title 'sentinel-2 NDVI'
-.abstract 'Styling a Sentinel-2A coverage for NDVI with Style & Symbology Basic Coverage Styling'
+.abstract 'Styling a Sentinel-2 L2A coverage for NDVI with Style & Symbology Basic Coverage Styling'
 
 "sentinel2-l2a"[dataLayer.type = coverage]
 {

@@ -1,11 +1,10 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
 ==== Functions
 
-[[rc_table-functions]]
+[[rc-table-functions]]
 
 [requirements_class]
 .Functions
-
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/functions
@@ -19,9 +18,10 @@ subject:: Style encodings and Renderers
 [requirement]
 ====
 [%metadata]
-identifier:: /req/functions/functions-call-expressions
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+identifier:: /req/functions/call-expressions
+part:: An Encoding SHALL support defining a FunctionCallExpression identifying the Function to call and an ordered list of zero or more argument Expressions.
+part:: A Renderer SHALL support evaluating a FunctionCallExpression by evaluating its arguments and resolving the expression to the value returned by the Function, of the Function's return type.
+part:: A Renderer SHALL treat a FunctionCallExpression whose arguments do not match the parameters of the Function, in number or type, as invalid.
 ====
 
 [[req-functions-standard-functions]]
@@ -31,6 +31,6 @@ part:: A Renderer SHALL support ...
 ====
 [%metadata]
 identifier:: /req/functions/standard-functions
-part:: An Encoding SHALL support ...
-part:: A Renderer SHALL support ...
+part:: An Encoding SHALL support identifying standard functions by their name, with the name mapping to the URI of the standard function.
+part:: A Renderer SHALL support standard functions as specified by the requirements class defining them, with the parameters, return type and behavior defined there.
 ====

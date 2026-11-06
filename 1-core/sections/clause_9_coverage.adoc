@@ -105,7 +105,7 @@ and applies wherever this basic RGB Color class is used.
 
 include::../requirements/rc-coverage.adoc[]
 
-[[rc-hillshading]]
+[[rc-hill-shading]]
 === Requirements Class "Hill Shading"
 ==== Overview
 
@@ -148,7 +148,7 @@ It depends on the _Basic Coverage Styling_ requirements class.
 [width="90%",options="header"]
 |===
 | Name                          	| Definition	                                       | Data type and value   |Multiplicity
-| factor                         | Factor controlling the intensity of the shading     | float                 | 0..1
+| factor                         | Exaggeration of the terrain relief                  | float                 | 0..1
 | sun                            | Orientation of the sun                              | AzimuthElevation      | 0..1
 | colorMap                       | Color map to be applied based on calculated shade   | ValueColor            | 0..*
 | opacityMap                     | Opacity map to be applied based on calculated shade | ValueOpacity          | 0..*

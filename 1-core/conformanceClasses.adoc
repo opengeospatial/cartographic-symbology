@@ -51,12 +51,13 @@ Initial take at organizing https://github.com/opengeospatial/styles-and-symbolog
 
 === Conformance classes for additional Vector Graphics Capabilities
 
-==== Dashes, Stipples, Hatches and Gradients
+==== Dashes, Stipples and Hatches
 
 * Dash pattern Strokes
 * Hatch fills
 * Stipple fills
-* Gradient fills
+
+Gradient fills are defined in Part 2 (see #86).
 
 ==== Joins and Caps
 

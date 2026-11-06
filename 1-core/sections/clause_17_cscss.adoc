@@ -227,6 +227,7 @@ As an extension to CQL2-Text, this encoding adds support for conditional express
 
 <if-expression> '`?`' <then-expression> '`:`' <else-expression>
 
+[[cscss-enumeration-values]]
 ===== Enumeration values
 
 As an extension to CQL2-Text, this encoding supports the concept of enumeration values, which do not need to be enclosed in single quotes.

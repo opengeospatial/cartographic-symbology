@@ -1,5 +1,5 @@
 
-[[rc_table-coverage]]
+[[rc-table-coverage]]
 
 [requirements_class]
 .Basic Coverage Styling
@@ -11,7 +11,6 @@ subject:: Style encodings and Renderers
 ====
 
 [[req-coverage-color-channels]]
-
 ===== Symbolizer `colorChannels` property
 
 [requirement]
@@ -19,9 +18,12 @@ subject:: Style encodings and Renderers
 [%metadata]
 identifier:: /req/coverage/color-channels
 part:: An Encoding SHALL support defining a `colorChannels` Symbolizer property as a Color object.
-part:: A Renderer SHALL support ...
+part:: A Renderer SHALL support portraying each coverage cell with the red, green and blue components resolved from the `colorChannels` property for that cell, each in the range 0 to 1.
 ====
 
+NOTE: Band values in another range are scaled in the style, as in example 6, which divides Sentinel-2 digital numbers by 2500.
+
+[[req-coverage-alpha-channel]]
 ===== Symbolizer `alphaChannel` property
 
 [requirement]
@@ -29,9 +31,10 @@ part:: A Renderer SHALL support ...
 [%metadata]
 identifier:: /req/coverage/alpha-channel
 part:: An Encoding SHALL support defining a `alphaChannel` Symbolizer property as a float.
-part:: A Renderer SHALL support ...
+part:: A Renderer SHALL support portraying each coverage cell with the opacity resolved from the `alphaChannel` property for that cell, where 0 is fully transparent and 1 is fully opaque.
 ====
 
+[[req-coverage-single-channel]]
 ===== Symbolizer `singleChannel` property
 
 [requirement]
@@ -39,9 +42,10 @@ part:: A Renderer SHALL support ...
 [%metadata]
 identifier:: /req/coverage/single-channel
 part:: An Encoding SHALL support defining a `singleChannel` Symbolizer property as a float.
-part:: A Renderer SHALL support ...
+part:: A Renderer SHALL support using the value resolved from the `singleChannel` property for each coverage cell as the input value to the `colorMap` and `opacityMap` properties.
 ====
 
+[[req-coverage-color-map]]
 ===== Symbolizer `colorMap` property
 
 [requirement]
@@ -49,9 +53,10 @@ part:: A Renderer SHALL support ...
 [%metadata]
 identifier:: /req/coverage/color-map
 part:: An Encoding SHALL support defining a `colorMap` Symbolizer property as an array of `value` (float) and `color` (Color) pairs which can be tagged with a `name`.
-part:: A Renderer SHALL support ...
+part:: A Renderer SHALL support portraying each coverage cell with the color mapped from its `singleChannel` value by the `colorMap`, using the color of an entry for a value equal to that entry's `value`, interpolating between the colors of the two closest entries for other values within the range of the map, and using the color of the first or last entry for values outside the range of the map.
 ====
 
+[[req-coverage-opacity-map]]
 ===== Symbolizer `opacityMap` property
 
 [requirement]
@@ -59,51 +64,17 @@ part:: A Renderer SHALL support ...
 [%metadata]
 identifier:: /req/coverage/opacity-map
 part:: An Encoding SHALL support defining a `opacityMap` Symbolizer property as an array of `value` (float) and `opacity` (float) pairs which can be tagged with a `name`.
-part:: A Renderer SHALL support ...
+part:: A Renderer SHALL support portraying each coverage cell with the opacity mapped from its `singleChannel` value by the `opacityMap`, using the opacity of an entry for a value equal to that entry's `value`, interpolating between the opacities of the two closest entries for other values within the range of the map, and using the opacity of the first or last entry for values outside the range of the map.
 ====
 
-[[req-coverage-gamma]]
-===== Symbolizer `gamma` property
-
-[requirement]
+[[rec-coverage-map-interpolation]]
+[recommendation]
 ====
 [%metadata]
-identifier:: /req/coverage/gamma
-part:: An Encoding SHOULD support defining a `gamma` Symbolizer property as a float.
-part:: A Renderer SHOULD support ...
+identifier:: /rec/coverage/map-interpolation
+part:: A Renderer SHOULD interpolate the colors of a `colorMap` and the opacities of an `opacityMap` so that the result lies between those of the two closest entries.
 ====
 
-[[req-coverage-contrast]]
+NOTE: The interpolation method is not specified: linear interpolation, or a smoother one, can be used. Linear interpolation, easing between the two closest entries and monotone cubic interpolation all keep the result between those entries, while a parabola fitted through three neighbouring entries can overshoot them. When all values of a coverage are equal to entries of the map (e.g., integer class codes), the cells take exactly the colors or opacities of those entries.
 
-[[req-coverage-gradient]]
-===== Symbolizer `gradient` property
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/coverage/gradient
-part:: An Encoding SHALL support defining a `gradient` Symbolizer property as an object including a `type` and a `stops` array of color stops.
-part:: A Renderer SHALL support filling vector geometry based on a `gradient` property specifying a `type` and a `stops` array of color stops.
-====
-
-[[req-coverage-gradient-type]]
-===== Gradient `type` property
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/coverage/gradient/type
-part:: An Encoding SHALL support defining a `type` property of a `gradient` Symbolizer as a string with a value of `linear` or `radial`.
-part:: A Renderer SHALL support filling vector geometry based on a `gradient` property specifying a `type` of `linear` or `radial`.
-====
-
-[[req-coverage-gradient-stops]]
-===== Gradient `stops` property
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/coverage/gradient/stops
-part:: An Encoding SHALL support defining a `stops` property of a `gradient` Symbolizer as an array of color stops.
-part:: A Renderer SHALL support filling vector geometry based on a `gradient` property specifying a `stops` array of color stops.
-====
+NOTE: A `colorMap` does not define stepped classes for continuous values (e.g., one color for all values from 0 to 10). Such classes can be written with chained conditional expressions using relational operators, e.g. `colorChannels: B04 < 10 ? green : (B04 < 20 ? yellow : red)`.

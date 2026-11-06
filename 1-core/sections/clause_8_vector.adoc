@@ -167,6 +167,7 @@ A Stroke object inherits from a base _StrokeStyling_ class, which is re-used in 
 | width     | Width of the stroke                  | float (uom-qualified) | 0..1
 |===
 
+[[graphical-units-of-measure]]
 ===== Graphical Units of Measure
 
 [#img-uml-class-graphicalunits]
@@ -293,7 +294,10 @@ or by a three-dimensional cube. The GraphicSize properties are documented in the
 @startuml
 Dot --|> Shape
 Dot : point: UnitPoint
+Dot : size: float
+Dot : color: Color
 Dot *-- UnitPoint
+Dot *-- Color
 
 abstract class Shape
 Shape --|> Graphic
@@ -304,7 +308,15 @@ Shape *-- Stroke
 
 A round Dot is one type of Graphic defined by this requirements class that can be used as part of a Marker.
 
-A Dot inherits from a Shape class allowing to define a `stroke` which controls the color and size of the dot (with the stroke's `width` property).
+A Dot inherits from a Shape class allowing to define a `stroke` which controls the color and size of the dot (with the stroke's `width` property). The `size` and `color` of a Dot are the same values as the `width` and `color` of its stroke: setting either one sets the other.
+
+.Dot
+[width="90%",options="header"]
+|===
+| Name       | Definition                                       | Type                  | Multiplicity
+| size       | Diameter of the dot (the `width` of its stroke)  | float (uom-qualified) | 0..1
+| color      | Color of the dot (the `color` of its stroke)     | Color                 | 0..1
+|===
 
 .Shape
 [width="90%",options="header"]
@@ -347,9 +359,9 @@ An Image is one type of graphic defined by this requirements class that can be u
 | Name           | Definition                      | Type                      | Multiplicity
 | image          | The image to use                | Resource                  | 1
 | hotSpot        | 0,0 position in the image       | UnitPoint (uom-qualified) | 1
-| tint           | Tint (multiplying white)        | Color                     | 1
-| blackTint      | Black tint (used for black      | Color                     | 1
-| alphaThreshold | Alpha value considered pickable | float                     | 1
+| tint           | Color replacing white in the image | Color                  | 1
+| blackTint      | Color replacing black in the image | Color                  | 1
+| alphaThreshold | Lowest alpha value of a pixel considered part of the image for picking | float | 1
 |===
 
 The actual image content is defined by a Resource, which can be specified by one or multiple properties:
