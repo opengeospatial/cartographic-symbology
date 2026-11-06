@@ -313,35 +313,48 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 ====
 [source,sld]
 ----
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<StyledLayerDescriptor version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se="http://www.opengis.net/se">
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Elevation</Name>
+      <se:Name>Elevation</se:Name>
       <UserStyle>
-         <Name>DEM with color map</Name>
-         <Abstract>Applying a color map to a Digital Elevation Model with Style &amp; Symbology Basic Coverage Styling</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>DEM with color map</Name>
-               <Title>DEM with color map</Title>
-               <MaxScaleDenominator>200000</MaxScaleDenominator>
-               <sld:RasterSymbolizer>
-                  <sld:Opacity>0.8</sld:Opacity>
-                  <sld:ChannelSelection>
-                     <sld:GrayChannel>
-                        <sld:SourceChannelName>elevation</sld:SourceChannelName>
-                     </sld:GrayChannel>
-                  </sld:ChannelSelection>
-                  <sld:ColorMap>
-                     <sld:ColorMapEntry color="#608849" quantity="0" label="0"/>
-                     <sld:ColorMapEntry color="#E2DBA7" quantity="900" label="900"/>
-                     <sld:ColorMapEntry color="#FCC575" quantity="1300" label="1300"/>
-                     <sld:ColorMapEntry color="#FCA886" quantity="1900" label="1900"/>
-                     <sld:ColorMapEntry color="#FAFAFA" quantity="2500" label="2500"/>
-                  </sld:ColorMap>
-               </sld:RasterSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+         <se:Name>DEM with color map</se:Name>
+         <se:Description>
+            <se:Abstract>Applying a color map to a Digital Elevation Model with Style &amp; Symbology Basic Coverage Styling</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>DEM with color map</se:Name>
+               <se:Description>
+                  <se:Title>DEM with color map</se:Title>
+               </se:Description>
+               <se:MaxScaleDenominator>200000</se:MaxScaleDenominator>
+               <se:RasterSymbolizer>
+                  <se:Opacity>0.8</se:Opacity>
+                  <se:ChannelSelection>
+                     <se:GrayChannel>
+                        <se:SourceChannelName>elevation</se:SourceChannelName>
+                     </se:GrayChannel>
+                  </se:ChannelSelection>
+                  <se:ColorMap>
+                     <se:Categorize fallbackValue="#FFFFFF">
+                        <se:LookupValue>Rasterdata</se:LookupValue>
+                        <se:Value>#608849</se:Value>
+                        <se:Threshold>900</se:Threshold>
+                        <se:Value>#E2DBA7</se:Value>
+                        <se:Threshold>1300</se:Threshold>
+                        <se:Value>#FCC575</se:Value>
+                        <se:Threshold>1900</se:Threshold>
+                        <se:Value>#FCA886</se:Value>
+                        <se:Threshold>2500</se:Threshold>
+                        <se:Value>#FAFAFA</se:Value>
+                     </se:Categorize>
+                  </se:ColorMap>
+               </se:RasterSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
