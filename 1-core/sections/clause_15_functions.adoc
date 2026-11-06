@@ -159,7 +159,7 @@ TextManipulationFunctions : format(string f, ...) string
 |===
 | Name               | Parameters                     | Return type  | Definition
 | caseInsensitize    | (string s)                     | string       | `s` made suitable for case-insensitive comparison
-| accentInsensitize  | (string s)                     | string       | `s` with accents removed
+| accentInsensitize  | (string s)                     | string       | `s` with accents stripped and diacritics folded
 | lowerCase          | (string s)                     | string       | `s` converted to lowercase
 | upperCase          | (string s)                     | string       | `s` converted to uppercase
 | concatenate        | (string a, string b)           | string       | `a` followed by `b`
