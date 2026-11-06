@@ -161,6 +161,7 @@ arithmeticOperatorAdd:
 
 relationalOperator:
      EQ
+   | NEQ
    | LT
    | LTEQ
    | GT

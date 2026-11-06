@@ -12,6 +12,7 @@ LPAR: '(';
 RPAR: ')';
 COMMA: ',';
 EQ: '=';
+NEQ: '<>';
 LT: '<';
 LTEQ: '<=';
 GT: '>';
