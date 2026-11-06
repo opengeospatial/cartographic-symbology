@@ -18,15 +18,15 @@ Standard.
 [width="90%",options="header"]
 |===
 | Construct                    | SE Equivalent
-| SpatialRelationFunctions     | `<ogc:Function>`
-| s_intersects                 | `<ogc:Function>`
-| s_contains                   | `<ogc:Function>`
-| s_crosses                    | `<ogc:Function>`
-| s_disjoint                   | `<ogc:Function>`
-| s_equals                     | N/A
-| s_overlaps                   | `<ogc:Function>`
-| s_touches                    | `<ogc:Function>`
-| s_within                     | `<ogc:Function>`
+| SpatialRelationFunctions     | Spatial operators (`ogc:spatialOps`) inside `<ogc:Filter>`
+| s_intersects                 | `<ogc:Intersects>`
+| s_contains                   | `<ogc:Contains>`
+| s_crosses                    | `<ogc:Crosses>`
+| s_disjoint                   | `<ogc:Disjoint>`
+| s_equals                     | `<ogc:Equals>`
+| s_overlaps                   | `<ogc:Overlaps>`
+| s_touches                    | `<ogc:Touches>`
+| s_within                     | `<ogc:Within>`
 | s_covers                     | N/A
 | s_coveredBy                  | N/A
 |===
@@ -36,31 +36,37 @@ Standard.
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Spatial Relation Functions</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
-                        <ogc:Function name="intersects">
-                           <ogc:PropertyName>landuse</ogc:PropertyName>
-                           <ogc:Literal>parking</ogc:Literal>
-                        </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Spatial Relation Functions</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>areaOfInterest</se:Name>
+               <ogc:Filter>
+                  <ogc:Intersects>
+                     <ogc:PropertyName>geometry</ogc:PropertyName>
+                     <gml:Envelope srsName="EPSG:4326">
+                        <gml:lowerCorner>6.5 46.5</gml:lowerCorner>
+                        <gml:upperCorner>6.7 46.6</gml:upperCorner>
+                     </gml:Envelope>
+                  </ogc:Intersects>
+               </ogc:Filter>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">#808080</se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
