@@ -37,8 +37,7 @@ Standard.
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
-    xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
       <se:Name>Landuse</se:Name>
@@ -102,31 +101,35 @@ Standard.
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Temporal Relation Functions</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Fill>
-                     <CssParameter name="fill">
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Temporal Relation Functions</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Fill>
+                     <se:SvgParameter name="fill">
                         <ogc:Function name="t_after">
                            <ogc:PropertyName>date</ogc:PropertyName>
                            <ogc:Literal>2019-01-01</ogc:Literal>
                         </ogc:Function>
-                     </CssParameter>
-                     <CssParameter name="fill-opacity">0.5</CssParameter>
-                  </Fill>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+                     </se:SvgParameter>
+                     <se:SvgParameter name="fill-opacity">0.5</se:SvgParameter>
+                  </se:Fill>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
