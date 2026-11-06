@@ -30,7 +30,7 @@ Amenities[dataLayer.type = 'vector' and dataLayer.featuresGeometryDimensions = 0
          [viz.sd < 5000]
          {
             // Add a Text graphic to Marker at 1:5000
-            marker.elements[1]:
+            marker.elements[2]:
                Text {
                   position: 20 0; // Offset 20 pixels to the right
                   text: Name; // Name of Amenity

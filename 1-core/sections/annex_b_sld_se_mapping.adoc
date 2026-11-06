@@ -18,7 +18,7 @@ Standard.
 | name              | `<Name>` inside `<Rule>`
 | selector          | `<ogc:Filter>`
 | symbolizer        | `<PointSymbolizer>`, `<LineSymbolizer>`, `<PolygonSymbolizer>`, `<TextSymbolizer>`, `<RasterSymbolizer>`
-| nestedRules       | `<ogc:ElseFilter>` provides limited support for one use case of nested rules
+| nestedRules       | `<ElseFilter>` provides limited support for one use case of nested rules
 |===
 
 .Mapping of Symbolizers to SLD/SE constructs
@@ -110,7 +110,7 @@ Standard.
 | Symbolizer        | `<PointSymbolizer>`, `<LineSymbolizer>`, `<PolygonSymbolizer>`, `<TextSymbolizer>`, `<RasterSymbolizer>`
 | Symbolizer opacity | `<Opacity>` inside `<RasterSymbolizer>` (no global opacity for vector symbolizers)
 | Selector          | `<ogc:Filter>`
-| nestedRules       | `<ogc:ElseFilter>` provides limited support for one use case of nested rules
+| nestedRules       | `<ElseFilter>` provides limited support for one use case of nested rules
 
 | *Expression*         |
 | LiteralExpression    | `<ogc:Literal>`
