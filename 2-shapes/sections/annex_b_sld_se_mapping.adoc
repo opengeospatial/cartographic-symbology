@@ -70,7 +70,7 @@ Standard.
 [width="90%",options="header"]
 |===
 | Construct                    | SE Equivalent
-| thickness                    | `<Stroke>` with `<CssParameter>` (stroke-width) 
+| thickness                    | `<Stroke>` with `<SvgParameter>` (stroke-width) for SE 1.1.0, `<CssParameter>` for SLD 1.0.0 
 |===
 
 .SLD Example encoding style using "Shape Outlines" requirements class
@@ -161,8 +161,8 @@ Standard.
 [width="90%",options="header"]
 |===
 | Construct                    | SE Equivalent
-| join                         | `<Stroke>` with `<CssParameter>` (stroke-linejoin)
-| cap                          | `<Stroke>` with `<CssParameter>` (stroke-linecap)
+| join                         | `<Stroke>` with `<SvgParameter>` (stroke-linejoin) for SE 1.1.0, `<CssParameter>` for SLD 1.0.0
+| cap                          | `<Stroke>` with `<SvgParameter>` (stroke-linecap) for SE 1.1.0, `<CssParameter>` for SLD 1.0.0
 |===
 
 .SLD Example encoding style using "Joins and Caps" requirements class
