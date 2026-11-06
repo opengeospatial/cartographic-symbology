@@ -61,20 +61,38 @@ expression:
    | expression LSBR expConstant RSBR  // Indexing
 
    // Operations
-   | expression arithmeticOperatorExp expression
    | unaryArithmeticOperator expression
+   | expression arithmeticOperatorExp expression
    | expression arithmeticOperatorMul expression
    | expression arithmeticOperatorAdd expression
    | expression relationalOperator expression
-   | expression betweenOperator expression AND expression
+   | expression betweenOperator betweenBound AND betweenBound
    | unaryLogicalOperator expression
    | expression AND expression
    | expression OR expression
-   | expression QUESTION expression COLON expression
+   | <assoc=right> expression QUESTION expression COLON expression
 
    | tuple
 
    | variable
+   ;
+
+// Operands of "between": arithmetic expressions only (no and / or / comparison),
+// so that the "and" separating the bounds is never part of a bound.
+betweenBound:
+     idOrConstant
+   | expString
+   | expCall
+   | expArray
+   | expInstance
+   | variable
+   | LPAR expression RPAR
+   | betweenBound DOT IDENTIFIER
+   | betweenBound LSBR expConstant RSBR
+   | unaryArithmeticOperator betweenBound
+   | betweenBound arithmeticOperatorExp betweenBound
+   | betweenBound arithmeticOperatorMul betweenBound
+   | betweenBound arithmeticOperatorAdd betweenBound
    ;
 
 expConstant: NUMERIC_LITERAL UNIT? | HEX_LITERAL;
