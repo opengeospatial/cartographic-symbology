@@ -16,38 +16,23 @@ LT: '<';
 LTEQ: '<=';
 GT: '>';
 GTEQ: '>=';
-IN: I N;
-NOT: N O T;
-IS: I S;
-LIKE: L I K E;
-BETWEEN: B E T W E E N;
+// CQL2-Text keywords are case-insensitive (ANTLR >= 4.10 lexer rule option).
+IN options { caseInsensitive = true; } : 'in';
+NOT options { caseInsensitive = true; } : 'not';
+IS options { caseInsensitive = true; } : 'is';
+LIKE options { caseInsensitive = true; } : 'like';
+BETWEEN options { caseInsensitive = true; } : 'between';
 QUESTION: '?';
 COLON: ':';
-AND: A N D;
-OR: O R;
+AND options { caseInsensitive = true; } : 'and';
+OR options { caseInsensitive = true; } : 'or';
 MUL: '*';
 DIV: '/';
-IDIV: D I V;
+IDIV options { caseInsensitive = true; } : 'div';
 MOD: '%';
 POW: '^';
 MINUS: '-';
 PLUS: '+';
-
-// CQL2 keywords are case-insensitive (CQL2-Text BNF); one fragment per letter.
-fragment A: [aA];
-fragment B: [bB];
-fragment D: [dD];
-fragment E: [eE];
-fragment I: [iI];
-fragment K: [kK];
-fragment L: [lL];
-fragment N: [nN];
-fragment O: [oO];
-fragment R: [rR];
-fragment S: [sS];
-fragment T: [tT];
-fragment V: [vV];
-fragment W: [wW];
 
 // Numeric Literals
 
@@ -68,7 +53,7 @@ HEX_LITERAL :
 NUMERIC_LITERAL :
         ( [0-9]+ ('.' ([0-9]+)? )? |
         '.' [0-9]+ )
-    (E ('+'|'-')? [0-9]+)?;
+    ([eE] ('+'|'-')? [0-9]+)?;
 
 // Character Literals
 
