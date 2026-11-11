@@ -1,5 +1,3 @@
-== Requirements Classes for Functions
-
 [[rc-functions]]
 === Requirements Class "Function Expressions"
 ==== Overview
@@ -87,7 +85,6 @@ MathFunctions : max(x : double, y : double) double
 MathFunctions : min(x : double, y : double) double
 MathFunctions : pow(x : double, y : double) double
 MathFunctions : random() double
-MathFunctions : rint(x : double) double
 MathFunctions : round(x : double) long
 MathFunctions : sin(x : double) double
 MathFunctions : sinh(x : double) double

@@ -176,18 +176,14 @@
          { "$ref": "#/$defs/idOrFnExpression" },
          {
             "type": "array",
-            "items":
-            {
-               "type": "integer",
-               "minimum": 0
-            }
+            "items": { "$ref": "#/$defs/unitValue" }
          },
          {
             "type": "object",
             "required": [ "index", "value" ],
             "properties": {
                "index": { "type": "integer", "minimum": 0 },
-               "value": { "type": "integer", "minimum": 0 }
+               "value": { "$ref": "#/$defs/unitValue" }
             }
          }
        ]

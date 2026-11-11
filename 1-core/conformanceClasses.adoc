@@ -98,7 +98,7 @@ Gradient fills are defined in Part 2 (see #86).
 
 ==== Bitwise Operators
 
-==== Text Relation Operators (e.g., CQL2 'Like')
+==== Text Relation Operators and Functions (e.g., CQL2 'Like')
 
 ==== Spatial Relation Functions
 

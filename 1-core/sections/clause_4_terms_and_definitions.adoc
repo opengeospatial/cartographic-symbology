@@ -20,5 +20,11 @@ A sequence of rules of symbolizing instructions to be applied by a rendering eng
 === Rendering engine
 Automated process that produces graphics using a pipeline of layers and styles as inputs.
 
+=== Consumer
+Application taking a style as input, such as a rendering engine or a transcoder.
+
+=== Producer
+Application generating a style, such as a style editor or a transcoder.
+
 === Render
 Conversion of digital graphics data into visual form (EXAMPLE Generation of an image on a video display) [SOURCE: ISO 19117:2012, 4.27]

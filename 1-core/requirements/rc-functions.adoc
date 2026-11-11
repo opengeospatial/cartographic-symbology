@@ -21,7 +21,7 @@ subject:: Style encodings and Renderers
 identifier:: /req/functions/call-expressions
 part:: An Encoding SHALL support defining a FunctionCallExpression identifying the Function to call and an ordered list of zero or more argument Expressions.
 part:: A Renderer SHALL support evaluating a FunctionCallExpression by evaluating its arguments and resolving the expression to the value returned by the Function, of the Function's return type.
-part:: A Renderer SHALL treat a FunctionCallExpression whose arguments do not match the parameters of the Function, in number or type, as invalid.
+part:: A Renderer SHALL evaluate a FunctionCallExpression whose arguments do not match the parameters of the Function, in number or type, to NULL.
 ====
 
 [[req-functions-standard-functions]]

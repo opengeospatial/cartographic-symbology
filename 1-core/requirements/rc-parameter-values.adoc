@@ -22,3 +22,34 @@ identifier:: /req/parameter-values/expressions
 part:: An Encoding SHALL support defining the value of any Symbolizer property, including members of object properties, using any type of Expression, not only Literal Expressions.
 part:: A Renderer SHALL support evaluating Expressions used as Parameter Values for each feature or coverage cell being portrayed, and resolving the result to the data type expected by the Symbolizer property.
 ====
+
+[[req-parameter-values-null]]
+===== Expressions evaluating to NULL
+
+[[table-parameter-values-null]]
+.Value of a Symbolizer property whose Expression evaluates to NULL
+[width="90%",options="header"]
+|===
+| Data type of the property | Value
+| Integer or real, such as `stroke.width`, `opacity` or `zOrder` | 0
+| Boolean, such as `visibility` | `false`
+| Color | black
+| Text | the empty string
+| Enumeration | the default value of the property
+| Marker or Label | `null`, emptying its graphical elements
+|===
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/parameter-values/null
+part:: A Renderer SHALL support resolving a Parameter Value whose Expression evaluates to NULL to the value given for the data type of the Symbolizer property in <<table-parameter-values-null>>.
+====
+
+[[rec-parameter-values-report-null]]
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/parameter-values/report-null
+part:: A Renderer SHOULD report a Symbolizer property whose Expression evaluates to NULL, unless the property is set to `null` directly.
+====

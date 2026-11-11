@@ -9,7 +9,7 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/cscss
 inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
-subject:: Style encodings and Renderers
+subject:: Consumers and Producers of styles encoded as CartoSym-CSS
 ====
 
 [[req-cscss-grammar]]
@@ -19,8 +19,8 @@ subject:: Style encodings and Renderers
 ====
 [%metadata]
 identifier:: /req/cscss/grammar
-part:: A style encoded as CartoSym-CSS SHALL conform to the BNF grammar definition of this requirements class.
-part:: A Renderer SHALL support parsing styles encoded as CartoSym-CSS.
+part:: A Producer SHALL generate CartoSym-CSS conforming to the BNF grammar definition of this requirements class.
+part:: A Consumer SHALL support parsing styles encoded as CartoSym-CSS.
 ====
 
 [[req-cscss-rules]]
@@ -30,8 +30,8 @@ part:: A Renderer SHALL support parsing styles encoded as CartoSym-CSS.
 ====
 [%metadata]
 identifier:: /req/cscss/rules
-part:: An Encoding SHALL support encoding a style as a sequence of styling rules, each consisting of zero or more selectors, an optional `.name`, symbolizer property assignments and nested rules enclosed within `{` `}`.
-part:: An Encoding SHALL support assigning a value to a member of an object property (using `.`) or to an element of an array property (using `[` `]`), overriding only that portion of the property.
+part:: A Consumer SHALL support parsing a style as a sequence of styling rules, each consisting of zero or more selectors, an optional `.name`, symbolizer property assignments and nested rules enclosed within `{` `}`.
+part:: A Consumer SHALL support parsing the assignment of a value to a member of an object property (using `.`) or to an element of an array property (using `[` `]`), overriding only that portion of the property.
 part:: A Renderer SHALL support symbolizer properties set further down in rules overriding those set by rules at the same level appearing earlier, and properties set in nested rules overriding those set in the parent rule.
 ====
 
@@ -42,9 +42,11 @@ part:: A Renderer SHALL support symbolizer properties set further down in rules 
 ====
 [%metadata]
 identifier:: /req/cscss/selectors
-part:: An Encoding SHALL support defining selectors either as expressions enclosed within `[` `]`, or as a short-hand data layer name.
-part:: A Renderer SHALL support combining multiple expression selectors of a rule with a logical AND, combining multiple data layer name selectors with a logical OR, and combining those two groups with a logical AND.
+part:: A Consumer SHALL support parsing selectors defined either as expressions enclosed within `[` `]`, or as a short-hand data layer name.
+part:: A Renderer SHALL support combining multiple expression selectors of a rule with a logical AND, combining multiple short-hand data layer name selectors with a logical OR, and combining those two groups with a logical AND.
 ====
+
+NOTE: Only the short-hand data layer names are combined with a logical OR. In `[dataLayer.id = 'Roads'][dataLayer.id = 'Railways']`, the two selectors are expressions, combined with a logical AND, so the rule never matches.
 
 [[req-cscss-expressions]]
 ===== Expressions
@@ -53,8 +55,8 @@ part:: A Renderer SHALL support combining multiple expression selectors of a rul
 ====
 [%metadata]
 identifier:: /req/cscss/expressions
-part:: An Encoding SHALL encode expressions using CQL2-Text, extended with instance expressions, tuples, units of measure, conditional expressions and enumeration values as specified in this requirements class.
-part:: An Encoding supporting the <<rc-text-relation,Text Relation Operators>> requirements class SHALL encode the `contains`, `startsWith` and `endsWith` operations as function calls (e.g., `contains(name, 'Oslo')`).
+part:: A Producer SHALL encode expressions using CQL2-Text, extended with instance expressions, tuples, units of measure, conditional expressions and enumeration values as specified in this requirements class.
+part:: A Producer supporting the <<rc-text-relation,Text Relation Operators and Functions>> requirements class SHALL encode calls to the `contains`, `startsWith` and `endsWith` functions using the function call syntax (e.g., `contains(name, 'Oslo')`).
 part:: A Renderer SHALL support evaluating CQL2-Text expressions (including WKT geometry) used directly as a selector or symbolizer parameter value.
 ====
 
@@ -65,7 +67,7 @@ part:: A Renderer SHALL support evaluating CQL2-Text expressions (including WKT 
 ====
 [%metadata]
 identifier:: /req/cscss/include
-part:: An Encoding SHALL support including another style sheet using the `.include` directive followed by a relative path enclosed within single quotes.
+part:: A Consumer SHALL support parsing an `.include` directive, followed by a relative path enclosed within single quotes, which includes another style sheet.
 part:: A Renderer SHALL support replacing an `.include` directive by the content of the referenced style sheet, recursively, before interpreting the style.
 part:: A Renderer SHALL support including style sheets encoded as CartoSym-CSS.
 ====
@@ -79,7 +81,7 @@ NOTE: A style that includes a style sheet in another encoding is not guaranteed 
 ====
 [%metadata]
 identifier:: /req/cscss/comments
-part:: An Encoding SHALL support C-style multi-line comments (between `/\*` and `*/`) and C++-style single-line comments (starting with `//`).
+part:: A Consumer SHALL support parsing C-style multi-line comments (between `/\*` and `*/`) and C++-style single-line comments (starting with `//`).
 part:: A Renderer SHALL support ignoring comments when interpreting a style sheet.
 ====
 
@@ -90,5 +92,5 @@ part:: A Renderer SHALL support ignoring comments when interpreting a style shee
 ====
 [%metadata]
 identifier:: /req/cscss/variables
-part:: An Encoding supporting the <<rc-variables,Variables>> requirements class SHALL define variables before the styling rules using the syntax `@<identifier> = <expression>;`, and reference them as an expression using `@<identifier>`.
+part:: A Producer supporting the <<rc-variables,Variables>> requirements class SHALL define variables before the styling rules using the syntax `@<identifier> = <expression>;`, and reference them as an expression using `@<identifier>`.
 ====

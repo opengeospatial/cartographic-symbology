@@ -1,10 +1,10 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
-==== Text Relation Operators
+==== Text Relation Operators and Functions
 
 [[rc-table-text-relation]]
 
 [requirements_class]
-.Text Relation Operators
+.Text Relation Operators and Functions
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/text-relation
@@ -35,69 +35,38 @@ part:: A Renderer SHALL support evaluating a `notLike` operation expression to t
 ====
 
 [[req-text-relation-contains]]
-===== Text `contains` operator
+===== Text `contains` function
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/text-relation/contains
-part:: An Encoding SHALL support defining a `contains` operation expression taking two text operands.
-part:: A Renderer SHALL support evaluating a `contains` operation expression to true if and only if the second operand occurs as a substring of the first operand.
+part:: An Encoding SHALL support defining a call to the `contains` function taking two text arguments.
+part:: A Renderer SHALL support evaluating `contains(a, b)` to true if and only if `b` occurs as a substring of `a`.
 ====
 
 [[req-text-relation-starts-with]]
-===== Text `startsWith` operator
+===== Text `startsWith` function
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/text-relation/starts-with
-part:: An Encoding SHALL support defining a `startsWith` operation expression taking two text operands.
-part:: A Renderer SHALL support evaluating a `startsWith` operation expression to true if and only if the first operand begins with the second operand.
+part:: An Encoding SHALL support defining a call to the `startsWith` function taking two text arguments.
+part:: A Renderer SHALL support evaluating `startsWith(a, b)` to true if and only if `a` begins with `b`.
 ====
 
 [[req-text-relation-ends-with]]
-===== Text `endsWith` operator
+===== Text `endsWith` function
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/text-relation/ends-with
-part:: An Encoding SHALL support defining an `endsWith` operation expression taking two text operands.
-part:: A Renderer SHALL support evaluating an `endsWith` operation expression to true if and only if the first operand ends with the second operand.
+part:: An Encoding SHALL support defining a call to the `endsWith` function taking two text arguments.
+part:: A Renderer SHALL support evaluating `endsWith(a, b)` to true if and only if `a` ends with `b`.
 ====
 
-[[req-text-relation-not-contains]]
-===== Text `notContains` operator
+NOTE: The negations of the `contains`, `startsWith` and `endsWith` functions are written using the `not` operator, e.g., `not contains(name, 'Oslo')`.
 
-[requirement]
-====
-[%metadata]
-identifier:: /req/text-relation/not-contains
-part:: An Encoding SHALL support defining a `notContains` operation expression taking two text operands.
-part:: A Renderer SHALL support evaluating a `notContains` operation expression to the logical negation of the equivalent `contains` operation expression.
-====
-
-[[req-text-relation-not-starts-with]]
-===== Text `notStartsWith` operator
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/text-relation/not-starts-with
-part:: An Encoding SHALL support defining a `notStartsWith` operation expression taking two text operands.
-part:: A Renderer SHALL support evaluating a `notStartsWith` operation expression to the logical negation of the equivalent `startsWith` operation expression.
-====
-
-[[req-text-relation-not-ends-with]]
-===== Text `notEndsWith` operator
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/text-relation/not-ends-with
-part:: An Encoding SHALL support defining a `notEndsWith` operation expression taking two text operands.
-part:: A Renderer SHALL support evaluating a `notEndsWith` operation expression to the logical negation of the equivalent `endsWith` operation expression.
-====
-
-// TODO(review): the JSON schema has no `notLike`, `notContains`, `notStartsWith` or `notEndsWith`: add them, or state that they are encoded as `not` applied to the positive form (see #140).
+// TODO(review): the JSON schema has no `notLike`: add it, or state that it is encoded as `not` applied to `like` (see #140).

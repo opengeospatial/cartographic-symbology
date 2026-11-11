@@ -58,6 +58,16 @@ A selector is either:
 
 <data layer name>
 
+For example, the following rule applies to the features of the `Roads` data layer and to those of the `Railways` data layer, when the scale denominator is below 10,000 and the `level` property is below 4:
+
+[source,cscss]
+----
+Roads Railways[viz.sd < 10000][level < 4]
+{
+   stroke: {color: gray; width: 2.0 px};
+}
+----
+
 ==== Variables
 
 Variables can be defined before styling rule names with this syntax:

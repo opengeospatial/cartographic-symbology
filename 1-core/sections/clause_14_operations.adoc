@@ -1,4 +1,4 @@
-== Requirements Classes for Additional Operators
+== Requirements Classes for Additional Operators and Functions
 
 [[rc-arithmetic]]
 === Requirements Class "Arithmetic Operators"
@@ -41,11 +41,11 @@ ArithmeticOperator : pow
 include::../requirements/rc-arithmetic.adoc[]
 
 [[rc-text-relation]]
-=== Requirements Class "Text Relation Operators"
+=== Requirements Class "Text Relation Operators and Functions"
 ==== Overview
 
 [#img-uml-class-text-relation]
-.TextRelation Operators UML Diagram
+.Text Relation Operators and Functions UML Diagram
 [plantuml, target=diagram-classes, format=png]
 ....
 @startuml
@@ -53,17 +53,16 @@ enum TextRelationOperator
 TextRelationOperator --|> Operator
 TextRelationOperator : like
 TextRelationOperator : notLike
-TextRelationOperator : contains
-TextRelationOperator : startsWith
-TextRelationOperator : endsWith
-TextRelationOperator : notContains
-TextRelationOperator : notStartsWith
-TextRelationOperator : notEndsWith
+interface TextRelationFunctions
+TextRelationFunctions --|> Function : standard functions
+TextRelationFunctions : contains(a : string, b : string) boolean
+TextRelationFunctions : startsWith(a : string, b : string) boolean
+TextRelationFunctions : endsWith(a : string, b : string) boolean
 @enduml
 ....
 
-This requirements class adds more advanced support for evaluating the relation between text values, including the _like_ operator,
-_starts with_, _contains_, _ends with_, as well as _not_ variants for all these.
+This requirements class adds more advanced support for evaluating the relation between text values, including the _like_ and _not like_ operators,
+and the _contains_, _starts with_ and _ends with_ functions. Their negations are written using the _not_ operator.
 
 .comparison
 [width="90%",options="header"]
@@ -74,9 +73,6 @@ _starts with_, _contains_, _ends with_, as well as _not_ variants for all these.
 | contains     | Contains            | Text                  | 1..1
 | startsWith   | Starts With         | Text                  | 1..1
 | endsWith     | Ends With           | Text                  | 1..1
-| notContains  | Does Not Contain    | Text                  | 1..1
-| notStartsWith| Does Not Start With | Text                  | 1..1
-| notEndsWith  | Does Not End With   | Text                  | 1..1
 |===
 
 ==== Requirements

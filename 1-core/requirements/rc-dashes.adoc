@@ -19,7 +19,7 @@ Implementations shall support all properties in the below table for style encodi
 ....
 @startuml
 class Stroke <<extended>>
-Stroke : dashPattern: integer [*]
+Stroke : dashPattern: UnitValue [*]
 Stroke : dashOffset: float [0..1]
 @enduml
 ....
@@ -28,7 +28,7 @@ Stroke : dashOffset: float [0..1]
 [width="90%",options="header"]
 |===
 | Name          | Definition         | Type         | Multiplicity
-| dashPattern   | Dash pattern       | int          | 0..*
+| dashPattern   | Dash pattern       | UnitValue    | 0..*
 | dashOffset    | Dash offset        | UnitValue    | 0..1
 |===
 
@@ -41,9 +41,20 @@ Stroke : dashOffset: float [0..1]
 identifier:: /req/dashes/dash-pattern
 part:: An Encoding SHALL support defining a dashPattern property for the stroke symbolizer.
 part:: A Renderer SHALL support dashing vector geometry based on a dashPattern property, whose lengths are in pixels unless qualified with another unit (<<graphical-units-of-measure,Graphical Units of Measure>>).
+part:: A Renderer SHALL support dashPattern lengths in pixels, points, millimeters, centimeters and inches.
 
 .In black stroke without dashes, in red with a dash pattern alternating a long dash with a short gap.
 image::figures/stroke_dashPattern.png[]
+====
+
+[[per-dashes-dash-pattern-units]]
+[permission]
+====
+[%metadata]
+identifier:: /per/dashes/dash-pattern-units
+part:: A Renderer MAY support dashPattern lengths in real-world units (meters and feet).
+part:: A Renderer MAY support dashPattern lengths in percent of the stroke width, for a stroke whose width is in pixels, points, millimeters, centimeters or inches.
+part:: A Renderer MAY support dashPattern lengths in percent of the stroke width, for a stroke whose width is in meters or feet.
 ====
 
 [[req-dashes-dash-offset]]

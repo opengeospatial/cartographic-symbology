@@ -281,7 +281,17 @@ part:: A Renderer SHALL support not portraying a feature or coverage cell for wh
 [%metadata]
 identifier:: /req/core/opacity
 part:: An Encoding SHALL support defining an `opacity` Symbolizer property as a float between 0 (fully transparent) and 1 (fully opaque).
-part:: A Renderer SHALL support portraying a feature or coverage cell with the opacity specified by the resolved `opacity` property, applied to the portrayal as a whole.
+part:: A Renderer SHALL support applying the resolved `opacity` property by multiplying it with the opacity of the fill, the stroke, the graphics of markers and the opacity channel of coverage cells.
+====
+
+NOTE: The Symbolizer `opacity` does not apply to labels.
+
+[[rec-core-opacity-together]]
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/core/opacity-together
+part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke and the graphics of markers together, so that they do not show through each other where they overlap.
 ====
 
 [[req-core-z-order]]
@@ -912,7 +922,7 @@ part:: A Renderer SHALL support evaluating operation expressions while respectin
 part:: A Renderer SHALL support evaluating operation expressions with a null operand as specified by CQL2.
 ====
 
-// TODO(review): what a Symbolizer property does when its expression evaluates to null is not settled. Jérôme suggested that it is set to `null`, which is not the same as the default and empties graphical elements (see #155).
+NOTE: The value of a Symbolizer property whose expression evaluates to null is specified by the <<rc-parameter-values,Parameter Values>> requirements class.
 
 [[req-core-logical]]
 [requirement]

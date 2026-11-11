@@ -188,17 +188,6 @@ part:: An Encoding SHALL support defining a call to the `random` standard functi
 part:: A Renderer SHALL support evaluating `random()` as a pseudo-random real number greater than or equal to 0 and less than 1.
 ====
 
-[[req-math-rint]]
-===== Math `rint` function
-
-[requirement]
-====
-[%metadata]
-identifier:: /req/math/rint
-part:: An Encoding SHALL support defining a call to the `rint` standard function taking one numeric argument.
-part:: A Renderer SHALL support evaluating `rint(x)` as the integral value closest to `x`, rounding halfway cases to the even integral value.
-====
-
 [[req-math-round]]
 ===== Math `round` function
 
@@ -207,7 +196,7 @@ part:: A Renderer SHALL support evaluating `rint(x)` as the integral value close
 [%metadata]
 identifier:: /req/math/round
 part:: An Encoding SHALL support defining a call to the `round` standard function taking one numeric argument.
-part:: A Renderer SHALL support evaluating `round(x)` as the integer closest to `x`, rounding halfway cases toward positive infinity.
+part:: A Renderer SHALL support evaluating `round(x)` as the integer closest to `x`, rounding halfway cases away from zero.
 ====
 
 [[req-math-sin]]

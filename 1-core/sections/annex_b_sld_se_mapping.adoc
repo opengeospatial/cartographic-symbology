@@ -735,9 +735,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 ----
 ====
 
-=== Requirements Class "Text Relation Operators"
+=== Requirements Class "Text Relation Operators and Functions"
 
-.Mapping of the "Text Relation Operators" requirements class to SLD/SE constructs
+.Mapping of the "Text Relation Operators and Functions" requirements class to SLD/SE constructs
 [width="90%",options="header"]
 |===
 | Construct                     | SE Equivalent
@@ -747,17 +747,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 | contains                      | `<ogc:Function>`
 | startsWith                    | `<ogc:Function>`
 | endsWith                      | `<ogc:Function>`
-| notContains                   | `<ogc:Function>`
-| notStartsWith                 | `<ogc:Function>`
-| notEndsWith                   | `<ogc:Function>`
 | like                          | `<ogc:Function>`
 | notLike                       | `<ogc:Function>`
 | contains                      | `<ogc:Function>`
 | startsWith                    | `<ogc:Function>`
 | endsWith                      | `<ogc:Function>`
-| notContains                   | `<ogc:Function>`
-| notStartsWith                 | `<ogc:Function>`
-| notEndsWith                   | `<ogc:Function>`
 |===
 
 .SLD Example encoding style using "Text Relation Operators" requirements class
@@ -865,7 +859,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 | min                          | N/A
 | pow                          | N/A
 | random                       | N/A
-| rint                         | N/A
 | round                        | N/A
 | sin                          | N/A
 | sinh                         | N/A

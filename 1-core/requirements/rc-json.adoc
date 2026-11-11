@@ -9,7 +9,7 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/json
 inherit:: http://www.opengis.net/spec/cartosym-1/2.0/req/core
-subject:: Style encodings and Renderers
+subject:: Consumers and Producers of styles encoded as CartoSym-JSON
 ====
 
 [[req-json-schema]]
@@ -19,8 +19,8 @@ subject:: Style encodings and Renderers
 ====
 [%metadata]
 identifier:: /req/json/schema
-part:: A style encoded as CartoSym-JSON SHALL validate against the CartoSym-JSON JSON Schema defined in this requirements class.
-part:: A Renderer SHALL support parsing styles encoded as CartoSym-JSON.
+part:: A Producer SHALL generate CartoSym-JSON which validates against the CartoSym-JSON JSON Schema defined in this requirements class.
+part:: A Consumer SHALL support parsing styles encoded as CartoSym-JSON.
 ====
 
 [[req-json-expressions]]
@@ -30,7 +30,7 @@ part:: A Renderer SHALL support parsing styles encoded as CartoSym-JSON.
 ====
 [%metadata]
 identifier:: /req/json/expressions
-part:: An Encoding SHALL encode Selector and Symbolizer Parameter Value expressions based on the CQL2-JSON encoding, extended as specified by the JSON Schema to cover expressions which do not evaluate to a boolean value.
+part:: A Producer SHALL encode Selector and Symbolizer Parameter Value expressions based on the CQL2-JSON encoding, extended as specified by the JSON Schema to cover expressions which do not evaluate to a boolean value.
 ====
 
 [[req-json-partial-update]]
@@ -40,7 +40,7 @@ part:: An Encoding SHALL encode Selector and Symbolizer Parameter Value expressi
 ====
 [%metadata]
 identifier:: /req/json/partial-update
-part:: An Encoding SHALL support representing a partial update of an object property by specifying an object containing only the modified properties, with an `alter` property set to `true`.
+part:: A Consumer SHALL support parsing a partial update of an object property, represented by an object containing only the modified properties, with an `alter` property set to `true`.
 part:: A Renderer SHALL support preserving the values of the properties not specified in an object whose `alter` property is `true`, as set by earlier rules or by default values.
 ====
 
@@ -51,7 +51,7 @@ part:: A Renderer SHALL support preserving the values of the properties not spec
 ====
 [%metadata]
 identifier:: /req/json/array-element-update
-part:: An Encoding SHALL support representing an update to a single element of an array property by specifying an object with an `index` property set to the zero-based index of the array element, and a `value` property set to the new value of that element.
+part:: A Consumer SHALL support parsing an update to a single element of an array property, represented by an object with an `index` property set to the zero-based index of the array element, and a `value` property set to the new value of that element.
 part:: A Renderer SHALL support updating only the array element identified by `index`, preserving the other elements of the array.
 ====
 
@@ -62,7 +62,7 @@ part:: A Renderer SHALL support updating only the array element identified by `i
 ====
 [%metadata]
 identifier:: /req/json/dot-size-color
-part:: An Encoding SHALL NOT set both `size` and `stroke.width`, nor both `color` and `stroke.color`, for the same Dot within a single styling rule.
+part:: A Producer SHALL NOT set both `size` and `stroke.width`, nor both `color` and `stroke.color`, for the same Dot within a single styling rule.
 ====
 
 NOTE: The `size` and `color` of a Dot are the same values as the `width` and `color` of its stroke, and the value set last applies. The members of a JSON object have no order (RFC 8259), so within one styling rule there is no last value. Setting `stroke.width` in one styling rule and `size` in a later one is valid, even though both refer to the same Dot of the same Marker or Label: the value set by the later rule applies, as in CartoSym-CSS.
@@ -74,7 +74,7 @@ NOTE: The `size` and `color` of a Dot are the same values as the `width` and `co
 ====
 [%metadata]
 identifier:: /req/json/variables
-part:: An Encoding supporting the <<rc-variables,Variables>> requirements class SHALL encode variables as members of a top-level `$variables` object, referenced using a JSON Pointer within a `$ref` property (e.g., `{ "$ref": "#/$variables/myVariable" }`).
+part:: A Producer supporting the <<rc-variables,Variables>> requirements class SHALL encode variables as members of a top-level `$variables` object, referenced using a JSON Pointer within a `$ref` property (e.g., `{ "$ref": "#/$variables/myVariable" }`).
 ====
 
 [[req-json-include]]
@@ -84,7 +84,7 @@ part:: An Encoding supporting the <<rc-variables,Variables>> requirements class 
 ====
 [%metadata]
 identifier:: /req/json/include
-part:: An Encoding SHALL support including base style sheets using an `$include` property in the top-level object, specified as either a single relative file path string or an array of relative file path strings.
+part:: A Consumer SHALL support parsing an `$include` property in the top-level object, specified as either a single relative file path string or an array of relative file path strings, which includes base style sheets.
 part:: A Renderer SHALL support considering the styling rules of included style sheets before the styling rules defined by the including file.
 part:: A Renderer SHALL support including style sheets encoded as CartoSym-JSON.
 ====

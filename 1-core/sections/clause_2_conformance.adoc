@@ -98,7 +98,7 @@ The Variables Requirements Class specifies requirements for defining variables w
 
 The Arithmetic Operators Requirements Class specifies requirements for defining arithmetic operation expressions.
 
-*<<rc-text-relation,Requirements Class "Text Relation Operators">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/text-relation)
+*<<rc-text-relation,Requirements Class "Text Relation Operators and Functions">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/text-relation)
 
 The Text Relation Operators Requirements Class specifies requirements for defining text relation operation expressions.
 
@@ -161,7 +161,7 @@ is declared by appending `-partial-concept` to the conformance URI.
 |<<rc-conditional,Conditional Expressions>>                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/conditional
 |<<rc-variables,Variables>>                                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/variables
 |<<rc-arithmetic,Arithmetic Operators>>                           |http://www.opengis.net/spec/cartosym-1/2.0/conf/arithmetic
-|<<rc-text-relation,Text Relation Operators>>                      |http://www.opengis.net/spec/cartosym-1/2.0/conf/text-relation
+|<<rc-text-relation,Text Relation Operators and Functions>>        |http://www.opengis.net/spec/cartosym-1/2.0/conf/text-relation
 |<<rc-functions,Function Expressions>>                            |http://www.opengis.net/spec/cartosym-1/2.0/conf/functions
 |<<rc-math,Math Functions>>                                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/math
 |<<rc-array-relations,Array Relation Functions>>                   |http://www.opengis.net/spec/cartosym-1/2.0/conf/array-relations
