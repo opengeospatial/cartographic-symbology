@@ -34,30 +34,34 @@ Standard.
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Shape Graphics</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PointSymbolizer>
-                  <Graphic>
-                     <Mark>
-                        <WellKnownName>circle</WellKnownName>
-                        <Fill>
-                           <CssParameter name="fill">#FFA500</CssParameter>
-                        </Fill>
-                     </Mark>
-                  </Graphic>
-               </PointSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Shape Graphics</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PointSymbolizer>
+                  <se:Graphic>
+                     <se:Mark>
+                        <se:WellKnownName>circle</se:WellKnownName>
+                        <se:Fill>
+                           <se:SvgParameter name="fill">#FFA500</se:SvgParameter>
+                        </se:Fill>
+                     </se:Mark>
+                  </se:Graphic>
+               </se:PointSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -78,26 +82,30 @@ Standard.
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Shape Outlines</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PolygonSymbolizer>
-                  <Stroke>
-                     <CssParameter name="stroke">#000000</CssParameter>
-                     <CssParameter name="stroke-width">1</CssParameter>
-                  </Stroke>
-               </PolygonSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Shape Outlines</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PolygonSymbolizer>
+                  <se:Stroke>
+                     <se:SvgParameter name="stroke">#000000</se:SvgParameter>
+                     <se:SvgParameter name="stroke-width">1</se:SvgParameter>
+                  </se:Stroke>
+               </se:PolygonSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -123,32 +131,36 @@ Standard.
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Multi Graphics and Transforms</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <PointSymbolizer>
-                  <Graphic>
-                     <Mark>
-                        <WellKnownName>circle</WellKnownName>
-                        <Fill>
-                           <CssParameter name="fill">#FFA500</CssParameter>
-                        </Fill>
-                     </Mark>
-                     <Size>12</Size>
-                     <Rotation>45</Rotation>
-                  </Graphic>
-               </PointSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Multi Graphics and Transforms</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:PointSymbolizer>
+                  <se:Graphic>
+                     <se:Mark>
+                        <se:WellKnownName>circle</se:WellKnownName>
+                        <se:Fill>
+                           <se:SvgParameter name="fill">#FFA500</se:SvgParameter>
+                        </se:Fill>
+                     </se:Mark>
+                     <se:Size>12</se:Size>
+                     <se:Rotation>45</se:Rotation>
+                  </se:Graphic>
+               </se:PointSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
@@ -170,28 +182,32 @@ Standard.
 [source,sld]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ogr="http://www.opengis.net/ogr"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<StyledLayerDescriptor version="1.1.0" xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se"
+    xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
    <NamedLayer>
-      <Name>Landuse</Name>
+      <se:Name>Landuse</se:Name>
       <UserStyle>
-         <Name>Styling a land use layer</Name>
-         <Abstract>Styling land use data with Style &amp; Symbology Joins and Caps</Abstract>
-         <FeatureTypeStyle>
-            <Rule>
-               <Name>parking</Name>
-               <Title>parking</Title>
-               <LineSymbolizer>
-                  <Stroke>
-                     <CssParameter name="stroke">#000000</CssParameter>
-                     <CssParameter name="stroke-width">1</CssParameter>
-                     <CssParameter name="stroke-linejoin">round</CssParameter>
-                     <CssParameter name="stroke-linecap">round</CssParameter>
-                  </Stroke>
-               </LineSymbolizer>
-            </Rule>
-         </FeatureTypeStyle>
+         <se:Name>Styling a land use layer</se:Name>
+         <se:Description>
+            <se:Abstract>Styling land use data with Style &amp; Symbology Joins and Caps</se:Abstract>
+         </se:Description>
+         <se:FeatureTypeStyle>
+            <se:Rule>
+               <se:Name>parking</se:Name>
+               <se:Description>
+                  <se:Title>parking</se:Title>
+               </se:Description>
+               <se:LineSymbolizer>
+                  <se:Stroke>
+                     <se:SvgParameter name="stroke">#000000</se:SvgParameter>
+                     <se:SvgParameter name="stroke-width">1</se:SvgParameter>
+                     <se:SvgParameter name="stroke-linejoin">round</se:SvgParameter>
+                     <se:SvgParameter name="stroke-linecap">round</se:SvgParameter>
+                  </se:Stroke>
+               </se:LineSymbolizer>
+            </se:Rule>
+         </se:FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
 </StyledLayerDescriptor>
