@@ -1,7 +1,7 @@
 == Requirements Classes for Additional expressions
 
 [[rc-parameter-values]]
-=== Requirements Class "Symbolizer Parameter Value Expressions"
+=== Requirements Class "Parameter Values"
 ==== Overview
 
 This requirements class adds support for using **ParameterValues** i.e., arbitrary **Expressions** (not only literals), for all **Symbolizer** properties.
