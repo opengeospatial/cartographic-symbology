@@ -166,16 +166,16 @@ Standard.
                      <CssParameter name="fill">#FF0000</CssParameter>
                      <CssParameter name="fill-opacity">0.5</CssParameter>
                   </Fill>
-                  <stroke>
+                  <Stroke>
                      <CssParameter name="stroke">#000000</CssParameter>
                      <CssParameter name="stroke-width">1</CssParameter>
-                  </stroke>
+                  </Stroke>
                </PolygonSymbolizer>
             </Rule>
          </FeatureTypeStyle>
       </UserStyle>
    </NamedLayer>
-<StyledLayerDescriptor>
+</StyledLayerDescriptor>
 ----
 ====
 
