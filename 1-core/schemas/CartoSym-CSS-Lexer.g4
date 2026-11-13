@@ -17,18 +17,19 @@ LT: '<';
 LTEQ: '<=';
 GT: '>';
 GTEQ: '>=';
-IN: 'in';
-NOT: 'not';
-IS: 'is';
-LIKE: 'like';
-BETWEEN: 'between';
+// CQL2-Text keywords are case-insensitive (ANTLR >= 4.10 lexer rule option).
+IN options { caseInsensitive = true; } : 'in';
+NOT options { caseInsensitive = true; } : 'not';
+IS options { caseInsensitive = true; } : 'is';
+LIKE options { caseInsensitive = true; } : 'like';
+BETWEEN options { caseInsensitive = true; } : 'between';
 QUESTION: '?';
 COLON: ':';
-AND: 'and';
-OR: 'or';
+AND options { caseInsensitive = true; } : 'and';
+OR options { caseInsensitive = true; } : 'or';
 MUL: '*';
 DIV: '/';
-IDIV: 'div';
+IDIV options { caseInsensitive = true; } : 'div';
 MOD: '%';
 POW: '^';
 MINUS: '-';
@@ -53,7 +54,7 @@ HEX_LITERAL :
 NUMERIC_LITERAL :
         ( [0-9]+ ('.' ([0-9]+)? )? |
         '.' [0-9]+ )
-    ('E' ('+'|'-')? [0-9]+)?;
+    ([eE] ('+'|'-')? [0-9]+)?;
 
 // Character Literals
 
