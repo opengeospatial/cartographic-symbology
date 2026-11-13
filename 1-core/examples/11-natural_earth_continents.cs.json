@@ -68,16 +68,16 @@
               {
                 "property": "CONTINENT"
               },
-              "Antartica"
+              "Antarctica"
             ]
           },
           "symbolizer": {
             "fill": {
               "alter": true,
               "color": [
-                58,
-                15,
-                200
+                220,
+                236,
+                245
               ]
             }
           }

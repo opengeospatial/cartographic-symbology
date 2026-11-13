@@ -54,7 +54,7 @@ The Font Outlines Requirements Class specifies requirements for displaying fonts
 
 *<<rc-hatches,Requirements Class "Hatch Fills">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/hatches)
 
-The Hatch Filles Requirements Class specifies requirements for defining fils using hatches
+The Hatch Fills Requirements Class specifies requirements for defining fils using hatches
 
 *<<rc-stipples,Requirements Class "Stipple Fills">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/stipples)
 

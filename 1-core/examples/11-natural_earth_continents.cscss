@@ -20,9 +20,9 @@ ne_10m_admin_0_countries
       fill.color: #e29176;
    }
 
-   [CONTINENT = 'Antartica']
+   [CONTINENT = 'Antarctica']
    {
-      fill.color: #3a0fc8;
+      fill.color: #dcecf5;
    }
 
    [CONTINENT = 'Asia']
