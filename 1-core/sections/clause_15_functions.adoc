@@ -51,7 +51,7 @@ Requirements class in this section defines standard functions.
 [width="90%",options="header"]
 |===
 | Key   | Value      | Definition
-| uri   | Function   | A URI allows to identify standard functiona, even if identical function names are used in different encoding, extension or implementations for different behaviors.
+| uri   | Function   | A URI allows to identify standard functions, even if identical function names are used in different encoding, extension or implementations for different behaviors.
 |===
 
 ==== Requirements

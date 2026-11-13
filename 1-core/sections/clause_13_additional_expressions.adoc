@@ -46,8 +46,8 @@ ConditionalExpression *-- Expression
 |===
 | Name        | Definition                                     | Type          | Multiplicity
 | condition   | Condition                                      | Expression    | 1
-| thenExp     | Expression resolving to when condition is true | Expession     | 1
-| elseExp     | Expression resolving to when condition is false| Expession     | 1
+| thenExp     | Expression resolving to when condition is true | Expression    | 1
+| elseExp     | Expression resolving to when condition is false| Expression    | 1
 |===
 
 ==== Requirements

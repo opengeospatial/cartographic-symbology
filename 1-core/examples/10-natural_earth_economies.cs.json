@@ -3,7 +3,7 @@
     "title": "Economy status by country",
     "abstract": "This style is used to draw the economic status of the natural earth countries.\n This style uses the natural earth shapefile available at https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/",
     "keywords": [
-      "Econonomy",
+      "Economy",
       "Country",
       "World"
     ]

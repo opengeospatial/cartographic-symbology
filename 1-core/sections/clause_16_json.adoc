@@ -49,7 +49,7 @@ defined by the current file, allowing to override the symbolization fully or par
 ==== Example
 
 The following example demonstrates the CartoSym JSON encoding for the same example Basic Vector Styling for polygons equivalent to the one seen in
-the following CartoSym CSS section (Example 1 in 21.1.8.1. Basic Vector Styling).
+the CartoSym CSS example for "Basic Vector Styling" in the examples of the CartoSym-CSS clause.
 
 [source,json,options="unnumbered"]
 ----
