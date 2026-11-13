@@ -64,7 +64,7 @@ The Stipple Fills Requirements Class specifies requirements for defining fils us
 
 The Dot Pattern Fills Requirements Class specifies requirements for defining fills using a regular pattern of points.
 
-*<<rc-dashes,Requirements Class "Dashed Stroke">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/dashes)
+*<<rc-dashes,Requirements Class "Dashes">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/dashes)
 
 The Dashes Requirements Class specifies requirements for defining dashed strokes.
 
@@ -82,9 +82,9 @@ TODO: Clarify how this differs to using a Stroke with a casing on the Shape, and
 
 The Parameter Values Requirements Class specifies requirements for using an Expression to define any property of a Symbolizer.
 
-*<<rc-right-hand,Requirements Class "Right-hand Identifiers">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/right-hand)
+*<<rc-right-hand,Requirements Class "Any right-hand operands">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/right-hand)
 
-The Right-hand Identifiers Requirements Class specifies requirements for defining operation expressions with identifiers on the right-hand side.
+The Any right-hand operands Requirements Class specifies requirements for using any expression, not only a literal, as a right-hand operand of an operation expression.
 
 *<<rc-conditional,Requirements Class "Conditional Expressions">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/conditional)
 
@@ -151,7 +151,7 @@ is declared by appending `-partial-concept` to the conformance URI.
 |<<rc-hill-shading,Hill Shading>>                                  |http://www.opengis.net/spec/cartosym-1/2.0/conf/hill-shading
 |<<rc-labels,Basic Labeling>>                                     |http://www.opengis.net/spec/cartosym-1/2.0/conf/labels
 |<<rc-font-outlines,Font Outlines>>                                |http://www.opengis.net/spec/cartosym-1/2.0/conf/font-outlines
-|<<rc-dashes,Dashed Strokes>>                                     |http://www.opengis.net/spec/cartosym-1/2.0/conf/dashes
+|<<rc-dashes,Dashes>>                                            |http://www.opengis.net/spec/cartosym-1/2.0/conf/dashes
 |<<rc-casing,Casing and Centerline>>                              |http://www.opengis.net/spec/cartosym-1/2.0/conf/casing
 |<<rc-hatches,Hatch Fills>>                                       |http://www.opengis.net/spec/cartosym-1/2.0/conf/hatches
 |<<rc-stipples, Stipple Fills>>                                   |http://www.opengis.net/spec/cartosym-1/2.0/conf/stipples

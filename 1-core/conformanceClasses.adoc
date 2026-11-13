@@ -35,7 +35,8 @@ Initial take at organizing https://github.com/opengeospatial/styles-and-symbolog
 
 ==== Hill Shading
 
-* Consider polygon vector + light direction hillshading
+* Shading of an elevation coverage from the terrain normal and the sun (azimuth and elevation), with a `factor`
+* colorMap and opacityMap applied to the computed shade
 
 === Conformance classes for Labeling Capabilities
 
@@ -51,11 +52,12 @@ Initial take at organizing https://github.com/opengeospatial/styles-and-symbolog
 
 === Conformance classes for additional Vector Graphics Capabilities
 
-==== Dashes, Stipples and Hatches
+==== Dashes, Stipples, Hatches and Dot Patterns
 
 * Dash pattern Strokes
 * Hatch fills
 * Stipple fills
+* Dot pattern fills
 
 Gradient fills are defined in Part 2 (see #86).
 
@@ -88,13 +90,17 @@ Gradient fills are defined in Part 2 (see #86).
 
 === Conformance classes for additional Expressions Capabilities
 
-==== Full ParameterValues Support
+==== Parameter Values
 
 * Parameter Values for any Symbolizer properties
 
 ==== Function Expressions
 
-==== Arithmetic Operations
+==== Math Functions
+
+==== Conditional Expressions
+
+==== Arithmetic Operators
 
 ==== Bitwise Operators
 
@@ -112,4 +118,4 @@ Gradient fills are defined in Part 2 (see #86).
 
 ==== Variables (e.g., map to an app slider)
 
-==== Right-hand identifiers (e.g., CQL2 Property-Property comparison)
+==== Any right-hand operands (e.g., CQL2 Property-Property comparison)
