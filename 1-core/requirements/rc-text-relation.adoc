@@ -69,4 +69,4 @@ part:: A Renderer SHALL support evaluating `endsWith(a, b)` to true if and only 
 
 NOTE: The negations of the `contains`, `startsWith` and `endsWith` functions are written using the `not` operator, e.g., `not contains(name, 'Oslo')`.
 
-// TODO(review): the JSON schema has no `notLike`: add it, or state that it is encoded as `not` applied to `like` (see #140).
+NOTE: In CartoSym-JSON, `notLike` is encoded as `not` applied to `like` (see <<req-json-expressions>>).

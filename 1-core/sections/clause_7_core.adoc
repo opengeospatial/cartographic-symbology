@@ -942,6 +942,8 @@ part:: An Encoding SHALL support defining operation expressions using the relati
 part:: A Renderer SHALL support evaluating the relational operators as defined in the Relational Operators table.
 ====
 
+NOTE: The operands of a relational operator can be boolean expressions, e.g., `(a = 5) <> (b = 6)`. This extends CQL2, where an operand of a comparison can be a boolean literal but not a boolean expression (see https://github.com/opengeospatial/ogcapi-features/issues/914[OGC API - Features issue 914]).
+
 [[array-expressions]]
 ==== Array Expressions
 
