@@ -297,7 +297,7 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 | ColorMap                     | `<ColorMap>`
 | OpacityMap                   | `<ColorMap>` with `<ColorMapEntry>` elements carrying an `opacity` attribute for SLD 1.0.0; N/A for SE 1.1.0 (`<ColorMap>` only holds `<Categorize>` or `<Interpolate>`, with no per-entry opacity)
 | Color                        | `<Value>` inside `<ColorMap>`
-| ValueColor                   | `<Value>` and `<Threshold>` inside `<Categorize>` inside `<ColorMap>` for SE 1.1.0, `<ColorMapEntry>` for SLD 1.0.0
+| ValueColor                   | `<InterpolationPoint>` (with `<Data>` and `<Value>`) inside `<Interpolate>` inside `<ColorMap>` for SE 1.1.0, `<ColorMapEntry>` for SLD 1.0.0
 | ValueOpacity                 | `<ColorMapEntry>` (`quantity`, `opacity` and `label` attributes) for SLD 1.0.0; N/A for SE 1.1.0
 
 |*Hill Shading*                |
@@ -339,18 +339,29 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
                      </se:GrayChannel>
                   </se:ChannelSelection>
                   <se:ColorMap>
-                     <se:Categorize fallbackValue="#FFFFFF">
+                     <se:Interpolate fallbackValue="#FFFFFF" method="color" mode="linear">
                         <se:LookupValue>Rasterdata</se:LookupValue>
-                        <se:Value>#608849</se:Value>
-                        <se:Threshold>900</se:Threshold>
-                        <se:Value>#E2DBA7</se:Value>
-                        <se:Threshold>1300</se:Threshold>
-                        <se:Value>#FCC575</se:Value>
-                        <se:Threshold>1900</se:Threshold>
-                        <se:Value>#FCA886</se:Value>
-                        <se:Threshold>2500</se:Threshold>
-                        <se:Value>#FAFAFA</se:Value>
-                     </se:Categorize>
+                        <se:InterpolationPoint>
+                           <se:Data>0</se:Data>
+                           <se:Value>#608849</se:Value>
+                        </se:InterpolationPoint>
+                        <se:InterpolationPoint>
+                           <se:Data>900</se:Data>
+                           <se:Value>#E2DBA7</se:Value>
+                        </se:InterpolationPoint>
+                        <se:InterpolationPoint>
+                           <se:Data>1300</se:Data>
+                           <se:Value>#FCC575</se:Value>
+                        </se:InterpolationPoint>
+                        <se:InterpolationPoint>
+                           <se:Data>1900</se:Data>
+                           <se:Value>#FCA886</se:Value>
+                        </se:InterpolationPoint>
+                        <se:InterpolationPoint>
+                           <se:Data>2500</se:Data>
+                           <se:Value>#FAFAFA</se:Value>
+                        </se:InterpolationPoint>
+                     </se:Interpolate>
                   </se:ColorMap>
                </se:RasterSymbolizer>
             </se:Rule>
