@@ -1,257 +1,166 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "title": "OGC Cartographic Symbology - Part 3: Model extension for geometry relations and manipulation",
-    "$defs": {
-      "allOf": [
-           { "$ref": "../1-core/schema/CartoSym-JSON.schema.json" }
-      ],
-      "point": {
-        "title": "GeoJSON Point",
-        "type": "object",
-        "required": [ "type", "coordinates" ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [ "Point" ]
-          },
-          "coordinates": {
-            "type": "array",
-            "minItems": 2,
-            "items": {
-              "type": "number"
-            }
-          },
-          "bbox": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "multipoint": {
-        "title": "GeoJSON MultiPoint",
-        "type": "object",
-        "required": [ "type", "coordinates" ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [ "MultiPoint" ]
-          },
-          "coordinates": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            }
-          },
-          "bbox": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "linestring": {
-        "title": "GeoJSON LineString",
-        "type": "object",
-        "required": [ "type", "coordinates" ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [ "LineString" ]
-          },
-          "coordinates": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            }
-          },
-          "bbox": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "multilinestring": {
-        "title": "GeoJSON MultiLineString",
-        "type": "object",
-        "required": [ "type", "coordinates" ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [ "MultiLineString" ]
-          },
-          "coordinates": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "array",
-                "minItems": 2,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          },
-          "bbox": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "linearRing": {
-        "title": "GeoJSON LinearRing",
-        "type": "object",
-        "required": [ "type", "coordinates" ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [ "LinearRing" ]
-          },
-          "coordinates": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "minItems": 4,
-              "items": {
-                "type": "number"
-              }
-            }
-          },
-          "bbox": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "polygon": {
-        "title": "GeoJSON Polygon",
-        "type": "object",
-        "required": [ "type", "coordinates" ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [ "Polygon" ]
-          },
-          "coordinates": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "minItems": 4,
-              "items": {
-                "type": "array",
-                "minItems": 2,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          },
-          "bbox": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-     },
-      "multipolygon": {
-        "title": "GeoJSON MultiPolygon",
-        "type": "object",
-        "required": [ "type", "coordinates" ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [ "MultiPolygon" ]
-          },
-          "coordinates": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "minItems": 4,
-              "items": {
-                "type": "array",
-                "minItems": 4,
-                "items": {
-                  "type": "array",
-                  "minItems": 2,
-                  "items": {
-                    "type": "number"
-                  }
-                }
-              }
-            }
-          },
-          "bbox": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "geometryLiteral": {
-        "oneOf": [
-          { "$ref": "#/$defs/point" },
-          { "$ref": "#/$defs/linestring" },
-          { "$ref": "#/$defs/multipoint" },
-          { "$ref": "#/$defs/multilinestring" },
-          { "$ref": "#/$defs/multipolygon" }
-        ]
-      },
-      "bboxLiteral": {
-        "type": "object",
-        "required": [
-          "bbox"
-        ],
-        "properties": {
-          "bbox": {
-            "$ref": "#/$defs/bbox"
-          }
-        }
-      },
-      "bbox": {
-        "type": "array",
-        "oneOf": [
-          { "minItems": 4, "maxItems": 4 },
-          { "minItems": 6, "maxItems": 6 }
-        ],
-        "items": { "type": "number" }
-      },
-      "spatialInstance": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OGC Cartographic Symbology - Part 3: Model extension for geometry relations and manipulation",
+  "$comment": "A style valid against this schema is valid against the Part 1 schema, which accepts the spatial and temporal relations and the geometry manipulation functions as generic function calls. In addition, checkOperations walks the whole style and checks each of these operations wherever it appears. This uses only $ref: extending the Part 1 expression definitions through $dynamicRef / $dynamicAnchor works in some validators but not in others (Ajv falls back to the root schema when the anchor is not at the root).",
+  "allOf": [
+    { "$ref": "../../1-core/schemas/CartoSym-JSON.schema.json" },
+    { "$ref": "#/$defs/checkOperations" }
+  ],
+  "$defs": {
+    "checkOperations": {
+      "if": { "type": "object" },
+      "then": {
         "allOf": [
-          { "$ref": "#/$defs/spatialInstance" },
-          { 
-            "oneOf": [
-              { "$ref": "#/$defs/bboxLiteral" },
-              { "$ref": "#/$defs/geometryLiteral" }
+          { "if": { "$ref": "#/$defs/opIn/spatialPredicate" }, "then": { "$ref": "#/$defs/spatialPredicate" } },
+          { "if": { "$ref": "#/$defs/opIn/temporalPredicate" }, "then": { "$ref": "#/$defs/temporalPredicate" } },
+          { "if": { "$ref": "#/$defs/opIn/geometryManipulationBinary" }, "then": { "$ref": "#/$defs/geometryManipulationBinary" } },
+          { "if": { "$ref": "#/$defs/opIn/geometryManipulationUnary" }, "then": { "$ref": "#/$defs/geometryManipulationUnary" } },
+          { "if": { "$ref": "#/$defs/opIn/geometryBuffer" }, "then": { "$ref": "#/$defs/geometryBuffer" } }
+        ],
+        "additionalProperties": { "$ref": "#/$defs/checkOperations" }
+      },
+      "items": { "$ref": "#/$defs/checkOperations" }
+    },
+    "opIn": {
+      "spatialPredicate": {
+        "type": "object",
+        "required": [ "op" ],
+        "properties": {
+          "op": {
+            "enum": [
+              "s_contains",
+              "s_crosses",
+              "s_disjoint",
+              "s_equals",
+              "s_intersects",
+              "s_overlaps",
+              "s_touches",
+              "s_within",
+              "s_covers",
+              "s_coveredBy"
             ]
           }
+        }
+      },
+      "temporalPredicate": {
+        "type": "object",
+        "required": [ "op" ],
+        "properties": {
+          "op": {
+            "enum": [
+              "t_after",
+              "t_before",
+              "t_contains",
+              "t_disjoint",
+              "t_during",
+              "t_equals",
+              "t_finishedBy",
+              "t_finishes",
+              "t_intersects",
+              "t_meets",
+              "t_metBy",
+              "t_overlappedBy",
+              "t_overlaps",
+              "t_startedBy",
+              "t_starts"
+            ]
+          }
+        }
+      },
+      "geometryManipulationBinary": {
+        "type": "object",
+        "required": [ "op" ],
+        "properties": {
+          "op": { "enum": [ "s_intersection", "s_union", "s_difference", "s_symDifference" ] }
+        }
+      },
+      "geometryManipulationUnary": {
+        "type": "object",
+        "required": [ "op" ],
+        "properties": {
+          "op": { "enum": [ "s_convexHull", "s_envelope" ] }
+        }
+      },
+      "geometryBuffer": {
+        "type": "object",
+        "required": [ "op" ],
+        "properties": {
+          "op": { "enum": [ "s_buffer" ] }
+        }
+      }
+    },
+    "geomArgument": {
+      "$comment": "A geometry operand: a Part 1 geometry expression or a geometry manipulation function (whose own arguments are checked by checkOperations), but not a spatial or temporal relation.",
+      "anyOf": [
+        { "$ref": "../../1-core/schemas/CartoSym-JSON.schema.json#/$defs/geomExpression" },
+        { "$ref": "#/$defs/opIn/geometryManipulationBinary" },
+        { "$ref": "#/$defs/opIn/geometryManipulationUnary" },
+        { "$ref": "#/$defs/opIn/geometryBuffer" }
+      ],
+      "not": {
+        "anyOf": [
+          { "$ref": "#/$defs/opIn/spatialPredicate" },
+          { "$ref": "#/$defs/opIn/temporalPredicate" }
         ]
       }
+    },
+    "spatialPredicate": {
+      "required": [ "op", "args" ],
+      "properties": {
+        "args": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "$ref": "#/$defs/geomArgument" }
+        }
+      }
+    },
+    "temporalPredicate": {
+      "required": [ "op", "args" ],
+      "properties": {
+        "args": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "$ref": "../../1-core/schemas/CartoSym-JSON.schema.json#/$defs/temporalExpression" }
+        }
+      }
+    },
+    "geometryManipulationBinary": {
+      "required": [ "op", "args" ],
+      "properties": {
+        "args": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "$ref": "#/$defs/geomArgument" }
+        }
+      }
+    },
+    "geometryManipulationUnary": {
+      "required": [ "op", "args" ],
+      "properties": {
+        "args": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": { "$ref": "#/$defs/geomArgument" }
+        }
+      }
+    },
+    "geometryBuffer": {
+      "required": [ "op", "args" ],
+      "properties": {
+        "args": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            { "$ref": "#/$defs/geomArgument" },
+            { "$ref": "../../1-core/schemas/CartoSym-JSON.schema.json#/$defs/numericExpression" }
+          ]
+        }
+      }
     }
+  }
 }
