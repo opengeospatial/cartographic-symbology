@@ -100,7 +100,7 @@ The Arithmetic Operators Requirements Class specifies requirements for defining 
 
 *<<rc-text-relation,Requirements Class "Text Relation Operators and Functions">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/text-relation)
 
-The Text Relation Operators Requirements Class specifies requirements for defining text relation operation expressions.
+The Text Relation Operators and Functions Requirements Class specifies requirements for defining text relation operation expressions (`like` and `notLike`) and calls to the `contains`, `startsWith` and `endsWith` functions.
 
 *<<rc-functions,Requirements Class "Function Expressions">>* (http://www.opengis.net/spec/cartosym-1/2.0/req/functions)
 

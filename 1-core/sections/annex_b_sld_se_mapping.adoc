@@ -747,14 +747,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 | contains                      | `<ogc:Function>`
 | startsWith                    | `<ogc:Function>`
 | endsWith                      | `<ogc:Function>`
-| like                          | `<ogc:Function>`
-| notLike                       | `<ogc:Function>`
-| contains                      | `<ogc:Function>`
-| startsWith                    | `<ogc:Function>`
-| endsWith                      | `<ogc:Function>`
 |===
 
-.SLD Example encoding style using "Text Relation Operators" requirements class
+.SLD Example encoding style using "Text Relation Operators and Functions" requirements class
 ====
 [source,sld]
 ----

@@ -521,7 +521,7 @@ Capabilities   : vendor: VendorCapabilities
 | capabilities.arrayrelations                   | Support for <<rc-array-relations,Array Relation Functions>>      | Boolean (true if supported, false otherwise)
 | capabilities.textmanipulation                 | Support for <<rc-text-manipulation,Text Manipulation Functions>> | Boolean (true if supported, false otherwise)
 | capabilities.arithmetic                       | Support for <<rc-arithmetic,Arithmetic Operators>>              | Boolean (true if supported, false otherwise)
-| capabilities.textrelation                     | Support for <<rc-text-relation,Text Relation Operators>>         | Boolean (true if supported, false otherwise)
+| capabilities.textrelation                     | Support for <<rc-text-relation,Text Relation Operators and Functions>> | Boolean (true if supported, false otherwise)
 | capabilities.righthand                        | Support for <<rc-right-hand,Any right-hand operands>>            | Boolean (true if supported, false otherwise)
 | capabilities.conditional                      | Support for <<rc-conditional,Conditional Expressions>>          | Boolean (true if supported, false otherwise)
 | capabilities.variables                        | Support for <<rc-variables,Variables>>                          | Boolean (true if supported, false otherwise)
