@@ -83,4 +83,5 @@ All questions regarding this submission should be directed to the editors or the
 | Erwan Bocher (editor)                   | Laboratoire des Sciences et Techniques de l'information de la Communication et de la Connaissance / Centre national de la recherche scientifique (Lab-STICC CNRS)
 | Jérôme Jacovella-St-Louis (editor)      | Ecere Corporation
 | Maxime Collombin (editor)               | Haute École d'Ingénierie et de Gestion du Canton de Vaud (HEIG-VD)
+| Henrik Gulliksen Schüller (editor)      | Norwegian Mapping Authority
 |===
