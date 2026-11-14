@@ -31,7 +31,10 @@ part:: A Consumer SHALL support parsing styles encoded as CartoSym-JSON.
 [%metadata]
 identifier:: /req/json/expressions
 part:: A Producer SHALL encode Selector and Symbolizer Parameter Value expressions based on the CQL2-JSON encoding, extended as specified by the JSON Schema to cover expressions which do not evaluate to a boolean value.
+part:: A Producer SHALL encode the `isNot`, `notIn`, `notBetween` and `notLike` operators as a `not` operation whose only argument is the corresponding `isNull`, `in`, `between` or `like` operation.
 ====
+
+NOTE: As in CQL2-JSON, the JSON Schema has no operation for the negated operators. For example, `name not like 'a%'` is encoded as `{ "op": "not", "args": [ { "op": "like", "args": [ { "property": "name" }, "a%" ] } ] }`, the same as `not (name like 'a%')`. When such an expression is written in CartoSym-CSS, the negated operator (`name not like 'a%'`) is the more readable form.
 
 [[req-json-partial-update]]
 ===== Partial updates of object properties
