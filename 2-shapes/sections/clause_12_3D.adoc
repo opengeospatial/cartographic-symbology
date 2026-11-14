@@ -1,4 +1,4 @@
-[[rc-threedim]]
+[[rc-3d-models-transforms]]
 == Requirements Class "3D Graphics, Models and Transforms"
 === Overview
 
