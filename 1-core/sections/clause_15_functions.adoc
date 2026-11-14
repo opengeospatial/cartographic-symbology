@@ -69,28 +69,28 @@ include::../requirements/rc-functions.adoc[]
 @startuml
 interface MathFunctions
 MathFunctions --|> Function : standard functions
-MathFunctions : abs(x : double) double
-MathFunctions : acos(x : double) double
-MathFunctions : asin(x : double) double
-MathFunctions : atan(x : double) double
-MathFunctions : atan2(y : double, x : double) double
-MathFunctions : ceil(x : double) double
-MathFunctions : cos(x : double) double
-MathFunctions : cosh(x : double) double
-MathFunctions : exp(x : double) double
-MathFunctions : floor(x : double) double
-MathFunctions : log(x : double) double
-MathFunctions : log10(x : double) double
-MathFunctions : max(x : double, y : double) double
-MathFunctions : min(x : double, y : double) double
-MathFunctions : pow(x : double, y : double) double
-MathFunctions : random() double
-MathFunctions : round(x : double) long
-MathFunctions : sin(x : double) double
-MathFunctions : sinh(x : double) double
-MathFunctions : sqrt(x : double) double
-MathFunctions : tan(x : double) double
-MathFunctions : tanh(x : double) double
+MathFunctions : abs(x : number) number
+MathFunctions : acos(x : number) number
+MathFunctions : asin(x : number) number
+MathFunctions : atan(x : number) number
+MathFunctions : atan2(y : number, x : number) number
+MathFunctions : ceil(x : number) integer
+MathFunctions : cos(x : number) number
+MathFunctions : cosh(x : number) number
+MathFunctions : exp(x : number) number
+MathFunctions : floor(x : number) integer
+MathFunctions : log(x : number) number
+MathFunctions : log10(x : number) number
+MathFunctions : max(x : number, y : number) number
+MathFunctions : min(x : number, y : number) number
+MathFunctions : pow(x : number, y : number) number
+MathFunctions : random() number
+MathFunctions : round(x : number) integer
+MathFunctions : sin(x : number) number
+MathFunctions : sinh(x : number) number
+MathFunctions : sqrt(x : number) number
+MathFunctions : tan(x : number) number
+MathFunctions : tanh(x : number) number
 @enduml
 ....
 
@@ -108,10 +108,10 @@ include::../requirements/rc-math.adoc[]
 @startuml
 interface ArrayRelationFunctions
 ArrayRelationFunctions --|> Function : standard functions
-ArrayRelationFunctions : a_containedBy(array a, array b) bool
-ArrayRelationFunctions : a_contains(array a, array b) bool
-ArrayRelationFunctions : a_equals(array a, array b) bool
-ArrayRelationFunctions : a_overlaps(array a, array b) bool
+ArrayRelationFunctions : a_containedBy(array a, array b) boolean
+ArrayRelationFunctions : a_contains(array a, array b) boolean
+ArrayRelationFunctions : a_equals(array a, array b) boolean
+ArrayRelationFunctions : a_overlaps(array a, array b) boolean
 ArrayRelationFunctions --> ArrayExpression
 @enduml
 ....
@@ -120,10 +120,10 @@ ArrayRelationFunctions --> ArrayExpression
 [width="90%",options="header"]
 |===
 | Name            | Parameters         | Return type  | Definition
-| a_containedBy   | (array a, array b) | bool         | True if every element of `a` is also an element of `b`
-| a_contains      | (array a, array b) | bool         | True if every element of `b` is also an element of `a`
-| a_equals        | (array a, array b) | bool         | True if `a` and `b` have the same elements in the same order
-| a_overlaps      | (array a, array b) | bool         | True if `a` and `b` have at least one element in common
+| a_containedBy   | (array a, array b) | boolean      | True if every element of `a` is also an element of `b`
+| a_contains      | (array a, array b) | boolean      | True if every element of `b` is also an element of `a`
+| a_equals        | (array a, array b) | boolean      | True if `a` and `b` have the same elements in the same order
+| a_overlaps      | (array a, array b) | boolean      | True if `a` and `b` have at least one element in common
 |===
 
 ==== Requirements

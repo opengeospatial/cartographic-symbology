@@ -37,8 +37,8 @@ StylingRule : nestedRules: StylingRule[0..*]
 StylingRule *-- StylingRule
 StylingRule *-- Expression : selector
 
-Symbolizer : visibility: bool[0..1]
-Symbolizer : opacity: float[0..1]
+Symbolizer : visibility: boolean[0..1]
+Symbolizer : opacity: number[0..1]
 Symbolizer : zOrder: integer[0..1]
 Symbolizer --* StylingRule
 Symbolizer --> Expression : parameter values
@@ -211,9 +211,9 @@ Separate requirements classes and later parts will extend this Symbolizer class 
 [width="90%",options="header"]
 |===
 | Name        | Definition                   | Data type and value  | Multiplicity
-| visibility | Whether to display the data  | bool                 | 0..1
-| opacity    | Degree of opacity            | float                | 0..1
-| zOrder     | Specify a rendering order    | int                  | 0..1
+| visibility | Whether to display the data  | boolean              | 0..1
+| opacity    | Degree of opacity            | number               | 0..1
+| zOrder     | Specify a rendering order    | integer              | 0..1
 |===
 
 .CSCSS Example showcasing the limited symbolization possible with this Core requirements class
@@ -280,7 +280,7 @@ part:: A Renderer SHALL support not portraying a feature or coverage cell for wh
 ====
 [%metadata]
 identifier:: /req/core/opacity
-part:: An Encoding SHALL support defining an `opacity` Symbolizer property as a float between 0 (fully transparent) and 1 (fully opaque).
+part:: An Encoding SHALL support defining an `opacity` Symbolizer property as a number between 0 (fully transparent) and 1 (fully opaque).
 part:: A Renderer SHALL support applying the resolved `opacity` property by multiplying it with the opacity of the fill, the stroke, the graphics of markers and the opacity channel of coverage cells.
 ====
 
@@ -407,12 +407,12 @@ SystemIdentifierExpression : dataLayer.type
 SystemIdentifierExpression --> Visualization
 SystemIdentifierExpression --> DataLayer
 
-Visualization : scaleDenominator: double
+Visualization : scaleDenominator: number
 Visualization : dateTime: TimeInstant
 Visualization : date: Date
 Visualization : timeOfDay: TimeOfDay
 Visualization : timeInterval: TimeInterval
-Visualization : pass: int
+Visualization : pass: integer
 Visualization *-- TimeInstant
 Visualization *-- TimeInterval
 Visualization --o Date
@@ -439,15 +439,15 @@ TimeInterval : end: TimeInstant
 TimeInterval *-- TimeInstant
 
 class Date
-Date : year: int
+Date : year: integer
 Date : month: Month
-Date : day: int
+Date : day: integer
 Date *-- Month
 
 class TimeOfDay
-TimeOfDay : hour: int
-TimeOfDay : minutes: int
-TimeOfDay : seconds: double
+TimeOfDay : hour: integer
+TimeOfDay : minutes: integer
+TimeOfDay : seconds: number
 
 enum Month
 Month : january
@@ -478,25 +478,25 @@ A capability System Identifier declares available capabilities of the rendering 
 ....
 @startuml
 Class Capabilities
-Capabilities   : vector: bool
-Capabilities   : coverage: bool
-Capabilities   : labels: bool
-Capabilities   : hillshading: bool
-Capabilities   : fontoutlines: bool
-Capabilities   : hatches: bool
-Capabilities   : stipples: bool
-Capabilities   : dashes: bool
-Capabilities   : casing: bool
-Capabilities   : parametervalues: bool
-Capabilities   : functions: bool
-Capabilities   : math: bool
-Capabilities   : arrayrelations: bool
-Capabilities   : textmanipulation: bool
-Capabilities   : arithmetic: bool
-Capabilities   : textrelation: bool
-Capabilities   : righthand: bool
-Capabilities   : conditional: bool
-Capabilities   : variables: bool
+Capabilities   : vector: boolean
+Capabilities   : coverage: boolean
+Capabilities   : labels: boolean
+Capabilities   : hillshading: boolean
+Capabilities   : fontoutlines: boolean
+Capabilities   : hatches: boolean
+Capabilities   : stipples: boolean
+Capabilities   : dashes: boolean
+Capabilities   : casing: boolean
+Capabilities   : parametervalues: boolean
+Capabilities   : functions: boolean
+Capabilities   : math: boolean
+Capabilities   : arrayrelations: boolean
+Capabilities   : textmanipulation: boolean
+Capabilities   : arithmetic: boolean
+Capabilities   : textrelation: boolean
+Capabilities   : righthand: boolean
+Capabilities   : conditional: boolean
+Capabilities   : variables: boolean
 Capabilities   : vendor: VendorCapabilities
 @enduml
 ....
@@ -506,26 +506,26 @@ Capabilities   : vendor: VendorCapabilities
 |===
 | Name                                          | Definition                                                      | Data type and value
 | capabilities                                  | Supported capabilities of the rendering engine                  | Capabilities
-| capabilities.vector                           | Support for <<rc-vector,Basic Vector Features Styling>>         | Boolean (true if supported, false otherwise)
-| capabilities.coverage                         | Support for <<rc-coverage,Basic Coverage Styling>>              | Boolean (true if supported, false otherwise)
-| capabilities.labels                           | Support for <<rc-labels,Basic Labeling>>                        | Boolean (true if supported, false otherwise)
-| capabilities.hillshading                      | Support for <<rc-hill-shading,Hill Shading>>                     | Boolean (true if supported, false otherwise)
-| capabilities.fontoutlines                     | Support for <<rc-font-outlines,Font Outlines>>                   | Boolean (true if supported, false otherwise)
-| capabilities.hatches                          | Support for <<rc-hatches,Hatch Fills>>                          | Boolean (true if supported, false otherwise)
-| capabilities.stipples                         | Support for <<rc-stipples, Stipple Fills>>                      | Boolean (true if supported, false otherwise)
-| capabilities.dashes                           | Support for <<rc-dashes,Dashed Strokes>>                        | Boolean (true if supported, false otherwise)
-| capabilities.casing                           | Support for <<rc-casing,Casing and Centerline>>                 | Boolean (true if supported, false otherwise)
-| capabilities.parametervalues                  | Support for <<rc-parameter-values,Parameter Values>>             | Boolean (true if supported, false otherwise)
-| capabilities.functions                        | Support for <<rc-functions,Function Expressions>>               | Boolean (true if supported, false otherwise)
-| capabilities.math                             | Support for <<rc-math,Math Functions>>                          | Boolean (true if supported, false otherwise)
-| capabilities.arrayrelations                   | Support for <<rc-array-relations,Array Relation Functions>>      | Boolean (true if supported, false otherwise)
-| capabilities.textmanipulation                 | Support for <<rc-text-manipulation,Text Manipulation Functions>> | Boolean (true if supported, false otherwise)
-| capabilities.arithmetic                       | Support for <<rc-arithmetic,Arithmetic Operators>>              | Boolean (true if supported, false otherwise)
-| capabilities.textrelation                     | Support for <<rc-text-relation,Text Relation Operators and Functions>> | Boolean (true if supported, false otherwise)
-| capabilities.righthand                        | Support for <<rc-right-hand,Any right-hand operands>>            | Boolean (true if supported, false otherwise)
-| capabilities.conditional                      | Support for <<rc-conditional,Conditional Expressions>>          | Boolean (true if supported, false otherwise)
-| capabilities.variables                        | Support for <<rc-variables,Variables>>                          | Boolean (true if supported, false otherwise)
-| capabilities.vendor.<vendorName>.<capability> | Support for a capability defined by a vendor extension          | Boolean (true if supported, false otherwise)
+| capabilities.vector                           | Support for <<rc-vector,Basic Vector Features Styling>>         | boolean (true if supported, false otherwise)
+| capabilities.coverage                         | Support for <<rc-coverage,Basic Coverage Styling>>              | boolean (true if supported, false otherwise)
+| capabilities.labels                           | Support for <<rc-labels,Basic Labeling>>                        | boolean (true if supported, false otherwise)
+| capabilities.hillshading                      | Support for <<rc-hill-shading,Hill Shading>>                     | boolean (true if supported, false otherwise)
+| capabilities.fontoutlines                     | Support for <<rc-font-outlines,Font Outlines>>                   | boolean (true if supported, false otherwise)
+| capabilities.hatches                          | Support for <<rc-hatches,Hatch Fills>>                          | boolean (true if supported, false otherwise)
+| capabilities.stipples                         | Support for <<rc-stipples, Stipple Fills>>                      | boolean (true if supported, false otherwise)
+| capabilities.dashes                           | Support for <<rc-dashes,Dashed Strokes>>                        | boolean (true if supported, false otherwise)
+| capabilities.casing                           | Support for <<rc-casing,Casing and Centerline>>                 | boolean (true if supported, false otherwise)
+| capabilities.parametervalues                  | Support for <<rc-parameter-values,Parameter Values>>             | boolean (true if supported, false otherwise)
+| capabilities.functions                        | Support for <<rc-functions,Function Expressions>>               | boolean (true if supported, false otherwise)
+| capabilities.math                             | Support for <<rc-math,Math Functions>>                          | boolean (true if supported, false otherwise)
+| capabilities.arrayrelations                   | Support for <<rc-array-relations,Array Relation Functions>>      | boolean (true if supported, false otherwise)
+| capabilities.textmanipulation                 | Support for <<rc-text-manipulation,Text Manipulation Functions>> | boolean (true if supported, false otherwise)
+| capabilities.arithmetic                       | Support for <<rc-arithmetic,Arithmetic Operators>>              | boolean (true if supported, false otherwise)
+| capabilities.textrelation                     | Support for <<rc-text-relation,Text Relation Operators and Functions>> | boolean (true if supported, false otherwise)
+| capabilities.righthand                        | Support for <<rc-right-hand,Any right-hand operands>>            | boolean (true if supported, false otherwise)
+| capabilities.conditional                      | Support for <<rc-conditional,Conditional Expressions>>          | boolean (true if supported, false otherwise)
+| capabilities.variables                        | Support for <<rc-variables,Variables>>                          | boolean (true if supported, false otherwise)
+| capabilities.vendor.<vendorName>.<capability> | Support for a capability defined by a vendor extension          | boolean (true if supported, false otherwise)
 |===
 
 .CSCSS Example showcasing the use of a capability System Identifier with a fallback Styling Rule
@@ -547,12 +547,12 @@ Capabilities   : vendor: VendorCapabilities
 |===
 | Name                             | Definition                              | Data type and value
 | visualization                    | Current visualization state             | Visualization
-| visualization.scaleDenominator   | Current visualization scale denominator | float
+| visualization.scaleDenominator   | Current visualization scale denominator | number
 | visualization.dateTime           | Current visualization date and time     | DateTime
 | visualization.date               | Current visualization date              | Date
 | visualization.timeOfDay          | Current visualization time of day       | Time
 | visualization.timeInterval       | Current visualization time of day       | TimeInterval
-| visualization.pass               | Current visualization rendering pass    | int
+| visualization.pass               | Current visualization rendering pass    | integer
 |===
 
 .CSCSS Example showcasing scale-dependent selector using system identifiers
@@ -598,7 +598,7 @@ with different symbolizers before rendering the next feature.
 [width="90%",options="header"]
 |===
 | Construct          | Construct type                   | Data type |Behavior description
-| zOrder             | Symbolizer property              | float     | In a single pass, modify default order of features / layers
+| zOrder             | Symbolizer property              | number    | In a single pass, modify default order of features / layers
 | visualization.pass | System identifier for selector   | integer   | Render all selected geometry features / coverage cells of data layers
                                                                       more than once with different symbolization,
                                                                       or after whole map drawn in previous pass
@@ -628,18 +628,18 @@ with different symbolizers before rendering the next feature.
 [width="90%",options="header"]
 |===
 | Name            | Definition                                   | Data type and value | Multiplicity
-| year            |                                              | int                 | 1
+| year            |                                              | integer             | 1
 | month           |                                              | Month               | 1
-| day             |                                              | int                 | 1
+| day             |                                              | integer             | 1
 |===
 
 .TimeOfDay class
 [width="90%",options="header"]
 |===
 | Name            | Definition                                   | Data type and value | Multiplicity
-| hour            |                                               | int                 | 1
-| minutes         |                                              | Month               | 1
-| seconds         |                                              | int                 | 1
+| hour            |                                               | integer             | 1
+| minutes         |                                              | integer             | 1
+| seconds         |                                              | number              | 1
 |===
 
 .Class TimeInstant
@@ -755,6 +755,21 @@ part:: An Encoding SHALL support defining expressions using the `dataLayer.ident
 part:: A Renderer SHALL support resolving the `dataLayer.identifier` System Identifier to the identifier of the data layer being portrayed, and the `dataLayer.type` System Identifier to its type (`map`, `vector` or `coverage`).
 ====
 
+[[data-types]]
+==== Data Types
+
+Every value has a data type: literal values in the style, the values of System Identifiers, data properties and Symbolizer properties, and the values that expressions compute, including the arguments and return values of Functions.
+The basic data types are named after the types that the `/functions` resource of OGC API - Features - Part 3: Filtering uses for the arguments and return values of functions, so that a Function described in this Standard reads the same as its description in `/functions`:
+
+* `string`: a sequence of Unicode characters (text).
+* `integer`: a whole number, in the range of a signed 64-bit integer.
+* `number`: a real number, with or without a fractional part. Every `integer` value is also a `number` value. A `number` is generally represented as a double-precision floating-point value, but this Standard does not require that representation.
+* `boolean`: `true` or `false`.
+
+Other data types, such as Color, enumerations, arrays and the classes in the UML diagrams, are named after their classes.
+
+The `round`, `floor` and `ceil` functions of the <<rc-math,Math Functions>> requirements class return an `integer`, so they can be used to convert a `number` to an `integer`.
+
 [[literal-expressions]]
 ==== Literal Expressions
 
@@ -771,7 +786,7 @@ TextLiteral : text: string
 EnumValueLiteral --|> LiteralExpression
 EnumValueLiteral : enum: type
 EnumValueLiteral : value: string
-EnumValueLiteral : numericValue: int64
+EnumValueLiteral : numericValue: integer
 
 enum BoolLiteral
 BoolLiteral --|> EnumValueLiteral
@@ -781,10 +796,10 @@ BoolLiteral : true
 NullLiteral --|> LiteralExpression
 
 IntegerLiteral --|> LiteralExpression
-IntegerLiteral : value: int64
+IntegerLiteral : value: integer
 
 RealLiteral --|> LiteralExpression
-RealLiteral : value: double
+RealLiteral : value: number
 
 ArrayLiteral --|> ArrayExpression
 ArrayLiteral --|> LiteralExpression
@@ -799,12 +814,12 @@ A similar literal class concept was originally defined in the OGC Filter Encodin
 
 The following types of literals are defined:
 
-* An integer literal represents a whole numeric value (CSCSS example: `123`)
-* A real literal represents a real number (integer, fractional or irrational number) (CSCSS example: `0.85`)
-* Text literals are Unicode character strings (CSCSS example: `'København'`)
+* An integer literal represents a whole numeric value, of type `integer` (CSCSS example: `123`)
+* A real literal represents a real number (integer, fractional or irrational number), of type `number` (CSCSS example: `0.85`)
+* Text literals are Unicode character strings, of type `string` (CSCSS example: `'København'`)
 * A null literal represents an unset value (CSCSS example: `null`)
 * Enumeration value literals allow to refer by name to a set of pre-defined values associated with the context where they are used (CSCSS example: `vector`)
-* Boolean literals are a specialized type of enumeration literals which are either true or false (CSCSS example: `false`)
+* Boolean literals are a specialized type of enumeration literals which are either true or false, of type `boolean` (CSCSS example: `false`)
 * Array literals (see <<array-expressions,Array Expressions>>) (CSCSS example: `(1, 2, 3)`)
 * Instance literals (see <<instance-expressions,Instance Expressions>>) (CSCSS examples: `Color(20, 100, 80)` or `Color(r: 20, g: 100, b: 80)`)
 

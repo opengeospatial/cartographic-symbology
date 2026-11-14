@@ -17,9 +17,9 @@ Label --|> MultiGraphic
 Label : placement: LabelPlacement
 Label *-- LabelPlacement
 
-LabelPlacement : priority: float
-LabelPlacement : minSpacing: float
-LabelPlacement : maxSpacing: float
+LabelPlacement : priority: number
+LabelPlacement : minSpacing: number
+LabelPlacement : maxSpacing: number
 @enduml
 ....
 
@@ -46,7 +46,7 @@ LabelClass properties are documented in the following table.
 |===
 | Name   | Definition   | Data type and value   | Multiplicity
 | uom   | Unit of measure to apply to the affected graphical properties within a Label   | uom code   | zero or one
-| labelText   | Text-label content to draw   | ParameterValue data type String   | one
+| labelText   | Text-label content to draw   | ParameterValue data type string   | one
 | font   | Font definition to draw the text-label content   | Font data type Default value: system-dependent   | zero or one
 | fill   | Filling style to draw the glyphs   | Fill data type   | zero or one
 | extension   | Any encoding should allow to extend a Label with custom items   | Any type   | zero or more
@@ -69,8 +69,8 @@ include::../requirements/rc-labels.adoc[]
 Font *-- FontOutline
 Font : outline: FontOutline
 
-FontOutline : size: float
-FontOutline : opacity: float
+FontOutline : size: number
+FontOutline : opacity: number
 FontOutline : color: Color
 FontOutline *-- Color
 @enduml
@@ -91,8 +91,8 @@ This requirements class adds support for Text font outlines to improve readabili
 [width="90%",options="header"]
 |===
 | Name      | Definition               | Data type and value   | Multiplicity
-| size      | Size of the outline      | float                 | 0..1
-| opacity   | Opacity of the outline   | float                 | 0..1
+| size      | Size of the outline      | number                | 0..1
+| opacity   | Opacity of the outline   | number                | 0..1
 | color     | Color of the outline     | Color                 | 0..1
 |===
 

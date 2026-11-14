@@ -66,7 +66,7 @@ The SolidFill class is a concrete implementation of the Fill class and allows to
 |===
 | Name	| Definition	| Data type and value	| Multiplicity
 | color	| The color to fill the area	| Color data type	| zero or one
-| opacity	| Opacity of the Color	| ParameterValue type (Float) Value: [0;1] (1 means 100% opaque) Default value: 0	| zero or one
+| opacity	| Opacity of the Color	| ParameterValue type (number) Value: [0;1] (1 means 100% opaque) Default value: 0	| zero or one
 |===
 
 Note: Any fill implementation can be imagined as for example a TextureFill extension to add a level of artistic control and realism to a surface. For complex Texture properties, a specific Symbolizer could be proposed.
@@ -80,7 +80,7 @@ The PenStroke extension is a concrete implementation of the Stroke class. It all
 [width="90%",options="header"]
 |===
 | Name	| Definition	| Data type and value	| Multiplicity
-| width	| Thickness of the line which gives form to an area to fill (a)	| ParameterValue data type (Float) Value: [0;+∞) | Default value: 1px	| zero or one
+| width	| Thickness of the line which gives form to an area to fill (a)	| ParameterValue data type (number) Value: [0;+∞) | Default value: 1px	| zero or one
 | fill	| The filling style to draw the linear area	| Fill data type	| zero or one
 |===
 
@@ -95,7 +95,7 @@ The RGBColor extension is a concrete implementation of the Color class where the
 [width="90%",options="header"]
 |===
 | Name	| Definition	| Data type and value	| Multiplicity
-| red	| The red value of the color	| ParameterValue data type (Integer) Value: (0;255) Default value: 0	| one
-| green	| The green value of the color	| ParameterValue data type (Integer) Value: (0;255) Default value: 0	| one
-| blue	| The blue value of the color	| ParameterValue data type (Integer) Value: (0;255) Default value: 0	| one
+| red	| The red value of the color	| ParameterValue data type (integer) Value: (0;255) Default value: 0	| one
+| green	| The green value of the color	| ParameterValue data type (integer) Value: (0;255) Default value: 0	| one
+| blue	| The blue value of the color	| ParameterValue data type (integer) Value: (0;255) Default value: 0	| one
 |===

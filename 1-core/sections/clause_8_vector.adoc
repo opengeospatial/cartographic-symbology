@@ -59,10 +59,10 @@ SystemIdentifierExpression --> Feature
 SystemIdentifierExpression --> DataLayer
 
 Feature : identifier: string
-Feature : geometryDimensions: int
+Feature : geometryDimensions: integer
 
 DataLayer : features: Feature[*]
-DataLayer : featuresGeometryDimensions: int
+DataLayer : featuresGeometryDimensions: integer
 DataLayer *-- Feature
 @enduml
 ....
@@ -75,7 +75,7 @@ In addition, the following new System Identifiers are defined by this requiremen
 | Name                                  | Definition                                               | Data type and value
 | feature.identifier                    | Identifier of a particular feature                       | string or number
 | feature.geometryDimension            | Dimension of geometry for a particular feature           | 0 (points), 1 (lines), 2 (polygons), 3 (polyhedrons)
-| feature.pass                          | Current rendering pass for the same feature              | int
+| feature.pass                          | Current rendering pass for the same feature              | integer
 | dataLayer.featuresGeometryDimension   | Dimension of feature geometry (if same for all features) | 0 (points), 1 (lines), 2 (polygons), 3 (polyhedrons), `null` (mixed)
 |===
 
@@ -96,9 +96,9 @@ with different symbolizers.
 [plantuml, target=diagram-classes, format=png]
 ....
 @startuml
-Color : r: float
-Color : g: float
-Color : b: float
+Color : r: number
+Color : g: number
+Color : b: number
 @enduml
 ....
 
@@ -106,9 +106,9 @@ Color : b: float
 [width="90%",options="header"]
 |===
 | Name   | Definition       | Type   | Multiplicity
-| r       | Red component   | float  | 1
-| g       | Green component | float  | 1
-| b       | Blue component  | float  | 1
+| r       | Red component   | number | 1
+| g       | Green component | number | 1
+| b       | Blue component  | number | 1
 |===
 
 ==== Fills
@@ -119,7 +119,7 @@ Color : b: float
 ....
 @startuml
 Fill : color: Color
-Fill : opacity: float
+Fill : opacity: number
 Fill *-- Color
 @enduml
 ....
@@ -132,7 +132,7 @@ Separate conformance classes can extend this Fill class with additional properti
 |===
 | Name    | Definition          | Type    | Multiplicity
 | color   | Color of the fill   | Color   | 0..1
-| opacity | Opacity of the fill | float   | 0..1
+| opacity | Opacity of the fill | number  | 0..1
 |===
 
 ==== Strokes
@@ -146,8 +146,8 @@ Stroke --|> StrokeStyling
 Stroke *-- StrokeStyling
 
 StrokeStyling : color: Color
-StrokeStyling : opacity: float
-StrokeStyling : width: float
+StrokeStyling : opacity: number
+StrokeStyling : width: number
 StrokeStyling : widthUnit: GraphicalUnit
 StrokeStyling *-- Color
 StrokeStyling *-- GraphicalUnit
@@ -163,8 +163,8 @@ A Stroke object inherits from a base _StrokeStyling_ class, which is re-used in 
 |===
 | Name      | Definition                           | Data type and value   | Multiplicity
 | color     | Color of the stroke                  | Color                 | 0..1
-| opacity   | Opacity of the stroke                | float                 | 0..1
-| width     | Width of the stroke                  | float (uom-qualified) | 0..1
+| opacity   | Opacity of the stroke                | number                | 0..1
+| width     | Width of the stroke                  | number (uom-qualified) | 0..1
 |===
 
 [[graphical-units-of-measure]]
@@ -223,7 +223,7 @@ MultiGraphic : elements: Graphic [0..*]
 MultiGraphic *-- Graphic
 
 Graphic : position: UnitPoint
-Graphic : opacity: float
+Graphic : opacity: number
 @enduml
 ....
 
@@ -244,7 +244,7 @@ A MultiGraphic itself inherits from a Graphic allowing to specify an opacity and
 [width="90%",options="header"]
 |===
 | Name      | Definition  | Data type and value | Multiplicity
-| opacity   | Opacity     | float               | 0..1
+| opacity   | Opacity     | number              | 0..1
 | position  | Position    | UnitPoint           | 0..1
 |===
 
@@ -281,8 +281,8 @@ or by a three-dimensional cube. The GraphicSize properties are documented in the
 [width="90%",options="header"]
 |===
 | Name      | Definition           | Data type and value   | Multiplicity
-| x         | Horizontal position  | float (uom-qualified) | 1
-| y         | Vertical position    | float (uom-qualified) | 1
+| x         | Horizontal position  | number (uom-qualified) | 1
+| y         | Vertical position    | number (uom-qualified) | 1
 |===
 
 ===== Dot Graphics
@@ -294,7 +294,7 @@ or by a three-dimensional cube. The GraphicSize properties are documented in the
 @startuml
 Dot --|> Shape
 Dot : point: UnitPoint
-Dot : size: float
+Dot : size: number
 Dot : color: Color
 Dot *-- UnitPoint
 Dot *-- Color
@@ -314,7 +314,7 @@ A Dot inherits from a Shape class allowing to define a `stroke` which controls t
 [width="90%",options="header"]
 |===
 | Name       | Definition                                       | Type                  | Multiplicity
-| size       | Diameter of the dot (the `width` of its stroke)  | float (uom-qualified) | 0..1
+| size       | Diameter of the dot (the `width` of its stroke)  | number (uom-qualified) | 0..1
 | color      | Color of the dot (the `color` of its stroke)     | Color                 | 0..1
 |===
 
@@ -337,7 +337,7 @@ Image  : image: Resource
 Image  : hotSpot: UnitPoint
 Image  : tint: Color
 Image  : blackTint: Color
-Image  : alphaThreshold: float
+Image  : alphaThreshold: number
 Image *-- Resource
 Image *-- Color
 Image *-- UnitPoint
@@ -361,7 +361,7 @@ An Image is one type of graphic defined by this requirements class that can be u
 | hotSpot        | 0,0 position in the image       | UnitPoint (uom-qualified) | 1
 | tint           | Color replacing white in the image | Color                  | 1
 | blackTint      | Color replacing black in the image | Color                  | 1
-| alphaThreshold | Lowest alpha value of a pixel considered part of the image for picking | float | 1
+| alphaThreshold | Lowest alpha value of a pixel considered part of the image for picking | number | 1
 |===
 
 The actual image content is defined by a Resource, which can be specified by one or multiple properties:
@@ -394,12 +394,12 @@ Text *-- TextAlignment
 Text --> IdentifierExpressions
 
 Font : face: string
-Font : size: float
-Font : bold: bool
-Font : italic: bool
-Font : underline: bool
+Font : size: number
+Font : bold: boolean
+Font : italic: boolean
+Font : underline: boolean
 Font : color: Color
-Font : opacity: float
+Font : opacity: number
 Font *-- Color
 
 TextAlignment : horizontal: HAlignment
@@ -465,9 +465,9 @@ The font property of a Text Graphic is defined uses the following _Font_ class:
 |===
 | Name           | Definition            | Data type and value   | Multiplicity
 | face           | Face name             | string                | 0..1
-| size           | Size of the font (pt) | float                 | 0..1
-| bold           | Use bold style        | bool                  | 0..1
-| italic         | Use italic style      | bool                  | 0..1
+| size           | Size of the font (pt) | number                | 0..1
+| bold           | Use bold style        | boolean               | 0..1
+| italic         | Use italic style      | boolean               | 0..1
 |===
 
 ////
@@ -479,7 +479,7 @@ The FontClass describes the font properties to apply for the rendering of a text
 | Name         | Definition   | Data type and value   | Multiplicity
 | uom          | Unit of measure to apply to the affected graphical properties within a Font   | uom code   | zero or one
 | fontFamily   | Font family name (a)   | ParameterValue data type CharacterString   | zero or more
-| fontSize     | Font size when applying the font to a text string (b)   | ParameterValue data type Float   | zero or one
+| fontSize     | Font size when applying the font to a text string (b)   | ParameterValue data type number   | zero or one
 | fontWeight   | Amount of weight or boldness to use for a font   | ParameterValue data type CharacterString   | zero or one
 | fontStyle    | Style to use for a font   | ParameterValue data type CharacterString   | zero or one
 |===

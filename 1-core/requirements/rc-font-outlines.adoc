@@ -30,7 +30,7 @@ part:: A Renderer SHALL support drawing an outline around the glyphs of text dra
 ====
 [%metadata]
 identifier:: /req/font-outlines/size
-part:: An Encoding SHALL support defining a `size` FontOutline property as a float.
+part:: An Encoding SHALL support defining a `size` FontOutline property as a number.
 part:: A Renderer SHALL support drawing the outline extending outward from the glyph contours by the thickness specified by the `size` property.
 ====
 
@@ -41,7 +41,7 @@ part:: A Renderer SHALL support drawing the outline extending outward from the g
 ====
 [%metadata]
 identifier:: /req/font-outlines/opacity
-part:: An Encoding SHALL support defining an `opacity` FontOutline property as a float between 0 (fully transparent) and 1 (fully opaque).
+part:: An Encoding SHALL support defining an `opacity` FontOutline property as a number between 0 (fully transparent) and 1 (fully opaque).
 part:: A Renderer SHALL support drawing the outline with the opacity specified by the `opacity` property.
 ====
 
