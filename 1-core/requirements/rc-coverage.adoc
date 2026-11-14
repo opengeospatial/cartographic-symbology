@@ -30,7 +30,7 @@ NOTE: Band values in another range are scaled in the style, as in example 6, whi
 ====
 [%metadata]
 identifier:: /req/coverage/alpha-channel
-part:: An Encoding SHALL support defining a `alphaChannel` Symbolizer property as a float.
+part:: An Encoding SHALL support defining a `alphaChannel` Symbolizer property as a number.
 part:: A Renderer SHALL support portraying each coverage cell with the opacity resolved from the `alphaChannel` property for that cell, where 0 is fully transparent and 1 is fully opaque.
 ====
 
@@ -41,7 +41,7 @@ part:: A Renderer SHALL support portraying each coverage cell with the opacity r
 ====
 [%metadata]
 identifier:: /req/coverage/single-channel
-part:: An Encoding SHALL support defining a `singleChannel` Symbolizer property as a float.
+part:: An Encoding SHALL support defining a `singleChannel` Symbolizer property as a number.
 part:: A Renderer SHALL support using the value resolved from the `singleChannel` property for each coverage cell as the input value to the `colorMap` and `opacityMap` properties.
 ====
 
@@ -52,7 +52,7 @@ part:: A Renderer SHALL support using the value resolved from the `singleChannel
 ====
 [%metadata]
 identifier:: /req/coverage/color-map
-part:: An Encoding SHALL support defining a `colorMap` Symbolizer property as an array of `value` (float) and `color` (Color) pairs which can be tagged with a `name`.
+part:: An Encoding SHALL support defining a `colorMap` Symbolizer property as an array of `value` (number) and `color` (Color) pairs which can be tagged with a `name`.
 part:: A Renderer SHALL support portraying each coverage cell with the color mapped from its `singleChannel` value by the `colorMap`, using the color of an entry for a value equal to that entry's `value`, interpolating between the colors of the two closest entries for other values within the range of the map, and using the color of the first or last entry for values outside the range of the map.
 ====
 
@@ -63,7 +63,7 @@ part:: A Renderer SHALL support portraying each coverage cell with the color map
 ====
 [%metadata]
 identifier:: /req/coverage/opacity-map
-part:: An Encoding SHALL support defining a `opacityMap` Symbolizer property as an array of `value` (float) and `opacity` (float) pairs which can be tagged with a `name`.
+part:: An Encoding SHALL support defining a `opacityMap` Symbolizer property as an array of `value` (number) and `opacity` (number) pairs which can be tagged with a `name`.
 part:: A Renderer SHALL support portraying each coverage cell with the opacity mapped from its `singleChannel` value by the `opacityMap`, using the opacity of an entry for a value equal to that entry's `value`, interpolating between the opacities of the two closest entries for other values within the range of the map, and using the opacity of the first or last entry for values outside the range of the map.
 ====
 

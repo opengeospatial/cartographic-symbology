@@ -79,7 +79,7 @@ Standard.
 | BoolLiteral       | true or false in `<ogc:Literal>`
 | NullLiteral       | `<PropertyIsNull>` when testing for null values
 | IntegerLiteral    | integer value directly in `<ogc:Literal>`
-| RealLiteral       | double value inside `<ogc:Literal>`
+| RealLiteral       | number value inside `<ogc:Literal>`
 | ArrayLiteral      | N/A
 | InstanceLiteral   | N/A
 |===

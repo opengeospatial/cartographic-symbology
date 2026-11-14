@@ -30,7 +30,7 @@ part:: A Renderer SHALL support, where the HillShading has no `colorMap`, multip
 ====
 [%metadata]
 identifier:: /req/hill-shading/factor
-part:: An Encoding SHALL support defining a `factor` HillShading property as a float.
+part:: An Encoding SHALL support defining a `factor` HillShading property as a number.
 part:: A Renderer SHALL support multiplying the horizontal components of the terrain surface normal by the `factor` property before normalizing it, so that a `factor` of 1 shades the terrain as it is and a larger `factor` exaggerates the relief.
 ====
 
@@ -54,7 +54,7 @@ part:: A Renderer SHALL support computing the shade of each cell for a light sou
 ====
 [%metadata]
 identifier:: /req/hill-shading/color-map
-part:: An Encoding SHALL support defining a `colorMap` HillShading property as an array of `value` (float) and `color` (Color) pairs.
+part:: An Encoding SHALL support defining a `colorMap` HillShading property as an array of `value` (number) and `color` (Color) pairs.
 part:: A Renderer SHALL support portraying each cell with the color mapped from its computed shade value by the `colorMap`, as for the `colorMap` Symbolizer property.
 ====
 
@@ -65,6 +65,6 @@ part:: A Renderer SHALL support portraying each cell with the color mapped from 
 ====
 [%metadata]
 identifier:: /req/hill-shading/opacity-map
-part:: An Encoding SHALL support defining a `opacityMap` HillShading property as an array of `value` (float) and `opacity` (float) pairs.
+part:: An Encoding SHALL support defining a `opacityMap` HillShading property as an array of `value` (number) and `opacity` (number) pairs.
 part:: A Renderer SHALL support portraying each cell with the opacity mapped from its computed shade value by the `opacityMap`, as for the `opacityMap` Symbolizer property.
 ====

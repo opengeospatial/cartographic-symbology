@@ -16,7 +16,7 @@ Implementations shall support all properties in the below table for style encodi
 [width="90%",options="header"]
 |===
 | Name   | Definition                                       | Type                   | Multiplicity
-| ratio  | Ratio of stippling dots according to area filled | float (between 0 and 1) | 0..1
+| ratio  | Ratio of stippling dots according to area filled | number (between 0 and 1) | 0..1
 |===
 
 [[req-stipples-ratio]]

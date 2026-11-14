@@ -32,9 +32,9 @@ part:: A Renderer SHALL support filling vector geometry with a pattern of parall
 [width="90%",options="header"]
 |===
 | Name      | Definition       | Data type and value   | Multiplicity
-| width     | Thickness of hatch          | float                 | 0..1
-| angle     | Hatches orientation clockwise degree         | float                 | 0..1
-| distance  | Distance between two consecutive hatches     | float                 | 0..1
+| width     | Thickness of hatch          | number                | 0..1
+| angle     | Hatches orientation clockwise degree         | number                | 0..1
+| distance  | Distance between two consecutive hatches     | number                | 0..1
 |===
 
 // TODO(review): the table says the hatch `angle` turns clockwise, while other angles drawn on the map (such as the gradient `angle`) start at 0 pointing right and turn counter-clockwise. The hatch angle should probably do the same, to be checked against graphics toolkits (see #146).

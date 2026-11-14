@@ -15,8 +15,8 @@ as providing an option to apply a color and/or opacity map based on the values.
 @startuml
 class Symbolizer <<extended>>
 Symbolizer : colorChannels: Color -- IdentifierExpressions
-Symbolizer : alphaChannel: double -- IdentifierExpression
-Symbolizer : singleChannel: double -- IdentifierExpression
+Symbolizer : alphaChannel: number -- IdentifierExpression
+Symbolizer : singleChannel: number -- IdentifierExpression
 Symbolizer : colorMap: ValueColor[*]
 Symbolizer : opacityMap: ValueOpacity[*]
 Symbolizer *-- ValueOpacity
@@ -24,18 +24,18 @@ Symbolizer *-- ValueColor
 Symbolizer *-- Color
 Symbolizer --> IdentifierExpression
 
-ValueColor : value: double
+ValueColor : value: number
 ValueColor : color: Color
 ValueColor : label: text
 ValueColor *-- Color
 
-ValueOpacity : value: double
-ValueOpacity : opacity: float
+ValueOpacity : value: number
+ValueOpacity : opacity: number
 ValueOpacity : label: text
 
-Color : r: float
-Color : g: float
-Color : b: float
+Color : r: number
+Color : g: number
+Color : b: number
 @enduml
 ....
 
@@ -53,8 +53,8 @@ An encoding must support an escaping mechanism in cases where the name of a feat
 |===
 | Name              | Definition	                                  | Data type and value   | Multiplicity
 | colorChannels     | Value of the Red, Green and Blue color channels | Color                 | 0..1
-| alphaChannel      | Value of the alpha (opacity) channel            | float                 | 0..1
-| singleChannel     | Value of a single (gray-scale) output channel   | float                 | 0..1
+| alphaChannel      | Value of the alpha (opacity) channel            | number                | 0..1
+| singleChannel     | Value of a single (gray-scale) output channel   | number                | 0..1
 | colorMap          | Color map to be applied based on singleCannel   | ValueColor            | 0..*
 | opacityMap        | Opacity map to be applied based on singleCannel | ValueOpacity          | 0..*
 |===
@@ -70,7 +70,7 @@ The color map is defined with a Value/Color pair object:
 [width="90%",options="header"]
 |===
 | Name                | Definition	                                         | Data type and value | Multiplicity
-| value               | Key value for selecting this color                   | float               | 1
+| value               | Key value for selecting this color                   | number              | 1
 | color               | Color associated with this value                     | Color               | 1
 | name                | Label to use for this value when generating a legend | string              | 0..1
 |===
@@ -81,7 +81,7 @@ Similarly, the opacity map is defined with a Value/Opacity pair object:
 [width="90%",options="header"]
 |===
 | Name                | Definition	                                         | Data type and value | Multiplicity
-| value               | Key value for selecting this color                   | float               | 1
+| value               | Key value for selecting this color                   | number              | 1
 | color               | Color associated with this value                     | Color               | 1
 | name                | Label to use for this value when generating a legend | string              | 0..1
 |===
@@ -96,9 +96,9 @@ and applies wherever this basic RGB Color class is used.
 [width="90%",options="header"]
 |===
 | Name	| Definition	| Data type and value	| Multiplicity
-| r	   | Red          | float                 | 1
-| g	   | Green        | float                 | 1
-| b	   | Blue         | float                 | 1
+| r	   | Red          | number                | 1
+| g	   | Green        | number                | 1
+| b	   | Blue         | number                | 1
 |===
 
 ==== Requirements
@@ -118,7 +118,7 @@ AzimuthElevation : azimuth: Angle
 AzimuthElevation : elevation: Angle
 AzimuthElevation --* Angle
 
-HillShading : factor: double
+HillShading : factor: number
 HillShading : sun: AzimuthElevation
 HillShading : colorMap: ValueColor[*]
 HillShading : opacityMap: ValueOpacity[*]
@@ -148,7 +148,7 @@ It depends on the _Basic Coverage Styling_ requirements class.
 [width="90%",options="header"]
 |===
 | Name                          	| Definition	                                       | Data type and value   |Multiplicity
-| factor                         | Exaggeration of the terrain relief                  | float                 | 0..1
+| factor                         | Exaggeration of the terrain relief                  | number                | 0..1
 | sun                            | Orientation of the sun                              | AzimuthElevation      | 0..1
 | colorMap                       | Color map to be applied based on calculated shade   | ValueColor            | 0..*
 | opacityMap                     | Opacity map to be applied based on calculated shade | ValueOpacity          | 0..*
