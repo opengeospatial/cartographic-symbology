@@ -34,21 +34,21 @@ The Vector Geometry Properties Requirements Class specifies requirements for usi
 
 === Requirements classes for advanced stroke and fills
 
-*<<rc-joins-caps,Requirements Class "Joins and Caps">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/joinscaps)
+*<<rc-joins-caps,Requirements Class "Joins and Caps">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/joins-caps)
 
 The Joins and Caps Requirements Class specifies requirements for defining  a particular type of join and/or cap on strokes.
 
-*<<rc-pattern-strokes,Requirements Class "Pattern Strokes">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/patternstrokes)
+*<<rc-pattern-strokes,Requirements Class "Pattern Strokes">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/pattern-strokes)
 
 The Pattern Strokes Requirements Class specifies requirements for defining patern strokes using Graphics.
 
-*<<rc-pattern-fills,Requirements Class "Pattern Fills">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/patternfills)
+*<<rc-pattern-fills,Requirements Class "Pattern Fills">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/pattern-fills)
 
 The Pattern Strokes Requirements Class specifies requirements for defining patern fills using Graphics.
 
 === Requirements classes for additional portrayal capabilities
 
-*<<rc-shapeoutlines,Requirements Class "Shape Outlines">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/shapeoutlines)
+*<<rc-shape-outlines,Requirements Class "Shape Outlines">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/shape-outlines)
 
 The Shape Outlines Requirements Class specifies requirements for displaying shapes with outlines so that they stand out on any background.
 
@@ -56,7 +56,7 @@ The Shape Outlines Requirements Class specifies requirements for displaying shap
 
 The MultiGraphics and Transforms Requirements Class specifies requirements for building vector graphic hierarchy, including support for arbitrary transforms (translation, rotation and scaling).
 
-*<<rc-image-outlines,Requirements Class "Image Outlines">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/imageoutlines)
+*<<rc-image-outlines,Requirements Class "Image Outlines">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/image-outlines)
 
 The Image Outlines Requirements Class specifies requirements for displaying images with outlines so that they stand out on any background.
 
@@ -86,13 +86,13 @@ is declared by appending `-partial-concept` to the conformance URI.
 |===
 | Conformance class                                               |URI
 |<<rc-shape-graphics,Shape Graphics>>                              |http://www.opengis.net/spec/cartosym-2/1.0/conf/shape-graphics
-|<<rc-shapeoutlines,Shape Outlines>>                              |http://www.opengis.net/spec/cartosym-2/1.0/conf/shapeoutlines
+|<<rc-shape-outlines,Shape Outlines>>                              |http://www.opengis.net/spec/cartosym-2/1.0/conf/shape-outlines
 |<<rc-graphical-hierarchy,Multi Graphics and Transforms>>                  |http://www.opengis.net/spec/cartosym-2/1.0/conf/graphical-hierarchy
-|<<rc-joins-caps,Joins and Caps>>                                  |http://www.opengis.net/spec/cartosym-2/1.0/conf/joinscaps
-|<<rc-pattern-strokes,Pattern Strokes>>                            |http://www.opengis.net/spec/cartosym-2/1.0/conf/patternstrokes
-|<<rc-pattern-fills,Pattern Fills>>                                |http://www.opengis.net/spec/cartosym-2/1.0/conf/patternfills
+|<<rc-joins-caps,Joins and Caps>>                                  |http://www.opengis.net/spec/cartosym-2/1.0/conf/joins-caps
+|<<rc-pattern-strokes,Pattern Strokes>>                            |http://www.opengis.net/spec/cartosym-2/1.0/conf/pattern-strokes
+|<<rc-pattern-fills,Pattern Fills>>                                |http://www.opengis.net/spec/cartosym-2/1.0/conf/pattern-fills
 |<<rc-gradients,Gradients Fills>>                                |http://www.opengis.net/spec/cartosym-2/1.0/conf/gradients
 |<<rc-3d-models-transforms,3D Graphics, Models and Transforms>>               |http://www.opengis.net/spec/cartosym-2/1.0/conf/3d-models-transforms
-|<<rc-image-outlines,Image Outlines>>                              |http://www.opengis.net/spec/cartosym-2/1.0/conf/imageoutlines
+|<<rc-image-outlines,Image Outlines>>                              |http://www.opengis.net/spec/cartosym-2/1.0/conf/image-outlines
 |<<rc-geometry-properties,Vector Geometry Properties>>             |http://www.opengis.net/spec/cartosym-2/1.0/conf/geometry-properties
 |===

@@ -173,7 +173,7 @@ A closed path is a ClosedShape that can be filled, and can optionally contain in
 
 include::../requirements/rc-shape-graphics.adoc[]
 
-[[rc-shapeoutlines]]
+[[rc-shape-outlines]]
 === Requirements Class "Shape Outlines"
 ==== Overview
 
@@ -197,4 +197,4 @@ include::../requirements/rc-shape-graphics.adoc[]
 
 ==== Requirements
 
-include::../requirements/rc-shapes-outline.adoc[]
+include::../requirements/rc-shape-outlines.adoc[]
