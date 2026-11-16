@@ -68,6 +68,7 @@ part:: A Renderer SHALL support drawing the graphical elements of a marker at th
 identifier:: /req/vector/graphics
 part:: An Encoding SHALL support defining graphical elements (graphics) specifying a uom-qualified 2D real position offsetting the graphic from its original position.
 part:: A Renderer SHALL support drawing the Graphics at the specified uom-qualified 2D position offset relative to its original position.
+part:: A Renderer SHALL support interpreting a positive `x` of the position as an offset to the right and a positive `y` as an offset upwards on the map, as for `Displacement` in SE 1.1.
 ====
 
 [[req-vector-dot]]
@@ -79,7 +80,7 @@ part:: A Renderer SHALL support drawing the Graphics at the specified uom-qualif
 identifier:: /req/vector/dot
 part:: An Encoding SHALL support defining a Dot Graphic inheriting from a base Shape class specifying a stroke, with a uom-qualified `size` property and a `color` property that are the same values as the `width` and the `color` of its stroke.
 part:: A Renderer SHALL support setting the `width` and the `color` of the stroke of a Dot when its `size` and `color` are set, and the reverse, so that the value set last applies to both.
-part:: A Renderer SHALL support drawing a Dot Graphic as a filled circle whose diameter is its `size` (the `width` of its stroke), in its `color` (the `color` of its stroke).
+part:: A Renderer SHALL support drawing a Dot Graphic as a filled circle whose diameter is its `size` (the `width` of its stroke), in its `color` (the `color` of its stroke), and drawing nothing for a Dot whose `size` is 0 or less.
 ====
 
 NOTE: A Dot is a stroke drawn on a single point, as if a pen were put down and lifted again. A Dot with an outline is drawn with two concentric Dots, the larger one first.
@@ -93,8 +94,11 @@ NOTE: A Dot is a stroke drawn on a single point, as if a pen were put down and l
 identifier:: /req/vector/image
 part:: An Encoding SHALL support defining an Image Graphic with an `image` property referencing an image resource, an optional uom-qualified `hotSpot` position within the image, optional `tint` and `blackTint` Colors, and an optional `alphaThreshold` real number between 0 and 1.
 part:: A Renderer SHALL support drawing the referenced image so that its `hotSpot` (by default, its center, `{ 0.5, 0.5 }`) is located at the position of the Graphic.
+part:: A Renderer SHALL support interpreting the `hotSpot` in the coordinates of the image, from its top left corner with `x` to the right and `y` downwards, where a number without a unit is a fraction of the image's width or height, a value in `pc` is a percentage of it, and a value in another unit is a length from that corner.
 part:: A Renderer SHALL support recoloring the image so that each red, green and blue component _v_ (between 0 and 1) of each pixel becomes `tint` × _v_ + `blackTint` × (1 − _v_), using the same component of `tint` and `blackTint`.
 ====
+
+NOTE: SE 1.1 `AnchorPoint` uses the same fractions, but measures `AnchorPointY` from the bottom of the graphic: it is 1 minus the `y` of the `hotSpot`.
 
 NOTE: With the default `tint` (white) and `blackTint` (black), the image is drawn unchanged. For a monochrome icon, `tint` sets the color of its white parts and `blackTint` the color of its black parts, so that one icon can be drawn in a different color per category.
 
@@ -117,6 +121,7 @@ part:: A Renderer MAY use `alphaThreshold` as the threshold of an alpha test, by
 identifier:: /req/vector/text
 part:: An Encoding SHALL support defining a Text Graphic with a `text` unicode string content, a `font`, and an `alignment` with a horizontal (`horzAlignment`: `left`, `right` or `center`) and vertical component (`vertAlignment`: `top`, `middle`, `bottom`).
 part:: A Renderer SHALL support drawing the `text` of a Text Graphic using the `font` and the `alignment` specified.
+part:: A Renderer SHALL support aligning the text so that the edge or center of its box named by the `alignment` is at the position of the Graphic: `left` puts the start of the text there, `right` its end, `top` the top of the font's ascent, `bottom` the bottom of its descent, and `middle` the point halfway between them; the default `alignment` is `center` `middle`.
 ====
 
 [[req-vector-fonts]]

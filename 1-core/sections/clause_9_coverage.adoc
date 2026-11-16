@@ -81,8 +81,8 @@ Similarly, the opacity map is defined with a Value/Opacity pair object:
 [width="90%",options="header"]
 |===
 | Name                | Definition	                                         | Data type and value | Multiplicity
-| value               | Key value for selecting this color                   | float               | 1
-| color               | Color associated with this value                     | Color               | 1
+| value               | Key value for selecting this opacity                 | float               | 1
+| opacity             | Opacity associated with this value                   | float (between 0 and 1) | 1
 | name                | Label to use for this value when generating a legend | string              | 0..1
 |===
 

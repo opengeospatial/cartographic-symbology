@@ -36,6 +36,7 @@ NOTE: A Renderer can also draw the casings and main strokes together, e.g. in a 
 identifier:: /req/casing/center
 part:: An Encoding SHALL support defining a `center` Stroke property as a StrokeStyling object.
 part:: A Renderer SHALL support drawing the center line of a stroke along the same geometry as the stroke, using the StrokeStyling specified by the `center` property, on top of the main stroke.
+part:: A Renderer SHALL support drawing, within a single visualization pass, the center lines of all features with the same `zOrder` on top of the main strokes of all those features, so that the main stroke of a joining line does not cut a center line.
 ====
 
 // TODO(review): the JSON schema names this property `centerLine` rather than `center` (see #120).

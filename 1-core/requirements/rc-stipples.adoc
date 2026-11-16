@@ -27,10 +27,12 @@ Implementations shall support all properties in the below table for style encodi
 [%metadata]
 identifier:: /req/stipples/ratio
 part:: An Encoding SHALL support defining a ratio property for the stipple fill symbolizer.
-part:: A Renderer SHALL support stipple fill vector geometry based on a ratio property.
+part:: A Renderer SHALL support stipple fill vector geometry based on a ratio property, with dots in the `color` and `opacity` of the Fill placed at random so that they cover the `ratio` fraction of the area, without painting the area between the dots.
 ====
 
-// TODO(review): define the size and color of the stipple dots (see #84).
+NOTE: The size of the dots and their placement are left to the Renderer, so two Renderers do not draw the same dots; only the share of the area they cover is defined.
+
+// TODO(review): define the size of the stipple dots (see #84).
 
 .Fill a shape area with dots defined by a ratio (0.2, 0.5, 0.8)
 image::figures/stipples.png[]

@@ -236,7 +236,7 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 | Dot                         | `<WellKnownName>` inside a `<Mark>` inside a `<Graphic>` inside a `<PointSymbolizer>`
 | Marker                      | `<PointSymbolizer>`
 | Marker opacity              | `<SvgParameter name="fill-opacity">` for SE 1.1.0, `<CssParameter name="fill-opacity">` for SLD 1.0.0 inside a <PointSymbolizer>
-| Marker position             | `<AnchorPoint>` inside `<PointSymbolizer>`
+| Marker position             | `<Displacement>` inside `<Graphic>` inside `<PointSymbolizer>` for SE 1.1.0, or `<Displacement>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>` for SE 1.1.0 and SLD 1.0.0 (a positive `y` is upwards in both)
 | GraphicalUnit               | `uom` attribute of symbolizers
 | Stroke                      | `<Stroke>`
 | Stroke opacity              | `<SvgParameter name="stroke-opacity">` for SE 1.1.0, `<CssParameter name="stroke-opacity">` for SLD 1.0.0

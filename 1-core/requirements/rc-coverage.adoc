@@ -43,6 +43,7 @@ part:: A Renderer SHALL support portraying each coverage cell with the opacity r
 identifier:: /req/coverage/single-channel
 part:: An Encoding SHALL support defining a `singleChannel` Symbolizer property as a float.
 part:: A Renderer SHALL support using the value resolved from the `singleChannel` property for each coverage cell as the input value to the `colorMap` and `opacityMap` properties.
+part:: A Renderer SHALL support portraying each coverage cell over the whole area of that cell, so that each pixel of the map whose center lies in a cell takes the color and opacity of that cell.
 ====
 
 [[req-coverage-color-map]]

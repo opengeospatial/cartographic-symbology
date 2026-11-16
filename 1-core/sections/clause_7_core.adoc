@@ -260,6 +260,7 @@ LabelSymbolizer to render the road name along a line.
 identifier:: /req/core/symbolizer
 part:: An Encoding SHALL support defining a Symbolizer for a StylingRule, specifying any subset of the Symbolizer properties.
 part:: A Renderer SHALL support portraying data using the Symbolizer properties resulting from all selected StylingRules, using the default values for properties not set by any selected rule.
+part:: A Renderer SHALL support portraying, with the default values, the features and coverage cells that no StylingRule selects, so that a style hides data only by setting `visibility` to false (as example 11 does with `{ visibility: false; }` at its start).
 ====
 
 [[req-core-visibility]]
@@ -291,7 +292,7 @@ NOTE: The Symbolizer `opacity` does not apply to labels.
 ====
 [%metadata]
 identifier:: /rec/core/opacity-together
-part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke and the graphics of markers together, so that they do not show through each other where they overlap.
+part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke and the graphics of markers of each feature together, so that they do not show through each other where they overlap; different features still show through each other.
 ====
 
 [[req-core-z-order]]
@@ -551,7 +552,7 @@ Capabilities   : vendor: VendorCapabilities
 | visualization.dateTime           | Current visualization date and time     | DateTime
 | visualization.date               | Current visualization date              | Date
 | visualization.timeOfDay          | Current visualization time of day       | Time
-| visualization.timeInterval       | Current visualization time of day       | TimeInterval
+| visualization.timeInterval       | Current visualization time interval     | TimeInterval
 | visualization.pass               | Current visualization rendering pass    | int
 |===
 
@@ -598,7 +599,7 @@ with different symbolizers before rendering the next feature.
 [width="90%",options="header"]
 |===
 | Construct          | Construct type                   | Data type |Behavior description
-| zOrder             | Symbolizer property              | float     | In a single pass, modify default order of features / layers
+| zOrder             | Symbolizer property              | int       | In a single pass, modify default order of features / layers
 | visualization.pass | System identifier for selector   | integer   | Render all selected geometry features / coverage cells of data layers
                                                                       more than once with different symbolization,
                                                                       or after whole map drawn in previous pass
@@ -638,7 +639,7 @@ with different symbolizers before rendering the next feature.
 |===
 | Name            | Definition                                   | Data type and value | Multiplicity
 | hour            |                                               | int                 | 1
-| minutes         |                                              | Month               | 1
+| minutes         |                                              | int                 | 1
 | seconds         |                                              | int                 | 1
 |===
 
