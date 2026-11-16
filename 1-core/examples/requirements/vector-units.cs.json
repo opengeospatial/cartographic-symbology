@@ -1,0 +1,108 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/units: widths in metres follow the map scale, widths in pixels and millimetres do not",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "municipal"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                208,
+                72,
+                58
+              ],
+              "width": {
+                "m": 12.0
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "private"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                242,
+                184,
+                75
+              ],
+              "width": {
+                "px": 3.0
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "tractor"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                138,
+                106,
+                74
+              ],
+              "width": {
+                "mm": 0.5
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

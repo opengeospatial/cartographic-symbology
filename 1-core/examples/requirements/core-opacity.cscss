@@ -1,0 +1,13 @@
+// /req/core/opacity, /rec/core/opacity-together: the fill and the wide stroke are made transparent together
+ProtectedAreas
+{
+   marker: null;
+   visibility: false;
+   [class = 'nationalPark']
+   {
+      visibility: true;
+      opacity: 0.45;
+      fill: { color: #5e8f52 };
+      stroke: { color: #2f5d2a; width: 10 px };
+   }
+}

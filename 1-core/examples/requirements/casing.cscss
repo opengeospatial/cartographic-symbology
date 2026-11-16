@@ -1,0 +1,22 @@
+// /req/casing/casing, /req/casing/center: casings of joining roads merge beneath the main strokes
+Roads
+{
+   marker: null;
+   visibility: false;
+   [class = 'municipal' or class = 'private']
+   {
+      visibility: true;
+      stroke: { color: white; width: 4 px; casing: { color: #8c8172; width: 1 px } };
+   }
+   [class = 'county' or class = 'national']
+   {
+      visibility: true;
+      stroke: { color: #f2b84b; width: 6 px; casing: { color: #8a6a2a; width: 1 px } };
+   }
+   [class = 'european']
+   {
+      visibility: true;
+      stroke: { color: #d0483a; width: 8 px; casing: { color: #6e2219; width: 1.25 px };
+                center: { color: #f7d26a; width: 1 px } };
+   }
+}

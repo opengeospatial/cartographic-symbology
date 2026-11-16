@@ -1,0 +1,22 @@
+// /req/core/rules, selector, nested, symbolizer, visibility, layers, expressions-field-identifiers
+Landcover[dataLayer.type = vector]
+{
+   marker: null;
+   fill: { color: #e4e0d4 };
+   stroke: { color: #b8b2a2; width: 0.75 px };
+
+   [class = 'forest']
+   {
+      fill.color: #93bf85;
+      // Nested twice: small forest patches
+      [area < 50000] { fill.color: #c9e0bb; }
+   }
+   [class = 'bog'] { fill.color: #e3dcb0; }
+   [class = 'farmland'] { fill.color: #f3e7b8; }
+   [class = 'lake']
+   {
+      fill.color: #b7d3e6;
+      stroke: { color: #3f7fb3; width: 1.5 px };
+   }
+   [class = 'open'] { visibility: false; }
+}

@@ -1,0 +1,169 @@
+.title 'Rondane overview map'
+.abstract 'A map of the area around Rondane, Norway, from several N50 Kartdata layers and the elevation model'
+
+{ visibility: false; }
+
+Municipalities
+{
+   visibility: true;
+   zOrder: 1;
+   opacity: 0.3686275;
+   marker: null;
+
+   label: { elements: [ Text { text: name,
+                               font: { face: 'Tahoma',
+                                       size: 14,
+                                       outline: { size: 3,
+                                                  opacity: 0.75,
+                                                  color: white }
+                                      }
+                               } ] };
+
+   [name = 'Alvdal']
+   {
+      fill.color: #e8c9a0;
+   }
+
+   [name = 'Dovre']
+   {
+      fill.color: #c9dbb2;
+   }
+
+   [name = 'Folldal']
+   {
+      fill.color: #b9cfe0;
+   }
+
+   [name = 'Nord-Fron']
+   {
+      fill.color: #e6c3cf;
+   }
+
+   [name = 'Sel']
+   {
+      fill.color: #d9d0a6;
+   }
+
+   [name = 'Stor-Elvdal']
+   {
+      fill.color: #cdc4e2;
+   }
+}
+
+Elevation
+{
+   visibility: true;
+   zOrder: 0;
+   singleChannel: elevation;
+   colorMap: [ 300 #e4f4f7, 900 #f2f0e6, 1300 #e8dcc4, 1700 #d6c8b8, 2200 #ffffff ];
+   hillShading: { factor: 1.5; sun: { azimuth: 315; elevation: 60 } };
+}
+
+Landcover
+{
+   visibility: true;
+   marker: null;
+   stroke: { width: 0 };
+
+   [class = 'lake' or class = 'river']
+   {
+      fill: { color: #7fb2d8 };
+      zOrder: 67;
+   }
+
+   [class = 'bog']
+   {
+      opacity: 0.4235294;
+      fill: { color: burlyWood };
+      zOrder: 65;
+   }
+
+   [class <> 'lake' and class <> 'river' and class <> 'bog']
+   {
+      visibility: false;
+   }
+}
+
+Rivers
+{
+   visibility: true;
+   marker: null;
+   stroke: { color: #5f9ccc, width: 0.5 };
+   zOrder: 36;
+}
+
+Roads
+{
+   visibility: true;
+   marker: null;
+   zOrder: 86;
+   [class = 'european' or class = 'national' or class = 'county']
+   {
+      stroke: { width: 0.66, color : #c42e31 };
+   }
+   [class = 'municipal' or class = 'private']
+   {
+      stroke: { width: 0.5, color : gray };
+   }
+   [class = 'path' and marked = true]
+   {
+      stroke: { width: 0.5, color : #c42e31, dashPattern: [ 3, 2 ] };
+   }
+   [class = 'tractor' or class = 'cycleway']
+   {
+      visibility: false;
+   }
+   [class = 'path' and marked = false]
+   {
+      visibility: false;
+   }
+}
+
+ProtectedAreas
+{
+   visibility: true;
+   fill: { opacity: 0 };
+   stroke: { color: #00af7a, width: 1.5 };
+   marker: null;
+   zOrder: 87;
+   [class = 'nationalPark']
+   {
+      label: { elements: [ Text {
+                     text: name,
+                     font: { face: 'Times New Roman',
+                     size: 12,
+                     italic: true,
+                     color: papayaWhip,
+                     outline: { size: 3,
+                                color: black,
+                                opacity: 0.35 }
+                            },
+                     alignment: { center, middle }
+                                  }
+                         ] };
+   }
+}
+
+Places
+{
+   visibility: true;
+   zOrder: 24;
+   marker: null;
+
+   [type = 'mountain' and elevation >= 2100]
+   {
+      label: { elements: [
+         Dot { color: white, size: 10 },
+         Dot { color: darkOrange, size: 6 },
+         Text { text: name,
+                position: 10 -4,
+                font: { face: 'Tahoma',
+                        size: 12,
+                        outline: { color: white,
+                                   size: 3.5,
+                                   opacity: 0.75 }
+                       },
+                alignment: { left, middle } }
+      ] };
+   }
+}

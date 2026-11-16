@@ -189,6 +189,13 @@ part:: A Renderer SHALL support considering the nested rules of a StylingRule on
 part:: A Renderer SHALL support the Symbolizer of a selected nested rule inheriting from, and overriding, the Symbolizer properties of its parent rule.
 ====
 
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/rules`, `/req/core/selector`, `/req/core/nested`, `/req/core/symbolizer`, `/req/core/visibility`, `/req/core/layers`, `/req/core/expressions-field-identifiers`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-rules.adoc[]
+====
+
 
 // TODO: Illustrate above example with two pictures at different scales
 
@@ -285,6 +292,13 @@ part:: An Encoding SHALL support defining an `opacity` Symbolizer property as a 
 part:: A Renderer SHALL support applying the resolved `opacity` property by multiplying it with the opacity of the fill, the stroke, the graphics of markers and the opacity channel of coverage cells.
 ====
 
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/opacity`, `/rec/core/opacity-together`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-opacity.adoc[]
+====
+
 NOTE: The Symbolizer `opacity` does not apply to labels.
 
 [[rec-core-opacity-together]]
@@ -304,6 +318,13 @@ part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke 
 identifier:: /req/core/z-order
 part:: An Encoding SHALL support defining a `zOrder` Symbolizer property as an integer.
 part:: A Renderer SHALL support portraying features and coverage cells of a single rendering pass in increasing order of their resolved `zOrder` property, so that portrayals with a higher `zOrder` are drawn on top of those with a lower `zOrder`.
+====
+
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/z-order`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-z-order.adoc[]
 ====
 
 === Expressions
@@ -368,6 +389,13 @@ compatible with the expected data type are allowed as _Parameter Values_.
 identifier:: /req/core/parameters
 part:: An Encoding SHALL support defining Symbolizer properties as Parameter Values using Literal Expressions compatible with the data type expected by the property.
 part:: A Renderer SHALL support resolving Parameter Values to the data type expected by the Symbolizer property.
+====
+
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/parameters`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-parameters.adoc[]
 ====
 
 ==== Identifier Expressions
@@ -747,6 +775,13 @@ part:: An Encoding SHALL support defining expressions using the `visualization.d
 part:: A Renderer SHALL support resolving the visualization time System Identifiers to the time instant or interval of the map being rendered.
 ====
 
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/time`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-time.adoc[]
+====
+
 [[req-core-layers]]
 [requirement]
 ====
@@ -1012,6 +1047,13 @@ part:: An Encoding SHALL support overriding a single member of an object Symboli
 part:: A Renderer SHALL support resolving instance expressions to an object of the specified class, using default values for members which are not specified.
 ====
 
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/instances`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-instances.adoc[]
+====
+
 [[cscss-default-values]]
 === Default class member values
 
@@ -1084,6 +1126,10 @@ identifier:: /req/core/default-values
 part:: An Encoding SHALL support omitting Symbolizer properties and object members for which a default value is defined in this section.
 part:: A Renderer SHALL support using the default values defined in this section for Symbolizer properties and object members which are not set by any selected StylingRule.
 ====
+
+// Examples placed by cartosym-draft-check
+
+<<fig-example-1-core>> in the CartoSym-CSS clause shows the default values applied to land cover polygons.
 
 NOTE: The default Marker applies to features of every geometry type, so that every feature is visible by default. A style that sets no marker therefore draws a Dot at each point, at each vertex of a line and at the centroid of each polygon. A typical base style unsets the marker for lines and polygons, unless it wants this default behavior, for example with `[dataLayer.featuresGeometryDimensions > 0] { marker: null; }` in CSCSS. An empty list of elements (`marker: { elements: [] }`) also unsets it, while an empty `marker: { }` still yields the default Dot.
 

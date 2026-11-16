@@ -1,0 +1,42 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/hill-shading/hill-shading, factor, sun: no colorMap, so the shade multiplies the colors of the elevation color map",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Elevation"
+        ]
+      },
+      "symbolizer": {
+        "singleChannel": {
+          "property": "elevation"
+        },
+        "colorMap": [
+          [
+            300.0,
+            "#cfe3c0"
+          ],
+          [
+            1300.0,
+            "#e9d9b0"
+          ],
+          [
+            2200.0,
+            "#fafafa"
+          ]
+        ],
+        "hillShading": {
+          "factor": 2,
+          "sun": {
+            "azimuth": 135.0,
+            "elevation": 30.0
+          }
+        }
+      }
+    }
+  ]
+}

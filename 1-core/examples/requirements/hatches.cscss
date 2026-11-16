@@ -1,0 +1,10 @@
+// /req/hatches/hatch, width, angle, distance
+Landcover
+{
+   marker: null;
+   visibility: false;
+   stroke: { color: #b0aa98; width: 0.5 px };
+   [class = 'bog'] { visibility: true; fill: { color: #a39a5c; hatch: { width: 1 px; angle: 0; distance: 4 px } }; }
+   [class = 'forest'] { visibility: true; fill: { color: #5e8f52; hatch: { width: 1.5 px; angle: 45; distance: 8 px } }; }
+   [class = 'lake'] { visibility: true; fill: { color: #3f7fb3; hatch: { width: 1 px; angle: 90; distance: 3 px } }; }
+}

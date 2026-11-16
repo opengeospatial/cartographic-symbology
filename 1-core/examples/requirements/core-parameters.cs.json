@@ -1,0 +1,87 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/parameters: the size of each Dot is computed from the elevation property",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "SpotHeights"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": ">=",
+            "args": [
+              {
+                "property": "elevation"
+              },
+              1300
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "op": "+",
+                    "args": [
+                      {
+                        "op": "/",
+                        "args": [
+                          {
+                            "op": "-",
+                            "args": [
+                              {
+                                "property": "elevation"
+                              },
+                              1000
+                            ]
+                          },
+                          80
+                        ]
+                      },
+                      3
+                    ]
+                  },
+                  "color": "white"
+                },
+                {
+                  "type": "Dot",
+                  "size": {
+                    "op": "/",
+                    "args": [
+                      {
+                        "op": "-",
+                        "args": [
+                          {
+                            "property": "elevation"
+                          },
+                          1000
+                        ]
+                      },
+                      80
+                    ]
+                  },
+                  "color": [
+                    138,
+                    90,
+                    58
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

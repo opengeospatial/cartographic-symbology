@@ -1,0 +1,94 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/instances: a nested rule changes only the color of the stroke, keeping its width",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "stroke": {
+          "color": [
+            154,
+            149,
+            139
+          ],
+          "width": {
+            "px": 3.0
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "european"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "stroke": {
+              "alter": true,
+              "color": [
+                208,
+                72,
+                58
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "tractor"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": false
+          }
+        }
+      ]
+    }
+  ]
+}

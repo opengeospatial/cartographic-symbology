@@ -1,0 +1,125 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/image: the bottom centre of the icon (hotSpot 50 pc 100 pc) sits on the cabin, recolored by tint and blackTint",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Huts"
+        ]
+      },
+      "symbolizer": {
+        "marker": {
+          "elements": [
+            {
+              "type": "Image",
+              "image": {
+                "uri": "http://example.com/icons/hut.png",
+                "path": "../icons/hut.png",
+                "type": "image/png"
+              },
+              "hotSpot": [
+                {
+                  "pc": 50
+                },
+                {
+                  "pc": 100
+                }
+              ],
+              "tint": "white",
+              "blackTint": [
+                184,
+                50,
+                42
+              ]
+            }
+          ]
+        }
+      },
+      "nestedRules": [
+        {
+          "$comment": "Self-service cabins and shelters: the same icon in other colors",
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "service"
+              },
+              "selfService"
+            ]
+          },
+          "symbolizer": {
+            "marker": {
+              "elements": [
+                {
+                  "type": "Image",
+                  "image": {
+                    "uri": "http://example.com/icons/hut.png",
+                    "path": "../icons/hut.png",
+                    "type": "image/png"
+                  },
+                  "hotSpot": [
+                    {
+                      "pc": 50
+                    },
+                    {
+                      "pc": 100
+                    }
+                  ],
+                  "tint": "white",
+                  "blackTint": [
+                    217,
+                    130,
+                    43
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "service"
+              },
+              "shelter"
+            ]
+          },
+          "symbolizer": {
+            "marker": {
+              "elements": [
+                {
+                  "type": "Image",
+                  "image": {
+                    "uri": "http://example.com/icons/hut.png",
+                    "path": "../icons/hut.png",
+                    "type": "image/png"
+                  },
+                  "hotSpot": [
+                    {
+                      "pc": 50
+                    },
+                    {
+                      "pc": 100
+                    }
+                  ],
+                  "tint": "white",
+                  "blackTint": [
+                    107,
+                    90,
+                    74
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

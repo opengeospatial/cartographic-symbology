@@ -424,84 +424,57 @@ Finally, colors can also be expressed as an enumeration value for https://www.w3
 
 ==== Examples
 
-.CSCSS Example encoding style using "Core" requirements class
+.Example style using "Core" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/1-core.cscss[]
-----
+include::../examples/1-core.adoc[]
 ====
 
 ===== Basic Vector Styling
 
-.CSCSS Example encoding style for polygon features using "Basic Vector Styling" requirements class
+.Example style for polygon features using "Basic Vector Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/2-vector-polygon.cscss[]
-----
+include::../examples/2-vector-polygon.adoc[]
 ====
 
-.CSCSS Example encoding style for line features using "Basic Vector Styling" requirements class
+.Example style for line features using "Basic Vector Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/3-vector-line.cscss[]
-----
+include::../examples/3-vector-line.adoc[]
 ====
 
-.CSCSS Example encoding style for point features using "Basic Vector Styling" requirements class
+.Example style for point features using "Basic Vector Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/4-vector-point.cscss[]
-----
+include::../examples/4-vector-point.adoc[]
 ====
 
 ===== Basic Coverage Styling
 
-.CSCSS Example encoding style rendering DEM with a color map using "Basic Coverage Styling" requirements class
+.Example style rendering DEM with a color map using "Basic Coverage Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/5-coverage-dem.cscss[]
-----
+include::../examples/5-coverage-dem.adoc[]
 ====
 
-.CSCSS Example encoding style rendering sentinel-2 in natural color from 3 bands using "Basic Coverage Styling" requirements class
+.Example style rendering sentinel-2 in natural color from 3 bands using "Basic Coverage Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/6-coverage-sentinel2.cscss[]
-----
+include::../examples/6-coverage-sentinel2.adoc[]
 ====
 
 ===== Arithmetic Operations (with Basic Coverage Styling)
 
-.CSCSS Example encoding style rendering NDVI with color map using "Basic Coverage Styling" requirements class
+.Example style rendering NDVI with color map using "Basic Coverage Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/7-coverage-ndvi.cscss[]
-----
+include::../examples/7-coverage-ndvi.adoc[]
 ====
 
 ===== Hill Shading
 
-.CSCSS Example encoding style rendering DEM with hill-shading and a color map using "Basic Coverage Styling" and "Hill Shading" requirements classes
+.Example style rendering DEM with hill-shading and a color map using "Basic Coverage Styling" and "Hill Shading" requirements classes, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/8-coverage-hillshading.cscss[]
-----
+include::../examples/8-coverage-hillshading.adoc[]
 ====
 
-.CSCSS Example encoding style rendering DEM with hill-shading using an opacity and shading intensity color map using "Basic Coverage Styling" and "Hill Shading" requirements classes
+.Example style rendering DEM with hill-shading using an opacity and shading intensity color map using "Basic Coverage Styling" and "Hill Shading" requirements classes, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/9-coverage-hillshading-opacity.cscss[]
-----
+include::../examples/9-coverage-hillshading-opacity.adoc[]
 ====
 
 ==== BNF token definitions

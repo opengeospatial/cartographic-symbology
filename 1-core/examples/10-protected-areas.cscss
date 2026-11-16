@@ -1,0 +1,36 @@
+.title 'Protected areas by class'
+.abstract 'This style is used to draw the protected areas around Rondane, Norway, colored by the kind of protection.\n'
+          'This style uses the protected areas of N50 Kartdata from the Norwegian Mapping Authority (Kartverket), available at https://kartkatalog.geonorge.no/metadata/n50-kartdata/ea192681-d039-42ec-b1bc-f3ce04c189ac'
+
+.keywords 'Protected area, National park, Norway'
+
+ProtectedAreas[dataLayer.type = vector]
+{
+    visibility: true;
+    zOrder: 1;
+    marker: null;
+    stroke: {color: #5d6b55; width: 1.0 px; opacity: 1.0};
+    label : { elements: [
+            Text {
+             text : name,
+             font:{
+             face:'Arial',
+             size:8,
+             color:#2b2b2b
+             }
+                }]
+            };
+
+   [class = 'nationalPark']
+   {
+    fill.color : #a9cf98;
+   }
+   [class = 'landscapeProtection']
+   {
+    fill.color : #e3d48e;
+   }
+   [class = 'natureReserve']
+   {
+    fill.color : #eba57f;
+   }
+}

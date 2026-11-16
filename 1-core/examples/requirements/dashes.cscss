@@ -1,0 +1,21 @@
+// /req/dashes/dash-pattern, /req/dashes/dash-offset: marked hiking routes dashed in pixels, other paths in millimetres
+Roads
+{
+   marker: null;
+   visibility: false;
+   [class = 'path' and marked = true]
+   {
+      visibility: true;
+      stroke: { color: #b8442f; width: 2.5 px; dashPattern: [ 10 px, 5 px ]; dashOffset: 5 px };
+   }
+   [class = 'path' and marked = false]
+   {
+      visibility: true;
+      stroke: { color: #4a4a4a; width: 1 px; dashPattern: [ 1 mm, 0.75 mm ] };
+   }
+   [class = 'tractor']
+   {
+      visibility: true;
+      stroke: { color: #8a6a4a; width: 1.5 px; dashPattern: [ 8 px, 3 px, 2 px, 3 px ] };
+   }
+}

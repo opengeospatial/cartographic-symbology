@@ -1,0 +1,54 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/opacity, /rec/core/opacity-together: the fill and the wide stroke are made transparent together",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ProtectedAreas"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "nationalPark"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "opacity": 0.45,
+            "fill": {
+              "color": [
+                94,
+                143,
+                82
+              ]
+            },
+            "stroke": {
+              "color": [
+                47,
+                93,
+                42
+              ],
+              "width": {
+                "px": 10.0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

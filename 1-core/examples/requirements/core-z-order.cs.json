@@ -1,0 +1,85 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/z-order: rivers (zOrder 2) are drawn over roads (zOrder 1)",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "zOrder": 1,
+        "stroke": {
+          "color": [
+            242,
+            184,
+            75
+          ],
+          "width": {
+            "px": 5.0
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "tractor"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": false
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Rivers"
+        ]
+      },
+      "symbolizer": {
+        "zOrder": 2,
+        "stroke": {
+          "color": [
+            63,
+            127,
+            179
+          ],
+          "width": {
+            "px": 2.0
+          }
+        },
+        "marker": null
+      }
+    }
+  ]
+}

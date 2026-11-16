@@ -1,0 +1,49 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/coverage/opacity-map, /rec/coverage/map-interpolation: the valleys fade out below 900 m",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Elevation"
+        ]
+      },
+      "symbolizer": {
+        "singleChannel": {
+          "property": "elevation"
+        },
+        "colorMap": [
+          [
+            900.0,
+            "#a3917a"
+          ],
+          [
+            1600.0,
+            "#d8cfc0"
+          ],
+          [
+            2200.0,
+            "#ffffff"
+          ]
+        ],
+        "opacityMap": [
+          [
+            600.0,
+            0.0
+          ],
+          [
+            900.0,
+            0.2
+          ],
+          [
+            1300.0,
+            1.0
+          ]
+        ]
+      }
+    }
+  ]
+}

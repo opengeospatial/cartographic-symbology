@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Styling point vector features",
-    "abstract": "Basic vector features styling (points)"
+    "abstract": "Basic vector features styling (points): tourist cabins in Dørålen, Rondane, Norway (N50 Kartdata)"
   },
   "stylingRules": [
     {
@@ -14,7 +14,7 @@
               {
                 "sysId": "dataLayer.id"
               },
-              "Amenities"
+              "Huts"
             ]
           },
           {
@@ -89,9 +89,25 @@
             ]
           },
           "symbolizer": {
+            "$comment": "A small Dot (positioned at the point)",
             "visibility": true,
-            "opacity": 0.5,
-            "zOrder": 3
+            "opacity": 0.9,
+            "zOrder": 3,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 7
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                }
+              ]
+            }
           },
           "nestedRules": [
             {
@@ -106,13 +122,13 @@
                 ]
               },
               "symbolizer": {
-                "$comment": "Add a double-Dot marker (positioned at centroid)",
+                "$comment": "Replace it with a double-Dot marker (positioned at centroid)",
                 "marker": {
                   "elements": [
                     {
                       "type": "Dot",
                       "size": {
-                        "px": 10
+                        "px": 14
                       },
                       "position": {
                         "x": 0.0,
@@ -123,13 +139,17 @@
                     {
                       "type": "Dot",
                       "size": {
-                        "px": 8
+                        "px": 10
                       },
                       "position": {
                         "x": 0.0,
                         "y": 0.0
                       },
-                      "color": "orange"
+                      "color": [
+                        184,
+                        50,
+                        42
+                      ]
                     }
                   ]
                 }
@@ -154,11 +174,11 @@
                         "value": {
                           "type": "Text",
                           "position": {
-                            "x": 20.0,
+                            "x": 12.0,
                             "y": 0.0
                           },
                           "text": {
-                            "property": "Name"
+                            "property": "name"
                           },
                           "alignment": [
                             "left",
@@ -167,10 +187,14 @@
                           "font": {
                             "face": "Arial",
                             "size": 12,
-                            "bold": false,
+                            "bold": true,
                             "italic": false,
                             "opacity": 1.0,
-                            "color": "darkGray"
+                            "color": [
+                              43,
+                              43,
+                              43
+                            ]
                           }
                         }
                       }
