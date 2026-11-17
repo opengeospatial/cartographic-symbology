@@ -934,22 +934,20 @@
        ]
     },
     "idOrFnExpression": {
-       "anyOf": [
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/conditionalOrFunctionCall" },
+      "else": {
+        "anyOf": [
           { "$ref": "#/$defs/systemIdentifier" },
-          { "$ref": "#/$defs/propertyRef" },
-          { "$ref": "#/$defs/functionCall" },
-          { "$ref": "#/$defs/conditionalExpression" }
-       ]
+          { "$ref": "#/$defs/propertyRef" }
+        ]
+      }
     },
     "anyExpression": {
-       "anyOf": [
-          { "$ref": "#/$defs/systemIdentifier" },
-          { "$ref": "#/$defs/scalarExpression" },
-          { "$ref": "#/$defs/geomExpression" },
-          { "$ref": "#/$defs/temporalExpression" },
-          { "$ref": "#/$defs/array" },
-          { "type": "null" }
-       ]
+      "anyOf": [
+        { "$ref": "#/$defs/argument" },
+        { "type": "null" }
+      ]
     },
     "systemIdentifier": {
        "type": "object",
@@ -1037,16 +1035,88 @@
           }
        }
     },
-    "boolExpression": {
-        "oneOf": [
-          { "$ref": "#/$defs/andOrExpression" },
-          { "$ref": "#/$defs/notExpression" },
-          { "$ref": "#/$defs/comparisonPredicate" },
-          { "$ref": "#/$defs/arrayPredicate" },
-          { "$ref": "#/$defs/functionCall" },
-          { "$ref": "#/$defs/conditionalExpression" },
-          { "type": "boolean" }
+    "hasOp": {
+      "$comment": "An operation or a function call. Each expression definition checks such an object against one definition, selected by its op (see operation), rather than trying every kind of expression: with alternatives, the time a validator takes grows exponentially with the nesting depth.",
+      "type": "object",
+      "required": [ "op" ]
+    },
+    "booleanOperators": {
+      "enum": [ "and", "or", "not", "=", "<>", "<", ">", "<=", ">=", "like", "contains", "startsWith", "endsWith", "between", "in", "isNull", "a_containedBy", "a_contains", "a_equals", "a_overlaps" ]
+    },
+    "numericOperators": {
+      "enum": [ "+", "-", "*", "/", "^", "%", "div", "bitAnd", "bitOr", "bitXor", "<<", ">>", "bitNot" ]
+    },
+    "characterOperators": {
+      "enum": [ "casei", "accenti", "lowerCase", "upperCase", "concatenate", "substitute", "format" ]
+    },
+    "operation": {
+      "$comment": "Checks an object with an op: an operator of this Part against its own definition, any other op as a function call.",
+      "allOf": [
+        { "if": { "properties": { "op": { "enum": [ "and", "or" ] } } }, "then": { "$ref": "#/$defs/andOrExpression" } },
+        { "if": { "properties": { "op": { "const": "not" } } }, "then": { "$ref": "#/$defs/notExpression" } },
+        { "if": { "properties": { "op": { "enum": [ "=", "<>", "<", ">", "<=", ">=" ] } } }, "then": { "$ref": "#/$defs/binaryComparisonPredicate" } },
+        { "if": { "properties": { "op": { "const": "like" } } }, "then": { "$ref": "#/$defs/isLikePredicate" } },
+        { "if": { "properties": { "op": { "enum": [ "contains", "startsWith", "endsWith" ] } } }, "then": { "$ref": "#/$defs/textOpPredicate" } },
+        { "if": { "properties": { "op": { "const": "between" } } }, "then": { "$ref": "#/$defs/isBetweenPredicate" } },
+        { "if": { "properties": { "op": { "const": "in" } } }, "then": { "$ref": "#/$defs/isInListPredicate" } },
+        { "if": { "properties": { "op": { "const": "isNull" } } }, "then": { "$ref": "#/$defs/isNullPredicate" } },
+        { "if": { "properties": { "op": { "enum": [ "a_containedBy", "a_contains", "a_equals", "a_overlaps" ] } } }, "then": { "$ref": "#/$defs/arrayPredicate" } },
+        { "if": { "properties": { "op": { "enum": [ "+", "-", "*", "/", "^", "%", "div" ] } } }, "then": { "$ref": "#/$defs/arithmeticExpression" } },
+        { "if": { "properties": { "op": { "enum": [ "bitAnd", "bitOr", "bitXor" ] } } }, "then": { "$ref": "#/$defs/bitwiseLogical" } },
+        { "if": { "properties": { "op": { "enum": [ "<<", ">>" ] } } }, "then": { "$ref": "#/$defs/bitwiseShift" } },
+        { "if": { "properties": { "op": { "const": "bitNot" } } }, "then": { "$ref": "#/$defs/bitwiseNot" } },
+        { "if": { "properties": { "op": { "const": "casei" } } }, "then": { "$ref": "#/$defs/casei" } },
+        { "if": { "properties": { "op": { "const": "accenti" } } }, "then": { "$ref": "#/$defs/accenti" } },
+        { "if": { "properties": { "op": { "enum": [ "lowerCase", "upperCase" ] } } }, "then": { "$ref": "#/$defs/lowerUpperCase" } },
+        { "if": { "properties": { "op": { "const": "concatenate" } } }, "then": { "$ref": "#/$defs/concatenate" } },
+        { "if": { "properties": { "op": { "const": "substitute" } } }, "then": { "$ref": "#/$defs/substitute" } },
+        { "if": { "properties": { "op": { "const": "format" } } }, "then": { "$ref": "#/$defs/format" } },
+        { "if": { "properties": { "op": { "const": "?:" } } }, "then": { "$ref": "#/$defs/conditionalExpression" } },
+        {
+          "if": { "properties": { "op": { "not": { "anyOf": [ { "$ref": "#/$defs/booleanOperators" }, { "$ref": "#/$defs/numericOperators" }, { "$ref": "#/$defs/characterOperators" }, { "const": "?:" } ] } } } },
+          "then": { "$ref": "#/$defs/functionCall" }
+        }
+      ]
+    },
+    "booleanOperation": {
+      "$comment": "A boolean operator, a conditional expression or a function call.",
+      "properties": { "op": { "not": { "anyOf": [ { "$ref": "#/$defs/numericOperators" }, { "$ref": "#/$defs/characterOperators" } ] } } },
+      "$ref": "#/$defs/operation"
+    },
+    "numericOperation": {
+      "$comment": "An arithmetic or bitwise operator, a conditional expression or a function call.",
+      "properties": { "op": { "not": { "anyOf": [ { "$ref": "#/$defs/booleanOperators" }, { "$ref": "#/$defs/characterOperators" } ] } } },
+      "$ref": "#/$defs/operation"
+    },
+    "characterOperation": {
+      "$comment": "A text function, a conditional expression or a function call.",
+      "properties": { "op": { "not": { "anyOf": [ { "$ref": "#/$defs/booleanOperators" }, { "$ref": "#/$defs/numericOperators" } ] } } },
+      "$ref": "#/$defs/operation"
+    },
+    "conditionalOrFunctionCall": {
+      "$comment": "A conditional expression or a function call, the operations that can have any type.",
+      "properties": { "op": { "not": { "anyOf": [ { "$ref": "#/$defs/booleanOperators" }, { "$ref": "#/$defs/numericOperators" }, { "$ref": "#/$defs/characterOperators" } ] } } },
+      "$ref": "#/$defs/operation"
+    },
+    "argument": {
+      "$comment": "An expression of any type: an argument of a function call or of format, or an element of an array.",
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/operation" },
+      "else": {
+        "anyOf": [
+          { "$ref": "#/$defs/characterPrimary" },
+          { "$ref": "#/$defs/numericPrimary" },
+          { "type": "boolean" },
+          { "$ref": "#/$defs/geomPrimary" },
+          { "$ref": "#/$defs/temporalPrimary" },
+          { "$ref": "#/$defs/array" }
         ]
+      }
+    },
+    "boolExpression": {
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/booleanOperation" },
+      "else": { "type": "boolean" }
     },
     "andOrExpression": {
       "type": "object",
@@ -1083,16 +1153,6 @@
         }
       }
     },
-    "comparisonPredicate": {
-      "oneOf": [
-        { "$ref": "#/$defs/binaryComparisonPredicate" },
-        { "$ref": "#/$defs/isLikePredicate" },
-        { "$ref": "#/$defs/textOpPredicate" },
-        { "$ref": "#/$defs/isBetweenPredicate" },
-        { "$ref": "#/$defs/isInListPredicate" },
-        { "$ref": "#/$defs/isNullPredicate" }
-      ]
-    },
     "binaryComparisonPredicate": {
       "type": "object",
       "required": [ "op", "args" ],
@@ -1116,20 +1176,27 @@
       ]
     },
     "scalarExpression": {
-      "anyOf": [
-        { "$ref": "#/$defs/characterExpression" },
-        { "$ref": "#/$defs/numericExpression" },
-        { "$ref": "#/$defs/boolExpression" },
-        { "$ref": "#/$defs/temporalInstantExpression" }
-      ]
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/operation" },
+      "else": {
+        "anyOf": [
+          { "$ref": "#/$defs/characterPrimary" },
+          { "$ref": "#/$defs/numericPrimary" },
+          { "type": "boolean" },
+          { "$ref": "#/$defs/temporalInstantPrimary" }
+        ]
+      }
     },
     "temporalInstantExpression": {
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/conditionalOrFunctionCall" },
+      "else": { "$ref": "#/$defs/temporalInstantPrimary" }
+    },
+    "temporalInstantPrimary": {
       "oneOf": [
         { "$ref": "#/$defs/instantInstance" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" },
-        { "$ref": "#/$defs/functionCall" },
-        { "$ref": "#/$defs/conditionalExpression" }
+        { "$ref": "#/$defs/systemIdentifier" }
       ]
     },
     "isLikePredicate": {
@@ -1174,35 +1241,20 @@
       }
     },
     "patternExpression": {
-      "oneOf": [
-        {
-          "type": "object",
-          "required": [ "op", "args" ],
-          "properties": {
-            "op": { "type": "string", "enum": [ "casei" ] },
-            "args": {
-               "type": "array",
-               "items": { "$ref": "#/$defs/patternExpression" },
-               "minItems": 1,
-               "maxItems": 1
-            }
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": {
+        "required": [ "op", "args" ],
+        "properties": {
+          "op": { "type": "string", "enum": [ "casei", "accenti" ] },
+          "args": {
+             "type": "array",
+             "items": { "$ref": "#/$defs/patternExpression" },
+             "minItems": 1,
+             "maxItems": 1
           }
-        },
-        {
-          "type": "object",
-          "required": [ "op", "args" ],
-          "properties": {
-            "op": { "type": "string", "enum": [ "accenti" ] },
-            "args": {
-               "type": "array",
-               "items": { "$ref": "#/$defs/patternExpression" },
-               "minItems": 1,
-               "maxItems": 1
-            }
-          }
-        },
-        { "type": "string" }
-      ]
+        }
+      },
+      "else": { "type": "string" }
     },
     "isBetweenPredicate": {
       "type": "object",
@@ -1221,16 +1273,15 @@
       }
     },
     "numericExpression": {
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/numericOperation" },
+      "else": { "$ref": "#/$defs/numericPrimary" }
+    },
+    "numericPrimary": {
       "oneOf": [
-        { "$ref": "#/$defs/arithmeticExpression" },
-        { "$ref": "#/$defs/bitwiseLogical" },
-        { "$ref": "#/$defs/bitwiseShift" },
-        { "$ref": "#/$defs/bitwiseNot" },
         { "type": "number" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" },
-        { "$ref": "#/$defs/functionCall" },
-        { "$ref": "#/$defs/conditionalExpression" }
+        { "$ref": "#/$defs/systemIdentifier" }
       ]
     },
     "isInListPredicate": {
@@ -1279,30 +1330,40 @@
       }
     },
     "isNullOperand": {
-      "anyOf": [
-        { "$ref": "#/$defs/characterExpression" },
-        { "$ref": "#/$defs/numericExpression" },
-        { "$ref": "#/$defs/boolExpression" },
-        { "$ref": "#/$defs/geomExpression" },
-        { "$ref": "#/$defs/temporalExpression" }
-      ]
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/operation" },
+      "else": {
+        "anyOf": [
+          { "$ref": "#/$defs/characterPrimary" },
+          { "$ref": "#/$defs/numericPrimary" },
+          { "type": "boolean" },
+          { "$ref": "#/$defs/geomPrimary" },
+          { "$ref": "#/$defs/temporalPrimary" }
+        ]
+      }
     },
     "geomExpression": {
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/conditionalOrFunctionCall" },
+      "else": { "$ref": "#/$defs/geomPrimary" }
+    },
+    "geomPrimary": {
       "oneOf": [
         { "$ref": "#/$defs/spatialInstance" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" },
-        { "$ref": "#/$defs/functionCall" },
-        { "$ref": "#/$defs/conditionalExpression" }
+        { "$ref": "#/$defs/systemIdentifier" }
       ]
     },
     "temporalExpression": {
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/conditionalOrFunctionCall" },
+      "else": { "$ref": "#/$defs/temporalPrimary" }
+    },
+    "temporalPrimary": {
       "oneOf": [
         { "$ref": "#/$defs/temporalInstance" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" },
-        { "$ref": "#/$defs/functionCall" },
-        { "$ref": "#/$defs/conditionalExpression" }
+        { "$ref": "#/$defs/systemIdentifier" }
       ]
     },
     "arrayPredicate": {
@@ -1325,40 +1386,26 @@
       "type": "array",
       "minItems": 2,
       "maxItems": 2,
-      "items": {
-        "oneOf": [
-          { "$ref": "#/$defs/array" },
-          { "$ref": "#/$defs/propertyRef" },
-          { "$ref": "#/$defs/systemIdentifier" },
-          { "$ref": "#/$defs/functionCall" },
-          { "$ref": "#/$defs/conditionalExpression" }
-        ]
-      }
+      "items": { "$ref": "#/$defs/arrayOperand" }
     },
     "arrayExpression": {
       "type": "array",
-      "items": {
+      "items": { "$ref": "#/$defs/arrayOperand" }
+    },
+    "arrayOperand": {
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/conditionalOrFunctionCall" },
+      "else": {
         "oneOf": [
           { "$ref": "#/$defs/array" },
           { "$ref": "#/$defs/propertyRef" },
-          { "$ref": "#/$defs/systemIdentifier" },
-          { "$ref": "#/$defs/functionCall" },
-          { "$ref": "#/$defs/conditionalExpression" }
+          { "$ref": "#/$defs/systemIdentifier" }
         ]
       }
     },
     "array": {
       "type": "array",
-      "items": {
-        "oneOf": [
-          { "$ref": "#/$defs/characterExpression" },
-          { "$ref": "#/$defs/numericExpression" },
-          { "$ref": "#/$defs/boolExpression" },
-          { "$ref": "#/$defs/geomExpression" },
-          { "$ref": "#/$defs/temporalExpression" },
-          { "$ref": "#/$defs/array" }
-        ]
-      }
+      "items": { "$ref": "#/$defs/argument" }
     },
     "arithmeticExpression": {
       "type": "object",
@@ -1377,19 +1424,7 @@
       "type": "array",
       "minItems": 2,
       "maxItems": 2,
-      "items": {
-        "oneOf": [
-          { "$ref": "#/$defs/arithmeticExpression" },
-          { "$ref": "#/$defs/bitwiseLogical" },
-          { "$ref": "#/$defs/bitwiseShift" },
-          { "$ref": "#/$defs/bitwiseNot" },
-          { "$ref": "#/$defs/propertyRef" },
-          { "$ref": "#/$defs/systemIdentifier" },
-          { "$ref": "#/$defs/functionCall" },
-          { "$ref": "#/$defs/conditionalExpression" },
-          { "type": "number" }
-        ]
-      }
+      "items": { "$ref": "#/$defs/numericExpression" }
     },
     "hexNumber": {
        "type": "string",
@@ -1450,18 +1485,16 @@
       }
     },
     "bitwiseOperand": {
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/numericOperation" },
+      "else": {
         "oneOf": [
-          { "$ref": "#/$defs/arithmeticExpression" },
-          { "$ref": "#/$defs/bitwiseLogical" },
-          { "$ref": "#/$defs/bitwiseShift" },
-          { "$ref": "#/$defs/bitwiseNot" },
-          { "$ref": "#/$defs/propertyRef" },
-          { "$ref": "#/$defs/systemIdentifier" },
-          { "$ref": "#/$defs/functionCall" },
-          { "$ref": "#/$defs/conditionalExpression" },
           { "type": "integer" },
-          { "$ref": "#/$defs/hexNumber" }
+          { "$ref": "#/$defs/hexNumber" },
+          { "$ref": "#/$defs/propertyRef" },
+          { "$ref": "#/$defs/systemIdentifier" }
         ]
+      }
     },
     "propertyRef": {
       "type": "object",
@@ -1556,16 +1589,7 @@
          },
          "args": {
            "type": "array",
-           "items": {
-             "anyOf": [
-               { "$ref": "#/$defs/characterExpression" },
-               { "$ref": "#/$defs/numericExpression" },
-               { "$ref": "#/$defs/boolExpression" },
-               { "$ref": "#/$defs/geomExpression" },
-               { "$ref": "#/$defs/temporalExpression" },
-               { "$ref": "#/$defs/array" }
-             ]
-           },
+           "items": { "$ref": "#/$defs/argument" },
            "prefixItems": [
              { "$ref": "#/$defs/characterExpression" }
            ],
@@ -1574,18 +1598,15 @@
       }
     },
     "characterExpression": {
+      "if": { "$ref": "#/$defs/hasOp" },
+      "then": { "$ref": "#/$defs/characterOperation" },
+      "else": { "$ref": "#/$defs/characterPrimary" }
+    },
+    "characterPrimary": {
       "oneOf": [
-        { "$ref": "#/$defs/casei" },
-        { "$ref": "#/$defs/accenti" },
-        { "$ref": "#/$defs/lowerUpperCase" },
-        { "$ref": "#/$defs/concatenate" },
-        { "$ref": "#/$defs/substitute" },
-        { "$ref": "#/$defs/format" },
         { "type": "string" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" },
-        { "$ref": "#/$defs/functionCall" },
-        { "$ref": "#/$defs/conditionalExpression" }
+        { "$ref": "#/$defs/systemIdentifier" }
       ]
     },
     "conditionalExpression": {
@@ -1627,16 +1648,7 @@
         },
         "args": {
           "type": "array",
-          "items": {
-            "anyOf": [
-              { "$ref": "#/$defs/characterExpression" },
-              { "$ref": "#/$defs/numericExpression" },
-              { "$ref": "#/$defs/boolExpression" },
-              { "$ref": "#/$defs/geomExpression" },
-              { "$ref": "#/$defs/temporalExpression" },
-              { "$ref": "#/$defs/array" }
-            ]
-          }
+          "items": { "$ref": "#/$defs/argument" }
         }
       }
     },
@@ -1836,14 +1848,16 @@
       "minItems": 2,
       "maxItems": 2,
       "items": {
-        "oneOf": [
-          { "$ref": "#/$defs/instantString" },
-          { "type": "string", "enum": [ ".." ] },
-          { "$ref": "#/$defs/propertyRef" },
-          { "$ref": "#/$defs/systemIdentifier" },
-          { "$ref": "#/$defs/functionCall" },
-          { "$ref": "#/$defs/conditionalExpression" }
-        ]
+        "if": { "$ref": "#/$defs/hasOp" },
+        "then": { "$ref": "#/$defs/conditionalOrFunctionCall" },
+        "else": {
+          "oneOf": [
+            { "$ref": "#/$defs/instantString" },
+            { "type": "string", "enum": [ ".." ] },
+            { "$ref": "#/$defs/propertyRef" },
+            { "$ref": "#/$defs/systemIdentifier" }
+          ]
+        }
       }
     }
   }
