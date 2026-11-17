@@ -154,7 +154,7 @@ StrokeStyling *-- GraphicalUnit
 @enduml
 ....
 
-A Stroke defines the graphical symbolizing parameters for drawing an outline (e.g., for linear geometries or the exterior of a polygon geometry). As an abstract class and part of the base of the core graphical concepts, StrokeClass is a global point of extension to specify concrete ways to draw outlines. The StrokeClass properties are documented in the following table. By default the end of open subpaths are butt caped and at the corners of paths are miter joined when they are stroked.
+A Stroke defines the graphical symbolizing parameters for drawing an outline (e.g., for linear geometries or the exterior of a polygon geometry). As an abstract class and part of the base of the core graphical concepts, StrokeClass is a global point of extension to specify concrete ways to draw outlines. The StrokeClass properties are documented in the following table. The ends of open lines are drawn with round caps, and their vertices with round joins (the Joins and Caps requirements class of Part 2 adds properties to choose other caps and joins).
 
 A Stroke object inherits from a base _StrokeStyling_ class, which is re-used in a separate requirements class for defining more complex strokes:
 
@@ -358,7 +358,7 @@ An Image is one type of graphic defined by this requirements class that can be u
 |===
 | Name           | Definition                      | Type                      | Multiplicity
 | image          | The image to use                | Resource                  | 1
-| hotSpot        | 0,0 position in the image       | UnitPoint (uom-qualified) | 1
+| hotSpot        | Point of the image placed at the position of the Graphic, from its top left corner (`0 0`) | UnitPoint (uom-qualified) | 1
 | tint           | Color replacing white in the image | Color                  | 1
 | blackTint      | Color replacing black in the image | Color                  | 1
 | alphaThreshold | Lowest alpha value of a pixel considered part of the image for picking | float | 1

@@ -55,6 +55,10 @@
               "text": {
                 "property": "name"
               },
+              "alignment": [
+                "center",
+                "middle"
+              ],
               "font": {
                 "face": "Arial",
                 "size": 8,

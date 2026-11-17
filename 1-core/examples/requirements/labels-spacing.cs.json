@@ -73,6 +73,10 @@
                   "text": {
                     "property": "number"
                   },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
                   "font": {
                     "face": "Arial",
                     "size": 8,

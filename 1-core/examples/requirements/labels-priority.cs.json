@@ -62,12 +62,16 @@
                 {
                   "position": {
                     "x": 0.0,
-                    "y": 8.0
+                    "y": -8.0
                   },
                   "type": "Text",
                   "text": {
                     "property": "name"
                   },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
                   "font": {
                     "face": "Arial",
                     "size": 9,

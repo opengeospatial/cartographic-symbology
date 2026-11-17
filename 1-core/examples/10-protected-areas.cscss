@@ -13,6 +13,7 @@ ProtectedAreas[dataLayer.type = vector]
     label : { elements: [
             Text {
              text : name,
+             alignment: center middle,
              font:{
              face:'Arial',
              size:8,

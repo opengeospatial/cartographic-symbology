@@ -306,8 +306,10 @@ NOTE: The Symbolizer `opacity` does not apply to labels.
 ====
 [%metadata]
 identifier:: /rec/core/opacity-together
-part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke and the graphics of markers of each feature together, so that they do not show through each other where they overlap; different features still show through each other.
+part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke and the graphics of markers together, so that they do not show through each other where they overlap, either for each feature or for all features of a data layer with the same `zOrder` drawn at once.
 ====
+
+NOTE: Applying the opacity per feature lets overlapping features of the same data layer show through each other, but can be costly for many features; applying it to all features of a data layer and `zOrder` at once can be done in a single drawing operation, but those features then no longer show through each other. Which of these to recommend is still under consideration. A style can select on `visualization.pass` (as in the Visualization passes use case of <<annex-mapgallery>>) to control what is drawn in which pass.
 
 [[req-core-z-order]]
 ==== Symbolizer `zOrder` property
@@ -1083,6 +1085,8 @@ The following default values are defined by this encoding.
 | opacity        | 1
 | width          | 1 px
 | color          | black
+| casing         | `width` 0 (no casing), `color` black
+| center         | `width` 0 (no center line), `color` black
 |===
 
 .Fill class default values
@@ -1112,10 +1116,25 @@ The following default values are defined by this encoding.
 [width="90%",options="header"]
 |===
 | Name           | Default value
-| hotSpot        | center of the image (`{ 0.5, 0.5 }`)
+| hotSpot        | center of the image (`50 pc 50 pc`)
 | tint           | white
 | blackTint      | black
 | alphaThreshold | 0
+|===
+
+.Text class default values
+[width="90%",options="header"]
+|===
+| Name           | Default value
+| alignment      | `left` `top`
+|===
+
+.HillShading class default values
+[width="90%",options="header"]
+|===
+| Name           | Default value
+| factor         | 0 (no hill shading)
+| sun            | `azimuth` 315, `elevation` 45
 |===
 
 [[req-core-default-values]]

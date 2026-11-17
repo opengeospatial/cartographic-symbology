@@ -35,6 +35,8 @@ image::figures/fill_opacity.png[]
 identifier:: /req/vector/stroke
 part:: An Encoding SHALL support defining a `stroke` Symbolizer property as an object including a `color` and a units of measure-qualified ("uom-qualified") `width`.
 part:: A Renderer SHALL support drawing the stroke of vector geometry based on a `stroke` property specifying a `color` and a uom-qualified `width`.
+part:: A Renderer SHALL support drawing strokes with round caps at the ends of open lines and round joins at their vertices.
+part:: A Renderer SHALL support drawing nothing for a stroke whose `width` is 0 or less.
 ====
 
 [[req-vector-units]]
@@ -68,7 +70,7 @@ part:: A Renderer SHALL support drawing the graphical elements of a marker at th
 identifier:: /req/vector/graphics
 part:: An Encoding SHALL support defining graphical elements (graphics) specifying a uom-qualified 2D real position offsetting the graphic from its original position.
 part:: A Renderer SHALL support drawing the Graphics at the specified uom-qualified 2D position offset relative to its original position.
-part:: A Renderer SHALL support interpreting a positive `x` of the position as an offset to the right and a positive `y` as an offset upwards on the map, as for `Displacement` in SE 1.1.
+part:: A Renderer SHALL support interpreting a positive `x` of the position as an offset to the right and a positive `y` as an offset downwards on the map, as for screen coordinates.
 ====
 
 [[req-vector-dot]]
@@ -85,6 +87,14 @@ part:: A Renderer SHALL support drawing a Dot Graphic as a filled circle whose d
 
 NOTE: A Dot is a stroke drawn on a single point, as if a pen were put down and lifted again. A Dot with an outline is drawn with two concentric Dots, the larger one first.
 
+[[per-vector-dot-outline]]
+[permission]
+====
+[%metadata]
+identifier:: /per/vector/dot-outline
+part:: A Renderer MAY draw a hairline outline, no wider than 1 pixel, around a Dot in a color that contrasts with the Dot's `color`, so that the Dot remains visible on a background of its own color (such as the default white Dot on a white map).
+====
+
 [[req-vector-image]]
 ===== Image Graphics
 
@@ -93,12 +103,15 @@ NOTE: A Dot is a stroke drawn on a single point, as if a pen were put down and l
 [%metadata]
 identifier:: /req/vector/image
 part:: An Encoding SHALL support defining an Image Graphic with an `image` property referencing an image resource, an optional uom-qualified `hotSpot` position within the image, optional `tint` and `blackTint` Colors, and an optional `alphaThreshold` real number between 0 and 1.
-part:: A Renderer SHALL support drawing the referenced image so that its `hotSpot` (by default, its center, `{ 0.5, 0.5 }`) is located at the position of the Graphic.
-part:: A Renderer SHALL support interpreting the `hotSpot` in the coordinates of the image, from its top left corner with `x` to the right and `y` downwards, where a number without a unit is a fraction of the image's width or height, a value in `pc` is a percentage of it, and a value in another unit is a length from that corner.
+part:: A Renderer SHALL support drawing the referenced image at its own size, one pixel of the image to one pixel of the map (for an SVG image, the size given by its `width` and `height`).
+part:: A Renderer SHALL support drawing the referenced image so that its `hotSpot` (by default, its center, `50 pc 50 pc`) is located at the position of the Graphic.
+part:: A Renderer SHALL support interpreting the `hotSpot` in the coordinates of the image, from its top left corner (`0 0`) with `x` to the right and `y` downwards, where a number without a unit is in pixels of the image, a value in `pc` is a percentage of the image's width or height, and a value in another unit is a length from that corner.
 part:: A Renderer SHALL support recoloring the image so that each red, green and blue component _v_ (between 0 and 1) of each pixel becomes `tint` × _v_ + `blackTint` × (1 − _v_), using the same component of `tint` and `blackTint`.
 ====
 
-NOTE: SE 1.1 `AnchorPoint` uses the same fractions, but measures `AnchorPointY` from the bottom of the graphic: it is 1 minus the `y` of the `hotSpot`.
+NOTE: SE 1.1 `AnchorPoint` gives fractions of the graphic's width and height and measures `AnchorPointY` from the bottom of the graphic: a `hotSpot` of `x pc y pc` is an `AnchorPointX` of _x_ / 100 and an `AnchorPointY` of 1 − _y_ / 100.
+
+// TODO(review): an image drawn at its own size in pixels is smaller on a display with smaller pixels; add an Image `size` in units such as `mm` or `em`, as a tuple allowing `size.y` alone (see #100).
 
 NOTE: With the default `tint` (white) and `blackTint` (black), the image is drawn unchanged. For a monochrome icon, `tint` sets the color of its white parts and `blackTint` the color of its black parts, so that one icon can be drawn in a different color per category.
 
@@ -112,6 +125,14 @@ identifier:: /per/vector/image-alpha-test
 part:: A Renderer MAY use `alphaThreshold` as the threshold of an alpha test, by not drawing the pixels of the image whose alpha value is below it.
 ====
 
+[[per-vector-image-linear-light]]
+[permission]
+====
+[%metadata]
+identifier:: /per/vector/image-linear-light
+part:: A Renderer MAY convert the sRGB components of the image, `tint` and `blackTint` to linear light, recolor the image there, and convert the result back to sRGB for output.
+====
+
 [[req-vector-text]]
 ===== Text Graphics
 
@@ -121,7 +142,7 @@ part:: A Renderer MAY use `alphaThreshold` as the threshold of an alpha test, by
 identifier:: /req/vector/text
 part:: An Encoding SHALL support defining a Text Graphic with a `text` unicode string content, a `font`, and an `alignment` with a horizontal (`horzAlignment`: `left`, `right` or `center`) and vertical component (`vertAlignment`: `top`, `middle`, `bottom`).
 part:: A Renderer SHALL support drawing the `text` of a Text Graphic using the `font` and the `alignment` specified.
-part:: A Renderer SHALL support aligning the text so that the edge or center of its box named by the `alignment` is at the position of the Graphic: `left` puts the start of the text there, `right` its end, `top` the top of the font's ascent, `bottom` the bottom of its descent, and `middle` the point halfway between them; the default `alignment` is `center` `middle`.
+part:: A Renderer SHALL support aligning the text so that the edge or center of its box named by the `alignment` is at the position of the Graphic: `left` puts the start of the text there, `right` its end, `top` the top of the font's ascent, `bottom` the bottom of its descent, and `middle` the point halfway between them; the default `alignment` is `left` `top`.
 ====
 
 [[req-vector-fonts]]

@@ -31,6 +31,10 @@
               "text": {
                 "property": "name"
               },
+              "alignment": [
+                "center",
+                "middle"
+              ],
               "font": {
                 "face": "Tahoma",
                 "size": 14,
@@ -675,7 +679,7 @@
                 {
                   "position": {
                     "x": 10.0,
-                    "y": -4.0
+                    "y": 4.0
                   },
                   "type": "Text",
                   "text": {

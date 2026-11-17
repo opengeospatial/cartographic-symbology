@@ -29,8 +29,9 @@ part:: A Renderer SHALL support drawing the graphical elements of the labels as 
 [%metadata]
 identifier:: /rec/labels/overlap
 part:: A Renderer SHOULD omit labels which cannot be placed without overlapping other labels, unless a property of the Symbolizer allows the overlap.
-part:: A Renderer SHOULD omit labels which would extend beyond the edges of the map, except where the map is drawn in tiles that are put together.
 ====
+
+NOTE: Whether labels that would extend beyond the edges of the map are placed is left to the Renderer, for example as a configuration option, considering use cases such as rendering a static map, a dynamic map or map tiles.
 
 [[req-labels-placement]]
 ===== Label `placement` property

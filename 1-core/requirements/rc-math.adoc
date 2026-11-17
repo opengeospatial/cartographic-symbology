@@ -151,8 +151,8 @@ part:: A Renderer SHALL support evaluating `log10(x)` as the base 10 logarithm o
 ====
 [%metadata]
 identifier:: /req/math/max
-part:: An Encoding SHALL support defining a call to the `max` standard function taking two numeric arguments.
-part:: A Renderer SHALL support evaluating `max(x, y)` as the greater of `x` and `y`.
+part:: An Encoding SHALL support defining a call to the `max` standard function taking one or more numeric arguments.
+part:: A Renderer SHALL support evaluating `max(x, y, ...)` as the greatest of its arguments, so that `max(x)` is `x`.
 ====
 
 [[req-math-min]]
@@ -162,8 +162,8 @@ part:: A Renderer SHALL support evaluating `max(x, y)` as the greater of `x` and
 ====
 [%metadata]
 identifier:: /req/math/min
-part:: An Encoding SHALL support defining a call to the `min` standard function taking two numeric arguments.
-part:: A Renderer SHALL support evaluating `min(x, y)` as the smaller of `x` and `y`.
+part:: An Encoding SHALL support defining a call to the `min` standard function taking one or more numeric arguments.
+part:: A Renderer SHALL support evaluating `min(x, y, ...)` as the smallest of its arguments, so that `min(x)` is `x`.
 ====
 
 [[req-math-pow]]

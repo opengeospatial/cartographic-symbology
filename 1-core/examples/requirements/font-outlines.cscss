@@ -12,7 +12,7 @@ Places
    [type = 'mountain' and elevation >= 2000]
    {
       visibility: true;
-      label: { elements: [ Text { text: name,
+      label: { elements: [ Text { text: name, alignment: center middle,
          font: { face: 'Arial', size: 10, color: #2b2b2b, outline: { size: 2, opacity: 0.85, color: white } } } ] };
    }
 }

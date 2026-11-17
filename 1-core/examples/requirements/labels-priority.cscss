@@ -7,7 +7,7 @@ Places
    {
       visibility: true;
       marker: { elements: [ Dot { size: 4 px, color: #2b2b2b } ] };
-      label: { elements: [ Text { text: name, position: 0 8, font: { face: 'Arial', size: 9, color: #2b2b2b } } ],
+      label: { elements: [ Text { text: name, position: 0 -8, alignment: center middle, font: { face: 'Arial', size: 9, color: #2b2b2b } } ],
                placement: { priority: elevation } };
    }
 }

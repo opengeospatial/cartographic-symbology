@@ -4,7 +4,7 @@ Huts
    marker: { elements: [
       Dot { size: 14 px, color: white },
       Dot { size: 9 px, color: #b8322a },
-      Dot { size: 5 px, color: #b8322a, position: 12 -12 }
+      Dot { size: 5 px, color: #b8322a, position: 12 12 }
    ] };
 }
 Landcover
