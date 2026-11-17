@@ -1,0 +1,97 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/labels/label, /req/labels/placement (priority), /rec/labels/overlap: higher peaks win where labels would overlap",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "type"
+                  },
+                  "mountain"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "type"
+                  },
+                  "peak"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 4
+                  },
+                  "color": [
+                    43,
+                    43,
+                    43
+                  ]
+                }
+              ]
+            },
+            "label": {
+              "elements": [
+                {
+                  "position": {
+                    "x": 0.0,
+                    "y": -8.0
+                  },
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 9,
+                    "color": [
+                      43,
+                      43,
+                      43
+                    ]
+                  }
+                }
+              ],
+              "placement": {
+                "priority": {
+                  "property": "elevation"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

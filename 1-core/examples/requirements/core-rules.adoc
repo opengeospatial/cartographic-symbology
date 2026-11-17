@@ -5,7 +5,7 @@ image::figures/examples/requirements/core-rules.jpg[]
 
 Illustrates `/req/core/rules`, `/req/core/selector`, `/req/core/nested`, `/req/core/symbolizer`, `/req/core/visibility`, `/req/core/layers`, `/req/core/expressions-field-identifiers`.
 
-Rendered by the draft renderer of cartosym-draft-check. The pale land cover, water and rivers, the grey shadows of the relief, the scale bar and the credit are context, not part of the style. Open land is not drawn (visibility false); the light grey shapes under it are the context. Map data © Kartverket, CC BY 4.0.
+Rendered by the draft renderer of cartosym-draft-check. Open land is not drawn (visibility false). Map data © Kartverket, CC BY 4.0.
 
 [cols="1,1",options="header"]
 |===

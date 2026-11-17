@@ -1,0 +1,9 @@
+// /req/stipples/ratio, /req/dot-patterns/dotpattern, /req/dot-patterns/distance
+Landcover
+{
+   marker: null;
+   visibility: false;
+   stroke: { color: #b0aa98; width: 0.5 px };
+   [class = 'bog'] { visibility: true; fill: { color: #8f8650; stipple: { ratio: 0.3 } }; }
+   [class = 'forest'] { visibility: true; fill: { color: #5e8f52; dotpattern: { distance: { horizontal: 8 px; vertical: 4 px } } }; }
+}

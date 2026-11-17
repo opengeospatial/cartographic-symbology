@@ -1,0 +1,18 @@
+// /req/font-outlines/outline, size, opacity, color: peak names over the relief
+Elevation
+{
+   singleChannel: elevation;
+   colorMap: [ 300 #56704a, 1200 #8d7f62, 2200 #4a4a4a ];
+   hillShading: { factor: 2; sun: { azimuth: 315; elevation: 45 } };
+}
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain' and elevation >= 2000]
+   {
+      visibility: true;
+      label: { elements: [ Text { text: name, alignment: center middle,
+         font: { face: 'Arial', size: 10, color: #2b2b2b, outline: { size: 2, opacity: 0.85, color: white } } } ] };
+   }
+}

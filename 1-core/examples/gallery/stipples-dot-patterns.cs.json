@@ -1,0 +1,87 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/stipples/ratio, /req/dot-patterns/dotpattern, /req/dot-patterns/distance",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "stroke": {
+          "color": [
+            176,
+            170,
+            152
+          ],
+          "width": {
+            "px": 0.5
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "bog"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                143,
+                134,
+                80
+              ],
+              "stipple": {
+                "ratio": 0.3
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "dotpattern": {
+                "distance": {
+                  "horizontal": {
+                    "px": 8.0
+                  },
+                  "vertical": {
+                    "px": 4.0
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/fill, /req/vector/stroke",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "opacity": 0.35
+            },
+            "stroke": {
+              "width": 0.0
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "bog"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                201,
+                187,
+                110
+              ],
+              "opacity": 0.5
+            },
+            "stroke": {
+              "color": [
+                143,
+                132,
+                72
+              ],
+              "width": {
+                "px": 0.75
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "lake"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "river"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                183,
+                211,
+                230
+              ]
+            },
+            "stroke": {
+              "color": [
+                63,
+                127,
+                179
+              ],
+              "width": {
+                "px": 1.0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

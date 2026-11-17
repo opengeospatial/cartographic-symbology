@@ -1,0 +1,35 @@
+// /req/vector/image: the bottom centre of the icon (hotSpot 50 pc 100 pc) sits on the cabin, recolored by tint and blackTint
+Huts
+{
+   marker: { elements: [
+      Image {
+         image: { uri: 'http://example.com/icons/hut.png'; path: '../icons/hut.png'; type: 'image/png' };
+         hotSpot: 50 pc 100 pc;
+         tint: white;
+         blackTint: #b8322a;
+      }
+   ] };
+   // Self-service cabins and shelters: the same icon in other colors
+   [service = 'selfService']
+   {
+      marker: { elements: [
+         Image {
+            image: { uri: 'http://example.com/icons/hut.png'; path: '../icons/hut.png'; type: 'image/png' };
+            hotSpot: 50 pc 100 pc;
+            tint: white;
+            blackTint: #d9822b;
+         }
+      ] };
+   }
+   [service = 'shelter']
+   {
+      marker: { elements: [
+         Image {
+            image: { uri: 'http://example.com/icons/hut.png'; path: '../icons/hut.png'; type: 'image/png' };
+            hotSpot: 50 pc 100 pc;
+            tint: white;
+            blackTint: #6b5a4a;
+         }
+      ] };
+   }
+}

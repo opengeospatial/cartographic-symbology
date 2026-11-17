@@ -1,0 +1,7 @@
+// /req/coverage/opacity-map, /rec/coverage/map-interpolation: the valleys fade out below 900 m
+Elevation
+{
+   singleChannel: elevation;
+   colorMap: [ 900 #a3917a, 1600 #d8cfc0, 2200 #ffffff ];
+   opacityMap: [ 600 0.0, 900 0.2, 1300 1.0 ];
+}

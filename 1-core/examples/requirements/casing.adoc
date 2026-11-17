@@ -5,7 +5,7 @@ image::figures/examples/requirements/casing.jpg[]
 
 Illustrates `/req/casing/casing`, `/req/casing/center`.
 
-Rendered by the draft renderer of cartosym-draft-check. The pale land cover, water and rivers, the grey shadows of the relief, the scale bar and the credit are context, not part of the style. Map data © Kartverket, CC BY 4.0.
+Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the `casing` and `center` of the stroke; the CartoSym-CSS and CartoSym-JSON below are those of the panel marked in bold. The pale blue lakes are context, not part of the style. Map data © Kartverket, CC BY 4.0.
 
 [cols="1,1",options="header"]
 |===

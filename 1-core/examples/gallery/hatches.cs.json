@@ -1,0 +1,122 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/hatches/hatch, width, angle, distance",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "stroke": {
+          "color": [
+            176,
+            170,
+            152
+          ],
+          "width": {
+            "px": 0.5
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "bog"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                163,
+                154,
+                92
+              ],
+              "hatch": {
+                "width": {
+                  "px": 1.0
+                },
+                "angle": 0.0,
+                "distance": {
+                  "px": 4.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "hatch": {
+                "width": {
+                  "px": 1.5
+                },
+                "angle": 45.0,
+                "distance": {
+                  "px": 8.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "lake"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                63,
+                127,
+                179
+              ],
+              "hatch": {
+                "width": {
+                  "px": 1.0
+                },
+                "angle": 90.0,
+                "distance": {
+                  "px": 3.0
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

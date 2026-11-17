@@ -1,7 +1,7 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/vector/text, /req/vector/fonts: Text graphics with a font and an alignment",
+      "$comment": "/req/vector/text, /req/vector/fonts: the alignment of a Text graphic relative to its position (the Dot)",
       "selector": {
         "op": "=",
         "args": [
@@ -18,26 +18,12 @@
       "nestedRules": [
         {
           "selector": {
-            "op": "and",
+            "op": "=",
             "args": [
               {
-                "op": "=",
-                "args": [
-                  {
-                    "property": "type"
-                  },
-                  "mountain"
-                ]
+                "property": "type"
               },
-              {
-                "op": ">=",
-                "args": [
-                  {
-                    "property": "elevation"
-                  },
-                  2000
-                ]
-              }
+              "mountain"
             ]
           },
           "symbolizer": {
@@ -47,12 +33,12 @@
                 {
                   "type": "Dot",
                   "size": {
-                    "px": 5
+                    "px": 4
                   },
                   "color": [
-                    43,
-                    43,
-                    43
+                    184,
+                    50,
+                    42
                   ]
                 },
                 {
@@ -60,46 +46,17 @@
                   "text": {
                     "property": "name"
                   },
-                  "position": {
-                    "x": 6.0,
-                    "y": 0.0
-                  },
                   "alignment": [
-                    "left",
+                    "center",
                     "middle"
                   ],
                   "font": {
                     "face": "Arial",
                     "size": 9,
-                    "bold": true,
                     "color": [
                       43,
                       43,
                       43
-                    ]
-                  }
-                },
-                {
-                  "type": "Text",
-                  "text": {
-                    "property": "elevation"
-                  },
-                  "position": {
-                    "x": 0.0,
-                    "y": 6.0
-                  },
-                  "alignment": [
-                    "center",
-                    "top"
-                  ],
-                  "font": {
-                    "face": "Arial",
-                    "size": 7,
-                    "italic": true,
-                    "color": [
-                      107,
-                      107,
-                      107
                     ]
                   }
                 }

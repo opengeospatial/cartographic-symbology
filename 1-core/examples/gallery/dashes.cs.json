@@ -1,0 +1,155 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/dashes/dash-pattern, /req/dashes/dash-offset: marked hiking routes dashed in pixels, other paths in millimetres",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "marked"
+                  },
+                  true
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                184,
+                68,
+                47
+              ],
+              "width": {
+                "px": 2.5
+              },
+              "dashPattern": [
+                {
+                  "px": 10.0
+                },
+                {
+                  "px": 5.0
+                }
+              ],
+              "dashOffset": {
+                "px": 5.0
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "marked"
+                  },
+                  false
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                74,
+                74,
+                74
+              ],
+              "width": {
+                "px": 1.0
+              },
+              "dashPattern": [
+                {
+                  "mm": 1.0
+                },
+                {
+                  "mm": 0.75
+                }
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "tractor"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                138,
+                106,
+                74
+              ],
+              "width": {
+                "px": 1.5
+              },
+              "dashPattern": [
+                {
+                  "px": 8.0
+                },
+                {
+                  "px": 3.0
+                },
+                {
+                  "px": 2.0
+                },
+                {
+                  "px": 3.0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

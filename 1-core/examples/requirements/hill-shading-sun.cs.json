@@ -1,7 +1,7 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/hill-shading/hill-shading, factor, sun: no colorMap, so the shade multiplies the colors of the elevation color map",
+      "$comment": "/req/hill-shading/hill-shading, /req/hill-shading/sun: the direction of the sun",
       "selector": {
         "op": "=",
         "args": [
@@ -17,23 +17,19 @@
         },
         "colorMap": [
           [
-            300.0,
-            "#cfe3c0"
+            0.0,
+            "#efece4"
           ],
           [
-            1300.0,
-            "#e9d9b0"
-          ],
-          [
-            2200.0,
-            "#fafafa"
+            2500.0,
+            "#efece4"
           ]
         ],
         "hillShading": {
-          "factor": 2,
+          "factor": 1,
           "sun": {
-            "azimuth": 135.0,
-            "elevation": 30.0
+            "azimuth": 315.0,
+            "elevation": 45.0
           }
         }
       }

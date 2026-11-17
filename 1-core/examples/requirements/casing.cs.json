@@ -18,24 +18,24 @@
       "nestedRules": [
         {
           "selector": {
-            "op": "or",
+            "op": "and",
             "args": [
               {
-                "op": "=",
+                "op": "<>",
                 "args": [
                   {
                     "property": "class"
                   },
-                  "municipal"
+                  "path"
                 ]
               },
               {
-                "op": "=",
+                "op": "<>",
                 "args": [
                   {
                     "property": "class"
                   },
-                  "private"
+                  "tractor"
                 ]
               }
             ]
@@ -43,9 +43,13 @@
           "symbolizer": {
             "visibility": true,
             "stroke": {
-              "color": "white",
+              "color": [
+                243,
+                227,
+                181
+              ],
               "width": {
-                "px": 4.0
+                "px": 5.0
               },
               "casing": {
                 "color": [
@@ -56,94 +60,12 @@
                 "width": {
                   "px": 1.0
                 }
-              }
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "or",
-            "args": [
-              {
-                "op": "=",
-                "args": [
-                  {
-                    "property": "class"
-                  },
-                  "county"
-                ]
-              },
-              {
-                "op": "=",
-                "args": [
-                  {
-                    "property": "class"
-                  },
-                  "national"
-                ]
-              }
-            ]
-          },
-          "symbolizer": {
-            "visibility": true,
-            "stroke": {
-              "color": [
-                242,
-                184,
-                75
-              ],
-              "width": {
-                "px": 6.0
-              },
-              "casing": {
-                "color": [
-                  138,
-                  106,
-                  42
-                ],
-                "width": {
-                  "px": 1.0
-                }
-              }
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "class"
-              },
-              "european"
-            ]
-          },
-          "symbolizer": {
-            "visibility": true,
-            "stroke": {
-              "color": [
-                208,
-                72,
-                58
-              ],
-              "width": {
-                "px": 8.0
-              },
-              "casing": {
-                "color": [
-                  110,
-                  34,
-                  25
-                ],
-                "width": {
-                  "px": 1.25
-                }
               },
               "center": {
                 "color": [
-                  247,
-                  210,
-                  106
+                  208,
+                  72,
+                  58
                 ],
                 "width": {
                   "px": 1.0

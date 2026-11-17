@@ -1,7 +1,7 @@
-// /req/hill-shading/hill-shading, factor, sun: no colorMap, so the shade multiplies the colors of the elevation color map
+// /req/hill-shading/hill-shading, /req/hill-shading/sun: the direction of the sun
 Elevation
 {
    singleChannel: elevation;
-   colorMap: [ 300 #cfe3c0, 1300 #e9d9b0, 2200 #fafafa ];
-   hillShading: { factor: 2; sun: { azimuth: 135; elevation: 30 } };
+   colorMap: [ 0 #efece4, 2500 #efece4 ];
+   hillShading: { factor: 1; sun: { azimuth: 315; elevation: 45 } };
 }

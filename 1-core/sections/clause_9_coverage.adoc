@@ -183,7 +183,12 @@ include::../requirements/rc-hillshading.adoc[]
 
 <<fig-example-8-coverage-hillshading>> and <<fig-example-9-coverage-hillshading-opacity>> in the CartoSym-CSS clause show the hill shading `colorMap` and `opacityMap`.
 
-.Example style for `/req/hill-shading/hill-shading`, `/req/hill-shading/factor`, `/req/hill-shading/sun`, in CartoSym-CSS and CartoSym-JSON
+.Example style for `/req/hill-shading/hill-shading`, `/req/hill-shading/factor`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/hill-shading-factor.adoc[]
+====
+
+.Example style for `/req/hill-shading/hill-shading`, `/req/hill-shading/sun`, in CartoSym-CSS and CartoSym-JSON
 ====
 include::../examples/requirements/hill-shading-sun.adoc[]
 ====

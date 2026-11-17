@@ -5,7 +5,7 @@ image::figures/examples/requirements/core-parameters.jpg[]
 
 Illustrates `/req/core/parameters`.
 
-Rendered by the draft renderer of cartosym-draft-check. The pale land cover, water and rivers, the grey shadows of the relief, the scale bar and the credit are context, not part of the style. The size is an arithmetic expression, so this style also needs the "Parameter Values" and "Arithmetic" requirements classes. Map data © Kartverket, CC BY 4.0.
+Rendered by the draft renderer of cartosym-draft-check. The pale blue lakes are context, not part of the style. The size is an arithmetic expression, so this style also needs the "Parameter Values" and "Arithmetic" requirements classes. Map data © Kartverket, CC BY 4.0.
 
 [cols="1,1",options="header"]
 |===

@@ -1,0 +1,113 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/text, /req/vector/fonts: Text graphics with a font and an alignment",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "type"
+                  },
+                  "mountain"
+                ]
+              },
+              {
+                "op": ">=",
+                "args": [
+                  {
+                    "property": "elevation"
+                  },
+                  2000
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 5
+                  },
+                  "color": [
+                    43,
+                    43,
+                    43
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "position": {
+                    "x": 6.0,
+                    "y": 0.0
+                  },
+                  "alignment": [
+                    "left",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 9,
+                    "bold": true,
+                    "color": [
+                      43,
+                      43,
+                      43
+                    ]
+                  }
+                },
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "elevation"
+                  },
+                  "position": {
+                    "x": 0.0,
+                    "y": 6.0
+                  },
+                  "alignment": [
+                    "center",
+                    "top"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 7,
+                    "italic": true,
+                    "color": [
+                      107,
+                      107,
+                      107
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

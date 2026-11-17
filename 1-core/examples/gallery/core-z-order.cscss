@@ -1,0 +1,14 @@
+// /req/core/z-order: rivers (zOrder 2) are drawn over roads (zOrder 1)
+Roads
+{
+   marker: null;
+   zOrder: 1;
+   stroke: { color: #f2b84b; width: 5 px };
+   [class = 'path' or class = 'tractor'] { visibility: false; }
+}
+Rivers
+{
+   marker: null;
+   zOrder: 2;
+   stroke: { color: #3f7fb3; width: 2 px };
+}

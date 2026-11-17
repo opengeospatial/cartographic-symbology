@@ -1,0 +1,30 @@
+// /req/vector/marker, /req/vector/dot, /req/vector/graphics: markers at points, line vertices and polygon centroids
+Huts
+{
+   marker: { elements: [
+      Dot { size: 14 px, color: white },
+      Dot { size: 9 px, color: #b8322a },
+      Dot { size: 5 px, color: #b8322a, position: 12 12 }
+   ] };
+}
+Landcover
+{
+   visibility: false;
+   [class = 'lake' and area > 20000]
+   {
+      visibility: true;
+      fill: { color: #cfe1ee };
+      stroke: { width: 0 };
+      marker: { elements: [ Dot { size: 7 px, color: white }, Dot { size: 5 px, color: #1f4e79 } ] };
+   }
+}
+Roads
+{
+   visibility: false;
+   [class = 'path' and marked = true]
+   {
+      visibility: true;
+      stroke: { color: #b8442f; width: 1 px };
+      marker: { elements: [ Dot { size: 3 px, color: #b8442f } ] };
+   }
+}

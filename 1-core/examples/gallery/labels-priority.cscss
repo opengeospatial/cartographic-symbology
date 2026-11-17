@@ -1,0 +1,13 @@
+// /req/labels/label, /req/labels/placement (priority), /rec/labels/overlap: higher peaks win where labels would overlap
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain' or type = 'peak']
+   {
+      visibility: true;
+      marker: { elements: [ Dot { size: 4 px, color: #2b2b2b } ] };
+      label: { elements: [ Text { text: name, position: 0 -8, alignment: center middle, font: { face: 'Arial', size: 9, color: #2b2b2b } } ],
+               placement: { priority: elevation } };
+   }
+}

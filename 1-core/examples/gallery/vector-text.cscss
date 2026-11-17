@@ -1,0 +1,17 @@
+// /req/vector/text, /req/vector/fonts: Text graphics with a font and an alignment
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain' and elevation >= 2000]
+   {
+      visibility: true;
+      marker: { elements: [
+         Dot { size: 5 px, color: #2b2b2b },
+         Text { text: name, position: 6 0, alignment: left middle,
+                font: { face: 'Arial', size: 9, bold: true, color: #2b2b2b } },
+         Text { text: elevation, position: 0 6, alignment: center top,
+                font: { face: 'Arial', size: 7, italic: true, color: #6b6b6b } }
+      ] };
+   }
+}

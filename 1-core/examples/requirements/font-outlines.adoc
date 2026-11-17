@@ -5,7 +5,7 @@ image::figures/examples/requirements/font-outlines.jpg[]
 
 Illustrates `/req/font-outlines/outline`, `/req/font-outlines/size`, `/req/font-outlines/opacity`, `/req/font-outlines/color`.
 
-Rendered by the draft renderer of cartosym-draft-check. Map data © Kartverket, CC BY 4.0.
+Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the `outline` of the font; the CartoSym-CSS and CartoSym-JSON below are those of the panel marked in bold. Map data © Kartverket, CC BY 4.0.
 
 [cols="1,1",options="header"]
 |===

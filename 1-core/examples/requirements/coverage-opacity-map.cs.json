@@ -1,7 +1,7 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/coverage/opacity-map, /rec/coverage/map-interpolation: the valleys fade out below 900 m",
+      "$comment": "/req/coverage/opacity-map, /rec/coverage/map-interpolation: the valleys fade out",
       "selector": {
         "op": "=",
         "args": [
@@ -17,29 +17,25 @@
         },
         "colorMap": [
           [
-            900.0,
-            "#a3917a"
+            500.0,
+            "#7d9a6a"
           ],
           [
-            1600.0,
-            "#d8cfc0"
+            1300.0,
+            "#d6c79e"
           ],
           [
-            2200.0,
-            "#ffffff"
+            2100.0,
+            "#9c8f84"
           ]
         ],
         "opacityMap": [
           [
-            600.0,
+            700.0,
             0.0
           ],
           [
             900.0,
-            0.2
-          ],
-          [
-            1300.0,
             1.0
           ]
         ]

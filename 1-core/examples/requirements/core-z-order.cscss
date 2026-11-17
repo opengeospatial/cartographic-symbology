@@ -1,4 +1,4 @@
-// /req/core/z-order: rivers (zOrder 2) are drawn over roads (zOrder 1)
+// /req/core/z-order: the rivers are drawn under or over the roads, by their zOrder
 Roads
 {
    marker: null;

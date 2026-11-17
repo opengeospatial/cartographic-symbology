@@ -111,7 +111,7 @@ part:: A Renderer SHALL support recoloring the image so that each red, green and
 
 NOTE: SE 1.1 `AnchorPoint` gives fractions of the graphic's width and height and measures `AnchorPointY` from the bottom of the graphic: a `hotSpot` of `x pc y pc` is an `AnchorPointX` of _x_ / 100 and an `AnchorPointY` of 1 − _y_ / 100.
 
-// TODO(review): an image drawn at its own size in pixels is smaller on a display with smaller pixels; add an Image `size` in units such as `mm` or `em`, as a tuple allowing `size.y` alone (see #100).
+// TODO(review): an image drawn at its own size in pixels is smaller on a display with smaller pixels; add a uom-qualified Image `size` (display units such as `mm` or `em`, and ground units such as `m` and `ft`), as a tuple allowing `size.y` alone, saying which dimension a single value sets and whether it also applies to Images in pattern fills and strokes (see #100).
 
 NOTE: With the default `tint` (white) and `blackTint` (black), the image is drawn unchanged. For a monochrome icon, `tint` sets the color of its white parts and `blackTint` the color of its black parts, so that one icon can be drawn in a different color per category.
 

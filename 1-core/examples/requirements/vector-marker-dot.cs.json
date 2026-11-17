@@ -1,7 +1,7 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/vector/marker, /req/vector/dot, /req/vector/graphics: markers at points, line vertices and polygon centroids",
+      "$comment": "/req/vector/marker, /req/vector/dot, /req/vector/graphics: the same marker at points, line vertices and polygon centroids",
       "selector": {
         "op": "=",
         "args": [
@@ -17,35 +17,20 @@
             {
               "type": "Dot",
               "size": {
-                "px": 14
+                "px": 7
               },
               "color": "white"
             },
             {
               "type": "Dot",
               "size": {
-                "px": 9
+                "px": 4.5
               },
               "color": [
                 184,
                 50,
                 42
               ]
-            },
-            {
-              "type": "Dot",
-              "size": {
-                "px": 5
-              },
-              "color": [
-                184,
-                50,
-                42
-              ],
-              "position": {
-                "x": 12.0,
-                "y": 12.0
-              }
             }
           ]
         }
@@ -93,9 +78,9 @@
             "visibility": true,
             "fill": {
               "color": [
-                207,
-                225,
-                238
+                226,
+                237,
+                244
               ]
             },
             "stroke": {
@@ -113,12 +98,12 @@
                 {
                   "type": "Dot",
                   "size": {
-                    "px": 5
+                    "px": 4.5
                   },
                   "color": [
-                    31,
-                    78,
-                    121
+                    184,
+                    50,
+                    42
                   ]
                 }
               ]
@@ -182,12 +167,19 @@
                 {
                   "type": "Dot",
                   "size": {
-                    "px": 3
+                    "px": 7
+                  },
+                  "color": "white"
+                },
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 4.5
                   },
                   "color": [
                     184,
-                    68,
-                    47
+                    50,
+                    42
                   ]
                 }
               ]

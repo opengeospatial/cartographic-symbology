@@ -18,26 +18,12 @@
       "nestedRules": [
         {
           "selector": {
-            "op": "or",
+            "op": "=",
             "args": [
               {
-                "op": "=",
-                "args": [
-                  {
-                    "property": "type"
-                  },
-                  "mountain"
-                ]
+                "property": "type"
               },
-              {
-                "op": "=",
-                "args": [
-                  {
-                    "property": "type"
-                  },
-                  "peak"
-                ]
-              }
+              "mountain"
             ]
           },
           "symbolizer": {
@@ -47,12 +33,12 @@
                 {
                   "type": "Dot",
                   "size": {
-                    "px": 4
+                    "px": 3
                   },
                   "color": [
-                    43,
-                    43,
-                    43
+                    184,
+                    50,
+                    42
                   ]
                 }
               ]

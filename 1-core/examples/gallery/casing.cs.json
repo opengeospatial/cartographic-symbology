@@ -1,0 +1,158 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/casing/casing, /req/casing/center: casings of joining roads merge beneath the main strokes",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "municipal"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "private"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": "white",
+              "width": {
+                "px": 4.0
+              },
+              "casing": {
+                "color": [
+                  140,
+                  129,
+                  114
+                ],
+                "width": {
+                  "px": 1.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "national"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                242,
+                184,
+                75
+              ],
+              "width": {
+                "px": 6.0
+              },
+              "casing": {
+                "color": [
+                  138,
+                  106,
+                  42
+                ],
+                "width": {
+                  "px": 1.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "european"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                208,
+                72,
+                58
+              ],
+              "width": {
+                "px": 8.0
+              },
+              "casing": {
+                "color": [
+                  110,
+                  34,
+                  25
+                ],
+                "width": {
+                  "px": 1.25
+                }
+              },
+              "center": {
+                "color": [
+                  247,
+                  210,
+                  106
+                ],
+                "width": {
+                  "px": 1.0
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

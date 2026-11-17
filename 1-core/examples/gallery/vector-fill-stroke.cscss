@@ -1,0 +1,24 @@
+// /req/vector/fill, /req/vector/stroke
+Landcover
+{
+   marker: null;
+   visibility: false;
+   [class = 'forest']
+   {
+      visibility: true;
+      fill: { color: #5e8f52; opacity: 0.35 };
+      stroke: { width: 0 };
+   }
+   [class = 'bog']
+   {
+      visibility: true;
+      fill: { color: #c9bb6e; opacity: 0.5 };
+      stroke: { color: #8f8448; width: 0.75 px };
+   }
+   [class = 'lake' or class = 'river']
+   {
+      visibility: true;
+      fill: { color: #b7d3e6 };
+      stroke: { color: #3f7fb3; width: 1 px };
+   }
+}

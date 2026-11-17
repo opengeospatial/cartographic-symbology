@@ -1,7 +1,7 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/hatches/hatch, width, angle, distance",
+      "$comment": "/req/hatches/hatch, width, angle, distance: hatch fills on the forest",
       "selector": {
         "op": "=",
         "args": [
@@ -13,49 +13,9 @@
       },
       "symbolizer": {
         "visibility": false,
-        "stroke": {
-          "color": [
-            176,
-            170,
-            152
-          ],
-          "width": {
-            "px": 0.5
-          }
-        },
         "marker": null
       },
       "nestedRules": [
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "class"
-              },
-              "bog"
-            ]
-          },
-          "symbolizer": {
-            "visibility": true,
-            "fill": {
-              "color": [
-                163,
-                154,
-                92
-              ],
-              "hatch": {
-                "width": {
-                  "px": 1.0
-                },
-                "angle": 0.0,
-                "distance": {
-                  "px": 4.0
-                }
-              }
-            }
-          }
-        },
         {
           "selector": {
             "op": "=",
@@ -76,42 +36,22 @@
               ],
               "hatch": {
                 "width": {
-                  "px": 1.5
+                  "px": 1.0
                 },
                 "angle": 45.0,
                 "distance": {
-                  "px": 8.0
+                  "px": 6.0
                 }
               }
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "class"
-              },
-              "lake"
-            ]
-          },
-          "symbolizer": {
-            "visibility": true,
-            "fill": {
+            },
+            "stroke": {
               "color": [
-                63,
-                127,
-                179
+                94,
+                143,
+                82
               ],
-              "hatch": {
-                "width": {
-                  "px": 1.0
-                },
-                "angle": 90.0,
-                "distance": {
-                  "px": 3.0
-                }
+              "width": {
+                "px": 0.5
               }
             }
           }
