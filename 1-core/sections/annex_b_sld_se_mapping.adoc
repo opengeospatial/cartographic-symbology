@@ -18,7 +18,7 @@ Standard.
 | name              | `<Name>` inside `<Rule>`
 | selector          | `<ogc:Filter>`
 | symbolizer        | `<PointSymbolizer>`, `<LineSymbolizer>`, `<PolygonSymbolizer>`, `<TextSymbolizer>`, `<RasterSymbolizer>`
-| nestedRules       | `<ElseFilter>` provides limited support for one use case of nested rules
+| nestedRules       | A `<Rule>` per nested rule, its `<ogc:Filter>` combining (`and`) the selectors of the nested rule and of its parents (a nested rule without selector having its parent's filter only) and its symbolizer being the parent's overridden by its own. `<ElseFilter>` (not any other `<Rule>` of the `<FeatureTypeStyle>`) has no direct CartoSym counterpart
 |===
 
 .Mapping of Symbolizers to SLD/SE constructs
@@ -110,7 +110,7 @@ Standard.
 | Symbolizer        | `<PointSymbolizer>`, `<LineSymbolizer>`, `<PolygonSymbolizer>`, `<TextSymbolizer>`, `<RasterSymbolizer>`
 | Symbolizer opacity | `<Opacity>` inside `<RasterSymbolizer>` (no global opacity for vector symbolizers)
 | Selector          | `<ogc:Filter>`
-| nestedRules       | `<ElseFilter>` provides limited support for one use case of nested rules
+| nestedRules       | A `<Rule>` per nested rule, its `<ogc:Filter>` combining (`and`) the selectors of the nested rule and of its parents (a nested rule without selector having its parent's filter only) and its symbolizer being the parent's overridden by its own. `<ElseFilter>` (not any other `<Rule>` of the `<FeatureTypeStyle>`) has no direct CartoSym counterpart
 
 | *Expression*         |
 | LiteralExpression    | `<ogc:Literal>`
