@@ -308,7 +308,7 @@ part:: A Renderer SHALL support portraying features and coverage cells of a sing
 === Expressions
 
 Expressions are a syntactic entity that may be evaluated to determine its value (from https://en.wikipedia.org/wiki/Expression_(computer_science)[Wikipedia]).
-The concept has similar meaning to Expressions as defined in the OGC Filter Encoding 2.0 standard, and can also be implemented with the OGC Common Query Language (CQL2),
+The concept has similar meaning to Expressions as defined in the OGC Filter Encoding 2.0 standard, and can also be implemented with the https://docs.ogc.org/is/21-065r2/21-065r2.html[OGC Common Query Language (CQL2)],
 with the caveat that the Expressions defined here are not restricted to evaluate to a boolean value as is the case for the first version of CQL2.
 
 Expressions can be used in two places according to this Styles & Symbology conceptual model: as a Selector defining the condition whether to apply a StylingRule or not, as well
