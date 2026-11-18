@@ -343,7 +343,7 @@ Image *-- Color
 Image *-- UnitPoint
 
 Resource : path: string[0..1]
-Resource : url: string[0..1]
+Resource : uri: string[0..1]
 Resource : id: string[0..1]
 Resource : type: string[0..1]
 Resource : ext: string[0..1]
@@ -370,7 +370,7 @@ The actual image content is defined by a Resource, which can be specified by one
 [width="90%",options="header"]
 |===
 | Name           | Definition                                  | Type     | Multiplicity
-| url            | URL for online resource                     | string   | 0..1
+| uri            | URL for online resource                     | string   | 0..1
 | path           | (preferably relative) path to local file    | string   | 0..1
 | id             | ID within a database table or  a sprite     | string   | 0..1
 | type           | Selected media type for the resource        | string   | 0..1
