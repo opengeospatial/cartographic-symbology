@@ -485,6 +485,7 @@ Capabilities   : hillshading: bool
 Capabilities   : fontoutlines: bool
 Capabilities   : hatches: bool
 Capabilities   : stipples: bool
+Capabilities   : dotpatterns: bool
 Capabilities   : dashes: bool
 Capabilities   : casing: bool
 Capabilities   : parametervalues: bool
@@ -513,6 +514,7 @@ Capabilities   : vendor: VendorCapabilities
 | capabilities.fontoutlines                     | Support for <<rc-font-outlines,Font Outlines>>                   | Boolean (true if supported, false otherwise)
 | capabilities.hatches                          | Support for <<rc-hatches,Hatch Fills>>                          | Boolean (true if supported, false otherwise)
 | capabilities.stipples                         | Support for <<rc-stipples, Stipple Fills>>                      | Boolean (true if supported, false otherwise)
+| capabilities.dotpatterns                      | Support for <<rc-dot-patterns,Dot Pattern Fills>>               | Boolean (true if supported, false otherwise)
 | capabilities.dashes                           | Support for <<rc-dashes,Dashed Strokes>>                        | Boolean (true if supported, false otherwise)
 | capabilities.casing                           | Support for <<rc-casing,Casing and Centerline>>                 | Boolean (true if supported, false otherwise)
 | capabilities.parametervalues                  | Support for <<rc-parameter-values,Parameter Values>>             | Boolean (true if supported, false otherwise)
