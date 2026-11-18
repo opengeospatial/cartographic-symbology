@@ -89,8 +89,8 @@ Similarly, the opacity map is defined with a Value/Opacity pair object:
 ===== Colors
 
 Both the `colorChannels` and the `colorMap` properties use a Color class, specified using red, green and blue components.
-The ability to define Colors in other spaces (e.g., Lab, CMYK) is defined in separate requirements classes
-and applies wherever this basic RGB Color class is used.
+The ability to define Colors in other spaces (e.g., Lab, CMYK) is left to later extensions
+and would apply wherever this basic RGB Color class is used.
 
 .Color
 [width="90%",options="header"]
