@@ -187,7 +187,32 @@ identifier:: /req/core/nested
 part:: An Encoding SHALL support defining a StylingRule with an ordered list of nested StylingRules.
 part:: A Renderer SHALL support considering the nested rules of a StylingRule only if that parent rule is selected.
 part:: A Renderer SHALL support the Symbolizer of a selected nested rule inheriting from, and overriding, the Symbolizer properties of its parent rule.
+part:: A Renderer SHALL consider a nested rule without a `selector` as selected whenever its parent rule is selected.
+part:: A Renderer SHALL apply the nested rules of a StylingRule in order, a later selected nested rule overriding the Symbolizer properties set by an earlier one.
 ====
+
+NOTE: A nested rule without a `selector` is the same as setting its Symbolizer properties directly in the parent rule (as if its curly brackets were removed), and several of them override one another, as do top-level rules with the same selector.
+Stacked drawing layers (e.g., a casing under a stroke, parallel strokes) are therefore not expressed with nested rules without a `selector`, but with the `casing` property of a stroke, or with the `feature.pass` and `visualization.pass` system identifiers (see <<rc-vector, Basic Vector Styling>> and the visualization rendering passes below).
+
+.CartoSym-CSS example: nested rules without a selector override one another, while `feature.pass` draws both layers
+[source]
+----
+[kind = 'road']
+{
+   // Both nested rules are selected; the second overrides the first,
+   // so only the white stroke is drawn (same as `stroke: { color: white; width: 3 px; }`)
+   { stroke: { color: black; width: 5 px; } }
+   { stroke: { color: white; width: 3 px; } }
+}
+
+[kind = 'road']
+{
+   // Each feature is drawn with the black stroke, then with the white one,
+   // before the next feature is drawn
+   [feature.pass = 0] { stroke: { color: black; width: 5 px; } }
+   [feature.pass = 1] { stroke: { color: white; width: 3 px; } }
+}
+----
 
 
 // TODO: Illustrate above example with two pictures at different scales
