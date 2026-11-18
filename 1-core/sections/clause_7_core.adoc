@@ -578,6 +578,8 @@ the map using different set of symbolizers.
 A later pass will only begin after all data layers and their features / coverage cells have been rendered
 with the symbolizers set for earlier visualization passes.
 
+A rule whose selector does not set `visualization.pass` applies in every visualization pass.
+
 See also the _feature pass_ introduced in
 <<rc-vector, Basic Vector Styling>> requirements class, which allows to render the same feature multiple times
 with different symbolizers before rendering the next feature.
