@@ -194,16 +194,19 @@
        ]
     },
     "marker": {
-       "anyOf": [
-          { "type": "null" },
-          { "$ref": "#/$defs/multiGraphic" },
-          {
-             "allOf": [
-                { "$ref": "#/$defs/abstractGraphic" },
-                { "not": { "required": [ "elements" ] } }
+       "$comment": "An expression, a MultiGraphic if it has elements, otherwise null or properties overriding those of the graphic (see graphic).",
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "if": { "type": "object", "required": [ "elements" ] },
+          "then": { "$ref": "#/$defs/multiGraphicObject" },
+          "else": {
+             "anyOf": [
+                { "type": "null" },
+                { "$ref": "#/$defs/abstractGraphic" }
              ]
           }
-       ]
+       }
     },
     "label": {
        "anyOf": [
@@ -222,40 +225,31 @@
           }
        ]
     },
-    "multiGraphic": {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "allOf": [
-               { "$ref": "#/$defs/abstractGraphic" },
-               {
-                  "type": "object",
-                  "required": [ "elements" ],
-                  "properties":
-                  {
-                     "elements": { "$ref": "#/$defs/graphicArray" }
-                  }
-               }
-            ]
-         }
+    "multiGraphicObject": {
+       "allOf": [
+          { "$ref": "#/$defs/abstractGraphic" },
+          {
+             "type": "object",
+             "required": [ "elements" ],
+             "properties":
+             {
+                "elements": { "$ref": "#/$defs/graphicArray" }
+             }
+          }
        ]
     },
     "graphicArray": {
-       "anyOf": [
-         { "$ref": "#/$defs/arrayExpression" },
-         {
-            "type": "array",
-            "items": { "$ref": "#/$defs/graphic" }
-         },
-         {
-            "type": "object",
-            "required": [ "index", "value" ],
-            "properties": {
-               "index": { "type": "integer", "minimum": 0 },
-               "value": { "$ref": "#/$defs/graphic" }
-            }
-         }
-       ]
+       "$comment": "An array of graphics, or one element given by its index (see clause 16).",
+       "if": { "type": "array" },
+       "then": { "items": { "$ref": "#/$defs/graphic" } },
+       "else": {
+          "type": "object",
+          "required": [ "index", "value" ],
+          "properties": {
+             "index": { "type": "integer", "minimum": 0 },
+             "value": { "$ref": "#/$defs/graphic" }
+          }
+       }
     },
     "abstractGraphic": {
        "type": "object",
@@ -342,13 +336,33 @@
        ]
     },
     "graphic": {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         { "$ref": "#/$defs/image" },
-         { "$ref": "#/$defs/shape" },
-         { "$ref": "#/$defs/text" },
-         { "$ref": "#/$defs/multiGraphic" }
-       ]
+       "$comment": "Checks a graphic against one definition: an expression, a MultiGraphic if it has elements, otherwise the graphic named by its type. Trying every kind of graphic instead, a validator could only report that none matched, not where the error is.",
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "if": { "type": "object", "required": [ "elements" ] },
+          "then": { "$ref": "#/$defs/multiGraphicObject" },
+          "else": {
+             "type": "object",
+             "required": [ "type" ],
+             "properties": { "type": { "enum": [ "Image", "Text", "Dot" ] } },
+             "allOf": [
+                { "if": { "required": [ "type" ], "properties": { "type": { "const": "Image" } } }, "then": { "$ref": "#/$defs/image" } },
+                { "if": { "required": [ "type" ], "properties": { "type": { "const": "Text" } } }, "then": { "$ref": "#/$defs/text" } },
+                { "if": { "required": [ "type" ], "properties": { "type": { "const": "Dot" } } }, "then": { "$ref": "#/$defs/shape" } }
+             ]
+          }
+       }
+    },
+    "isExpressionObject": {
+      "$comment": "An object that is an expression rather than a graphic: an operation or function call, a property, a system identifier or a variable.",
+      "type": "object",
+      "anyOf": [
+        { "required": [ "op" ] },
+        { "required": [ "property" ] },
+        { "required": [ "sysId" ] },
+        { "required": [ "$ref" ] }
+      ]
     },
     "image": {
       "allOf": [
@@ -939,6 +953,7 @@
       "else": {
         "anyOf": [
           { "$ref": "#/$defs/systemIdentifier" },
+          { "$ref": "#/$defs/variableRef" },
           { "$ref": "#/$defs/propertyRef" }
         ]
       }
@@ -1116,7 +1131,12 @@
     "boolExpression": {
       "if": { "$ref": "#/$defs/hasOp" },
       "then": { "$ref": "#/$defs/booleanOperation" },
-      "else": { "type": "boolean" }
+      "else": {
+        "anyOf": [
+          { "type": "boolean" },
+          { "$ref": "#/$defs/variableRef" }
+        ]
+      }
     },
     "andOrExpression": {
       "type": "object",
@@ -1196,7 +1216,8 @@
       "oneOf": [
         { "$ref": "#/$defs/instantInstance" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" }
+        { "$ref": "#/$defs/systemIdentifier" },
+        { "$ref": "#/$defs/variableRef" }
       ]
     },
     "isLikePredicate": {
@@ -1281,7 +1302,8 @@
       "oneOf": [
         { "type": "number" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" }
+        { "$ref": "#/$defs/systemIdentifier" },
+        { "$ref": "#/$defs/variableRef" }
       ]
     },
     "isInListPredicate": {
@@ -1351,7 +1373,8 @@
       "oneOf": [
         { "$ref": "#/$defs/spatialInstance" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" }
+        { "$ref": "#/$defs/systemIdentifier" },
+        { "$ref": "#/$defs/variableRef" }
       ]
     },
     "temporalExpression": {
@@ -1363,7 +1386,8 @@
       "oneOf": [
         { "$ref": "#/$defs/temporalInstance" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" }
+        { "$ref": "#/$defs/systemIdentifier" },
+        { "$ref": "#/$defs/variableRef" }
       ]
     },
     "arrayPredicate": {
@@ -1399,7 +1423,8 @@
         "oneOf": [
           { "$ref": "#/$defs/array" },
           { "$ref": "#/$defs/propertyRef" },
-          { "$ref": "#/$defs/systemIdentifier" }
+          { "$ref": "#/$defs/systemIdentifier" },
+          { "$ref": "#/$defs/variableRef" }
         ]
       }
     },
@@ -1492,7 +1517,8 @@
           { "type": "integer" },
           { "$ref": "#/$defs/hexNumber" },
           { "$ref": "#/$defs/propertyRef" },
-          { "$ref": "#/$defs/systemIdentifier" }
+          { "$ref": "#/$defs/systemIdentifier" },
+          { "$ref": "#/$defs/variableRef" }
         ]
       }
     },
@@ -1501,6 +1527,14 @@
       "required": [ "property" ],
       "properties": {
         "property": { "type": "string" }
+      }
+    },
+    "variableRef": {
+      "$comment": "A variable, as a JSON Pointer to the $variables of this style or of an included one (clause 16, /req/variables/expression). The member is matched by patternProperties so that tools resolving JSON references do not take it for one in this schema.",
+      "type": "object",
+      "required": [ "$ref" ],
+      "patternProperties": {
+        "^\\$ref$": { "type": "string", "pattern": "^[^#]*#/\\$variables/[^/]+$" }
       }
     },
     "casei": {
@@ -1606,7 +1640,8 @@
       "oneOf": [
         { "type": "string" },
         { "$ref": "#/$defs/propertyRef" },
-        { "$ref": "#/$defs/systemIdentifier" }
+        { "$ref": "#/$defs/systemIdentifier" },
+        { "$ref": "#/$defs/variableRef" }
       ]
     },
     "conditionalExpression": {
@@ -1855,7 +1890,8 @@
             { "$ref": "#/$defs/instantString" },
             { "type": "string", "enum": [ ".." ] },
             { "$ref": "#/$defs/propertyRef" },
-            { "$ref": "#/$defs/systemIdentifier" }
+            { "$ref": "#/$defs/systemIdentifier" },
+            { "$ref": "#/$defs/variableRef" }
           ]
         }
       }
