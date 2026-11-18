@@ -53,7 +53,7 @@ Citation: Olefeldt, D., Goswami, S., Grosse, G., Hayes, D., Hugelius, G., Kuhry,
 ====
 [source,cscss]
 ----
-#Thermokarst
+Thermokarst
 {
    stroke: { width: 0 };
    [TKWP = 'Low'                                    ]{ fill: { #a1ff74 }; }
