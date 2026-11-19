@@ -1000,8 +1000,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 |===
 | Construct                    | SE Equivalent
 | TextManipulationFunctions    | `<ogc:Function>`
-| caseInsensitize              | `<ogc:Function>`
-| accentInsensitize            | `<ogc:Function>`
+| casei                        | `<ogc:Function>`
+| accenti                      | `<ogc:Function>`
 | lowerCase                    | `<ogc:Function>`
 | upperCase                    | `<ogc:Function>`
 | concatenate                  | `<ogc:Function>`
