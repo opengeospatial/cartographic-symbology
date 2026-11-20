@@ -7,19 +7,7 @@ Illustrates `/req/vector/units`.
 
 Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the scale; the style is the same in all panels. The pale blue lakes are context, not part of the style. Map data © Kartverket, CC BY 4.0.
 
-[cols="1,1",options="header"]
-|===
-| CartoSym-CSS | CartoSym-JSON
-
-a|
 [source,cscss]
 ----
 include::vector-units.cscss[]
 ----
-
-a|
-[source,json]
-----
-include::vector-units.cs.json[]
-----
-|===

@@ -5,21 +5,9 @@ image::figures/examples/requirements/core-z-order.jpg[]
 
 Illustrates `/req/core/z-order`.
 
-Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the `zOrder` of the rivers (the roads have 1); the CartoSym-CSS and CartoSym-JSON below are those of the panel marked in bold. The pale blue lakes are context, not part of the style. Map data © Kartverket, CC BY 4.0.
+Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the `zOrder` of the rivers (the roads have 1); the CartoSym-CSS below is that of the panel marked in bold. The pale blue lakes are context, not part of the style. Map data © Kartverket, CC BY 4.0.
 
-[cols="1,1",options="header"]
-|===
-| CartoSym-CSS | CartoSym-JSON
-
-a|
 [source,cscss]
 ----
 include::core-z-order.cscss[]
 ----
-
-a|
-[source,json]
-----
-include::core-z-order.cs.json[]
-----
-|===

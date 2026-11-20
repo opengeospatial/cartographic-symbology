@@ -5,21 +5,9 @@ image::figures/examples/requirements/hatches.jpg[]
 
 Illustrates `/req/hatches/hatch`, `/req/hatches/width`, `/req/hatches/angle`, `/req/hatches/distance`.
 
-Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the `hatch`; the CartoSym-CSS and CartoSym-JSON below are those of the panel marked in bold. The pale blue lakes are context, not part of the style. Map data © Kartverket, CC BY 4.0.
+Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the `hatch`; the CartoSym-CSS below is that of the panel marked in bold. The pale blue lakes are context, not part of the style. Map data © Kartverket, CC BY 4.0.
 
-[cols="1,1",options="header"]
-|===
-| CartoSym-CSS | CartoSym-JSON
-
-a|
 [source,cscss]
 ----
 include::hatches.cscss[]
 ----
-
-a|
-[source,json]
-----
-include::hatches.cs.json[]
-----
-|===
