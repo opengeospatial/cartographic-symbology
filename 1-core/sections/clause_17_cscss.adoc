@@ -112,7 +112,7 @@ As examples, the above instantiations could also be written:
 Another capability introduced is the ability to infer the class from the expected type where the instance expression is used.
 For example, if a POLYGON object is assigned to a `poly` property expecting that object type, then the expression can be written simply as:
 
-* `(rings: (0 40, 10 40, 10 50, 0 50, 0 40))`
+* `{ rings: (0 40, 10 40, 10 50, 0 50, 0 40) }`
 
 In both of these examples, the members being initialized are implied from the order.
 
