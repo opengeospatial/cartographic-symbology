@@ -1,4 +1,4 @@
-// /req/hill-shading/hill-shading, /req/hill-shading/factor: the same terrain with different factors
+// /req/hill-shading/factor: the same terrain with different factors
 Elevation
 {
    singleChannel: elevation;

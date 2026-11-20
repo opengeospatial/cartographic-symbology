@@ -3,7 +3,7 @@
 .Hill shading with different factors (sun at the default azimuth 315, elevation 45), at 1:150 000
 image::figures/examples/requirements/hill-shading-factor.jpg[]
 
-Illustrates `/req/hill-shading/hill-shading`, `/req/hill-shading/factor`.
+Illustrates `/req/hill-shading/factor`.
 
 Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the `factor`; the CartoSym-CSS below is that of the panel marked in bold. Map data © Kartverket, CC BY 4.0.
 

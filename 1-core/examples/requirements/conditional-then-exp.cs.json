@@ -1,0 +1,64 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/conditional/then-exp: the size of the Dot on the peaks for which the condition is true",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "type"
+              },
+              "mountain"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "op": "?:",
+                    "args": [
+                      {
+                        "op": ">=",
+                        "args": [
+                          {
+                            "property": "elevation"
+                          },
+                          1900
+                        ]
+                      },
+                      8,
+                      4
+                    ]
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

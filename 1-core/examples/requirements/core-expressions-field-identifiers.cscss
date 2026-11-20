@@ -1,0 +1,8 @@
+// /req/core/expressions-field-identifiers: a selector on a property of each land cover feature
+Landcover
+{
+   marker: null;
+   fill: { color: #ece9e0 };
+   stroke: { color: #c9c4b8; width: 0.5 px };
+   [class = 'forest'] { fill.color: #5e8f52; }
+}

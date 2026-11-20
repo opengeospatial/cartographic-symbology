@@ -1,0 +1,11 @@
+// /req/core/scale: the paths and tractor roads are hidden at scales smaller than 1:40 000
+Roads
+{
+   marker: null;
+   stroke: { color: #d0483a; width: 2 px };
+   [class = 'path' or class = 'tractor']
+   {
+      stroke: { color: #8a6a4a; width: 1 px };
+      [viz.sd > 40000] { visibility: false; }
+   }
+}

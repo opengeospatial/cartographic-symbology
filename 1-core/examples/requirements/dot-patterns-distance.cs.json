@@ -1,0 +1,63 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/dot-patterns/distance: the horizontal and vertical distance between the dots",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "dotpattern": {
+                "distance": {
+                  "horizontal": {
+                    "px": 6.0
+                  },
+                  "vertical": {
+                    "px": 6.0
+                  }
+                }
+              }
+            },
+            "stroke": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "width": {
+                "px": 0.5
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

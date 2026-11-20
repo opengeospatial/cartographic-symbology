@@ -1,0 +1,6 @@
+// /req/coverage/color-map: the color of each cell mapped from its elevation
+Elevation
+{
+   singleChannel: elevation;
+   colorMap: [ 500 #7d9a6a, 1300 #d6c79e, 2100 #9c8f84 ];
+}

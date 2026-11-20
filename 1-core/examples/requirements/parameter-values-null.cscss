@@ -1,0 +1,5 @@
+// /req/parameter-values/null: a Dot size computed from the elevation, which only the mountains and peaks have
+Places
+{
+   marker: { elements: [ Dot { size: elevation / 250, color: #b8322a } ] };
+}

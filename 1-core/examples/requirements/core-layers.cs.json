@@ -1,0 +1,104 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/layers: a rule selecting by the identifier or the type of the data layer",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "stroke": {
+          "color": [
+            154,
+            149,
+            139
+          ],
+          "width": {
+            "px": 2.0
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "tractor"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": false
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Rivers"
+        ]
+      },
+      "symbolizer": {
+        "stroke": {
+          "color": [
+            154,
+            149,
+            139
+          ],
+          "width": {
+            "px": 2.0
+          }
+        },
+        "marker": null
+      }
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Rivers"
+        ]
+      },
+      "symbolizer": {
+        "stroke": {
+          "alter": true,
+          "color": [
+            63,
+            127,
+            179
+          ]
+        }
+      }
+    }
+  ]
+}

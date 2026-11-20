@@ -22,6 +22,12 @@ part:: A Renderer SHALL support filling vector geometry with a regular grid of p
 part:: A Renderer SHALL support placing the points of all features on one grid aligned with the map, with its first point half the horizontal and half the vertical distance from the top left corner of the map.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/dot-patterns/dotpattern`, in CartoSym-CSS
+====
+include::../examples/requirements/dot-patterns-dotpattern.adoc[]
+====
+
 [[req-dot-patterns-distance]]
 ===== Dotpattern `distance` property
 
@@ -31,6 +37,12 @@ part:: A Renderer SHALL support placing the points of all features on one grid a
 identifier:: /req/dot-patterns/distance
 part:: An Encoding SHALL support defining a `distance` Dotpattern property as a Distance object including a `horizontal` and a `vertical` float.
 part:: A Renderer SHALL support spacing the rendered points of a dot pattern fill horizontally by the `horizontal` distance and vertically by the `vertical` distance.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/dot-patterns/distance`, in CartoSym-CSS
+====
+include::../examples/requirements/dot-patterns-distance.adoc[]
 ====
 
 // TODO(review): the 2 pixel diameter and the Fill color of the points are a proposal from the independent renders; confirm or change them (see #84).

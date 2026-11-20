@@ -1,7 +1,7 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/hill-shading/hill-shading, /req/hill-shading/sun: the direction of the sun",
+      "$comment": "/req/hill-shading/sun: the direction of the sun",
       "selector": {
         "op": "=",
         "args": [

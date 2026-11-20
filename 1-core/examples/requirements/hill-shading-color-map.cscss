@@ -1,0 +1,6 @@
+// /req/hill-shading/color-map: the color of each cell mapped from its computed shade
+Elevation
+{
+   singleChannel: elevation;
+   hillShading: { factor: 2; colorMap: [ 0 #2f3a42, 1 #ffffff ] };
+}

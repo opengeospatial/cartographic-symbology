@@ -1,0 +1,12 @@
+// /req/stipples/ratio: the fraction of the forest the stipple dots cover
+Landcover
+{
+   marker: null;
+   visibility: false;
+   [class = 'forest']
+   {
+      visibility: true;
+      fill: { color: #5e8f52; stipple: { ratio: 0.3 } };
+      stroke: { color: #5e8f52; width: 0.5 px };
+   }
+}

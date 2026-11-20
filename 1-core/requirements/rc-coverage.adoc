@@ -21,6 +21,12 @@ part:: An Encoding SHALL support defining a `colorChannels` Symbolizer property 
 part:: A Renderer SHALL support portraying each coverage cell with the red, green and blue components resolved from the `colorChannels` property for that cell, each in the range 0 to 1.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/coverage/color-channels`, in CartoSym-CSS
+====
+include::../examples/requirements/coverage-color-channels.adoc[]
+====
+
 NOTE: Band values in another range are scaled in the style, as in example 6, which divides Sentinel-2 digital numbers by 2500.
 
 [[req-coverage-alpha-channel]]
@@ -34,6 +40,12 @@ part:: An Encoding SHALL support defining a `alphaChannel` Symbolizer property a
 part:: A Renderer SHALL support portraying each coverage cell with the opacity resolved from the `alphaChannel` property for that cell, where 0 is fully transparent and 1 is fully opaque.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/coverage/alpha-channel`, in CartoSym-CSS
+====
+include::../examples/requirements/coverage-alpha-channel.adoc[]
+====
+
 [[req-coverage-single-channel]]
 ===== Symbolizer `singleChannel` property
 
@@ -45,6 +57,12 @@ part:: An Encoding SHALL support defining a `singleChannel` Symbolizer property 
 part:: A Renderer SHALL support using the value resolved from the `singleChannel` property for each coverage cell as the input value to the `colorMap` and `opacityMap` properties.
 part:: A Renderer SHALL support portraying each coverage cell over the area of that cell.
 part:: A Renderer SHALL support portraying each cell of a variable that is not continuous (for example a land cover classification) with the color and opacity mapped from that cell's own value, without interpolating between the values of neighbouring cells.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/coverage/single-channel`, in CartoSym-CSS
+====
+include::../examples/requirements/coverage-single-channel.adoc[]
 ====
 
 [[per-coverage-interpolation]]
@@ -69,6 +87,12 @@ part:: An Encoding SHALL support defining a `colorMap` Symbolizer property as an
 part:: A Renderer SHALL support portraying each coverage cell with the color mapped from its `singleChannel` value by the `colorMap`, using the color of an entry for a value equal to that entry's `value`, interpolating between the colors of the two closest entries for other values within the range of the map, and using the color of the first or last entry for values outside the range of the map.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/coverage/color-map`, in CartoSym-CSS
+====
+include::../examples/requirements/coverage-color-map.adoc[]
+====
+
 [[req-coverage-opacity-map]]
 ===== Symbolizer `opacityMap` property
 
@@ -78,6 +102,12 @@ part:: A Renderer SHALL support portraying each coverage cell with the color map
 identifier:: /req/coverage/opacity-map
 part:: An Encoding SHALL support defining a `opacityMap` Symbolizer property as an array of `value` (float) and `opacity` (float) pairs which can be tagged with a `name`.
 part:: A Renderer SHALL support portraying each coverage cell with the opacity mapped from its `singleChannel` value by the `opacityMap`, using the opacity of an entry for a value equal to that entry's `value`, interpolating between the opacities of the two closest entries for other values within the range of the map, and using the opacity of the first or last entry for values outside the range of the map.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/coverage/opacity-map`, `/rec/coverage/map-interpolation`, in CartoSym-CSS
+====
+include::../examples/requirements/coverage-opacity-map.adoc[]
 ====
 
 [[rec-coverage-map-interpolation]]

@@ -1,0 +1,68 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/functions/call-expressions: the size of the Dot on each peak returned by a function",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "type"
+              },
+              "mountain"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "op": "/",
+                    "args": [
+                      {
+                        "op": "sqrt",
+                        "args": [
+                          {
+                            "op": "-",
+                            "args": [
+                              {
+                                "property": "elevation"
+                              },
+                              1000
+                            ]
+                          }
+                        ]
+                      },
+                      3
+                    ]
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

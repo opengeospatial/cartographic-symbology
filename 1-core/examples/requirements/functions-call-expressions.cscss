@@ -1,0 +1,11 @@
+// /req/functions/call-expressions: the size of the Dot on each peak returned by a function
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain']
+   {
+      visibility: true;
+      marker: { elements: [ Dot { size: sqrt(elevation - 1000) / 3, color: #b8322a } ] };
+   }
+}

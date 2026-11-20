@@ -1,0 +1,11 @@
+// /req/core/visibility: land cover whose visibility is false is not portrayed
+Landcover
+{
+   marker: null;
+   stroke: { width: 0 };
+   fill: { color: #ece9e0 };
+   [class = 'forest'] { fill.color: #93bf85; }
+   [class = 'bog'] { fill.color: #e3dcb0; }
+   [class = 'lake'] { fill.color: #7fb2d9; }
+   [class = 'bog'] { visibility: false; }
+}

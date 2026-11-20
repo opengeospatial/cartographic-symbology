@@ -1,4 +1,4 @@
-// /req/hill-shading/hill-shading, /req/hill-shading/sun: the direction of the sun
+// /req/hill-shading/sun: the direction of the sun
 Elevation
 {
    singleChannel: elevation;

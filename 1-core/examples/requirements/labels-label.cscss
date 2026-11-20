@@ -1,0 +1,18 @@
+// /req/labels/label: pond names in a marker are covered by the lakes drawn above them; in a label, they are drawn on top
+Landcover
+{
+   marker: null;
+   visibility: false;
+   [class = 'lake'] { visibility: true; zOrder: 2; fill: { color: #a9cbe3 }; stroke: { width: 0 }; }
+}
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'pond' or type = 'lake']
+   {
+      visibility: true;
+      label: { elements: [ Text { text: name, alignment: center middle,
+                                  font: { face: 'Arial', size: 9, italic: true, color: #1f4e79 } } ] };
+   }
+}

@@ -1,0 +1,48 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/graphics: a Dot offset by its position from the cabin, which the blue Dot marks",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Huts"
+        ]
+      },
+      "symbolizer": {
+        "marker": {
+          "elements": [
+            {
+              "type": "Dot",
+              "size": {
+                "px": 9
+              },
+              "color": [
+                184,
+                50,
+                42
+              ],
+              "position": {
+                "x": 10.0,
+                "y": 0.0
+              }
+            },
+            {
+              "type": "Dot",
+              "size": {
+                "px": 4
+              },
+              "color": [
+                31,
+                78,
+                121
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

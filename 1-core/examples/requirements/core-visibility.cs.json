@@ -1,0 +1,108 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/visibility: land cover whose visibility is false is not portrayed",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "color": [
+            236,
+            233,
+            224
+          ]
+        },
+        "stroke": {
+          "width": 0.0
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                147,
+                191,
+                133
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "bog"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                227,
+                220,
+                176
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "lake"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                127,
+                178,
+                217
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "bog"
+            ]
+          },
+          "symbolizer": {
+            "visibility": false
+          }
+        }
+      ]
+    }
+  ]
+}

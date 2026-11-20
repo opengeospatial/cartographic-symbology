@@ -29,14 +29,6 @@ Hatch : distance: float
 
 include::../requirements/rc-hatches.adoc[]
 
-// Examples placed by cartosym-draft-check
-==== Examples
-
-.Example style for `/req/hatches/hatch`, `/req/hatches/width`, `/req/hatches/angle`, `/req/hatches/distance`, in CartoSym-CSS and CartoSym-JSON
-====
-include::../examples/requirements/hatches.adoc[]
-====
-
 [[rc-dot-patterns]]
 === Requirements Class "Dot pattern fills"
 ==== Overview
@@ -86,11 +78,6 @@ This requirements class extends Fill capabilities by adding support for dot fill
 
 include::../requirements/rc-dotpatterns.adoc[]
 
-// Examples placed by cartosym-draft-check
-==== Examples
-
-<<fig-example-stipples-dot-patterns>> in the "Stipple fills" class also shows a dot pattern fill.
-
 [[rc-stipples]]
 === Requirements Class "Stipple fills"
 ==== Overview
@@ -113,11 +100,3 @@ Stipple : ratio
 ==== Requirements
 
 include::../requirements/rc-stipples.adoc[]
-
-// Examples placed by cartosym-draft-check
-==== Examples
-
-.Example style for `/req/stipples/ratio`, `/req/dot-patterns/dotpattern`, `/req/dot-patterns/distance`, in CartoSym-CSS and CartoSym-JSON
-====
-include::../examples/requirements/stipples-dot-patterns.adoc[]
-====

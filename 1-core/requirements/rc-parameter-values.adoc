@@ -23,6 +23,12 @@ part:: An Encoding SHALL support defining the value of any Symbolizer property, 
 part:: A Renderer SHALL support evaluating Expressions used as Parameter Values for each feature or coverage cell being portrayed, and resolving the result to the data type expected by the Symbolizer property.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/parameter-values/expressions`, in CartoSym-CSS
+====
+include::../examples/requirements/parameter-values-expressions.adoc[]
+====
+
 [[req-parameter-values-null]]
 ===== Expressions evaluating to NULL
 
@@ -44,6 +50,12 @@ part:: A Renderer SHALL support evaluating Expressions used as Parameter Values 
 [%metadata]
 identifier:: /req/parameter-values/null
 part:: A Renderer SHALL support resolving a Parameter Value whose Expression evaluates to NULL to the value given for the data type of the Symbolizer property in <<table-parameter-values-null>>.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/parameter-values/null`, in CartoSym-CSS
+====
+include::../examples/requirements/parameter-values-null.adoc[]
 ====
 
 [[rec-parameter-values-report-null]]

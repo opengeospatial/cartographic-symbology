@@ -1,0 +1,8 @@
+// /req/vector/graphics: a Dot offset by its position from the cabin, which the blue Dot marks
+Huts
+{
+   marker: { elements: [
+      Dot { size: 9 px, color: #b8322a, position: 10 0 },
+      Dot { size: 4 px, color: #1f4e79 }
+   ] };
+}

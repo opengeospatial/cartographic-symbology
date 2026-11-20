@@ -1,0 +1,12 @@
+// /req/vector/fill: the color and opacity of the fill of the lakes
+Landcover
+{
+   marker: null;
+   visibility: false;
+   [class = 'lake']
+   {
+      visibility: true;
+      fill: { color: #3f7fb3 };
+      stroke: { width: 0 };
+   }
+}

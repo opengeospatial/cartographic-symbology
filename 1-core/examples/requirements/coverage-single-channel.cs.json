@@ -1,0 +1,31 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/coverage/single-channel: one band of a Sentinel-2 scene through a grey color map",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "sentinel2-l2a"
+        ]
+      },
+      "symbolizer": {
+        "singleChannel": {
+          "property": "B08"
+        },
+        "colorMap": [
+          [
+            0.0,
+            "#000000"
+          ],
+          [
+            3500.0,
+            "#ffffff"
+          ]
+        ]
+      }
+    }
+  ]
+}

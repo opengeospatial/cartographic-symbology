@@ -1,0 +1,12 @@
+// /req/dot-patterns/distance: the horizontal and vertical distance between the dots
+Landcover
+{
+   marker: null;
+   visibility: false;
+   [class = 'forest']
+   {
+      visibility: true;
+      fill: { color: #5e8f52; dotpattern: { distance: { horizontal: 6 px; vertical: 6 px } } };
+      stroke: { color: #5e8f52; width: 0.5 px };
+   }
+}

@@ -1,0 +1,13 @@
+// /req/variables/expression: a variable used as the size of the Dot on the peaks above 1900 m
+@dotSize = 10;
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain']
+   {
+      visibility: true;
+      marker: { elements: [ Dot { size: 4 px, color: #9a958b } ] };
+      [elevation >= 1900] { marker: { elements: [ Dot { size: @dotSize, color: #b8322a } ] }; }
+   }
+}

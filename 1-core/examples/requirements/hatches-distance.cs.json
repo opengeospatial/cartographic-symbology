@@ -1,0 +1,62 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/hatches/distance: the distance between the hatch lines",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "hatch": {
+                "width": {
+                  "px": 1.0
+                },
+                "angle": 45.0,
+                "distance": {
+                  "px": 6.0
+                }
+              }
+            },
+            "stroke": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "width": {
+                "px": 0.5
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

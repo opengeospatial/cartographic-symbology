@@ -47,6 +47,12 @@ part:: A Renderer SHALL support dashPattern lengths in pixels, points, millimete
 image::figures/stroke_dashPattern.png[]
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/dashes/dash-pattern`, in CartoSym-CSS
+====
+include::../examples/requirements/dashes-dash-pattern.adoc[]
+====
+
 [[per-dashes-dash-pattern-units]]
 [permission]
 ====
@@ -70,4 +76,10 @@ part:: A Renderer SHALL support starting the dash pattern again at the beginning
 
 .In black stroke without dashes, in red with the same dash pattern started at an offset into the pattern.
 image::figures/stroke_dashOffset.png[]
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/dashes/dash-offset`, in CartoSym-CSS
+====
+include::../examples/requirements/dashes-dash-offset.adoc[]
 ====

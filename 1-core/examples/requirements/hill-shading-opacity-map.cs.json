@@ -1,0 +1,134 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/hill-shading/opacity-map: the opacity of each cell mapped from its computed shade, over the land cover",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "color": [
+            241,
+            239,
+            230
+          ]
+        },
+        "stroke": {
+          "width": 0.0
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                185,
+                214,
+                166
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "bog"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                232,
+                226,
+                188
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "lake"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                169,
+                203,
+                227
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Elevation"
+        ]
+      },
+      "symbolizer": {
+        "zOrder": 2,
+        "singleChannel": {
+          "property": "elevation"
+        },
+        "hillShading": {
+          "factor": 2,
+          "colorMap": [
+            [
+              0.0,
+              "#2f3a42"
+            ],
+            [
+              1.0,
+              "#2f3a42"
+            ]
+          ],
+          "opacityMap": [
+            [
+              0.0,
+              0.8
+            ],
+            [
+              0.7,
+              0.0
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

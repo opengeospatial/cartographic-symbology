@@ -1,0 +1,5 @@
+// /req/vector/dot: the size and color of a Dot on each spot height
+SpotHeights
+{
+   marker: { elements: [ Dot { size: 6 px, color: #8a5a3a } ] };
+}

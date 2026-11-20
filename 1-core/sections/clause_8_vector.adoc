@@ -491,31 +491,3 @@ The FontClass describes the font properties to apply for the rendering of a text
 === Requirements
 
 include::../requirements/rc-vector.adoc[]
-
-// Examples placed by cartosym-draft-check
-=== Examples
-
-.Example style for `/req/vector/fill`, `/req/vector/stroke`, in CartoSym-CSS and CartoSym-JSON
-====
-include::../examples/requirements/vector-fill-stroke.adoc[]
-====
-
-.Example style for `/req/vector/units`, in CartoSym-CSS and CartoSym-JSON
-====
-include::../examples/requirements/vector-units.adoc[]
-====
-
-.Example style for `/req/vector/marker`, `/req/vector/dot`, `/req/vector/graphics`, in CartoSym-CSS and CartoSym-JSON
-====
-include::../examples/requirements/vector-marker-dot.adoc[]
-====
-
-.Example style for `/req/vector/image`, in CartoSym-CSS and CartoSym-JSON
-====
-include::../examples/requirements/vector-image.adoc[]
-====
-
-.Example style for `/req/vector/text`, `/req/vector/fonts`, in CartoSym-CSS and CartoSym-JSON
-====
-include::../examples/requirements/vector-text.adoc[]
-====
