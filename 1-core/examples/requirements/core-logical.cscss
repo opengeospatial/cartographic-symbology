@@ -1,0 +1,8 @@
+// /req/core/logical: selectors combining conditions with and, or and not
+Landcover
+{
+   marker: null;
+   fill: { color: #ece9e0 };
+   stroke: { color: #c9c4b8; width: 0.5 px };
+   [class = 'forest' or class = 'bog'] { fill.color: #5e8f52; }
+}

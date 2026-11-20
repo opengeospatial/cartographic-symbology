@@ -1,28 +1,29 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/core/parameters: the size of each Dot is computed from the elevation property",
+      "$comment": "/req/core/parameters: literal values for the size and the color of the Dot on each peak",
       "selector": {
         "op": "=",
         "args": [
           {
             "sysId": "dataLayer.id"
           },
-          "SpotHeights"
+          "Places"
         ]
       },
       "symbolizer": {
-        "visibility": false
+        "visibility": false,
+        "marker": null
       },
       "nestedRules": [
         {
           "selector": {
-            "op": ">=",
+            "op": "=",
             "args": [
               {
-                "property": "elevation"
+                "property": "type"
               },
-              1300
+              "mountain"
             ]
           },
           "symbolizer": {
@@ -32,49 +33,12 @@
                 {
                   "type": "Dot",
                   "size": {
-                    "op": "+",
-                    "args": [
-                      {
-                        "op": "/",
-                        "args": [
-                          {
-                            "op": "-",
-                            "args": [
-                              {
-                                "property": "elevation"
-                              },
-                              1000
-                            ]
-                          },
-                          80
-                        ]
-                      },
-                      3
-                    ]
-                  },
-                  "color": "white"
-                },
-                {
-                  "type": "Dot",
-                  "size": {
-                    "op": "/",
-                    "args": [
-                      {
-                        "op": "-",
-                        "args": [
-                          {
-                            "property": "elevation"
-                          },
-                          1000
-                        ]
-                      },
-                      80
-                    ]
+                    "px": 6
                   },
                   "color": [
-                    138,
-                    90,
-                    58
+                    184,
+                    50,
+                    42
                   ]
                 }
               ]

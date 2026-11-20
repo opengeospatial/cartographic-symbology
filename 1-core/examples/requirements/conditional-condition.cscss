@@ -1,0 +1,11 @@
+// /req/conditional/condition: the condition choosing the size of the Dot on each peak
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain']
+   {
+      visibility: true;
+      marker: { elements: [ Dot { size: elevation >= 1900 ? 8 : 4, color: #b8322a } ] };
+   }
+}

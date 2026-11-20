@@ -1,7 +1,7 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/hill-shading/hill-shading, /req/hill-shading/factor: the same terrain with different factors",
+      "$comment": "/req/hill-shading/factor: the same terrain with different factors",
       "selector": {
         "op": "=",
         "args": [

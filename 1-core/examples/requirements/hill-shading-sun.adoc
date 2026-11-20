@@ -3,7 +3,7 @@
 .Hill shading with the sun from different directions, at 1:150 000
 image::figures/examples/requirements/hill-shading-sun.jpg[]
 
-Illustrates `/req/hill-shading/hill-shading`, `/req/hill-shading/sun`.
+Illustrates `/req/hill-shading/sun`.
 
 Rendered by the draft renderer of cartosym-draft-check. The panels differ only in the `azimuth` of the `sun`; the CartoSym-CSS below is that of the panel marked in bold. Map data © Kartverket, CC BY 4.0.
 

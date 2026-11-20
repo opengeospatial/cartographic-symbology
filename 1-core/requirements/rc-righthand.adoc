@@ -23,4 +23,10 @@ part:: An Encoding SHALL support defining the right-hand operands of RelationExp
 part:: A Renderer SHALL support evaluating RelationExpressions whose right-hand operands are any type of Expression.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/right-hand/operands`, in CartoSym-CSS
+====
+include::../examples/requirements/right-hand-operands.adoc[]
+====
+
 NOTE: Where an enumeration is expected, such as for the `dataLayer.type` System Identifier in `[dataLayer.type = coverage]`, a bare word on the right-hand side is an enumeration value rather than an Identifier Expression (see <<cscss-enumeration-values,Enumeration values>>).

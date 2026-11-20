@@ -1,0 +1,8 @@
+// /req/core/operations: and is evaluated before or, unless parentheses group the or first
+Landcover
+{
+   marker: null;
+   fill: { color: #ece9e0 };
+   stroke: { color: #c9c4b8; width: 0.5 px };
+   [class = 'bog' or class = 'lake' and area > 50000] { fill.color: #5e8f52; }
+}

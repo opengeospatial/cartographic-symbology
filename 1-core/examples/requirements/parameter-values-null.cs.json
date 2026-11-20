@@ -1,0 +1,39 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/parameter-values/null: a Dot size computed from the elevation, which only the mountains and peaks have",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "marker": {
+          "elements": [
+            {
+              "type": "Dot",
+              "size": {
+                "op": "/",
+                "args": [
+                  {
+                    "property": "elevation"
+                  },
+                  250
+                ]
+              },
+              "color": [
+                184,
+                50,
+                42
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

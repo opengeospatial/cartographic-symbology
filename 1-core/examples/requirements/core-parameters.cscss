@@ -1,13 +1,11 @@
-// /req/core/parameters: the size of each Dot is computed from the elevation property
-SpotHeights
+// /req/core/parameters: literal values for the size and the color of the Dot on each peak
+Places
 {
    visibility: false;
-   [elevation >= 1300]
+   marker: null;
+   [type = 'mountain']
    {
       visibility: true;
-      marker: { elements: [
-         Dot { size: (elevation - 1000) / 80 + 3, color: white },
-         Dot { size: (elevation - 1000) / 80, color: #8a5a3a }
-      ] };
+      marker: { elements: [ Dot { size: 6 px, color: #b8322a } ] };
    }
 }

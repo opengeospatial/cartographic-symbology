@@ -1,0 +1,6 @@
+// /req/coverage/single-channel: one band of a Sentinel-2 scene through a grey color map
+"sentinel2-l2a"
+{
+   singleChannel: B08;
+   colorMap: [ 0 #000000, 3500 #ffffff ];
+}

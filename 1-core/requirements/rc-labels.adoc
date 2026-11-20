@@ -23,6 +23,12 @@ part:: An Encoding SHALL support defining a `label` Symbolizer property as a Lab
 part:: A Renderer SHALL support drawing the graphical elements of the labels as a separate pass on top of all styled vector features and coverages.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/labels/label`, in CartoSym-CSS
+====
+include::../examples/requirements/labels-label.adoc[]
+====
+
 [[rec-labels-overlap]]
 [recommendation]
 ====
@@ -44,6 +50,18 @@ part:: An Encoding SHALL support defining a `placement` Label property as a Labe
 part:: A Renderer SHALL support placing labels so that a label with a higher `priority` is placed in preference to a conflicting label with a lower `priority`.
 part:: A Renderer SHALL support repeating a label so that the distance between repetitions of that label is at least `minSpacing` and, where space allows, at most `maxSpacing`, both in pixels unless qualified with another unit (<<graphical-units-of-measure,Graphical Units of Measure>>).
 part:: A Renderer SHALL support treating as repetitions of a label all labels with the same content from the same data layer (so that a road split into several features is labelled as one), and measuring the distance between repetitions on the map between their positions.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/labels/placement`, `/rec/labels/overlap`, in CartoSym-CSS
+====
+include::../examples/requirements/labels-placement-priority.adoc[]
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/labels/placement`, in CartoSym-CSS
+====
+include::../examples/requirements/labels-placement-spacing.adoc[]
 ====
 
 // TODO(review): confirm that a higher `priority` value means a higher priority (see #148).

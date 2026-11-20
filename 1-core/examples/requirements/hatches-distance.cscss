@@ -1,0 +1,12 @@
+// /req/hatches/distance: the distance between the hatch lines
+Landcover
+{
+   marker: null;
+   visibility: false;
+   [class = 'forest']
+   {
+      visibility: true;
+      fill: { color: #5e8f52; hatch: { width: 1 px; angle: 45; distance: 6 px } };
+      stroke: { color: #5e8f52; width: 0.5 px };
+   }
+}

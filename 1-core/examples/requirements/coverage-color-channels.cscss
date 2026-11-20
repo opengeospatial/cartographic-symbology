@@ -1,0 +1,7 @@
+// /req/coverage/color-channels: the red, green and blue of each cell from three bands of a Sentinel-2 scene
+"sentinel2-l2a"
+{
+   colorChannels.r: B04 / 2500;
+   colorChannels.g: B03 / 2500;
+   colorChannels.b: B02 / 2500;
+}

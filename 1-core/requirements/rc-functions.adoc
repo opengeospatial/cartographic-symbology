@@ -26,6 +26,12 @@ part:: A Renderer SHALL support converting a `string` argument to the enumeratio
 part:: A Renderer SHALL evaluate a FunctionCallExpression whose arguments do not match the parameters of the Function, in number or type, after these conversions, to NULL.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/functions/call-expressions`, in CartoSym-CSS
+====
+include::../examples/requirements/functions-call-expressions.adoc[]
+====
+
 NOTE: A Function can define itself which arguments match its parameters. The arguments of `format` match when they match the conversion specifiers of its format string.
 
 [[per-functions-type-casts]]

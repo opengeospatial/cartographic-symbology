@@ -23,6 +23,12 @@ part:: An Encoding SHALL support defining a ConditionalExpression with a `condit
 part:: A Renderer SHALL support evaluating the `condition` of a ConditionalExpression to select whether the ConditionalExpression resolves to its `thenExp` or its `elseExp` expression.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/conditional/condition`, in CartoSym-CSS
+====
+include::../examples/requirements/conditional-condition.adoc[]
+====
+
 [[req-conditional-then-exp]]
 ===== Conditional `thenExp` property
 
@@ -34,6 +40,12 @@ part:: An Encoding SHALL support defining a ConditionalExpression with a `thenEx
 part:: A Renderer SHALL support resolving a ConditionalExpression to the value of its `thenExp` expression when its `condition` evaluates to true.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/conditional/then-exp`, in CartoSym-CSS
+====
+include::../examples/requirements/conditional-then-exp.adoc[]
+====
+
 [[req-conditional-else-exp]]
 ===== Conditional `elseExp` property
 
@@ -43,4 +55,10 @@ part:: A Renderer SHALL support resolving a ConditionalExpression to the value o
 identifier:: /req/conditional/else-exp
 part:: An Encoding SHALL support defining a ConditionalExpression with an `elseExp` property as an Expression.
 part:: A Renderer SHALL support resolving a ConditionalExpression to the value of its `elseExp` expression when its `condition` does not evaluate to true.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/conditional/else-exp`, in CartoSym-CSS
+====
+include::../examples/requirements/conditional-else-exp.adoc[]
 ====

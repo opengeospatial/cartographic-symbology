@@ -1,0 +1,6 @@
+// /req/core/symbolizer: what no selected rule sets, and what no rule selects, is portrayed with the default values
+Landcover[class = 'lake']
+{
+   fill: { color: #7fb2d9 };
+   stroke: { color: #3f7fb3; width: 1 px };
+}

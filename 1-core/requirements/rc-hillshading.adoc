@@ -24,6 +24,12 @@ part:: A Renderer SHALL support portraying an elevation coverage with a shade va
 part:: A Renderer SHALL support, where the HillShading has no `colorMap`, multiplying the red, green and blue components of each cell by its shade value.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hill-shading/hill-shading`, in CartoSym-CSS
+====
+include::../examples/requirements/hill-shading-hill-shading.adoc[]
+====
+
 NOTE: How the differences in elevation are taken is not prescribed. One way is to take, in each direction, the difference between the two samples on either side of the cell over twice the distance between samples, repeating the edge sample at the edge of the coverage.
 
 [[req-hill-shading-factor]]
@@ -36,6 +42,12 @@ identifier:: /req/hill-shading/factor
 part:: An Encoding SHALL support defining a `factor` HillShading property as a number.
 part:: A Renderer SHALL support multiplying the horizontal components of the terrain surface normal by the `factor` property before normalizing it, so that a `factor` of 1 shades the terrain as it is and a larger `factor` exaggerates the relief.
 part:: A Renderer SHALL support a `factor` of 0, its default value, as no hill shading, so that a `hillShading` of `{ }` portrays the coverage as if `hillShading` were not set.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hill-shading/factor`, in CartoSym-CSS
+====
+include::../examples/requirements/hill-shading-factor.adoc[]
 ====
 
 NOTE: Slopes are measured between the samples being rendered, so the same `factor` gives a stronger relief at a finer resolution. The `factor` that suits a style depends on the resolution of the elevation data it is used with.
@@ -51,6 +63,12 @@ part:: An Encoding SHALL support defining a `sun` HillShading property as an obj
 part:: A Renderer SHALL support computing the shade of each cell for a light source at the `azimuth` angle (in degrees clockwise from north as shown on the map at the shaded point, as a compass bearing) and `elevation` angle (relative to the ground) specified by the `sun` property.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hill-shading/sun`, in CartoSym-CSS
+====
+include::../examples/requirements/hill-shading-sun.adoc[]
+====
+
 NOTE: On a north-up map in a projected coordinate reference system, north as shown on the map is about grid north; on a globe, it is true north. A Renderer that computes hill shading in the coordinates of the data, for example on textures in WGS 84, can approximate it. The default `sun` (`azimuth` 315, `elevation` 45) lights the terrain from the north-west, as is usual in cartography.
 
 [[req-hill-shading-color-map]]
@@ -64,6 +82,12 @@ part:: An Encoding SHALL support defining a `colorMap` HillShading property as a
 part:: A Renderer SHALL support portraying each cell with the color mapped from its computed shade value by the `colorMap`, as for the `colorMap` Symbolizer property.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hill-shading/color-map`, in CartoSym-CSS
+====
+include::../examples/requirements/hill-shading-color-map.adoc[]
+====
+
 [[req-hill-shading-opacity-map]]
 ===== HillShading `opacityMap` property
 
@@ -73,4 +97,10 @@ part:: A Renderer SHALL support portraying each cell with the color mapped from 
 identifier:: /req/hill-shading/opacity-map
 part:: An Encoding SHALL support defining a `opacityMap` HillShading property as an array of `value` (number) and `opacity` (number) pairs.
 part:: A Renderer SHALL support portraying each cell with the opacity mapped from its computed shade value by the `opacityMap`, as for the `opacityMap` Symbolizer property.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hill-shading/opacity-map`, in CartoSym-CSS
+====
+include::../examples/requirements/hill-shading-opacity-map.adoc[]
 ====

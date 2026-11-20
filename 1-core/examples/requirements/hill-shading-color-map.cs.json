@@ -1,0 +1,34 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/hill-shading/color-map: the color of each cell mapped from its computed shade",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Elevation"
+        ]
+      },
+      "symbolizer": {
+        "singleChannel": {
+          "property": "elevation"
+        },
+        "hillShading": {
+          "factor": 2,
+          "colorMap": [
+            [
+              0.0,
+              "#2f3a42"
+            ],
+            [
+              1.0,
+              "#ffffff"
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -23,6 +23,12 @@ part:: An Encoding SHALL support defining named variables, each associated with 
 part:: A Renderer SHALL support allowing an application to override the value of a defined variable at run time (e.g., from a slider or drop-down control).
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/variables/definition`, in CartoSym-CSS
+====
+include::../examples/requirements/variables-definition.adoc[]
+====
+
 [[req-variables-expression]]
 ===== Variable expressions
 
@@ -32,4 +38,10 @@ part:: A Renderer SHALL support allowing an application to override the value of
 identifier:: /req/variables/expression
 part:: An Encoding SHALL support defining a VariableExpression referencing a variable by its `name` anywhere an Expression is allowed.
 part:: A Renderer SHALL support resolving a VariableExpression to the current value of the referenced variable.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/variables/expression`, in CartoSym-CSS
+====
+include::../examples/requirements/variables-expression.adoc[]
 ====

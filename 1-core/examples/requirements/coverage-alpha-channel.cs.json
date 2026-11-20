@@ -1,0 +1,49 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/coverage/alpha-channel: the opacity of each cell of a Sentinel-2 scene over the relief",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "sentinel2-l2a"
+        ]
+      },
+      "symbolizer": {
+        "colorChannels": {
+          "alter": true,
+          "r": {
+            "op": "/",
+            "args": [
+              {
+                "property": "B04"
+              },
+              2500
+            ]
+          },
+          "g": {
+            "op": "/",
+            "args": [
+              {
+                "property": "B03"
+              },
+              2500
+            ]
+          },
+          "b": {
+            "op": "/",
+            "args": [
+              {
+                "property": "B02"
+              },
+              2500
+            ]
+          }
+        },
+        "alphaChannel": 0.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+// /req/hill-shading/opacity-map: the opacity of each cell mapped from its computed shade, over the land cover
+Landcover
+{
+   marker: null;
+   stroke: { width: 0 };
+   fill: { color: #f1efe6 };
+   [class = 'forest'] { fill.color: #b9d6a6; }
+   [class = 'bog'] { fill.color: #e8e2bc; }
+   [class = 'lake'] { fill.color: #a9cbe3; }
+}
+Elevation
+{
+   zOrder: 2;
+   singleChannel: elevation;
+   hillShading: { factor: 2; colorMap: [ 0 #2f3a42, 1 #2f3a42 ]; opacityMap: [ 0 0.8, 0.7 0.0 ] };
+}

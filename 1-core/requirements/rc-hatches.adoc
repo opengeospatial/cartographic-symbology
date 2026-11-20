@@ -22,6 +22,12 @@ part:: A Renderer SHALL support filling vector geometry with a pattern of parall
 part:: A Renderer SHALL support placing the hatch lines of all features on one pattern aligned with the map, with a line through the top left corner of the map, so that the hatches of neighbouring features line up.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hatches/hatch`, in CartoSym-CSS
+====
+include::../examples/requirements/hatches-hatch.adoc[]
+====
+
 .Fill class extended for hatches
 [width="90%",options="header"]
 |===
@@ -57,6 +63,12 @@ part:: An Encoding SHALL support defining a `width` property for the hatch fill 
 part:: A Renderer SHALL support fill hatching vector geometry based on a width property.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hatches/width`, in CartoSym-CSS
+====
+include::../examples/requirements/hatches-width.adoc[]
+====
+
 .A hatch lines with a width of 5px
 image::figures/hatches_width_5px.png[]
 
@@ -71,6 +83,12 @@ part:: An Encoding SHALL support defining an `angle` property for the hatch fill
 part:: A Renderer SHALL support fill hatching vector geometry based on an angle property.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hatches/angle`, in CartoSym-CSS
+====
+include::../examples/requirements/hatches-angle.adoc[]
+====
+
 .A hatch lines with an angle of 0 degree
 image::figures/hatches_angle_0.png[]
 
@@ -83,6 +101,12 @@ image::figures/hatches_angle_0.png[]
 identifier:: /req/hatches/distance
 part:: An Encoding SHALL support defining a `distance` property for the hatch fill symbolizer.
 part:: A Renderer SHALL support fill hatching vector geometry based on a distance property.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hatches/distance`, in CartoSym-CSS
+====
+include::../examples/requirements/hatches-distance.adoc[]
 ====
 
 .A hatch lines with a distance of 5px

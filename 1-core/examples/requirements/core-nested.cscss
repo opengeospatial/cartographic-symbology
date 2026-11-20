@@ -1,0 +1,12 @@
+// /req/core/nested: a nested rule is considered only for the features its parent rule selects
+Landcover
+{
+   marker: null;
+   fill: { color: #ece9e0 };
+   stroke: { color: #c9c4b8; width: 0.5 px };
+   [class = 'forest']
+   {
+      fill.color: #5e8f52;
+      [area < 50000] { fill.color: #e8c86a; }
+   }
+}

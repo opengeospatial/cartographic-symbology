@@ -23,6 +23,12 @@ part:: An Encoding SHALL support defining an `outline` Font property as a FontOu
 part:: A Renderer SHALL support drawing an outline around the glyphs of text drawn with a Font specifying an `outline`, beneath the glyphs themselves.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/font-outlines/outline`, in CartoSym-CSS
+====
+include::../examples/requirements/font-outlines-outline.adoc[]
+====
+
 [[req-font-outlines-size]]
 ===== FontOutline `size` property
 
@@ -32,6 +38,12 @@ part:: A Renderer SHALL support drawing an outline around the glyphs of text dra
 identifier:: /req/font-outlines/size
 part:: An Encoding SHALL support defining a `size` FontOutline property as a number.
 part:: A Renderer SHALL support drawing the outline extending outward from the glyph contours by the thickness specified by the `size` property, in pixels.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/font-outlines/size`, in CartoSym-CSS
+====
+include::../examples/requirements/font-outlines-size.adoc[]
 ====
 
 [[req-font-outlines-opacity]]
@@ -45,6 +57,12 @@ part:: An Encoding SHALL support defining an `opacity` FontOutline property as a
 part:: A Renderer SHALL support drawing the outline with the opacity specified by the `opacity` property.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/font-outlines/opacity`, in CartoSym-CSS
+====
+include::../examples/requirements/font-outlines-opacity.adoc[]
+====
+
 [[req-font-outlines-color]]
 ===== FontOutline `color` property
 
@@ -54,4 +72,10 @@ part:: A Renderer SHALL support drawing the outline with the opacity specified b
 identifier:: /req/font-outlines/color
 part:: An Encoding SHALL support defining a `color` FontOutline property as a Color.
 part:: A Renderer SHALL support drawing the outline in the color specified by the `color` property.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/font-outlines/color`, in CartoSym-CSS
+====
+include::../examples/requirements/font-outlines-color.adoc[]
 ====

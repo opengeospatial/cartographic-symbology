@@ -1,0 +1,116 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/labels/label: pond names in a marker are covered by the lakes drawn above them; in a label, they are drawn on top",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "lake"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "zOrder": 2,
+            "fill": {
+              "color": [
+                169,
+                203,
+                227
+              ]
+            },
+            "stroke": {
+              "width": 0.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "type"
+                  },
+                  "pond"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "type"
+                  },
+                  "lake"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "label": {
+              "elements": [
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 9,
+                    "italic": true,
+                    "color": [
+                      31,
+                      78,
+                      121
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

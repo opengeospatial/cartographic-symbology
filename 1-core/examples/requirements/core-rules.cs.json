@@ -1,28 +1,14 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/core/rules, selector, nested, symbolizer, visibility, layers, expressions-field-identifiers",
+      "$comment": "/req/core/rules: a later rule overrides what earlier rules set, for the features it selects",
       "selector": {
-        "op": "and",
+        "op": "=",
         "args": [
           {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.id"
-              },
-              "Landcover"
-            ]
+            "sysId": "dataLayer.id"
           },
-          {
-            "op": "=",
-            "args": [
-              {
-                "sysId": "dataLayer.type"
-              },
-              "vector"
-            ]
-          }
+          "Landcover"
         ]
       },
       "symbolizer": {
@@ -40,14 +26,26 @@
             162
           ],
           "width": {
-            "px": 0.75
+            "px": 0.5
           }
         },
         "marker": null
-      },
-      "nestedRules": [
-        {
-          "selector": {
+      }
+    },
+    {
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Landcover"
+            ]
+          },
+          {
             "op": "=",
             "args": [
               {
@@ -55,130 +53,54 @@
               },
               "forest"
             ]
-          },
-          "symbolizer": {
-            "fill": {
-              "alter": true,
-              "color": [
-                147,
-                191,
-                133
-              ]
-            }
-          },
-          "nestedRules": [
-            {
-              "$comment": "Nested twice: small forest patches",
-              "selector": {
-                "op": "<",
-                "args": [
-                  {
-                    "property": "area"
-                  },
-                  50000
-                ]
-              },
-              "symbolizer": {
-                "fill": {
-                  "alter": true,
-                  "color": [
-                    201,
-                    224,
-                    187
-                  ]
-                }
-              }
-            }
+          }
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "alter": true,
+          "color": [
+            147,
+            191,
+            133
           ]
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "class"
-              },
-              "bog"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "alter": true,
-              "color": [
-                227,
-                220,
-                176
-              ]
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "class"
-              },
-              "farmland"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "alter": true,
-              "color": [
-                243,
-                231,
-                184
-              ]
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "class"
-              },
-              "lake"
-            ]
-          },
-          "symbolizer": {
-            "fill": {
-              "alter": true,
-              "color": [
-                183,
-                211,
-                230
-              ]
-            },
-            "stroke": {
-              "color": [
-                63,
-                127,
-                179
-              ],
-              "width": {
-                "px": 1.5
-              }
-            }
-          }
-        },
-        {
-          "selector": {
-            "op": "=",
-            "args": [
-              {
-                "property": "class"
-              },
-              "open"
-            ]
-          },
-          "symbolizer": {
-            "visibility": false
-          }
         }
-      ]
+      }
+    },
+    {
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Landcover"
+            ]
+          },
+          {
+            "op": "<",
+            "args": [
+              {
+                "property": "area"
+              },
+              50000
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "alter": true,
+          "color": [
+            232,
+            200,
+            106
+          ]
+        }
+      }
     }
   ]
 }
