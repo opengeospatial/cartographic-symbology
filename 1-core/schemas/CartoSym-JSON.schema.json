@@ -75,6 +75,7 @@
     "fill":
     {
        "oneOf": [
+         { "type": "null" },
          { "$ref": "#/$defs/idOrFnExpression" },
          {
             "type": "object",
@@ -156,6 +157,7 @@
     "stroke":
     {
        "oneOf": [
+         { "type": "null" },
          { "$ref": "#/$defs/idOrFnExpression" },
          {
             "allOf": [
