@@ -156,14 +156,14 @@ image::figures/roads-group.png[]
 
 === Protected areas by kind of protection
 
-.Example style for the protected areas around Rondane, colored by kind of protection, in CartoSym-CSS and CartoSym-JSON
+.Example style for the protected areas around Rondane, colored by kind of protection, in CartoSym-CSS
 ====
 include::../examples/10-protected-areas.adoc[]
 ====
 
 === Overview map from several layers
 
-.Example style for an overview map of Rondane from several layers, in CartoSym-CSS and CartoSym-JSON
+.Example style for an overview map of Rondane from several layers, in CartoSym-CSS
 ====
 include::../examples/11-rondane-overview.adoc[]
 ====
