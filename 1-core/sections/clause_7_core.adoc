@@ -144,7 +144,7 @@ What actually needs i18n? Rule labels for legends? The choice between feature pr
 
 
 [[req-core-selector]]
-===== StylingRule `selector` property
+==== StylingRule `selector` property
 
 The selector (also sometimes called a _filter_), for the rule is defined as a predicate expression evaluating to either true or false.
 
@@ -190,7 +190,7 @@ include::../examples/requirements/core-selector.adoc[]
 NOTE: A `selector` evaluating to null does not evaluate to true, so it does not select the feature or coverage cell, the same as a `selector` evaluating to false.
 
 [[req-core-nested]]
-===== StylingRule `nestedRules` property
+==== StylingRule `nestedRules` property
 
 [requirement]
 ====

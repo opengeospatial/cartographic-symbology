@@ -1,5 +1,5 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
-==== Cartographic Symbology Cascading Style Sheets
+=== Requirements
 
 [[rc-table-cscss]]
 
@@ -13,7 +13,7 @@ subject:: Consumers and Producers of styles encoded as CartoSym-CSS
 ====
 
 [[req-cscss-grammar]]
-===== Grammar
+==== Grammar
 
 [requirement]
 ====
@@ -24,7 +24,7 @@ part:: A Consumer SHALL support parsing styles encoded as CartoSym-CSS.
 ====
 
 [[req-cscss-rules]]
-===== Styling rules
+==== Styling rules
 
 [requirement]
 ====
@@ -36,7 +36,7 @@ part:: A Renderer SHALL support symbolizer properties set further down in rules 
 ====
 
 [[req-cscss-selectors]]
-===== Selectors
+==== Selectors
 
 [requirement]
 ====
@@ -49,7 +49,7 @@ part:: A Renderer SHALL support combining multiple expression selectors of a rul
 NOTE: Only the short-hand data layer names are combined with a logical OR. In `[dataLayer.id = 'Roads'][dataLayer.id = 'Railways']`, the two selectors are expressions, combined with a logical AND, so the rule never matches.
 
 [[req-cscss-expressions]]
-===== Expressions
+==== Expressions
 
 [requirement]
 ====
@@ -61,7 +61,7 @@ part:: A Renderer SHALL support evaluating CQL2-Text expressions (including WKT 
 ====
 
 [[req-cscss-include]]
-===== Including style sheets
+==== Including style sheets
 
 [requirement]
 ====
@@ -75,7 +75,7 @@ part:: A Renderer SHALL support including style sheets encoded as CartoSym-CSS.
 NOTE: A style that includes a style sheet in another encoding is not guaranteed to work with all implementations.
 
 [[req-cscss-comments]]
-===== Comments
+==== Comments
 
 [requirement]
 ====
@@ -86,7 +86,7 @@ part:: A Renderer SHALL support ignoring comments when interpreting a style shee
 ====
 
 [[req-cscss-variables]]
-===== Variables
+==== Variables
 
 [requirement]
 ====

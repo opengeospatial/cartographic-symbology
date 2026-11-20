@@ -1,10 +1,10 @@
 // NOTE: Including an extra heading level for conformance class alone in their section
-==== JSON Styles and Symbology
+=== Requirements
 
 [[rc-table-json]]
 
 [requirements_class]
-.JSON Styles and Symbology
+.JSON Cartographic Symbology
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/cartosym-1/2.0/req/json
@@ -13,7 +13,7 @@ subject:: Consumers and Producers of styles encoded as CartoSym-JSON
 ====
 
 [[req-json-schema]]
-===== JSON Schema
+==== JSON Schema
 
 [requirement]
 ====
@@ -24,7 +24,7 @@ part:: A Consumer SHALL support parsing styles encoded as CartoSym-JSON.
 ====
 
 [[req-json-expressions]]
-===== Expressions
+==== Expressions
 
 [requirement]
 ====
@@ -37,7 +37,7 @@ part:: A Producer SHALL encode the `isNot`, `notIn`, `notBetween` and `notLike` 
 NOTE: As in CQL2-JSON, the JSON Schema has no operation for the negated operators. For example, `name not like 'a%'` is encoded as `{ "op": "not", "args": [ { "op": "like", "args": [ { "property": "name" }, "a%" ] } ] }`, the same as `not (name like 'a%')`. When such an expression is written in CartoSym-CSS, the negated operator (`name not like 'a%'`) is the more readable form.
 
 [[req-json-partial-update]]
-===== Partial updates of object properties
+==== Partial updates of object properties
 
 [requirement]
 ====
@@ -48,7 +48,7 @@ part:: A Renderer SHALL support preserving the values of the properties not spec
 ====
 
 [[req-json-array-element-update]]
-===== Updates of array elements
+==== Updates of array elements
 
 [requirement]
 ====
@@ -59,7 +59,7 @@ part:: A Renderer SHALL support updating only the array element identified by `i
 ====
 
 [[req-json-dot-size-color]]
-===== Dot `size` and `color`
+==== Dot `size` and `color`
 
 [requirement]
 ====
@@ -71,7 +71,7 @@ part:: A Producer SHALL NOT set both `size` and `stroke.width`, nor both `color`
 NOTE: The `size` and `color` of a Dot are the same values as the `width` and `color` of its stroke, and the value set last applies. The members of a JSON object have no order (RFC 8259), so within one styling rule there is no last value. Setting `stroke.width` in one styling rule and `size` in a later one is valid, even though both refer to the same Dot of the same Marker or Label: the value set by the later rule applies, as in CartoSym-CSS.
 
 [[req-json-variables]]
-===== Variables
+==== Variables
 
 [requirement]
 ====
@@ -81,7 +81,7 @@ part:: A Producer supporting the <<rc-variables,Variables>> requirements class S
 ====
 
 [[req-json-include]]
-===== Including style sheets
+==== Including style sheets
 
 [requirement]
 ====

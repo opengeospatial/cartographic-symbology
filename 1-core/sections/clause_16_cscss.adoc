@@ -1,14 +1,12 @@
 [[rc-cscss]]
 == Requirements Class "Cartographic Symbology Cascading Style Sheets"
 
-=== Overview
-
 This requirements class defines an encoding for the Styles and Symbology Logical Model inspired from Web Cascading Style Sheets (CSS) and other CSS-like cartographic symbology encodings.
 The primary objective of this encoding is expressiveness so as to facilitate hand-edition by cartographers.
 Parsing this encoding requires a custom parser.
 
 [[cscss]]
-==== Cascading Style Sheets
+=== Cascading Style Sheets
 
 A style is encoded as a series of styling rules into a _style sheet_ document.
 Symbolizer properties set further down in rules override those set by rules at the same level apearing earlier (higher up).
@@ -22,11 +20,11 @@ Because later rules allow to override earlier ones, this cascading allows to app
 * user styling preferences over default application styling,
 * application styling preferences over default data provider styling.
 
-==== Comments
+=== Comments
 
 A style sheet can also contain comments either using C-style multi-line comments (between `/\*` and `*/`) or C++-style single-line comments (starting with `//`).
 
-==== Styling Rules and Symbolizers
+=== Styling Rules and Symbolizers
 
 A styling rule applies zero or more symbolizer properties if its Selector is evaluated to _true_.
 A styling rule may also include nested rules that are only evaluated when the parent rule itself is selected.
@@ -49,7 +47,7 @@ The grammar for a symbolizer property assignment is:
    ['`.`' <member> | '`[`' <index> '`]`' ]*
    '`:`' <expression> '`;`'
 
-==== Selectors
+=== Selectors
 
 A selector is either:
 
@@ -68,7 +66,7 @@ Roads Railways[viz.sd < 10000][level < 4]
 }
 ----
 
-==== Variables
+=== Variables
 
 Variables can be defined before styling rule names with this syntax:
 
@@ -76,9 +74,9 @@ Variables can be defined before styling rule names with this syntax:
 
 A variable (`@` <identifier>) can then be used as an expression.
 
-==== Expressions
+=== Expressions
 
-===== CQL2-Text encoding
+==== CQL2-Text encoding
 
 Whether in Selectors or values of property symbolizers, Expressions are encoded using http://docs.ogc.org/DRAFTS/21-065.html#cql2-text[CQL2-Text].
 However, a number of extensions are introduced to cover the full range of capabilities defined by the styling and symbology conceptual model.
@@ -86,7 +84,7 @@ However, a number of extensions are introduced to cover the full range of capabi
 The first such extension is that in the context of a symbolizer property value, expressions are not limited to boolean predicates being
 evaluated as true or false, but can return any type of values such as numerical, text, or complex values, including geometry.
 
-===== Instance expressions
+==== Instance expressions
 
 The concept of an object instance is introduced, with the grammar:
 
@@ -124,7 +122,7 @@ but also supports `(` `)` in these contexts for compatibility with the CQL2-Text
 A CQL2-Text expression (including WKT geometry) can therefore be used directly as an expression in a selector or symbolizer parameter value.
 However, a CartoSym-CSS expression making use of the curly and/or square brackets will not be a valid CQL2 expression.
 
-===== Tuples and related implications
+==== Tuples and related implications
 
 The concept of a tuple is introduced, corresponding to the CQL2-Text Well-Known Text (WKT) coordinates in the above polygon examples.
 Based on the logical model, each of those tuples actually correspond to a Point instance.
@@ -210,7 +208,7 @@ The following are equivalent example definitions where a _TextAligment_ is expec
 * `TextAlignment(horizontal: left; vertical: top)`
 * `{left, top}`
 
-===== Units of measure
+==== Units of measure
 
 The following abbreviations are used, following a value, to qualify it with a unit of measure.
 These are mainly used for _UnitPoint_ coordinates, as well as with distance value such as those specified for Shape graphics e.g., the radius of a circle.
@@ -422,14 +420,16 @@ Finally, colors can also be expressed as an enumeration value for https://www.w3
    lightPink           |    `0xffb6c1` | 255, 182, 193
 |===
 
-==== Examples
+=== Examples
+
+==== Core
 
 .Example style using "Core" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
 include::../examples/1-core.adoc[]
 ====
 
-===== Basic Vector Styling
+==== Basic Vector Styling
 
 .Example style for polygon features using "Basic Vector Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
@@ -446,7 +446,7 @@ include::../examples/3-vector-line.adoc[]
 include::../examples/4-vector-point.adoc[]
 ====
 
-===== Basic Coverage Styling
+==== Basic Coverage Styling
 
 .Example style rendering DEM with a color map using "Basic Coverage Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
@@ -458,14 +458,14 @@ include::../examples/5-coverage-dem.adoc[]
 include::../examples/6-coverage-sentinel2.adoc[]
 ====
 
-===== Arithmetic Operations (with Basic Coverage Styling)
+==== Arithmetic Operations (with Basic Coverage Styling)
 
 .Example style rendering NDVI with color map using "Basic Coverage Styling" requirements class, in CartoSym-CSS and CartoSym-JSON
 ====
 include::../examples/7-coverage-ndvi.adoc[]
 ====
 
-===== Hill Shading
+==== Hill Shading
 
 .Example style rendering DEM with hill-shading and a color map using "Basic Coverage Styling" and "Hill Shading" requirements classes, in CartoSym-CSS and CartoSym-JSON
 ====
@@ -477,7 +477,7 @@ include::../examples/8-coverage-hillshading.adoc[]
 include::../examples/9-coverage-hillshading-opacity.adoc[]
 ====
 
-==== BNF token definitions
+=== BNF token definitions
 
 The following token definitions for ANTLR4 can be used to generate a lexer for the encoding.
 
@@ -486,7 +486,7 @@ The following token definitions for ANTLR4 can be used to generate a lexer for t
 include::../schemas/CartoSym-CSS-Lexer.g4[]
 ----
 
-==== BNF grammar definition
+=== BNF grammar definition
 
 The following grammar for ANTLR4 can be used to generate a parser for the encoding.
 
@@ -494,7 +494,5 @@ The following grammar for ANTLR4 can be used to generate a parser for the encodi
 ----
 include::../schemas/CartoSym-CSS-Grammar.g4[]
 ----
-
-=== Requirements
 
 include::../requirements/rc-cscss.adoc[]
