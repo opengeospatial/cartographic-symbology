@@ -213,6 +213,10 @@ The following are equivalent example definitions where a _TextAligment_ is expec
 The following abbreviations are used, following a value, to qualify it with a unit of measure.
 These are mainly used for _UnitPoint_ coordinates, as well as with distance value such as those specified for Shape graphics e.g., the radius of a circle.
 
+An abbreviation is a unit only when it follows a number (`10 m`, `2 px`).
+Elsewhere it is an identifier like any other, so a property or a data layer can be named `m`, `mm` or `pt` without quotes.
+The CQL2-Text keywords, such as `in`, remain reserved: a property with such a name is written between double quotes.
+
 .Units of measure abbreviations
 [width="90%",options="header"]
 |===
