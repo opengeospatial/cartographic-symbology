@@ -27,13 +27,13 @@ ArithmeticOperator : pow
 [width="90%",options="header"]
 |===
 | Name     | Definition       | Data type and value  | Multiplicity
-| add      | Addition         | Numeric              | 1..1
-| sub      | Subtraction      | Numeric              | 1..1
-| mul      | Multiplication   | Numeric              | 1..1
-| div      | Division         | Numeric              | 1..1
-| intDiv   | Integer Division | Numeric              | 1..1
-| mod      | Modulus          | Numeric              | 1..1
-| pow      | Power            | Numeric              | 1..1
+| add      | Addition         | number               | 1..1
+| sub      | Subtraction      | number               | 1..1
+| mul      | Multiplication   | number               | 1..1
+| div      | Division         | number               | 1..1
+| intDiv   | Integer Division | number               | 1..1
+| mod      | Modulus          | number               | 1..1
+| pow      | Power            | number               | 1..1
 |===
 
 ==== Requirements
@@ -68,11 +68,11 @@ and the _contains_, _starts with_ and _ends with_ functions. Their negations are
 [width="90%",options="header"]
 |===
 | Name         | Definition          | Data type and value   | Multiplicity
-| like         | Like                | Text                  | 1..1
-| notLike      | Not Like            | Text                  | 1..1
-| contains     | Contains            | Text                  | 1..1
-| startsWith   | Starts With         | Text                  | 1..1
-| endsWith     | Ends With           | Text                  | 1..1
+| like         | Like                | string                | 1..1
+| notLike      | Not Like            | string                | 1..1
+| contains     | Contains            | string                | 1..1
+| startsWith   | Starts With         | string                | 1..1
+| endsWith     | Ends With           | string                | 1..1
 |===
 
 ==== Requirements

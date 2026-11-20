@@ -806,7 +806,7 @@ The basic data types are named after the types that the `/functions` resource of
 
 Other data types, such as Color, enumerations, arrays and the classes in the UML diagrams, are named after their classes.
 
-The `round`, `floor` and `ceil` functions of the <<rc-math,Math Functions>> requirements class return an `integer`, so they can be used to convert a `number` to an `integer`.
+The `round`, `floor` and `ceil` functions of the <<rc-math,Math Functions>> requirements class return an `integer`, so they can be used to convert a `number` to an `integer`. When `x` is NaN or infinite, or the result is outside the range of an `integer`, they return NULL.
 
 [[literal-expressions]]
 ==== Literal Expressions
