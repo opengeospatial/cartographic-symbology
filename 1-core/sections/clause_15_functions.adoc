@@ -81,8 +81,8 @@ MathFunctions : exp(x : double) double
 MathFunctions : floor(x : double) double
 MathFunctions : log(x : double) double
 MathFunctions : log10(x : double) double
-MathFunctions : max(x : double, y : double) double
-MathFunctions : min(x : double, y : double) double
+MathFunctions : max(x : double[1..*]) double
+MathFunctions : min(x : double[1..*]) double
 MathFunctions : pow(x : double, y : double) double
 MathFunctions : random() double
 MathFunctions : round(x : double) long

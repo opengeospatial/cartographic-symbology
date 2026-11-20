@@ -164,6 +164,8 @@ It depends on the _Basic Coverage Styling_ requirements class.
 | opacityMap                     | Opacity map to be applied based on calculated shade | ValueOpacity          | 0..*
 |===
 
+The default `factor` (0, no hill shading) and `sun` are given in <<cscss-default-values>>.
+
 The `sun` property is specified using this AzimuthElevation class:
 
 .AzimuthElevation properties

@@ -267,7 +267,7 @@ LabelSymbolizer to render the road name along a line.
 identifier:: /req/core/symbolizer
 part:: An Encoding SHALL support defining a Symbolizer for a StylingRule, specifying any subset of the Symbolizer properties.
 part:: A Renderer SHALL support portraying data using the Symbolizer properties resulting from all selected StylingRules, using the default values for properties not set by any selected rule.
-part:: A Renderer SHALL support portraying, with the default values, the features and coverage cells that no StylingRule selects, so that a style hides data only by setting `visibility` to false (as example 11 does with `{ visibility: false; }` at its start).
+part:: A Renderer SHALL support portraying, with the default values, the features and coverage cells that no StylingRule selects, so that a style hides data only by setting `visibility` to false (as the style of <<fig-example-11-rondane-overview>> does with `{ visibility: false; }` at its start).
 ====
 
 [[req-core-visibility]]
