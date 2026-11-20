@@ -152,7 +152,7 @@ arrayElements:
 ///////////////////////////////
 // Expressions: Function calls
 
-expCall: IDENTIFIER LPAR arguments RPAR ;
+expCall: IDENTIFIER LPAR arguments? RPAR ;
 
 arguments:
    expression
