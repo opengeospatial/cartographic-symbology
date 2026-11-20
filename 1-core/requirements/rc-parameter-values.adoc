@@ -31,10 +31,10 @@ part:: A Renderer SHALL support evaluating Expressions used as Parameter Values 
 [width="90%",options="header"]
 |===
 | Data type of the property | Value
-| Integer or real, such as `stroke.width`, `opacity` or `zOrder` | 0
-| Boolean, such as `visibility` | `false`
+| `integer` or `number`, such as `stroke.width`, `opacity` or `zOrder` | 0
+| `boolean`, such as `visibility` | `false`
 | Color | black
-| Text | the empty string
+| `string` | the empty string
 | Enumeration | the default value of the property
 | Marker or Label | `null`, emptying its graphical elements
 |===

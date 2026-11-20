@@ -21,8 +21,8 @@ subject:: Style encodings and Renderers
 identifier:: /req/functions/call-expressions
 part:: An Encoding SHALL support defining a FunctionCallExpression identifying the Function to call and an ordered list of zero or more argument Expressions.
 part:: A Renderer SHALL support evaluating a FunctionCallExpression by evaluating its arguments and resolving the expression to the value returned by the Function, of the Function's return type.
-part:: A Renderer SHALL support converting an integer argument to a real number, where the parameter of the Function is a real number.
-part:: A Renderer SHALL support converting a text argument to the enumeration value of that name, where the parameter of the Function is of an enumeration type.
+part:: A Renderer SHALL support an `integer` argument where the parameter of the Function is a `number`.
+part:: A Renderer SHALL support converting a `string` argument to the enumeration value of that name, where the parameter of the Function is of an enumeration type.
 part:: A Renderer SHALL evaluate a FunctionCallExpression whose arguments do not match the parameters of the Function, in number or type, after these conversions, to NULL.
 ====
 

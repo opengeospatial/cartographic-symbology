@@ -29,7 +29,7 @@ part:: A Renderer SHALL support placing the points of all features on one grid a
 ====
 [%metadata]
 identifier:: /req/dot-patterns/distance
-part:: An Encoding SHALL support defining a `distance` Dotpattern property as a Distance object including a `horizontal` and a `vertical` float.
+part:: An Encoding SHALL support defining a `distance` Dotpattern property as a Distance object including a `horizontal` and a `vertical` number.
 part:: A Renderer SHALL support spacing the rendered points of a dot pattern fill horizontally by the `horizontal` distance and vertically by the `vertical` distance.
 ====
 
