@@ -37,5 +37,3 @@ identifier:: /req/casing/center
 part:: An Encoding SHALL support defining a `center` Stroke property as a StrokeStyling object.
 part:: A Renderer SHALL support drawing the center line of a stroke along the same geometry as the stroke, using the StrokeStyling specified by the `center` property, on top of the main stroke.
 ====
-
-// TODO(review): the JSON schema names this property `centerLine` rather than `center` (see #120).

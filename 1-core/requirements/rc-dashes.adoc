@@ -20,7 +20,7 @@ Implementations shall support all properties in the below table for style encodi
 @startuml
 class Stroke <<extended>>
 Stroke : dashPattern: UnitValue [*]
-Stroke : dashOffset: float [0..1]
+Stroke : dashOffset: UnitValue [0..1]
 @enduml
 ....
 

@@ -410,7 +410,7 @@ Finally, colors can also be expressed as an enumeration value for https://www.w3
    purple              |    `0x800080` | 128,   0, 128 |
    darkMagenta         |    `0x8b008b` | 139,   0, 139 |
    magenta             |    `0xff00ff` | 255,   0, 255 |
-   fuschia             |    `0xff00ff` | 255,   0, 255 |
+   fuchsia             |    `0xff00ff` | 255,   0, 255 |
    orchid              |    `0xda70d6` | 218, 112, 214 |
    mediumVioletRed     |    `0xc71585` | 199,  21, 133 |
    deepPink            |    `0xff1493` | 255,  20, 147 |
