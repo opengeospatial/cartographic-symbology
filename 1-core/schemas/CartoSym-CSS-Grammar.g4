@@ -185,8 +185,8 @@ relationalOperator:
    | GTEQ
    | IN
    | NOT IN
-   | IS
    | IS NOT
+   | IS
    | LIKE
    | NOT LIKE;
 
