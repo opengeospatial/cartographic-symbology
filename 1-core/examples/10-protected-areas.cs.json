@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Protected areas by class",
-    "abstract": "This style is used to draw the protected areas around Rondane, Norway, colored by the kind of protection.\n This style uses the protected areas of N50 Kartdata from the Norwegian Mapping Authority (Kartverket), available at https://kartkatalog.geonorge.no/metadata/n50-kartdata/ea192681-d039-42ec-b1bc-f3ce04c189ac",
+    "abstract": "This style is used to draw the protected areas around Rondane, Norway, by the kind of protection.\n This style uses the protected areas of N50 Kartdata from the Norwegian Mapping Authority (Kartverket), available at https://kartkatalog.geonorge.no/metadata/n50-kartdata/ea192681-d039-42ec-b1bc-f3ce04c189ac",
     "keywords": [
       "Protected area",
       "National park",
@@ -10,6 +10,7 @@
   },
   "stylingRules": [
     {
+      "$comment": "A light tint over the context, a soft band along each boundary with a crisp line in its center,\nand a texture for the kinds of protection other than the national park",
       "selector": {
         "op": "and",
         "args": [
@@ -36,41 +37,7 @@
       "symbolizer": {
         "visibility": true,
         "zOrder": 1,
-        "stroke": {
-          "color": [
-            93,
-            107,
-            85
-          ],
-          "opacity": 1.0,
-          "width": {
-            "px": 1.0
-          }
-        },
-        "marker": null,
-        "label": {
-          "elements": [
-            {
-              "type": "Text",
-              "text": {
-                "property": "name"
-              },
-              "alignment": [
-                "center",
-                "middle"
-              ],
-              "font": {
-                "face": "Arial",
-                "size": 8,
-                "color": [
-                  43,
-                  43,
-                  43
-                ]
-              }
-            }
-          ]
-        }
+        "marker": null
       },
       "nestedRules": [
         {
@@ -85,12 +52,67 @@
           },
           "symbolizer": {
             "fill": {
-              "alter": true,
               "color": [
-                169,
-                207,
-                152
-              ]
+                79,
+                138,
+                60
+              ],
+              "opacity": 0.12
+            },
+            "stroke": {
+              "color": [
+                79,
+                138,
+                60
+              ],
+              "opacity": 0.45,
+              "width": {
+                "px": 7.0
+              },
+              "center": {
+                "color": [
+                  47,
+                  93,
+                  42
+                ],
+                "width": {
+                  "px": 1.2
+                }
+              }
+            },
+            "label": {
+              "elements": [
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 13,
+                    "bold": true,
+                    "italic": true,
+                    "color": [
+                      47,
+                      93,
+                      42
+                    ],
+                    "outline": {
+                      "size": 2.5,
+                      "opacity": 0.85,
+                      "color": "white"
+                    }
+                  }
+                }
+              ],
+              "placement": {
+                "priority": 3.0,
+                "minSpacing": 500.0
+              }
             }
           }
         },
@@ -106,11 +128,71 @@
           },
           "symbolizer": {
             "fill": {
-              "alter": true,
               "color": [
-                227,
-                212,
-                142
+                168,
+                116,
+                26
+              ],
+              "opacity": 0.55,
+              "dotpattern": {
+                "distance": {
+                  "horizontal": {
+                    "px": 7.0
+                  },
+                  "vertical": {
+                    "px": 7.0
+                  }
+                }
+              }
+            },
+            "stroke": {
+              "color": [
+                201,
+                154,
+                58
+              ],
+              "opacity": 0.4,
+              "width": {
+                "px": 5.0
+              },
+              "center": {
+                "color": [
+                  138,
+                  94,
+                  20
+                ],
+                "width": {
+                  "px": 1.0
+                }
+              }
+            },
+            "label": {
+              "elements": [
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 8.5,
+                    "italic": true,
+                    "color": [
+                      110,
+                      74,
+                      14
+                    ],
+                    "outline": {
+                      "size": 2,
+                      "opacity": 0.85,
+                      "color": "white"
+                    }
+                  }
+                }
               ]
             }
           }
@@ -127,11 +209,70 @@
           },
           "symbolizer": {
             "fill": {
-              "alter": true,
               "color": [
-                235,
-                165,
-                127
+                184,
+                68,
+                47
+              ],
+              "opacity": 0.6,
+              "hatch": {
+                "width": {
+                  "px": 1.0
+                },
+                "angle": 45.0,
+                "distance": {
+                  "px": 5.0
+                }
+              }
+            },
+            "stroke": {
+              "color": [
+                208,
+                112,
+                90
+              ],
+              "opacity": 0.4,
+              "width": {
+                "px": 5.0
+              },
+              "center": {
+                "color": [
+                  154,
+                  51,
+                  34
+                ],
+                "width": {
+                  "px": 1.0
+                }
+              }
+            },
+            "label": {
+              "elements": [
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 8.5,
+                    "italic": true,
+                    "color": [
+                      126,
+                      42,
+                      28
+                    ],
+                    "outline": {
+                      "size": 2,
+                      "opacity": 0.85,
+                      "color": "white"
+                    }
+                  }
+                }
               ]
             }
           }

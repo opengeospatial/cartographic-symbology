@@ -1,37 +1,41 @@
 .title 'Protected areas by class'
-.abstract 'This style is used to draw the protected areas around Rondane, Norway, colored by the kind of protection.\n'
+.abstract 'This style is used to draw the protected areas around Rondane, Norway, by the kind of protection.
+'
           'This style uses the protected areas of N50 Kartdata from the Norwegian Mapping Authority (Kartverket), available at https://kartkatalog.geonorge.no/metadata/n50-kartdata/ea192681-d039-42ec-b1bc-f3ce04c189ac'
 
 .keywords 'Protected area, National park, Norway'
 
+// A light tint over the context, a soft band along each boundary with a crisp line in its center,
+// and a texture for the kinds of protection other than the national park
 ProtectedAreas[dataLayer.type = vector]
 {
-    visibility: true;
-    zOrder: 1;
-    marker: null;
-    stroke: {color: #5d6b55; width: 1.0 px; opacity: 1.0};
-    label : { elements: [
-            Text {
-             text : name,
-             alignment: center middle,
-             font:{
-             face:'Arial',
-             size:8,
-             color:#2b2b2b
-             }
-                }]
-            };
+   visibility: true;
+   zOrder: 1;
+   marker: null;
 
    [class = 'nationalPark']
    {
-    fill.color : #a9cf98;
+      fill: { color: #4f8a3c; opacity: 0.12 };
+      stroke: { color: #4f8a3c; width: 7 px; opacity: 0.45; center: { color: #2f5d2a; width: 1.2 px } };
+      label: { elements: [ Text { text: name, alignment: center middle,
+                                 font: { face: 'Arial', size: 13, bold: true, italic: true, color: #2f5d2a,
+                                         outline: { size: 2.5, opacity: 0.85, color: white } } } ],
+               placement: { priority: 3; minSpacing: 500 } };
    }
    [class = 'landscapeProtection']
    {
-    fill.color : #e3d48e;
+      fill: { color: #a8741a; opacity: 0.55; dotpattern: { distance: { horizontal: 7 px; vertical: 7 px } } };
+      stroke: { color: #c99a3a; width: 5 px; opacity: 0.4; center: { color: #8a5e14; width: 1 px } };
+      label: { elements: [ Text { text: name, alignment: center middle,
+                                 font: { face: 'Arial', size: 8.5, italic: true, color: #6e4a0e,
+                                         outline: { size: 2, opacity: 0.85, color: white } } } ] };
    }
    [class = 'natureReserve']
    {
-    fill.color : #eba57f;
+      fill: { color: #b8442f; opacity: 0.6; hatch: { width: 1 px; angle: 45; distance: 5 px } };
+      stroke: { color: #d0705a; width: 5 px; opacity: 0.4; center: { color: #9a3322; width: 1 px } };
+      label: { elements: [ Text { text: name, alignment: center middle,
+                                 font: { face: 'Arial', size: 8.5, italic: true, color: #7e2a1c,
+                                         outline: { size: 2, opacity: 0.85, color: white } } } ] };
    }
 }
