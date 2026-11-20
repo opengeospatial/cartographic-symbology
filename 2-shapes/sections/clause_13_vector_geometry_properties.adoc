@@ -21,4 +21,4 @@ This requirements class adds Area, Length, Perimeter, Envelope, pointOnSurface, 
 
 === Requirements
 
-// TODO: include::../requirements/rc-vector-geometry-properties.adoc[]
+include::../requirements/rc-geometry-properties.adoc[]
