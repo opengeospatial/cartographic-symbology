@@ -74,108 +74,111 @@
     },
     "fill":
     {
-       "oneOf": [
-         { "type": "null" },
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "type": "object",
-            "properties": {
-               "alter": { "type": "boolean" },
-               "color": { "$ref": "#/$defs/color" },
-               "opacity": { "$ref": "#/$defs/zeroToOne" },
-               "pattern": { "$ref": "#/$defs/graphic" },
-               "hatch": { "$ref": "#/$defs/hatch" },
-               "dotpattern": { "$ref": "#/$defs/dotpattern" },
-               "stipple": { "$ref": "#/$defs/stipple" }
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "oneOf": [
+            { "type": "null" },
+            {
+               "type": "object",
+               "properties": {
+                  "alter": { "type": "boolean" },
+                  "color": { "$ref": "#/$defs/color" },
+                  "opacity": { "$ref": "#/$defs/zeroToOne" },
+                  "pattern": { "$ref": "#/$defs/graphic" },
+                  "hatch": { "$ref": "#/$defs/hatch" },
+                  "dotpattern": { "$ref": "#/$defs/dotpattern" },
+                  "stipple": { "$ref": "#/$defs/stipple" }
+               }
             }
-         }
-       ]
+          ]
+       }
     },
     "dotpattern":
     {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "type": "object",
-            "properties":
-            {
-               "distance": {
-                  "oneOf": [
-                     { "$ref": "#/$defs/idOrFnExpression" },
-                     {
-                        "type": "array",
-                        "minItems": 2,
-                        "maxItems": 2,
-                        "items": false,
-                        "prefixItems": [
-                           { "$ref": "#/$defs/unitValue" },
-                           { "$ref": "#/$defs/unitValue" }
-                        ]
-                     },
-                     {
-                        "type": "object",
-                        "properties":
-                        {
-                           "horizontal": { "$ref": "#/$defs/unitValue" },
-                           "vertical": { "$ref": "#/$defs/unitValue" },
-                           "alter": { "type": "boolean" }
-                        },
-                        "additionalProperties": false
-                     }
-                  ]
-               }
-            }
-         }
-       ]
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "type": "object",
+          "properties":
+          {
+             "distance": {
+                "oneOf": [
+                   { "$ref": "#/$defs/idOrFnExpression" },
+                   {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": false,
+                      "prefixItems": [
+                         { "$ref": "#/$defs/unitValue" },
+                         { "$ref": "#/$defs/unitValue" }
+                      ]
+                   },
+                   {
+                      "type": "object",
+                      "properties":
+                      {
+                         "horizontal": { "$ref": "#/$defs/unitValue" },
+                         "vertical": { "$ref": "#/$defs/unitValue" },
+                         "alter": { "type": "boolean" }
+                      },
+                      "additionalProperties": false
+                   }
+                ]
+             }
+          }
+       }
     },
     "hatch":
     {
-      "oneOf": [
-        { "$ref": "#/$defs/idOrFnExpression" },
-        {
-          "type": "object",
-          "properties": {
-            "width": { "$ref":  "#/$defs/unitValue" },
-            "angle": { "$ref": "#/$defs/numericExpression"},
-            "distance": { "$ref":  "#/$defs/unitValue"}
-          }
+      "if": { "$ref": "#/$defs/isExpressionObject" },
+      "then": { "$ref": "#/$defs/idOrFnExpression" },
+      "else": {
+        "type": "object",
+        "properties": {
+          "width": { "$ref":  "#/$defs/unitValue" },
+          "angle": { "$ref": "#/$defs/numericExpression"},
+          "distance": { "$ref":  "#/$defs/unitValue"}
         }
-      ]
+      }
     },
     "stipple":
     {
-      "oneOf": [
-        { "$ref": "#/$defs/idOrFnExpression" },
-        {
-          "type": "object",
-          "properties": {
-            "ratio": { "$ref":  "#/$defs/numericExpression" }
-          }
+      "if": { "$ref": "#/$defs/isExpressionObject" },
+      "then": { "$ref": "#/$defs/idOrFnExpression" },
+      "else": {
+        "type": "object",
+        "properties": {
+          "ratio": { "$ref":  "#/$defs/numericExpression" }
         }
-      ]
+      }
     },
     "stroke":
     {
-       "oneOf": [
-         { "type": "null" },
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "allOf": [
-               { "$ref": "#/$defs/strokeStyling" },
-               {
-                  "type": "object",
-                  "properties":
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "oneOf": [
+            { "type": "null" },
+            {
+               "allOf": [
+                  { "$ref": "#/$defs/strokeStyling" },
                   {
-                     "casing": { "$ref": "#/$defs/strokeStyling" },
-                     "center": { "$ref": "#/$defs/strokeStyling" },
-                     "dashPattern": { "$ref": "#/$defs/dashPattern" },
-                     "dashOffset": { "$ref": "#/$defs/unitValue" },
-                     "pattern": { "$ref": "#/$defs/graphic" }
+                     "type": "object",
+                     "properties":
+                     {
+                        "casing": { "$ref": "#/$defs/strokeStyling" },
+                        "center": { "$ref": "#/$defs/strokeStyling" },
+                        "dashPattern": { "$ref": "#/$defs/dashPattern" },
+                        "dashOffset": { "$ref": "#/$defs/unitValue" },
+                        "pattern": { "$ref": "#/$defs/graphic" }
+                     }
                   }
-               }
-            ]
-         }
-       ]
+               ]
+            }
+          ]
+       }
     },
     "dashPattern":
     {
@@ -263,79 +266,88 @@
     },
     "scale2D":
     {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
-            "items": { "$ref": "#/$defs/numericExpression" }
-         },
-         {
-            "type": "object",
-            "properties":
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "oneOf": [
             {
-               "x": { "$ref": "#/$defs/numericExpression" },
-               "y": { "$ref": "#/$defs/numericExpression" },
-               "alter": { "type": "boolean" }
+               "type": "array",
+               "minItems": 2,
+               "maxItems": 2,
+               "items": { "$ref": "#/$defs/numericExpression" }
+            },
+            {
+               "type": "object",
+               "properties":
+               {
+                  "x": { "$ref": "#/$defs/numericExpression" },
+                  "y": { "$ref": "#/$defs/numericExpression" },
+                  "alter": { "type": "boolean" }
+               }
             }
-         }
-       ]
+          ]
+       }
     },
     "scale3D":
     {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "type": "array",
-            "minItems": 3,
-            "maxItems": 3,
-            "items": { "$ref": "#/$defs/numericExpression" }
-         },
-         {
-            "type": "object",
-            "properties":
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "oneOf": [
             {
-               "x": { "$ref": "#/$defs/numericExpression" },
-               "y": { "$ref": "#/$defs/numericExpression" },
-               "z": { "$ref": "#/$defs/numericExpression" },
-               "alter": { "type": "boolean" }
+               "type": "array",
+               "minItems": 3,
+               "maxItems": 3,
+               "items": { "$ref": "#/$defs/numericExpression" }
+            },
+            {
+               "type": "object",
+               "properties":
+               {
+                  "x": { "$ref": "#/$defs/numericExpression" },
+                  "y": { "$ref": "#/$defs/numericExpression" },
+                  "z": { "$ref": "#/$defs/numericExpression" },
+                  "alter": { "type": "boolean" }
+               }
             }
-         }
-       ]
+          ]
+       }
     },
     "orientation3D":
     {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "type": "array",
-            "minItems": 4,
-            "maxItems": 4,
-            "items": { "$ref": "#/$defs/numericExpression" }
-         },
-         {
-            "type": "object",
-            "properties":
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "anyOf": [
             {
-               "w": { "$ref": "#/$defs/numericExpression" },
-               "x": { "$ref": "#/$defs/numericExpression" },
-               "y": { "$ref": "#/$defs/numericExpression" },
-               "z": { "$ref": "#/$defs/numericExpression" },
-               "alter": { "type": "boolean" }
-            }
-         },
-         {
-            "type": "object",
-            "properties":
+               "type": "array",
+               "minItems": 4,
+               "maxItems": 4,
+               "items": { "$ref": "#/$defs/numericExpression" }
+            },
             {
-               "yaw": { "$ref": "#/$defs/numericExpression" },
-               "pitch": { "$ref": "#/$defs/numericExpression" },
-               "roll": { "$ref": "#/$defs/numericExpression" },
-               "alter": { "type": "boolean" }
+               "type": "object",
+               "properties":
+               {
+                  "w": { "$ref": "#/$defs/numericExpression" },
+                  "x": { "$ref": "#/$defs/numericExpression" },
+                  "y": { "$ref": "#/$defs/numericExpression" },
+                  "z": { "$ref": "#/$defs/numericExpression" },
+                  "alter": { "type": "boolean" }
+               }
+            },
+            {
+               "type": "object",
+               "properties":
+               {
+                  "yaw": { "$ref": "#/$defs/numericExpression" },
+                  "pitch": { "$ref": "#/$defs/numericExpression" },
+                  "roll": { "$ref": "#/$defs/numericExpression" },
+                  "alter": { "type": "boolean" }
+               }
             }
-         }
-       ]
+          ]
+       }
     },
     "graphic": {
        "$comment": "Checks a graphic against one definition: an expression, a MultiGraphic if it has elements, otherwise the graphic named by its type. Trying every kind of graphic instead, a validator could only report that none matched, not where the error is.",
@@ -401,27 +413,30 @@
        ]
     },
     "textAlignment": {
-       "oneOf": [
-          { "$ref": "#/$defs/idOrFnExpression" },
-          {
-             "type": "array",
-             "minItems": 2,
-             "maxItems": 2,
-             "prefixItems": [
-                { "$ref": "#/$defs/hAlignment" },
-                { "$ref": "#/$defs/vAlignment" }
-              ]
-          },
-          {
-             "type": "object",
-             "properties":
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "oneOf": [
              {
-               "hAlignment": { "$ref": "#/$defs/hAlignment" },
-               "vAlignment": { "$ref": "#/$defs/vAlignment" },
-               "alter": { "type": "boolean" }
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "prefixItems": [
+                   { "$ref": "#/$defs/hAlignment" },
+                   { "$ref": "#/$defs/vAlignment" }
+                 ]
+             },
+             {
+                "type": "object",
+                "properties":
+                {
+                  "hAlignment": { "$ref": "#/$defs/hAlignment" },
+                  "vAlignment": { "$ref": "#/$defs/vAlignment" },
+                  "alter": { "type": "boolean" }
+                }
              }
-          }
-       ]
+          ]
+       }
     },
     "hAlignment": {
        "oneOf": [
@@ -442,37 +457,35 @@
        ]
     },
     "font": {
-       "oneOf": [
-          { "$ref": "#/$defs/idOrFnExpression" },
-          {
-             "type": "object",
-             "properties": {
-                "alter": { "type": "boolean" },
-                "face": { "$ref": "#/$defs/characterExpression" },
-                "size": { "$ref": "#/$defs/numericExpression" },
-                "bold": { "$ref": "#/$defs/boolExpression" },
-                "italic": { "$ref": "#/$defs/boolExpression" },
-                "underline": { "$ref": "#/$defs/boolExpression" },
-                "color": { "$ref": "#/$defs/color" },
-                "opacity": { "$ref": "#/$defs/zeroToOne" },
-                "outline": { "$ref": "#/$defs/fontOutline" }
-             }
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "type": "object",
+          "properties": {
+             "alter": { "type": "boolean" },
+             "face": { "$ref": "#/$defs/characterExpression" },
+             "size": { "$ref": "#/$defs/numericExpression" },
+             "bold": { "$ref": "#/$defs/boolExpression" },
+             "italic": { "$ref": "#/$defs/boolExpression" },
+             "underline": { "$ref": "#/$defs/boolExpression" },
+             "color": { "$ref": "#/$defs/color" },
+             "opacity": { "$ref": "#/$defs/zeroToOne" },
+             "outline": { "$ref": "#/$defs/fontOutline" }
           }
-       ]
+       }
     },
     "fontOutline": {
-       "oneOf": [
-          { "$ref": "#/$defs/idOrFnExpression" },
-          {
-             "type": "object",
-             "properties": {
-                "alter": { "type": "boolean" },
-                "size": { "$ref": "#/$defs/numericExpression" },
-                "opacity": { "$ref": "#/$defs/zeroToOne" },
-                "color": { "$ref": "#/$defs/color" }
-             }
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "type": "object",
+          "properties": {
+             "alter": { "type": "boolean" },
+             "size": { "$ref": "#/$defs/numericExpression" },
+             "opacity": { "$ref": "#/$defs/zeroToOne" },
+             "color": { "$ref": "#/$defs/color" }
           }
-       ]
+       }
     },
     "abstractShape": {
       "allOf": [
@@ -541,35 +554,33 @@
        }
     },
     "labelPlacement": {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "type": "object",
-            "properties":
-            {
-               "alter": { "type": "boolean" },
-               "priority": { "$ref": "#/$defs/numericExpression" },
-               "minSpacing": { "$ref": "#/$defs/numericExpression" },
-               "maxSpacing": { "$ref": "#/$defs/numericExpression" }
-            }
-         }
-       ]
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "type": "object",
+          "properties":
+          {
+             "alter": { "type": "boolean" },
+             "priority": { "$ref": "#/$defs/numericExpression" },
+             "minSpacing": { "$ref": "#/$defs/numericExpression" },
+             "maxSpacing": { "$ref": "#/$defs/numericExpression" }
+          }
+       }
     },
     "strokeStyling":
     {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "type": "object",
-            "properties":
-            {
-               "alter": { "type": "boolean" },
-               "color": { "$ref": "#/$defs/color" },
-               "opacity": { "$ref": "#/$defs/zeroToOne" },
-               "width": { "$ref": "#/$defs/unitValue" }
-            }
-         }
-       ]
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "type": "object",
+          "properties":
+          {
+             "alter": { "type": "boolean" },
+             "color": { "$ref": "#/$defs/color" },
+             "opacity": { "$ref": "#/$defs/zeroToOne" },
+             "width": { "$ref": "#/$defs/unitValue" }
+          }
+       }
     },
     "angle":
     {
@@ -596,25 +607,28 @@
     },
     "unitPoint":
     {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-            "type": "array",
-            "minItems": 2,
-            "maxItems": 3,
-            "items": { "$ref": "#/$defs/unitValue" }
-         },
-         {
-            "type": "object",
-            "properties":
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+          "oneOf": [
             {
-               "x": { "$ref": "#/$defs/unitValue" },
-               "y": { "$ref": "#/$defs/unitValue" },
-               "z": { "$ref": "#/$defs/unitValue" },
-               "alter": { "type": "boolean" }
+               "type": "array",
+               "minItems": 2,
+               "maxItems": 3,
+               "items": { "$ref": "#/$defs/unitValue" }
+            },
+            {
+               "type": "object",
+               "properties":
+               {
+                  "x": { "$ref": "#/$defs/unitValue" },
+                  "y": { "$ref": "#/$defs/unitValue" },
+                  "z": { "$ref": "#/$defs/unitValue" },
+                  "alter": { "type": "boolean" }
+               }
             }
-         }
-       ]
+          ]
+       }
     },
     "percent":
     {
@@ -882,51 +896,49 @@
        ]
     },
     "hillShading": {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-             "type": "object",
-             "properties": {
-                "factor": { "$ref": "#/$defs/numericExpression" },
-                "sun": { "$ref": "#/$defs/azimuthElevation" },
-                "colorMap": {
-                  "allOf": [
-                   {"$ref": "#/$defs/colorMap"},
-                   {
-                     "oneOf": [
-                       { "$ref": "#/$defs/idOrFnExpression" },
-                       {
-                          "type": "array",
-                          "items":
-                          {
-                             "type": "array",
-                             "prefixItems": [
-                                { "$ref": "#/$defs/zeroToOne" }
-                             ]
-                          }
-                       }
-                     ]
-                   }
-                  ]
-                },
-                "opacityMap": { "$ref": "#/$defs/hsOpacityMap" },
-                "alter": { "type": "boolean" }
-             }
-         }
-       ]
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+           "type": "object",
+           "properties": {
+              "factor": { "$ref": "#/$defs/numericExpression" },
+              "sun": { "$ref": "#/$defs/azimuthElevation" },
+              "colorMap": {
+                "allOf": [
+                 {"$ref": "#/$defs/colorMap"},
+                 {
+                   "oneOf": [
+                     { "$ref": "#/$defs/idOrFnExpression" },
+                     {
+                        "type": "array",
+                        "items":
+                        {
+                           "type": "array",
+                           "prefixItems": [
+                              { "$ref": "#/$defs/zeroToOne" }
+                           ]
+                        }
+                     }
+                   ]
+                 }
+                ]
+              },
+              "opacityMap": { "$ref": "#/$defs/hsOpacityMap" },
+              "alter": { "type": "boolean" }
+           }
+       }
     },
     "azimuthElevation": {
-       "oneOf": [
-         { "$ref": "#/$defs/idOrFnExpression" },
-         {
-             "type": "object",
-             "properties": {
-                "azimuth": { "$ref": "#/$defs/angle" },
-                "elevation": { "$ref": "#/$defs/angle" },
-                "alter": { "type": "boolean" }
-             }
-         }
-       ]
+       "if": { "$ref": "#/$defs/isExpressionObject" },
+       "then": { "$ref": "#/$defs/idOrFnExpression" },
+       "else": {
+           "type": "object",
+           "properties": {
+              "azimuth": { "$ref": "#/$defs/angle" },
+              "elevation": { "$ref": "#/$defs/angle" },
+              "alter": { "type": "boolean" }
+           }
+       }
     },
     "hsOpacityMap":
     {
@@ -1136,6 +1148,8 @@
       "else": {
         "anyOf": [
           { "type": "boolean" },
+          { "$ref": "#/$defs/propertyRef" },
+          { "$ref": "#/$defs/systemIdentifier" },
           { "$ref": "#/$defs/variableRef" }
         ]
       }
