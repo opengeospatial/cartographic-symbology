@@ -86,6 +86,32 @@ However, a number of extensions are introduced to cover the full range of capabi
 The first such extension is that in the context of a symbolizer property value, expressions are not limited to boolean predicates being
 evaluated as true or false, but can return any type of values such as numerical, text, or complex values, including geometry.
 
+[[cscss-operator-priority]]
+===== Operator priority
+
+The operators of an expression are applied in the following order, from the highest priority to the lowest.
+Operators of the same priority are applied from left to right, except `? :`, which groups to the right.
+Parentheses change the order.
+
+[cols="1,4,2"]
+|===
+|Priority |Operators |Notes
+
+|1 |member access `.`, indexing `[ ]` |
+|2 |unary `+` and `-` |`-2 ^ 2` is `(-2) ^ 2`
+|3 |`^` |
+|4 |`*`, `/`, `div`, `%` |
+|5 |`+`, `-` |
+|6 |`=`, `<>`, `<`, `+<=+`, `>`, `>=`, `in`, `not in`, `like`, `not like`, `is`, `is not` |All the comparisons have the same priority
+|7 |`between`, `not between` |The bounds are arithmetic expressions
+|8 |`not` |
+|9 |`and` |
+|10 |`or` |
+|11 |`? :` |Groups to the right
+|===
+
+For example, `a is not null and b = 1` is `(a is not null) and (b = 1)`, and `a + 1 > 2 * b or c` is `((a + 1) > (2 * b)) or c`.
+
 ===== Instance expressions
 
 The concept of an object instance is introduced, with the grammar:
