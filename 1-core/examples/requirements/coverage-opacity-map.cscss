@@ -1,0 +1,7 @@
+// /req/coverage/opacity-map, /rec/coverage/map-interpolation: the valleys fade out
+Elevation
+{
+   singleChannel: elevation;
+   colorMap: [ 500 #7d9a6a, 1300 #d6c79e, 2100 #9c8f84 ];
+   opacityMap: [ 700 0.0, 900 1.0 ];
+}

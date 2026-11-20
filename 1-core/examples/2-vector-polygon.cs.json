@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Styling polygon vector features",
-    "abstract": "Basic vector features styling (polygons)"
+    "abstract": "Basic vector features styling (polygons): land cover in Rondane, Norway (N50 Kartdata)"
   },
   "stylingRules": [
     {
@@ -14,7 +14,7 @@
               {
                 "sysId": "dataLayer.id"
               },
-              "Landuse"
+              "Landcover"
             ]
           },
           {
@@ -43,12 +43,13 @@
         ]
       },
       "symbolizer": {
-        "$comment": "Do not show Landuse layer by default",
-        "visibility": false
+        "$comment": "Do not show Landcover layer by default\nNo default Dot at each polygon's centroid",
+        "visibility": false,
+        "marker": null
       },
       "nestedRules": [
         {
-          "$comment": "Show land use if zoomed in more than 1:200,000 for data valid within visualization's selected time range",
+          "$comment": "Show land cover if zoomed in more than 1:200,000 for data valid within visualization's selected time range",
           "selector": {
             "op": "and",
             "args": [
@@ -91,44 +92,57 @@
             ]
           },
           "symbolizer": {
+            "$comment": "Open land and the other classes: a light neutral fill through which the relief below shows",
             "visibility": true,
             "opacity": 0.8,
             "zOrder": 1,
             "fill": {
-              "color": "gray",
+              "color": [
+                214,
+                207,
+                189
+              ],
               "opacity": 0.5
             },
             "stroke": {
-              "color": "gray",
+              "color": [
+                168,
+                160,
+                140
+              ],
               "opacity": 1.0,
               "width": {
-                "px": 2.0
+                "px": 0.75
               }
             }
           },
           "nestedRules": [
             {
-              "$comment": "Select different fill and stroke color based on FunctionCode property",
+              "$comment": "Select different fill and stroke color based on class property",
               "selector": {
                 "op": "=",
                 "args": [
                   {
-                    "property": "FunctionCode"
+                    "property": "class"
                   },
-                  "parking"
+                  "bog"
                 ]
               },
               "symbolizer": {
                 "fill": {
                   "alter": true,
-                  "color": "darkGray"
+                  "color": [
+                    203,
+                    184,
+                    103
+                  ]
                 },
                 "stroke": {
                   "alter": true,
                   "color": [
-                    32,
-                    32,
-                    32
+                    143,
+                    132,
+                    72
                   ]
                 }
               }
@@ -138,19 +152,27 @@
                 "op": "=",
                 "args": [
                   {
-                    "property": "FunctionCode"
+                    "property": "class"
                   },
-                  "park"
+                  "forest"
                 ]
               },
               "symbolizer": {
                 "fill": {
                   "alter": true,
-                  "color": "darkGreen"
+                  "color": [
+                    79,
+                    138,
+                    69
+                  ]
                 },
                 "stroke": {
                   "alter": true,
-                  "color": "green"
+                  "color": [
+                    61,
+                    107,
+                    53
+                  ]
                 }
               }
             },
@@ -159,19 +181,27 @@
                 "op": "=",
                 "args": [
                   {
-                    "property": "FunctionCode"
+                    "property": "class"
                   },
-                  "commercial"
+                  "lake"
                 ]
               },
               "symbolizer": {
                 "fill": {
                   "alter": true,
-                  "color": "lightGray"
+                  "color": [
+                    111,
+                    163,
+                    204
+                  ]
                 },
                 "stroke": {
                   "alter": true,
-                  "color": "lightGray"
+                  "color": [
+                    47,
+                    109,
+                    158
+                  ]
                 }
               }
             },
@@ -187,11 +217,11 @@
                 ]
               },
               "symbolizer": {
-                "$comment": "Change stroke width to 4 pixels\nAdd a text marker (positioned at centroid + horizontal offset) showing FunctionTitle property",
+                "$comment": "Change stroke width to 2 pixels\nAdd a text marker (positioned at centroid + horizontal offset) showing name property",
                 "stroke": {
                   "alter": true,
                   "width": {
-                    "px": 4.0
+                    "px": 2.0
                   }
                 },
                 "marker": {
@@ -203,7 +233,7 @@
                         "y": 0.0
                       },
                       "text": {
-                        "property": "FunctionTitle"
+                        "property": "name"
                       },
                       "alignment": [
                         "left",
@@ -212,10 +242,14 @@
                       "font": {
                         "face": "Arial",
                         "size": 14,
-                        "bold": true,
+                        "bold": false,
                         "italic": true,
                         "opacity": 1.0,
-                        "color": "black"
+                        "color": [
+                          31,
+                          78,
+                          121
+                        ]
                       }
                     }
                   ]
@@ -223,14 +257,14 @@
               },
               "nestedRules": [
                 {
-                  "$comment": "Add icons at centroid based on land use function code property",
+                  "$comment": "Add icons at centroid based on land cover class property",
                   "selector": {
                     "op": "=",
                     "args": [
                       {
-                        "property": "FunctionCode"
+                        "property": "class"
                       },
-                      "parking"
+                      "bog"
                     ]
                   },
                   "symbolizer": {
@@ -241,11 +275,11 @@
                         "value": {
                           "type": "Image",
                           "image": {
-                            "uri": "http://example.com/parkingIcon",
-                            "path": "parkingIcon.png",
-                            "id": "parking",
-                            "type": "image/png",
-                            "ext": "png"
+                            "uri": "http://example.com/icons/bog.svg",
+                            "path": "icons/bog.svg",
+                            "id": "bog",
+                            "type": "image/svg+xml",
+                            "ext": "svg"
                           },
                           "hotSpot": [
                             {
@@ -256,7 +290,11 @@
                             }
                           ],
                           "tint": "white",
-                          "blackTint": "blue",
+                          "blackTint": [
+                            107,
+                            95,
+                            42
+                          ],
                           "alphaThreshold": 0.1
                         }
                       }
@@ -268,9 +306,9 @@
                     "op": "=",
                     "args": [
                       {
-                        "property": "FunctionCode"
+                        "property": "class"
                       },
-                      "park"
+                      "forest"
                     ]
                   },
                   "symbolizer": {
@@ -281,11 +319,11 @@
                         "value": {
                           "type": "Image",
                           "image": {
-                            "uri": "http://example.com/park",
-                            "path": "park.png",
-                            "id": "park",
-                            "type": "image/png",
-                            "ext": "png"
+                            "uri": "http://example.com/icons/forest.svg",
+                            "path": "icons/forest.svg",
+                            "id": "forest",
+                            "type": "image/svg+xml",
+                            "ext": "svg"
                           },
                           "hotSpot": [
                             {
@@ -296,7 +334,11 @@
                             }
                           ],
                           "tint": "white",
-                          "blackTint": "blue",
+                          "blackTint": [
+                            47,
+                            93,
+                            42
+                          ],
                           "alphaThreshold": 0.1
                         }
                       }
@@ -308,9 +350,9 @@
                     "op": "=",
                     "args": [
                       {
-                        "property": "FunctionCode"
+                        "property": "class"
                       },
-                      "commercial"
+                      "lake"
                     ]
                   },
                   "symbolizer": {
@@ -321,11 +363,11 @@
                         "value": {
                           "type": "Image",
                           "image": {
-                            "uri": "http://example.com/commercial",
-                            "path": "commercial.png",
-                            "id": "commercial",
-                            "type": "image/png",
-                            "ext": "png"
+                            "uri": "http://example.com/icons/lake.svg",
+                            "path": "icons/lake.svg",
+                            "id": "lake",
+                            "type": "image/svg+xml",
+                            "ext": "svg"
                           },
                           "hotSpot": [
                             {
@@ -336,7 +378,11 @@
                             }
                           ],
                           "tint": "white",
-                          "blackTint": "blue",
+                          "blackTint": [
+                            31,
+                            78,
+                            121
+                          ],
                           "alphaThreshold": 0.1
                         }
                       }

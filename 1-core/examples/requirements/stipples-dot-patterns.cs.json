@@ -1,0 +1,56 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/stipples/ratio, /req/dot-patterns/dotpattern, /req/dot-patterns/distance: stipple and dot pattern fills on the forest",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "stipple": {
+                "ratio": 0.2
+              }
+            },
+            "stroke": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "width": {
+                "px": 0.5
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

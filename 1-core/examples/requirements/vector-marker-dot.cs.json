@@ -1,0 +1,192 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/marker, /req/vector/dot, /req/vector/graphics: the same marker at points, line vertices and polygon centroids",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Huts"
+        ]
+      },
+      "symbolizer": {
+        "marker": {
+          "elements": [
+            {
+              "type": "Dot",
+              "size": {
+                "px": 7
+              },
+              "color": "white"
+            },
+            {
+              "type": "Dot",
+              "size": {
+                "px": 4.5
+              },
+              "color": [
+                184,
+                50,
+                42
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "lake"
+                ]
+              },
+              {
+                "op": ">",
+                "args": [
+                  {
+                    "property": "area"
+                  },
+                  20000
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                226,
+                237,
+                244
+              ]
+            },
+            "stroke": {
+              "width": 0.0
+            },
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 7
+                  },
+                  "color": "white"
+                },
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 4.5
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "marked"
+                  },
+                  true
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                184,
+                68,
+                47
+              ],
+              "width": {
+                "px": 1.0
+              }
+            },
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 7
+                  },
+                  "color": "white"
+                },
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 4.5
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

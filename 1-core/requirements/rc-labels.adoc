@@ -31,6 +31,8 @@ identifier:: /rec/labels/overlap
 part:: A Renderer SHOULD omit labels which cannot be placed without overlapping other labels, unless a property of the Symbolizer allows the overlap.
 ====
 
+NOTE: Whether labels that would extend beyond the edges of the map are placed is left to the Renderer, for example as a configuration option, considering use cases such as rendering a static map, a dynamic map or map tiles.
+
 [[req-labels-placement]]
 ===== Label `placement` property
 
@@ -41,6 +43,7 @@ identifier:: /req/labels/placement
 part:: An Encoding SHALL support defining a `placement` Label property as a LabelPlacement object including a `priority`, a `minSpacing` and a `maxSpacing`.
 part:: A Renderer SHALL support placing labels so that a label with a higher `priority` is placed in preference to a conflicting label with a lower `priority`.
 part:: A Renderer SHALL support repeating a label so that the distance between repetitions of that label is at least `minSpacing` and, where space allows, at most `maxSpacing`, both in pixels unless qualified with another unit (<<graphical-units-of-measure,Graphical Units of Measure>>).
+part:: A Renderer SHALL support treating as repetitions of a label all labels with the same content from the same data layer (so that a road split into several features is labelled as one), and measuring the distance between repetitions on the map between their positions.
 ====
 
 // TODO(review): confirm that a higher `priority` value means a higher priority (see #148).

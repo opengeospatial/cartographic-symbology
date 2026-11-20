@@ -232,11 +232,11 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 | Font                        | `<Font>` with `<SvgParameter name="font-family">`, `<SvgParameter name="font-size">`, `<SvgParameter name="font-style">`, `<SvgParameter name="font-weight">`
 | TextAlignment               | `<AnchorPoint>` inside `<Graphic>` inside `<PointSymbolizer>` for SE 1.1.0, or `<AnchorPoint>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>` for SE 1.1.0 and SLD 1.0.0
 | Image                       | `<Graphic>`
-| Image hotSpot               | `<AnchorPoint>` inside `<Graphic>` inside `<PointSymbolizer>` for SE 1.1.0, or `<AnchorPoint>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>` for SE 1.1.0 and SLD 1.0.0
+| Image hotSpot               | `<AnchorPoint>` inside `<Graphic>` inside `<PointSymbolizer>` for SE 1.1.0, or `<AnchorPoint>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>` for SE 1.1.0 and SLD 1.0.0 (`AnchorPoint` gives fractions of the image's width and height with `AnchorPointY` measured from the bottom, so a `hotSpot` of `x pc y pc` is an `AnchorPointX` of _x_ / 100 and an `AnchorPointY` of 1 − _y_ / 100; a `hotSpot` in pixels is first divided by the image's width and height)
 | Dot                         | `<WellKnownName>` inside a `<Mark>` inside a `<Graphic>` inside a `<PointSymbolizer>`
 | Marker                      | `<PointSymbolizer>`
 | Marker opacity              | `<SvgParameter name="fill-opacity">` for SE 1.1.0, `<CssParameter name="fill-opacity">` for SLD 1.0.0 inside a <PointSymbolizer>
-| Marker position             | `<AnchorPoint>` inside `<PointSymbolizer>`
+| Marker position             | `<Displacement>` inside `<Graphic>` inside `<PointSymbolizer>` for SE 1.1.0, or `<Displacement>` inside `<PointPlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>` for SE 1.1.0 and SLD 1.0.0 (a positive `y` is upwards in both, so `DisplacementY` is the negated `y` of the position)
 | GraphicalUnit               | `uom` attribute of symbolizers
 | Stroke                      | `<Stroke>`
 | Stroke opacity              | `<SvgParameter name="stroke-opacity">` for SE 1.1.0, `<CssParameter name="stroke-opacity">` for SLD 1.0.0

@@ -1,0 +1,11 @@
+// /req/vector/fill, /req/vector/stroke: the fill and the stroke of the lakes
+Landcover
+{
+   marker: null;
+   visibility: false;
+   [class = 'lake']
+   {
+      visibility: true;
+      fill: { color: #b7d3e6 }; stroke: { color: #3f7fb3; width: 1 px };
+   }
+}

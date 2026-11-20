@@ -1,0 +1,9 @@
+// /req/vector/units: widths in metres follow the map scale, widths in pixels and millimetres do not
+Roads
+{
+   marker: null;
+   visibility: false;
+   [class = 'county' or class = 'municipal'] { visibility: true; stroke: { color: #d0483a; width: 12 m }; }
+   [class = 'private'] { visibility: true; stroke: { color: #f2b84b; width: 3 px }; }
+   [class = 'tractor'] { visibility: true; stroke: { color: #8a6a4a; width: 0.5 mm }; }
+}

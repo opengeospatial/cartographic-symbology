@@ -15,6 +15,14 @@ This requirements class adds capabilities for strokes with the possibility to de
 
 include::../requirements/rc-dashes.adoc[]
 
+// Examples placed by cartosym-draft-check
+==== Examples
+
+.Example style for `/req/dashes/dash-pattern`, `/req/dashes/dash-offset`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/dashes.adoc[]
+====
+
 [[rc-casing]]
 === Requirements Class "Casing and Centerline"
 ==== Overview
@@ -43,3 +51,11 @@ This requirements class adds support for Strokes with a casing and centerline.
 ==== Requirements
 
 include::../requirements/rc-casing.adoc[]
+
+// Examples placed by cartosym-draft-check
+==== Examples
+
+.Example style for `/req/casing/casing`, `/req/casing/center`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/casing.adoc[]
+====

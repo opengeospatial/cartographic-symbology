@@ -1,0 +1,13 @@
+// /req/core/parameters: the size of each Dot is computed from the elevation property
+SpotHeights
+{
+   visibility: false;
+   [elevation >= 1300]
+   {
+      visibility: true;
+      marker: { elements: [
+         Dot { size: (elevation - 1000) / 80 + 3, color: white },
+         Dot { size: (elevation - 1000) / 80, color: #8a5a3a }
+      ] };
+   }
+}

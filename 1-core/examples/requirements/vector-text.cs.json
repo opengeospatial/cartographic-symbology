@@ -1,0 +1,70 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/text, /req/vector/fonts: the alignment of a Text graphic relative to its position (the Dot)",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "type"
+              },
+              "mountain"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 4
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 9,
+                    "color": [
+                      43,
+                      43,
+                      43
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

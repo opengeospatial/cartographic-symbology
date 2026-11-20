@@ -1,0 +1,8 @@
+// /req/core/instances: a nested rule changes only the color of the stroke, keeping its width
+Roads
+{
+   marker: null;
+   stroke: { color: #9a958b; width: 3 px };
+   [class = 'county' or class = 'european'] { stroke.color: #d0483a; }
+   [class = 'path' or class = 'tractor'] { visibility: false; }
+}
