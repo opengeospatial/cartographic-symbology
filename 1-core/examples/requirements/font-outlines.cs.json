@@ -1,0 +1,115 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/font-outlines/outline, size, opacity, color: peak names over the relief",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Elevation"
+        ]
+      },
+      "symbolizer": {
+        "singleChannel": {
+          "property": "elevation"
+        },
+        "colorMap": [
+          [
+            300.0,
+            "#56704a"
+          ],
+          [
+            1200.0,
+            "#8d7f62"
+          ],
+          [
+            2200.0,
+            "#4a4a4a"
+          ]
+        ],
+        "hillShading": {
+          "factor": 2,
+          "sun": {
+            "azimuth": 315.0,
+            "elevation": 45.0
+          }
+        }
+      }
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "type"
+                  },
+                  "mountain"
+                ]
+              },
+              {
+                "op": ">=",
+                "args": [
+                  {
+                    "property": "elevation"
+                  },
+                  2000
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "label": {
+              "elements": [
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 10,
+                    "color": [
+                      43,
+                      43,
+                      43
+                    ],
+                    "outline": {
+                      "size": 2,
+                      "opacity": 0.85,
+                      "color": "white"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

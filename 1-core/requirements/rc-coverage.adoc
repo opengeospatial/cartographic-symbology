@@ -43,7 +43,20 @@ part:: A Renderer SHALL support portraying each coverage cell with the opacity r
 identifier:: /req/coverage/single-channel
 part:: An Encoding SHALL support defining a `singleChannel` Symbolizer property as a number.
 part:: A Renderer SHALL support using the value resolved from the `singleChannel` property for each coverage cell as the input value to the `colorMap` and `opacityMap` properties.
+part:: A Renderer SHALL support portraying each coverage cell over the area of that cell.
+part:: A Renderer SHALL support portraying each cell of a variable that is not continuous (for example a land cover classification) with the color and opacity mapped from that cell's own value, without interpolating between the values of neighbouring cells.
 ====
+
+[[per-coverage-interpolation]]
+[permission]
+====
+[%metadata]
+identifier:: /per/coverage/interpolation
+part:: A Renderer MAY interpolate between the values of neighbouring cells of a continuous variable.
+part:: A Renderer MAY portray a coverage from overviews, levels of detail, tiles or DGGS zones that combine several cells, for example where one pixel of the map covers several cells.
+====
+
+NOTE: The method of portraying cells on the map is not prescribed: a coverage can be drawn on a 2D map or draped on 3D terrain, and from several levels of detail. Whether a variable is continuous can come from the logical schema of the data, for example `"x-ogc-variableType": "continuous"`, or be implied by its `x-ogc-definition` or `x-ogc-unit`, however that information reaches the Renderer. Where nothing indicates whether a variable is continuous, this Standard does not require a behavior; a Renderer can assume that it may interpolate, preferably with a way for users to control it.
 
 [[req-coverage-color-map]]
 ===== Symbolizer `colorMap` property
@@ -76,5 +89,13 @@ part:: A Renderer SHOULD interpolate the colors of a `colorMap` and the opacitie
 ====
 
 NOTE: The interpolation method is not specified: linear interpolation, or a smoother one, can be used. Linear interpolation, easing between the two closest entries and monotone cubic interpolation all keep the result between those entries, while a parabola fitted through three neighbouring entries can overshoot them. When all values of a coverage are equal to entries of the map (e.g., integer class codes), the cells take exactly the colors or opacities of those entries.
+
+[[per-coverage-linear-light]]
+[permission]
+====
+[%metadata]
+identifier:: /per/coverage/linear-light
+part:: A Renderer MAY convert the sRGB colors of a `colorMap` to linear light, interpolate between them there, and convert the result back to sRGB for output.
+====
 
 NOTE: A `colorMap` does not define stepped classes for continuous values (e.g., one color for all values from 0 to 10). Such classes can be written with chained conditional expressions using relational operators, e.g. `colorChannels: B04 < 10 ? green : (B04 < 20 ? yellow : red)`.

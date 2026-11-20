@@ -1,0 +1,105 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/labels/placement (minSpacing): road numbers repeated along the road, at least 150 pixels apart",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "european"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "national"
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                208,
+                72,
+                58
+              ],
+              "width": {
+                "px": 2.0
+              }
+            },
+            "label": {
+              "elements": [
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "number"
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 8,
+                    "bold": true,
+                    "color": [
+                      184,
+                      50,
+                      42
+                    ],
+                    "outline": {
+                      "size": 2,
+                      "color": "white"
+                    }
+                  }
+                }
+              ],
+              "placement": {
+                "minSpacing": 150.0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

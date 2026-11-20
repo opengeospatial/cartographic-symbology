@@ -53,7 +53,7 @@ Citation: Olefeldt, D., Goswami, S., Grosse, G., Hayes, D., Hugelius, G., Kuhry,
 ====
 [source,cscss]
 ----
-#Thermokarst
+Thermokarst
 {
    stroke: { width: 0 };
    [TKWP = 'Low'                                    ]{ fill: { #a1ff74 }; }
@@ -154,28 +154,16 @@ image::figures/roads-group.png[]
                   Render feature symbolizer
 ////
 
-=== Natural Earth (economies)
+=== Protected areas by kind of protection
 
-.Example rendering of the Natural Earth map, colored by economies
-image::figures/natural_earth_econonomy.png[]
-
-.CartoSym-CSS used to produce above Natural Earth map colored by economies
+.Example style for the protected areas around Rondane, colored by kind of protection, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/10-natural_earth_economies.cscss[]
-----
+include::../examples/10-protected-areas.adoc[]
 ====
 
-=== Natural Earth (continents)
+=== Overview map from several layers
 
-.Example rendering of the Natural Earth map, colored by continent
-image::figures/natural_earth.png[]
-
-.CartoSym-CSS used to produce above Natural Earth map colored by continents
+.Example style for an overview map of Rondane from several layers, in CartoSym-CSS and CartoSym-JSON
 ====
-[source,cscss]
-----
-include::../examples/11-natural_earth_continents.cscss[]
-----
+include::../examples/11-rondane-overview.adoc[]
 ====

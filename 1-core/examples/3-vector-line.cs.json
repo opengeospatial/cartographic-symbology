@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Styling line vector features",
-    "abstract": "Basic vector features styling (lines)"
+    "abstract": "Basic vector features styling (lines): roads in Sel, Norway (N50 Kartdata), colored by road class"
   },
   "stylingRules": [
     {
@@ -43,7 +43,9 @@
         ]
       },
       "symbolizer": {
-        "visibility": false
+        "$comment": "No default Dot at each vertex",
+        "visibility": false,
+        "marker": null
       },
       "nestedRules": [
         {
@@ -54,12 +56,26 @@
                 "op": "and",
                 "args": [
                   {
-                    "op": "<",
+                    "op": "and",
                     "args": [
                       {
-                        "sysId": "viz.sd"
+                        "op": "<",
+                        "args": [
+                          {
+                            "sysId": "viz.sd"
+                          },
+                          200000
+                        ]
                       },
-                      200000
+                      {
+                        "op": "<>",
+                        "args": [
+                          {
+                            "property": "class"
+                          },
+                          "path"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -89,18 +105,119 @@
             ]
           },
           "symbolizer": {
+            "$comment": "Private and tractor roads",
             "visibility": true,
-            "opacity": 0.8,
             "zOrder": 2,
             "stroke": {
-              "color": "gray",
+              "color": [
+                140,
+                129,
+                114
+              ],
               "opacity": 1.0,
               "width": {
-                "px": 5.0
+                "px": 1.0
               }
             }
           },
           "nestedRules": [
+            {
+              "$comment": "Select stroke color, width and drawing order based on the class property",
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "municipal"
+                ]
+              },
+              "symbolizer": {
+                "zOrder": 3,
+                "stroke": {
+                  "color": [
+                    242,
+                    184,
+                    75
+                  ],
+                  "width": {
+                    "px": 2.5
+                  }
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              },
+              "symbolizer": {
+                "zOrder": 4,
+                "stroke": {
+                  "color": [
+                    242,
+                    184,
+                    75
+                  ],
+                  "width": {
+                    "px": 3.5
+                  }
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "national"
+                ]
+              },
+              "symbolizer": {
+                "zOrder": 5,
+                "stroke": {
+                  "color": [
+                    232,
+                    131,
+                    58
+                  ],
+                  "width": {
+                    "px": 4.5
+                  }
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "european"
+                ]
+              },
+              "symbolizer": {
+                "zOrder": 6,
+                "stroke": {
+                  "color": [
+                    208,
+                    72,
+                    58
+                  ],
+                  "width": {
+                    "px": 5.5
+                  }
+                }
+              }
+            },
             {
               "$comment": "If zoomed in more than 1:10,000",
               "selector": {
@@ -113,7 +230,7 @@
                 ]
               },
               "symbolizer": {
-                "$comment": "Change stroke width to 8 meters\nAdd Dot at each segment end-point",
+                "$comment": "Change stroke width to 8 meters (12 meters for the main roads)\nAdd Dot at each segment end-point",
                 "stroke": {
                   "alter": true,
                   "width": {
@@ -125,13 +242,48 @@
                     {
                       "type": "Dot",
                       "size": {
-                        "m": 10
+                        "m": 4
                       },
                       "color": "white"
                     }
                   ]
                 }
-              }
+              },
+              "nestedRules": [
+                {
+                  "selector": {
+                    "op": "or",
+                    "args": [
+                      {
+                        "op": "=",
+                        "args": [
+                          {
+                            "property": "class"
+                          },
+                          "national"
+                        ]
+                      },
+                      {
+                        "op": "=",
+                        "args": [
+                          {
+                            "property": "class"
+                          },
+                          "european"
+                        ]
+                      }
+                    ]
+                  },
+                  "symbolizer": {
+                    "stroke": {
+                      "alter": true,
+                      "width": {
+                        "m": 12.0
+                      }
+                    }
+                  }
+                }
+              ]
             }
           ]
         }

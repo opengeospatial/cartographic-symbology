@@ -81,16 +81,16 @@ Similarly, the opacity map is defined with a Value/Opacity pair object:
 [width="90%",options="header"]
 |===
 | Name                | Definition	                                         | Data type and value | Multiplicity
-| value               | Key value for selecting this color                   | number              | 1
-| color               | Color associated with this value                     | Color               | 1
+| value               | Key value for selecting this opacity                 | number              | 1
+| opacity             | Opacity associated with this value                   | number (between 0 and 1) | 1
 | name                | Label to use for this value when generating a legend | string              | 0..1
 |===
 
 ===== Colors
 
 Both the `colorChannels` and the `colorMap` properties use a Color class, specified using red, green and blue components.
-The ability to define Colors in other spaces (e.g., Lab, CMYK) is defined in separate requirements classes
-and applies wherever this basic RGB Color class is used.
+The ability to define Colors in other spaces (e.g., Lab, CMYK) is left to later extensions
+and would apply wherever this basic RGB Color class is used.
 
 .Color
 [width="90%",options="header"]
@@ -104,6 +104,16 @@ and applies wherever this basic RGB Color class is used.
 ==== Requirements
 
 include::../requirements/rc-coverage.adoc[]
+
+// Examples placed by cartosym-draft-check
+==== Examples
+
+<<fig-example-5-coverage-dem>>, <<fig-example-6-coverage-sentinel2>> and <<fig-example-7-coverage-ndvi>> in the CartoSym-CSS clause show `singleChannel`, `colorMap`, `colorChannels` and `alphaChannel`.
+
+.Example style for `/req/coverage/opacity-map`, `/rec/coverage/map-interpolation`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/coverage-opacity-map.adoc[]
+====
 
 [[rc-hill-shading]]
 === Requirements Class "Hill Shading"
@@ -154,6 +164,8 @@ It depends on the _Basic Coverage Styling_ requirements class.
 | opacityMap                     | Opacity map to be applied based on calculated shade | ValueOpacity          | 0..*
 |===
 
+The default `factor` (0, no hill shading) and `sun` are given in <<cscss-default-values>>.
+
 The `sun` property is specified using this AzimuthElevation class:
 
 .AzimuthElevation properties
@@ -167,3 +179,18 @@ The `sun` property is specified using this AzimuthElevation class:
 ==== Requirements
 
 include::../requirements/rc-hillshading.adoc[]
+
+// Examples placed by cartosym-draft-check
+==== Examples
+
+<<fig-example-8-coverage-hillshading>> and <<fig-example-9-coverage-hillshading-opacity>> in the CartoSym-CSS clause show the hill shading `colorMap` and `opacityMap`.
+
+.Example style for `/req/hill-shading/hill-shading`, `/req/hill-shading/factor`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/hill-shading-factor.adoc[]
+====
+
+.Example style for `/req/hill-shading/hill-shading`, `/req/hill-shading/sun`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/hill-shading-sun.adoc[]
+====

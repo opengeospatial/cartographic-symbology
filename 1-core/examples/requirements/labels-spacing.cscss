@@ -1,0 +1,14 @@
+// /req/labels/placement (minSpacing): road numbers repeated along the road, at least 150 pixels apart
+Roads
+{
+   marker: null;
+   visibility: false;
+   [class = 'european' or class = 'national' or class = 'county']
+   {
+      visibility: true;
+      stroke: { color: #d0483a; width: 2 px };
+      label: { elements: [ Text { text: number, alignment: center middle, font: { face: 'Arial', size: 8, bold: true, color: #b8322a,
+                                                         outline: { size: 2, color: white } } } ],
+               placement: { minSpacing: 150 } };
+   }
+}

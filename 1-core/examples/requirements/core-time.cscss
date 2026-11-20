@@ -1,0 +1,11 @@
+// /req/core/time: roads updated within the visualization's time interval in red
+Roads
+{
+   marker: null;
+   stroke: { color: #c9c4bb; width: 2 px };
+   [validDate >= viz.timeInterval.start.date and validDate <= viz.timeInterval.end.date]
+   {
+      stroke: { color: #d0483a; width: 3 px };
+   }
+   [class = 'path' or class = 'tractor'] { visibility: false; }
+}

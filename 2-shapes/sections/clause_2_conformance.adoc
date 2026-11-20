@@ -23,44 +23,44 @@ Requirements and conformance test URIs defined in this document are relative to 
 
 The Gradient Fills Requirements Class specifies requirements for defining fils using gradients.
 
-*<<rc-shapegraphics,Requirements Class "Shape Graphics">>* (http://www.opengis.net/spec/symbology-1/1.0/req/shapegraphics)
+*<<rc-shape-graphics,Requirements Class "Shape Graphics">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/shape-graphics)
 
 The Shape Graphics Requirements Class specifies requirements for defining geometric shapes which can be used for markers, labels (with Basic Labeling),
 or as patterns for stroke (with Pattern Strokes) or for fills (with Pattern Fills).
 
-*<<rc-vector-geometry,Requirements Class "Vector Geometry Properties">>* (http://www.opengis.net/spec/symbology-1/1.0/req/geometryproperties)
+*<<rc-geometry-properties,Requirements Class "Vector Geometry Properties">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/geometry-properties)
 
 The Vector Geometry Properties Requirements Class specifies requirements for using system identifiers to query the area and perimeter of vector geometry.
 
 === Requirements classes for advanced stroke and fills
 
-*<<rc-joinscaps,Requirements Class "Joins and Caps">>* (http://www.opengis.net/spec/symbology-1/1.0/req/joinscaps)
+*<<rc-joins-caps,Requirements Class "Joins and Caps">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/joins-caps)
 
 The Joins and Caps Requirements Class specifies requirements for defining  a particular type of join and/or cap on strokes.
 
-*<<rc-patternstrokes,Requirements Class "Pattern Strokes">>* (http://www.opengis.net/spec/symbology-1/1.0/req/patternstrokes)
+*<<rc-pattern-strokes,Requirements Class "Pattern Strokes">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/pattern-strokes)
 
 The Pattern Strokes Requirements Class specifies requirements for defining patern strokes using Graphics.
 
-*<<rc-patternfills,Requirements Class "Pattern Fills">>* (http://www.opengis.net/spec/symbology-1/1.0/req/patternfills)
+*<<rc-pattern-fills,Requirements Class "Pattern Fills">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/pattern-fills)
 
 The Pattern Strokes Requirements Class specifies requirements for defining patern fills using Graphics.
 
 === Requirements classes for additional portrayal capabilities
 
-*<<rc-shapeoutlines,Requirements Class "Shape Outlines">>* (http://www.opengis.net/spec/symbology-1/1.0/req/shapeoutlines)
+*<<rc-shape-outlines,Requirements Class "Shape Outlines">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/shape-outlines)
 
 The Shape Outlines Requirements Class specifies requirements for displaying shapes with outlines so that they stand out on any background.
 
-*<<rc-transforms,Requirements Class "MultiGraphics and Transforms">>* (http://www.opengis.net/spec/symbology-1/1.0/req/transforms)
+*<<rc-graphical-hierarchy,Requirements Class "MultiGraphics and Transforms">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/graphical-hierarchy)
 
 The MultiGraphics and Transforms Requirements Class specifies requirements for building vector graphic hierarchy, including support for arbitrary transforms (translation, rotation and scaling).
 
-*<<rc-imageoutlines,Requirements Class "Image Outlines">>* (http://www.opengis.net/spec/symbology-1/1.0/req/imageoutlines)
+*<<rc-image-outlines,Requirements Class "Image Outlines">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/image-outlines)
 
 The Image Outlines Requirements Class specifies requirements for displaying images with outlines so that they stand out on any background.
 
-*<<rc-threedim,Requirements Class "3D Models and Transforms">>* (http://www.opengis.net/spec/symbology-1/1.0/req/threedim)
+*<<rc-3d-models-transforms,Requirements Class "3D Models and Transforms">>* (http://www.opengis.net/spec/cartosym-2/1.0/req/3d-models-transforms)
 
 The 3D Models and Transforms Requirements Class specifies requirements for defining 3D model Graphics and 3D transformations.
 
@@ -85,14 +85,14 @@ is declared by appending `-partial-concept` to the conformance URI.
 [cols="30,70",options="header"]
 |===
 | Conformance class                                               |URI
-|<<rc-shapegraphics,Shape Graphics>>                              |http://www.opengis.net/spec/symbology-1/1.0/conf/shapegraphics
-|<<rc-shapeoutlines,Shape Outlines>>                              |http://www.opengis.net/spec/symbology-1/1.0/conf/shapeoutlines
-|<<rc-transforms,Multi Graphics and Transforms>>                  |http://www.opengis.net/spec/symbology-1/1.0/conf/transforms
-|<<rc-joins-caps,Joins and Caps>>                                  |http://www.opengis.net/spec/symbology-1/1.0/conf/joinscaps
-|<<rc-pattern-strokes,Pattern Strokes>>                            |http://www.opengis.net/spec/symbology-1/1.0/conf/patternstrokes
-|<<rc-pattern-fills,Pattern Fills>>                                |http://www.opengis.net/spec/symbology-1/1.0/conf/patternfills
+|<<rc-shape-graphics,Shape Graphics>>                              |http://www.opengis.net/spec/cartosym-2/1.0/conf/shape-graphics
+|<<rc-shape-outlines,Shape Outlines>>                              |http://www.opengis.net/spec/cartosym-2/1.0/conf/shape-outlines
+|<<rc-graphical-hierarchy,Multi Graphics and Transforms>>                  |http://www.opengis.net/spec/cartosym-2/1.0/conf/graphical-hierarchy
+|<<rc-joins-caps,Joins and Caps>>                                  |http://www.opengis.net/spec/cartosym-2/1.0/conf/joins-caps
+|<<rc-pattern-strokes,Pattern Strokes>>                            |http://www.opengis.net/spec/cartosym-2/1.0/conf/pattern-strokes
+|<<rc-pattern-fills,Pattern Fills>>                                |http://www.opengis.net/spec/cartosym-2/1.0/conf/pattern-fills
 |<<rc-gradients,Gradients Fills>>                                |http://www.opengis.net/spec/cartosym-2/1.0/conf/gradients
-|<<rc-threedim,3D Graphics, Models and Transforms>>               |http://www.opengis.net/spec/symbology-1/1.0/conf/threedim
-|<<rc-image-outlines,Image Outlines>>                              |http://www.opengis.net/spec/symbology-1/1.0/conf/imageoutlines
-|<<rc-geometry-properties,Vector Geometry Properties>>             |http://www.opengis.net/spec/symbology-1/1.0/conf/geometryproperties
+|<<rc-3d-models-transforms,3D Graphics, Models and Transforms>>               |http://www.opengis.net/spec/cartosym-2/1.0/conf/3d-models-transforms
+|<<rc-image-outlines,Image Outlines>>                              |http://www.opengis.net/spec/cartosym-2/1.0/conf/image-outlines
+|<<rc-geometry-properties,Vector Geometry Properties>>             |http://www.opengis.net/spec/cartosym-2/1.0/conf/geometry-properties
 |===

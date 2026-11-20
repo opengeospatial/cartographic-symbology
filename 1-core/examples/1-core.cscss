@@ -1,8 +1,8 @@
-.title 'Styling a land use layer'
-.abstract 'Styling land use data with Style & Symbology Core'
-.description 'This is a simple example of how to style a land use layer using Style & Symbology Core.'
+.title 'Styling a land cover layer'
+.abstract 'Styling land cover data with Style & Symbology Core'
+.description 'This is a simple example of how to style a land cover layer using Style & Symbology Core.'
 
-Landuse[dataLayer.type = vector]
+Landcover[dataLayer.type = vector]
 {
    visibility: false;
 

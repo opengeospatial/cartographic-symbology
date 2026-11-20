@@ -1,0 +1,709 @@
+{
+  "metadata": {
+    "title": "Rondane overview map",
+    "abstract": "A map of the area around Rondane, Norway, from several N50 Kartdata layers and the elevation model"
+  },
+  "stylingRules": [
+    {
+      "symbolizer": {
+        "visibility": false
+      }
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Municipalities"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "opacity": 0.3686275,
+        "zOrder": 1,
+        "marker": null,
+        "label": {
+          "elements": [
+            {
+              "type": "Text",
+              "text": {
+                "property": "name"
+              },
+              "alignment": [
+                "center",
+                "middle"
+              ],
+              "font": {
+                "face": "Tahoma",
+                "size": 14,
+                "outline": {
+                  "size": 3,
+                  "opacity": 0.75,
+                  "color": "white"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "name"
+              },
+              "Alvdal"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                232,
+                201,
+                160
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "name"
+              },
+              "Dovre"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                201,
+                219,
+                178
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "name"
+              },
+              "Folldal"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                185,
+                207,
+                224
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "name"
+              },
+              "Nord-Fron"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                230,
+                195,
+                207
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "name"
+              },
+              "Sel"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                217,
+                208,
+                166
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "name"
+              },
+              "Stor-Elvdal"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                205,
+                196,
+                226
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Elevation"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 0,
+        "singleChannel": {
+          "property": "elevation"
+        },
+        "colorMap": [
+          [
+            300.0,
+            "#e4f4f7"
+          ],
+          [
+            900.0,
+            "#f2f0e6"
+          ],
+          [
+            1300.0,
+            "#e8dcc4"
+          ],
+          [
+            1700.0,
+            "#d6c8b8"
+          ],
+          [
+            2200.0,
+            "#ffffff"
+          ]
+        ],
+        "hillShading": {
+          "factor": 1.5,
+          "sun": {
+            "azimuth": 315.0,
+            "elevation": 60.0
+          }
+        }
+      }
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "stroke": {
+          "width": 0.0
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "lake"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "river"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "zOrder": 67,
+            "fill": {
+              "color": [
+                127,
+                178,
+                216
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "bog"
+            ]
+          },
+          "symbolizer": {
+            "opacity": 0.4235294,
+            "zOrder": 65,
+            "fill": {
+              "color": "burlyWood"
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "<>",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "lake"
+                    ]
+                  },
+                  {
+                    "op": "<>",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "river"
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "<>",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "bog"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": false
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Rivers"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 36,
+        "stroke": {
+          "color": [
+            95,
+            156,
+            204
+          ],
+          "width": 0.5
+        },
+        "marker": null
+      }
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 86,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "european"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "national"
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "stroke": {
+              "color": [
+                196,
+                46,
+                49
+              ],
+              "width": 0.66
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "municipal"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "private"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "stroke": {
+              "color": "gray",
+              "width": 0.5
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "marked"
+                  },
+                  true
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "stroke": {
+              "color": [
+                196,
+                46,
+                49
+              ],
+              "width": 0.5,
+              "dashPattern": [
+                3,
+                2
+              ]
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "tractor"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "cycleway"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": false
+          }
+        },
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "marked"
+                  },
+                  false
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": false
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "ProtectedAreas"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 87,
+        "fill": {
+          "opacity": 0.0
+        },
+        "stroke": {
+          "color": [
+            0,
+            175,
+            122
+          ],
+          "width": 1.5
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "nationalPark"
+            ]
+          },
+          "symbolizer": {
+            "label": {
+              "elements": [
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "font": {
+                    "face": "Times New Roman",
+                    "size": 12,
+                    "italic": true,
+                    "color": "papayaWhip",
+                    "outline": {
+                      "size": 3,
+                      "color": "black",
+                      "opacity": 0.35
+                    }
+                  },
+                  "alignment": [
+                    "center",
+                    "middle"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": true,
+        "zOrder": 24,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "type"
+                  },
+                  "mountain"
+                ]
+              },
+              {
+                "op": ">=",
+                "args": [
+                  {
+                    "property": "elevation"
+                  },
+                  2100
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "label": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "color": "white",
+                  "size": 10
+                },
+                {
+                  "type": "Dot",
+                  "color": "darkOrange",
+                  "size": 6
+                },
+                {
+                  "position": {
+                    "x": 10.0,
+                    "y": 4.0
+                  },
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "font": {
+                    "face": "Tahoma",
+                    "size": 12,
+                    "outline": {
+                      "color": "white",
+                      "size": 3.5,
+                      "opacity": 0.75
+                    }
+                  },
+                  "alignment": [
+                    "left",
+                    "middle"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

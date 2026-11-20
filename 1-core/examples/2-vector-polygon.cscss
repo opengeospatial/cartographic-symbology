@@ -1,81 +1,84 @@
 .title 'Styling polygon vector features'
-.abstract 'Basic vector features styling (polygons)'
+.abstract 'Basic vector features styling (polygons): land cover in Rondane, Norway (N50 Kartdata)'
 
-Landuse[dataLayer.type = vector and dataLayer.featuresGeometryDimensions = 2]
+Landcover[dataLayer.type = vector and dataLayer.featuresGeometryDimensions = 2]
 {
-   // Do not show Landuse layer by default
+   // Do not show Landcover layer by default
    visibility: false;
+   // No default Dot at each polygon's centroid
+   marker: null;
 
-   // Show land use if zoomed in more than 1:200,000 for data valid within visualization's selected time range
+   // Show land cover if zoomed in more than 1:200,000 for data valid within visualization's selected time range
    [viz.sd < 200000 and validDate >= viz.timeInterval.start.date and validDate <= viz.timeInterval.end.date]
    {
       visibility: true;
       opacity: 0.8;
       zOrder: 1;
-      fill: {color: gray; opacity: 0.5};
-      stroke: {color: gray; width: 2.0 px; opacity: 1.0};
+      // Open land and the other classes: a light neutral fill through which the relief below shows
+      fill: {color: #d6cfbd; opacity: 0.5};
+      stroke: {color: #a8a08c; width: 0.75 px; opacity: 1.0};
 
-      // Select different fill and stroke color based on FunctionCode property
-      [FunctionCode = 'parking']
+      // Select different fill and stroke color based on class property
+      [class = 'bog']
       {
-         fill.color: darkGray;
-         stroke.color: #202020;
+         fill.color: #cbb867;
+         stroke.color: #8f8448;
       }
-      [FunctionCode = 'park']
+      [class = 'forest']
       {
-         fill.color: darkGreen;
-         stroke.color: green;
+         fill.color: #4f8a45;
+         stroke.color: #3d6b35;
       }
-      [FunctionCode = 'commercial']
+      [class = 'lake']
       {
-         fill.color: lightGray;
-         stroke.color: lightGray;
+         fill.color: #6fa3cc;
+         stroke.color: #2f6d9e;
       }
 
       // If zoomed in more than 1:10,000
       [viz.sd < 10000]
       {
-         // Change stroke width to 4 pixels
-         stroke.width: 4.0 px;
-         // Add a text marker (positioned at centroid + horizontal offset) showing FunctionTitle property
+         // Change stroke width to 2 pixels
+         stroke.width: 2.0 px;
+         // Add a text marker (positioned at centroid + horizontal offset) showing name property
          marker: {elements: [
             Text(
                position: 20 0; // Offset 20 pixels to the right
-               text: FunctionTitle;
+               text: name;
                alignment: left top;
                font: {
                   face: 'Arial';
                   size: 14;
-                  bold: true;
+                  bold: false;
                   italic: true;
                   opacity: 1.0;
-                  color: black;
+                  color: #1f4e79;
                };
             )
          ]};
-         // Add icons at centroid based on land use function code property
-         [FunctionCode = 'parking']
+         // Add icons at centroid based on land cover class property
+         [class = 'bog']
          {
             marker.elements[1]:
                Image {
-                  image: {uri: 'http://example.com/parkingIcon'; path: 'parkingIcon.png'; id: 'parking'; type: 'image/png'; ext: 'png'};
-                  hotSpot: 50 pc 50 pc; tint: white; blackTint: blue; alphaThreshold: 0.1;
+                  image: {uri: 'http://example.com/icons/bog.svg'; path: 'icons/bog.svg'; id: 'bog'; type: 'image/svg+xml'; ext: 'svg'};
+                  hotSpot: 50 pc 50 pc; tint: white; blackTint: #6b5f2a; alphaThreshold: 0.1;
                };
          }
-         [FunctionCode = 'park']
+         [class = 'forest']
          {
             marker.elements[1]:
                Image {
-                  image: {uri: 'http://example.com/park'; path: 'park.png'; id: 'park'; type: 'image/png'; ext: 'png'};
-                  hotSpot: 50 pc 50 pc; tint: white; blackTint: blue; alphaThreshold: 0.1;
+                  image: {uri: 'http://example.com/icons/forest.svg'; path: 'icons/forest.svg'; id: 'forest'; type: 'image/svg+xml'; ext: 'svg'};
+                  hotSpot: 50 pc 50 pc; tint: white; blackTint: #2f5d2a; alphaThreshold: 0.1;
                };
          }
-         [FunctionCode = 'commercial']
+         [class = 'lake']
          {
             marker.elements[1]:
                Image {
-                  image: {uri: 'http://example.com/commercial'; path: 'commercial.png'; id: 'commercial'; type: 'image/png'; ext: 'png'};
-                  hotSpot: 50 pc 50 pc; tint: white; blackTint: blue; alphaThreshold: 0.1;
+                  image: {uri: 'http://example.com/icons/lake.svg'; path: 'icons/lake.svg'; id: 'lake'; type: 'image/svg+xml'; ext: 'svg'};
+                  hotSpot: 50 pc 50 pc; tint: white; blackTint: #1f4e79; alphaThreshold: 0.1;
                };
          }
       }

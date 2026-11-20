@@ -81,8 +81,8 @@ MathFunctions : exp(x : number) number
 MathFunctions : floor(x : number) integer
 MathFunctions : log(x : number) number
 MathFunctions : log10(x : number) number
-MathFunctions : max(x : number, y : number) number
-MathFunctions : min(x : number, y : number) number
+MathFunctions : max(x : number[1..*]) number
+MathFunctions : min(x : number[1..*]) number
 MathFunctions : pow(x : number, y : number) number
 MathFunctions : random() number
 MathFunctions : round(x : number) integer
@@ -141,8 +141,8 @@ include::../requirements/rc-array-relations.adoc[]
 @startuml
 interface TextManipulationFunctions
 TextManipulationFunctions --|> Function : standard functions
-TextManipulationFunctions : caseInsensitize(string s) string
-TextManipulationFunctions : accentInsensitize(string s) string
+TextManipulationFunctions : casei(string s) string
+TextManipulationFunctions : accenti(string s) string
 TextManipulationFunctions : lowerCase(string s) string
 TextManipulationFunctions : upperCase(string s) string
 TextManipulationFunctions : concatenate(string a, string b) string
@@ -155,14 +155,16 @@ TextManipulationFunctions : format(string f, ...) string
 [width="90%",options="header"]
 |===
 | Name               | Parameters                     | Return type  | Definition
-| caseInsensitize    | (string s)                     | string       | `s` made suitable for case-insensitive comparison
-| accentInsensitize  | (string s)                     | string       | `s` with accents stripped and diacritics folded
+| casei              | (string s)                     | string       | `s` made suitable for case-insensitive comparison
+| accenti            | (string s)                     | string       | `s` with accents stripped and diacritics folded
 | lowerCase          | (string s)                     | string       | `s` converted to lowercase
 | upperCase          | (string s)                     | string       | `s` converted to uppercase
 | concatenate        | (string a, string b)           | string       | `a` followed by `b`
 | substitute         | (string s, string a, string b) | string       | `s` with occurrences of `a` replaced by `b`
 | format             | (string f, ...)                | string       | The remaining arguments formatted according to the format string `f`
 |===
+
+The `casei` and `accenti` functions are those of the same name in CQL2 (<<OGC20-065>>), which uses them for case-insensitive and accent-insensitive comparisons.
 
 ==== Requirements
 

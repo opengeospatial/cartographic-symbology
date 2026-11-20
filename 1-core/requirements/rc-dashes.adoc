@@ -20,7 +20,7 @@ Implementations shall support all properties in the below table for style encodi
 @startuml
 class Stroke <<extended>>
 Stroke : dashPattern: UnitValue [*]
-Stroke : dashOffset: float [0..1]
+Stroke : dashOffset: UnitValue [0..1]
 @enduml
 ....
 
@@ -65,8 +65,9 @@ part:: A Renderer MAY support dashPattern lengths in percent of the stroke width
 [%metadata]
 identifier:: /req/dashes/dash-offset
 part:: An Encoding SHALL support defining a dashOffset property for the stroke symbolizer.
-part:: A Renderer SHALL support dashing vector geometry based on a dashOffset property.
+part:: A Renderer SHALL support dashing vector geometry based on a dashOffset property, as the distance into the dash pattern at which dashing starts at the beginning of each line (as `stroke-dashoffset` in SVG and SE 1.1), in the units of the dash pattern: with a `dashPattern` of `[ 8, 4 ]` and a `dashOffset` of 4, each line starts with a 4 pixel dash, then a 4 pixel gap.
+part:: A Renderer SHALL support starting the dash pattern again at the beginning of each line of a feature, and continuing it across the vertices of that line.
 
-.In black stroke without dashes, in red with a dash pattern preceded by an offset on the rendering of the associated dash pattern.
+.In black stroke without dashes, in red with the same dash pattern started at an offset into the pattern.
 image::figures/stroke_dashOffset.png[]
 ====

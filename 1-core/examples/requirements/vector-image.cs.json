@@ -1,0 +1,54 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/image: an Image marker on the cabins; the blue Dot marks the position of the Graphic",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Huts"
+        ]
+      },
+      "symbolizer": {
+        "marker": {
+          "elements": [
+            {
+              "type": "Image",
+              "image": {
+                "uri": "http://example.com/icons/hut.png",
+                "path": "../icons/hut.png",
+                "type": "image/png"
+              },
+              "hotSpot": [
+                {
+                  "pc": 50
+                },
+                {
+                  "pc": 100
+                }
+              ],
+              "blackTint": [
+                184,
+                50,
+                42
+              ]
+            },
+            {
+              "type": "Dot",
+              "size": {
+                "px": 5
+              },
+              "color": [
+                31,
+                78,
+                121
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

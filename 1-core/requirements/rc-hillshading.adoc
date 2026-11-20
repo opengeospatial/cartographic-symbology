@@ -19,9 +19,12 @@ subject:: Style encodings and Renderers
 identifier:: /req/hill-shading/hill-shading
 part:: An Encoding SHALL support defining a `hillShading` Symbolizer property as an object including `factor`, `sun`, `colorMap` and `opacityMap` properties.
 part:: A Renderer SHALL support computing the terrain surface normal of each cell from the differences in elevation between neighbouring samples of the elevation coverage at the resolution being rendered, over the horizontal distance between those samples, in the same units as the elevation.
+part:: A Renderer SHALL support taking the elevation samples at about the resolution being rendered: the cells of the elevation coverage where a pixel of the map covers no more ground than a cell (for example 75 m pixels over 150 m cells), and otherwise elevations at about the size of a pixel, for example from overviews or levels of detail.
 part:: A Renderer SHALL support portraying an elevation coverage with a shade value computed for each cell as the dot product of the unit normal of the terrain surface and the unit vector pointing towards the sun, clamped to the range 0 to 1, where 0 is full shade (the sun at 90 degrees or more from the normal) and 1 is no shade (the sun in the direction of the normal).
 part:: A Renderer SHALL support, where the HillShading has no `colorMap`, multiplying the red, green and blue components of each cell by its shade value.
 ====
+
+NOTE: How the differences in elevation are taken is not prescribed. One way is to take, in each direction, the difference between the two samples on either side of the cell over twice the distance between samples, repeating the edge sample at the edge of the coverage.
 
 [[req-hill-shading-factor]]
 ===== HillShading `factor` property
@@ -32,6 +35,7 @@ part:: A Renderer SHALL support, where the HillShading has no `colorMap`, multip
 identifier:: /req/hill-shading/factor
 part:: An Encoding SHALL support defining a `factor` HillShading property as a number.
 part:: A Renderer SHALL support multiplying the horizontal components of the terrain surface normal by the `factor` property before normalizing it, so that a `factor` of 1 shades the terrain as it is and a larger `factor` exaggerates the relief.
+part:: A Renderer SHALL support a `factor` of 0, its default value, as no hill shading, so that a `hillShading` of `{ }` portrays the coverage as if `hillShading` were not set.
 ====
 
 NOTE: Slopes are measured between the samples being rendered, so the same `factor` gives a stronger relief at a finer resolution. The `factor` that suits a style depends on the resolution of the elevation data it is used with.
@@ -44,8 +48,10 @@ NOTE: Slopes are measured between the samples being rendered, so the same `facto
 [%metadata]
 identifier:: /req/hill-shading/sun
 part:: An Encoding SHALL support defining a `sun` HillShading property as an object consisting of `azimuth` and `elevation` angle members representing the orientation of the sun relative to the terrain.
-part:: A Renderer SHALL support computing the shade of each cell for a light source at the `azimuth` angle (in degrees clockwise from North, as a compass bearing) and `elevation` angle (relative to the ground) specified by the `sun` property.
+part:: A Renderer SHALL support computing the shade of each cell for a light source at the `azimuth` angle (in degrees clockwise from north as shown on the map at the shaded point, as a compass bearing) and `elevation` angle (relative to the ground) specified by the `sun` property.
 ====
+
+NOTE: On a north-up map in a projected coordinate reference system, north as shown on the map is about grid north; on a globe, it is true north. A Renderer that computes hill shading in the coordinates of the data, for example on textures in WGS 84, can approximate it. The default `sun` (`azimuth` 315, `elevation` 45) lights the terrain from the north-west, as is usual in cartography.
 
 [[req-hill-shading-color-map]]
 ===== HillShading `colorMap` property

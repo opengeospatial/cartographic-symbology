@@ -189,6 +189,13 @@ part:: A Renderer SHALL support considering the nested rules of a StylingRule on
 part:: A Renderer SHALL support the Symbolizer of a selected nested rule inheriting from, and overriding, the Symbolizer properties of its parent rule.
 ====
 
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/rules`, `/req/core/selector`, `/req/core/nested`, `/req/core/symbolizer`, `/req/core/visibility`, `/req/core/layers`, `/req/core/expressions-field-identifiers`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-rules.adoc[]
+====
+
 
 // TODO: Illustrate above example with two pictures at different scales
 
@@ -260,6 +267,7 @@ LabelSymbolizer to render the road name along a line.
 identifier:: /req/core/symbolizer
 part:: An Encoding SHALL support defining a Symbolizer for a StylingRule, specifying any subset of the Symbolizer properties.
 part:: A Renderer SHALL support portraying data using the Symbolizer properties resulting from all selected StylingRules, using the default values for properties not set by any selected rule.
+part:: A Renderer SHALL support portraying, with the default values, the features and coverage cells that no StylingRule selects, so that a style hides data only by setting `visibility` to false (as the style of <<fig-example-11-rondane-overview>> does with `{ visibility: false; }` at its start).
 ====
 
 [[req-core-visibility]]
@@ -284,6 +292,13 @@ part:: An Encoding SHALL support defining an `opacity` Symbolizer property as a 
 part:: A Renderer SHALL support applying the resolved `opacity` property by multiplying it with the opacity of the fill, the stroke, the graphics of markers and the opacity channel of coverage cells.
 ====
 
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/opacity`, `/rec/core/opacity-together`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-opacity.adoc[]
+====
+
 NOTE: The Symbolizer `opacity` does not apply to labels.
 
 [[rec-core-opacity-together]]
@@ -291,8 +306,10 @@ NOTE: The Symbolizer `opacity` does not apply to labels.
 ====
 [%metadata]
 identifier:: /rec/core/opacity-together
-part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke and the graphics of markers together, so that they do not show through each other where they overlap.
+part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke and the graphics of markers together, so that they do not show through each other where they overlap, either for each feature or for all features of a data layer with the same `zOrder` drawn at once.
 ====
+
+NOTE: Applying the opacity per feature lets overlapping features of the same data layer show through each other, but can be costly for many features; applying it to all features of a data layer and `zOrder` at once can be done in a single drawing operation, but those features then no longer show through each other. Which of these to recommend is still under consideration. A style can select on `visualization.pass` (as in the Visualization passes use case of <<annex-mapgallery>>) to control what is drawn in which pass.
 
 [[req-core-z-order]]
 ==== Symbolizer `zOrder` property
@@ -303,6 +320,13 @@ part:: A Renderer SHOULD apply the Symbolizer `opacity` to the fill, the stroke 
 identifier:: /req/core/z-order
 part:: An Encoding SHALL support defining a `zOrder` Symbolizer property as an integer.
 part:: A Renderer SHALL support portraying features and coverage cells of a single rendering pass in increasing order of their resolved `zOrder` property, so that portrayals with a higher `zOrder` are drawn on top of those with a lower `zOrder`.
+====
+
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/z-order`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-z-order.adoc[]
 ====
 
 === Expressions
@@ -367,6 +391,13 @@ compatible with the expected data type are allowed as _Parameter Values_.
 identifier:: /req/core/parameters
 part:: An Encoding SHALL support defining Symbolizer properties as Parameter Values using Literal Expressions compatible with the data type expected by the property.
 part:: A Renderer SHALL support resolving Parameter Values to the data type expected by the Symbolizer property.
+====
+
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/parameters`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-parameters.adoc[]
 ====
 
 ==== Identifier Expressions
@@ -551,7 +582,7 @@ Capabilities   : vendor: VendorCapabilities
 | visualization.dateTime           | Current visualization date and time     | DateTime
 | visualization.date               | Current visualization date              | Date
 | visualization.timeOfDay          | Current visualization time of day       | Time
-| visualization.timeInterval       | Current visualization time of day       | TimeInterval
+| visualization.timeInterval       | Current visualization time interval     | TimeInterval
 | visualization.pass               | Current visualization rendering pass    | integer
 |===
 
@@ -598,7 +629,7 @@ with different symbolizers before rendering the next feature.
 [width="90%",options="header"]
 |===
 | Construct          | Construct type                   | Data type |Behavior description
-| zOrder             | Symbolizer property              | number    | In a single pass, modify default order of features / layers
+| zOrder             | Symbolizer property              | integer   | In a single pass, modify default order of features / layers
 | visualization.pass | System identifier for selector   | integer   | Render all selected geometry features / coverage cells of data layers
                                                                       more than once with different symbolization,
                                                                       or after whole map drawn in previous pass
@@ -744,6 +775,13 @@ part:: A Renderer SHALL support resolving the `visualization.scaleDenominator` S
 identifier:: /req/core/time
 part:: An Encoding SHALL support defining expressions using the `visualization.dateTime`, `visualization.date`, `visualization.timeOfDay` and `visualization.timeInterval` System Identifiers.
 part:: A Renderer SHALL support resolving the visualization time System Identifiers to the time instant or interval of the map being rendered.
+====
+
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/time`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-time.adoc[]
 ====
 
 [[req-core-layers]]
@@ -957,6 +995,8 @@ part:: An Encoding SHALL support defining operation expressions using the relati
 part:: A Renderer SHALL support evaluating the relational operators as defined in the Relational Operators table.
 ====
 
+NOTE: The operands of a relational operator can be boolean expressions, e.g., `(a = 5) <> (b = 6)`. This extends CQL2, where an operand of a comparison can be a boolean literal but not a boolean expression (see https://github.com/opengeospatial/ogcapi-features/issues/914[OGC API - Features issue 914]).
+
 [[array-expressions]]
 ==== Array Expressions
 
@@ -1026,6 +1066,13 @@ part:: An Encoding SHALL support overriding a single member of an object Symboli
 part:: A Renderer SHALL support resolving instance expressions to an object of the specified class, using default values for members which are not specified.
 ====
 
+// Examples placed by cartosym-draft-check
+
+.Example style for `/req/core/instances`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/core-instances.adoc[]
+====
+
 [[cscss-default-values]]
 === Default class member values
 
@@ -1055,6 +1102,8 @@ The following default values are defined by this encoding.
 | opacity        | 1
 | width          | 1 px
 | color          | black
+| casing         | `width` 0 (no casing), `color` black
+| center         | `width` 0 (no center line), `color` black
 |===
 
 .Fill class default values
@@ -1084,10 +1133,25 @@ The following default values are defined by this encoding.
 [width="90%",options="header"]
 |===
 | Name           | Default value
-| hotSpot        | center of the image (`{ 0.5, 0.5 }`)
+| hotSpot        | center of the image (`50 pc 50 pc`)
 | tint           | white
 | blackTint      | black
 | alphaThreshold | 0
+|===
+
+.Text class default values
+[width="90%",options="header"]
+|===
+| Name           | Default value
+| alignment      | `left` `top`
+|===
+
+.HillShading class default values
+[width="90%",options="header"]
+|===
+| Name           | Default value
+| factor         | 0 (no hill shading)
+| sun            | `azimuth` 315, `elevation` 45
 |===
 
 [[req-core-default-values]]
@@ -1098,6 +1162,10 @@ identifier:: /req/core/default-values
 part:: An Encoding SHALL support omitting Symbolizer properties and object members for which a default value is defined in this section.
 part:: A Renderer SHALL support using the default values defined in this section for Symbolizer properties and object members which are not set by any selected StylingRule.
 ====
+
+// Examples placed by cartosym-draft-check
+
+<<fig-example-1-core>> in the CartoSym-CSS clause shows the default values applied to land cover polygons.
 
 NOTE: The default Marker applies to features of every geometry type, so that every feature is visible by default. A style that sets no marker therefore draws a Dot at each point, at each vertex of a line and at the centroid of each polygon. A typical base style unsets the marker for lines and polygons, unless it wants this default behavior, for example with `[dataLayer.featuresGeometryDimensions > 0] { marker: null; }` in CSCSS. An empty list of elements (`marker: { elements: [] }`) also unsets it, while an empty `marker: { }` still yields the default Dot.
 

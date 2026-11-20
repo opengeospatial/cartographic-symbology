@@ -57,6 +57,19 @@ LabelClass properties are documented in the following table.
 
 include::../requirements/rc-labels.adoc[]
 
+// Examples placed by cartosym-draft-check
+==== Examples
+
+.Example style for `/req/labels/label`, `/req/labels/placement`, `/rec/labels/overlap`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/labels-priority.adoc[]
+====
+
+.Example style for `/req/labels/placement`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/labels-spacing.adoc[]
+====
+
 [[rc-font-outlines]]
 === Requirements Class "Font Outlines"
 ==== Overview
@@ -99,3 +112,11 @@ This requirements class adds support for Text font outlines to improve readabili
 ==== Requirements
 
 include::../requirements/rc-font-outlines.adoc[]
+
+// Examples placed by cartosym-draft-check
+==== Examples
+
+.Example style for `/req/font-outlines/outline`, `/req/font-outlines/size`, `/req/font-outlines/opacity`, `/req/font-outlines/color`, in CartoSym-CSS and CartoSym-JSON
+====
+include::../examples/requirements/font-outlines.adoc[]
+====
