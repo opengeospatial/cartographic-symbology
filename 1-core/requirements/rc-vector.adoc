@@ -182,7 +182,7 @@ part:: A Renderer MAY convert the sRGB components of the image, `tint` and `blac
 ====
 [%metadata]
 identifier:: /req/vector/text
-part:: An Encoding SHALL support defining a Text Graphic with a `text` unicode string content, a `font`, and an `alignment` with a horizontal (`horzAlignment`: `left`, `right` or `center`) and vertical component (`vertAlignment`: `top`, `middle`, `bottom`).
+part:: An Encoding SHALL support defining a Text Graphic with a `text` unicode string content, a `font`, and an `alignment` with a horizontal (`horizontal`: `left`, `right` or `center`) and vertical component (`vertical`: `top`, `middle`, `bottom`).
 part:: A Renderer SHALL support drawing the `text` of a Text Graphic using the `font` and the `alignment` specified.
 part:: A Renderer SHALL support aligning the text so that the edge or center of its box named by the `alignment` is at the position of the Graphic: `left` puts the start of the text there, `right` its end, `top` the top of the font's ascent, `bottom` the bottom of its descent, and `middle` the point halfway between them; the default `alignment` is `left` `top`.
 ====
