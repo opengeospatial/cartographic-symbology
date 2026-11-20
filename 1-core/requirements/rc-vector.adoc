@@ -115,7 +115,7 @@ part:: A Renderer MAY use `alphaThreshold` as the threshold of an alpha test, by
 ====
 [%metadata]
 identifier:: /req/vector/text
-part:: An Encoding SHALL support defining a Text Graphic with a `text` unicode string content, a `font`, and an `alignment` with a horizontal (`horzAlignment`: `left`, `right` or `center`) and vertical component (`vertAlignment`: `top`, `middle`, `bottom`).
+part:: An Encoding SHALL support defining a Text Graphic with a `text` unicode string content, a `font`, and an `alignment` with a horizontal (`horizontal`: `left`, `right` or `center`) and vertical component (`vertical`: `top`, `middle`, `bottom`).
 part:: A Renderer SHALL support drawing the `text` of a Text Graphic using the `font` and the `alignment` specified.
 ====
 
