@@ -9,3 +9,5 @@ Rendered by the draft renderer of cartosym-draft-check. The pale land cover, wat
 ----
 include::3-vector-line.cscss[]
 ----
+
+The same style in CartoSym-JSON: https://github.com/opengeospatial/cartographic-symbology/blob/main/1-core/examples/3-vector-line.cs.json[3-vector-line.cs.json].

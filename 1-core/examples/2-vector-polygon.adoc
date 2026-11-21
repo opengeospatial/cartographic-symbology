@@ -9,3 +9,5 @@ Rendered by the draft renderer of cartosym-draft-check. The pale land cover, wat
 ----
 include::2-vector-polygon.cscss[]
 ----
+
+The same style in CartoSym-JSON: https://github.com/opengeospatial/cartographic-symbology/blob/main/1-core/examples/2-vector-polygon.cs.json[2-vector-polygon.cs.json].

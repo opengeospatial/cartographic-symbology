@@ -9,3 +9,5 @@ Rendered by the draft renderer of cartosym-draft-check. Map data © Kartverket, 
 ----
 include::6-coverage-sentinel2.cscss[]
 ----
+
+The same style in CartoSym-JSON: https://github.com/opengeospatial/cartographic-symbology/blob/main/1-core/examples/6-coverage-sentinel2.cs.json[6-coverage-sentinel2.cs.json].

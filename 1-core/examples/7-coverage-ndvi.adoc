@@ -9,3 +9,5 @@ Rendered by the draft renderer of cartosym-draft-check. The grey shadows of the 
 ----
 include::7-coverage-ndvi.cscss[]
 ----
+
+The same style in CartoSym-JSON: https://github.com/opengeospatial/cartographic-symbology/blob/main/1-core/examples/7-coverage-ndvi.cs.json[7-coverage-ndvi.cs.json].
