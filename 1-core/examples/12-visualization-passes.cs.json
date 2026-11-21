@@ -1,0 +1,466 @@
+{
+  "metadata": {
+    "title": "Roads and railway in visualization passes",
+    "abstract": "Roads and the railway around Otta drawn in four visualization passes per z_order level: the outer lines, the white of the railway bridges, the railway, then the inner lines. z_order is 0 in a tunnel, 1 on the ground and 2 on a bridge."
+  },
+  "stylingRules": [
+    {
+      "$comment": "Nothing is drawn unless a pass selects it",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Transport"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "viz.pass"
+              },
+              {
+                "op": "+",
+                "args": [
+                  {
+                    "op": "*",
+                    "args": [
+                      4,
+                      {
+                        "property": "z_order"
+                      }
+                    ]
+                  },
+                  0
+                ]
+              }
+            ]
+          },
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "railway"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "bridge"
+                      },
+                      true
+                    ]
+                  }
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    51,
+                    51,
+                    51
+                  ],
+                  "width": {
+                    "px": 8.0
+                  }
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "municipal"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "private"
+                    ]
+                  }
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    166,
+                    146,
+                    105
+                  ],
+                  "width": {
+                    "px": 4.0
+                  }
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    255,
+                    0,
+                    0
+                  ],
+                  "width": {
+                    "px": 5.0
+                  }
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "european"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "national"
+                    ]
+                  }
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    153,
+                    0,
+                    0
+                  ],
+                  "width": {
+                    "px": 8.0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "viz.pass"
+              },
+              {
+                "op": "+",
+                "args": [
+                  {
+                    "op": "*",
+                    "args": [
+                      4,
+                      {
+                        "property": "z_order"
+                      }
+                    ]
+                  },
+                  1
+                ]
+              }
+            ]
+          },
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "railway"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "bridge"
+                      },
+                      true
+                    ]
+                  }
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "width": {
+                    "px": 6.0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "viz.pass"
+              },
+              {
+                "op": "+",
+                "args": [
+                  {
+                    "op": "*",
+                    "args": [
+                      4,
+                      {
+                        "property": "z_order"
+                      }
+                    ]
+                  },
+                  2
+                ]
+              }
+            ]
+          },
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "railway"
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    51,
+                    51,
+                    51
+                  ],
+                  "width": {
+                    "px": 3.0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "viz.pass"
+              },
+              {
+                "op": "+",
+                "args": [
+                  {
+                    "op": "*",
+                    "args": [
+                      4,
+                      {
+                        "property": "z_order"
+                      }
+                    ]
+                  },
+                  3
+                ]
+              }
+            ]
+          },
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "railway"
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "width": {
+                    "px": 1.5
+                  },
+                  "dashPattern": [
+                    {
+                      "px": 5.0
+                    },
+                    {
+                      "px": 5.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "municipal"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "private"
+                    ]
+                  }
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "width": {
+                    "px": 2.5
+                  }
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    255,
+                    153,
+                    153
+                  ],
+                  "width": {
+                    "px": 4.0
+                  }
+                }
+              }
+            },
+            {
+              "selector": {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "european"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "national"
+                    ]
+                  }
+                ]
+              },
+              "symbolizer": {
+                "visibility": true,
+                "stroke": {
+                  "color": [
+                    255,
+                    102,
+                    102
+                  ],
+                  "width": {
+                    "px": 6.0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

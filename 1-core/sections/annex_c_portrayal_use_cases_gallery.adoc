@@ -84,64 +84,20 @@ image::figures/gallery-thermokarst1.jpg[]
 
 === Visualization passes
 
-.Example rendering of complex visual ordering (placeholder from https://docs.geoserver.org/2.23.x/en/user/styling/sld/extensions/z-order/example.html[GeoServer documentation])
-image::figures/roads-group.png[]
+Each `z_order` level is drawn in four visualization passes (outer lines, the white of the railway bridges, the railway, inner lines), so that each level is drawn whole after the levels below it.
 
-
-// TODO: Set up our own example
-
-.CartoSym-CSS Example showcasing use of viz.pass for both casing and ordering based on `z_order` attribute
+.Example style for roads and the railway in visualization passes, ordered by `z_order`, in CartoSym-CSS
 ====
-[source,cscss]
-----
-{
-   [viz.pass = 4 * z_order + 0]
-   {
-      [class = 'railways'][bridge = 1] { stroke: { color: #333333; width: 8; }; }
-      [class = 'minorroads']           { stroke: { color: #a69269; width: 3; }; }
-      [class = 'mainroads']            { stroke: { color: #ff0000; width: 5; }; }
-      [class = 'motorways']            { stroke: { color: #990000; width: 8; }; }
-   }
-
-   [viz.pass = 4 * z_order + 1]
-   {
-      [class = 'railways'][bridge = 1] { stroke: { color: #ffffff; width: 6; }; }
-   }
-
-   [viz.pass = 4 * z_order + 2]
-   {
-      [class = 'railways'] { stroke: { color: #333333; width: 3; }; }
-   }
-
-   [viz.pass = 4 * z_order + 3]
-   {
-      [class = 'railways]    { stroke: { color: #ffffff; width: 1.5; dashPattern: 5, 5; }; }
-      [class = 'motorways']  { stroke: { color: #ff6666; width: 6;   cap: round; }; }
-      [class = 'minorroads'] { stroke: { color: #ffffff; width: 2.5; cap: round; }; }
-      [class = 'mainroads']  { stroke: { color: #ff9999; width: 4;   cap: round; }; }
-   }
-}
-----
+include::../examples/12-visualization-passes.adoc[]
 ====
 
 === Z-ordering and feature rendering passes
 
-.CartoSym-CSS Example using built-in casing
+The same roads and railway with built-in casings, ordered by `zOrder`. The railway bridges get a wider white line with a dark casing in feature pass -1, before the railway itself is drawn in pass 0. As all the casings of a `zOrder` are drawn before its main strokes (<<rc-casing>>), the dark casing of the railway is beneath the white line of the bridge, and the railway's white dashes on that white line do not show: on the bridges, the railway is not visible.
+
+.Example style for roads and the railway with built-in casings and a feature pass, in CartoSym-CSS
 ====
-[source,cscss]
-----
-{
-   zOrder: z_order;
-   [feature.pass = -1][class = 'railways'][bridge = 1]
-   {
-      stroke: { color: #ffffff; width: 6; casing: { color: #333333; width: 1; }; };
-   }
-   [class = 'minorroads']  { stroke: { color: #ffffff; width: 2.5; cap: round;        casing: { color: #a69269; width: 0.25; }; }; }
-   [class = 'mainroads']   { stroke: { color: #ff9999; width: 4;   cap: round;        casing: { color: #ff0000; width: 0.5;  }; }; }
-   [class = 'motorways']   { stroke: { color: #ff6666; width: 6;   cap: round;        casing: { color: #990000; width: 1;    }; }; }
-   [class = 'railways']    { stroke: { color: #ffffff; width: 1.5; dashPattern: 5, 5; casing: { color: #333333; width: 0.75; }; }; }
-}
-----
+include::../examples/13-feature-passes.adoc[]
 ====
 
 ////

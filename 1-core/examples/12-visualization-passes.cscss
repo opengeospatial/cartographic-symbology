@@ -1,0 +1,37 @@
+.title 'Roads and railway in visualization passes'
+.abstract 'Roads and the railway around Otta drawn in four visualization passes per z_order level: '
+          'the outer lines, the white of the railway bridges, the railway, then the inner lines. '
+          'z_order is 0 in a tunnel, 1 on the ground and 2 on a bridge.'
+
+// Nothing is drawn unless a pass selects it
+Transport
+{
+   visibility: false;
+   marker: null;
+
+   [viz.pass = 4 * z_order + 0]
+   {
+      [class = 'railway' and bridge = true]       { visibility: true; stroke: { color: #333333; width: 8 px }; }
+      [class = 'municipal' or class = 'private']  { visibility: true; stroke: { color: #a69269; width: 4 px }; }
+      [class = 'county']                          { visibility: true; stroke: { color: #ff0000; width: 5 px }; }
+      [class = 'european' or class = 'national']  { visibility: true; stroke: { color: #990000; width: 8 px }; }
+   }
+
+   [viz.pass = 4 * z_order + 1]
+   {
+      [class = 'railway' and bridge = true]       { visibility: true; stroke: { color: #ffffff; width: 6 px }; }
+   }
+
+   [viz.pass = 4 * z_order + 2]
+   {
+      [class = 'railway']                         { visibility: true; stroke: { color: #333333; width: 3 px }; }
+   }
+
+   [viz.pass = 4 * z_order + 3]
+   {
+      [class = 'railway']                         { visibility: true; stroke: { color: #ffffff; width: 1.5 px; dashPattern: [ 5 px, 5 px ] }; }
+      [class = 'municipal' or class = 'private']  { visibility: true; stroke: { color: #ffffff; width: 2.5 px }; }
+      [class = 'county']                          { visibility: true; stroke: { color: #ff9999; width: 4 px }; }
+      [class = 'european' or class = 'national']  { visibility: true; stroke: { color: #ff6666; width: 6 px }; }
+   }
+}

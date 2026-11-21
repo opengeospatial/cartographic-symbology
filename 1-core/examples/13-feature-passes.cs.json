@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "title": "Roads and railway with casings and a feature pass",
+    "abstract": "Roads and the railway around Otta with built-in casings, ordered by z_order (0 in a tunnel, 1 on the ground, 2 on a bridge). Railway bridges get a wider white line with a dark casing in feature pass -1, drawn before the railway itself in pass 0."
+  },
+  "stylingRules": [
+    {
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Transport"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "zOrder": {
+          "property": "z_order"
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "municipal"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "private"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                255,
+                255,
+                255
+              ],
+              "width": {
+                "px": 2.5
+              },
+              "casing": {
+                "color": [
+                  166,
+                  146,
+                  105
+                ],
+                "width": {
+                  "px": 0.75
+                }
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "county"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                255,
+                153,
+                153
+              ],
+              "width": {
+                "px": 4.0
+              },
+              "casing": {
+                "color": [
+                  255,
+                  0,
+                  0
+                ],
+                "width": {
+                  "px": 0.5
+                }
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "european"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "national"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                255,
+                102,
+                102
+              ],
+              "width": {
+                "px": 6.0
+              },
+              "casing": {
+                "color": [
+                  153,
+                  0,
+                  0
+                ],
+                "width": {
+                  "px": 1.0
+                }
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "railway"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                255,
+                255,
+                255
+              ],
+              "width": {
+                "px": 1.5
+              },
+              "casing": {
+                "color": [
+                  51,
+                  51,
+                  51
+                ],
+                "width": {
+                  "px": 0.75
+                }
+              },
+              "dashPattern": [
+                {
+                  "px": 5.0
+                },
+                {
+                  "px": 5.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "$comment": "After the railway rule, so that it overrides the railway's stroke in pass -1",
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "sysId": "feature.pass"
+                      },
+                      -1
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "railway"
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "bridge"
+                  },
+                  true
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "stroke": {
+              "color": [
+                255,
+                255,
+                255
+              ],
+              "width": {
+                "px": 6.0
+              },
+              "casing": {
+                "color": [
+                  51,
+                  51,
+                  51
+                ],
+                "width": {
+                  "px": 1.0
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
