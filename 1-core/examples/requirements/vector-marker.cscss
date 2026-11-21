@@ -8,5 +8,5 @@ Landcover
 Roads
 {
    visibility: false;
-   [class = 'path' and marked = true] { visibility: true; stroke: { color: #b8442f; width: 1 px }; }
+   [class = 'path'][marked = true] { visibility: true; stroke: { color: #b8442f; width: 1 px }; }
 }
