@@ -9,3 +9,5 @@ Rendered by the draft renderer of cartosym-draft-check. Map data © Kartverket, 
 ----
 include::9-coverage-hillshading-opacity.cscss[]
 ----
+
+The same style in CartoSym-JSON: https://github.com/opengeospatial/cartographic-symbology/blob/main/1-core/examples/9-coverage-hillshading-opacity.cs.json[9-coverage-hillshading-opacity.cs.json].
