@@ -62,26 +62,22 @@ Elevation
 
 Landcover
 {
-   visibility: true;
    marker: null;
    stroke: { width: 0 };
 
    [class = 'lake' or class = 'river']
    {
+      visibility: true;
       fill: { color: #7fb2d8 };
       zOrder: 67;
    }
 
    [class = 'bog']
    {
+      visibility: true;
       opacity: 0.4235294;
       fill: { color: burlyWood };
       zOrder: 65;
-   }
-
-   [class <> 'lake' and class <> 'river' and class <> 'bog']
-   {
-      visibility: false;
    }
 }
 
@@ -95,28 +91,22 @@ Rivers
 
 Roads
 {
-   visibility: true;
    marker: null;
    zOrder: 86;
    [class = 'european' or class = 'national' or class = 'county']
    {
+      visibility: true;
       stroke: { width: 0.66, color : #c42e31 };
    }
    [class = 'municipal' or class = 'private']
    {
+      visibility: true;
       stroke: { width: 0.5, color : gray };
    }
-   [class = 'path' and marked = true]
+   [class = 'path'][marked = true]
    {
+      visibility: true;
       stroke: { width: 0.5, color : #c42e31, dashPattern: [ 3, 2 ] };
-   }
-   [class = 'tractor' or class = 'cycleway']
-   {
-      visibility: false;
-   }
-   [class = 'path' and marked = false]
-   {
-      visibility: false;
    }
 }
 
