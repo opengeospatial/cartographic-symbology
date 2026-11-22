@@ -77,14 +77,12 @@ expression:
    | variable
    ;
 
-// Operands of "between": arithmetic expressions only (no and / or / comparison),
-// so that the "and" separating the bounds is never part of a bound.
+// Operands of "between": numeric primary expressions and arithmetic on them
+// (no and / or / comparison), so that the "and" separating the bounds is never
+// part of a bound. A parenthesized expression can still hold anything.
 betweenBound:
      idOrConstant
-   | expString
    | expCall
-   | expArray
-   | expInstance
    | variable
    | LPAR expression RPAR
    | betweenBound DOT IDENTIFIER
@@ -185,8 +183,8 @@ relationalOperator:
    | GTEQ
    | IN
    | NOT IN
-   | IS
    | IS NOT
+   | IS
    | LIKE
    | NOT LIKE;
 
