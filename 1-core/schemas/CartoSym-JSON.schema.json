@@ -430,8 +430,8 @@
                 "type": "object",
                 "properties":
                 {
-                  "hAlignment": { "$ref": "#/$defs/hAlignment" },
-                  "vAlignment": { "$ref": "#/$defs/vAlignment" },
+                  "horizontal": { "$ref": "#/$defs/hAlignment" },
+                  "vertical": { "$ref": "#/$defs/vAlignment" },
                   "alter": { "type": "boolean" }
                 }
              }
