@@ -101,7 +101,7 @@ Parentheses change the order.
 |4 |`*`, `/`, `div`, `%` |
 |5 |`+`, `-` |
 |6 |`=`, `<>`, `<`, `+<=+`, `>`, `>=`, `in`, `not in`, `like`, `not like`, `is`, `is not` |All the comparisons have the same priority
-|7 |`between`, `not between` |The bounds are arithmetic expressions
+|7 |`between`, `not between` |The bounds are numeric literals, identifiers, function calls or variables, combined with arithmetic operators; logical operators need parentheses
 |8 |`not` |
 |9 |`and` |
 |10 |`or` |
