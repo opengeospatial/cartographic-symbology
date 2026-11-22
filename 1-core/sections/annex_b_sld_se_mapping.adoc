@@ -18,7 +18,7 @@ Standard.
 | name              | `<Name>` inside `<Rule>`
 | selector          | `<ogc:Filter>`
 | symbolizer        | `<PointSymbolizer>`, `<LineSymbolizer>`, `<PolygonSymbolizer>`, `<TextSymbolizer>`, `<RasterSymbolizer>`
-| nestedRules       | `<ElseFilter>` provides limited support for one use case of nested rules
+| nestedRules       | A `<Rule>` for the parent and one per nested rule. As SE draws every `<Rule>` whose filter matches, the parent's `<ogc:Filter>` excludes (`and` `not`) the selectors of its nested rules, so that a feature selected by a nested rule is not also drawn with the parent's symbolizer. Selectors on the scale denominator or on a pass are mapped as below, not combined into the filter. The filter of a nested rule combines (`and`) its selector and those of its parents (a nested rule without selector being part of its parent), and its symbolizer is the parent's overridden by its own. Where several nested rules can select the same feature, a `<Rule>` per combination of them is needed, the later nested rule overriding the earlier. `<ElseFilter>` (not any other `<Rule>` of the `<FeatureTypeStyle>`) has no direct CartoSym counterpart
 |===
 
 .Mapping of Symbolizers to SLD/SE constructs
@@ -110,7 +110,7 @@ Standard.
 | Symbolizer        | `<PointSymbolizer>`, `<LineSymbolizer>`, `<PolygonSymbolizer>`, `<TextSymbolizer>`, `<RasterSymbolizer>`
 | Symbolizer opacity | `<Opacity>` inside `<RasterSymbolizer>` (no global opacity for vector symbolizers)
 | Selector          | `<ogc:Filter>`
-| nestedRules       | `<ElseFilter>` provides limited support for one use case of nested rules
+| nestedRules       | A `<Rule>` for the parent and one per nested rule. As SE draws every `<Rule>` whose filter matches, the parent's `<ogc:Filter>` excludes (`and` `not`) the selectors of its nested rules, so that a feature selected by a nested rule is not also drawn with the parent's symbolizer. Selectors on the scale denominator or on a pass are mapped as below, not combined into the filter. The filter of a nested rule combines (`and`) its selector and those of its parents (a nested rule without selector being part of its parent), and its symbolizer is the parent's overridden by its own. Where several nested rules can select the same feature, a `<Rule>` per combination of them is needed, the later nested rule overriding the earlier. `<ElseFilter>` (not any other `<Rule>` of the `<FeatureTypeStyle>`) has no direct CartoSym counterpart
 
 | *Expression*         |
 | LiteralExpression    | `<ogc:Literal>`
