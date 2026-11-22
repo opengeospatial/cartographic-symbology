@@ -7,7 +7,11 @@ options { tokenVocab=CartoSymCSSLexer; }
 
 styleSheet: metadata* variableDef* stylingRuleList?;
 
-variable: AT_SIGN IDENTIFIER;
+// A unit name (px, m, mm...) is a unit only after a number (see expConstant);
+// anywhere else it is an identifier, as any other name.
+identifier: IDENTIFIER | UNIT;
+
+variable: AT_SIGN identifier;
 
 variableDef: variable EQ expression SEMI;
 
@@ -31,14 +35,14 @@ stylingRule:
    RCBR;
 
 selector:
-     IDENTIFIER
+     identifier
    | LSBR expression RSBR ;
 
 ///////////////////////////////
 // Expressions
 
 idOrConstant:
-     IDENTIFIER
+     identifier
    | expConstant;
 
 tuple:
@@ -48,7 +52,7 @@ tuple:
 expression:
      idOrConstant
 
-   | expression DOT IDENTIFIER   // Member access
+   | expression DOT identifier   // Member access
 
    | expString
    | expCall
@@ -87,7 +91,7 @@ betweenBound:
    | expInstance
    | variable
    | LPAR expression RPAR
-   | betweenBound DOT IDENTIFIER
+   | betweenBound DOT identifier
    | betweenBound LSBR expConstant RSBR
    | unaryArithmeticOperator betweenBound
    | betweenBound arithmeticOperatorExp betweenBound
@@ -103,12 +107,12 @@ expString: CHARACTER_LITERAL;
 // Expressions: Instances
 
 expInstance:
-   IDENTIFIER?
+   identifier?
    LCBR
       propertyAssignmentInferredList?
       SEMI?
    RCBR |
-   IDENTIFIER
+   identifier
    LPAR
       propertyAssignmentInferredList?
       SEMI?
@@ -116,8 +120,8 @@ expInstance:
    ;
 
 lhValue:
-     IDENTIFIER
-   | lhValue DOT IDENTIFIER
+     identifier
+   | lhValue DOT identifier
    | lhValue LSBR expConstant RSBR ;
 
 propertyAssignment:
@@ -152,7 +156,7 @@ arrayElements:
 ///////////////////////////////
 // Expressions: Function calls
 
-expCall: IDENTIFIER LPAR arguments? RPAR ;
+expCall: identifier LPAR arguments? RPAR ;
 
 arguments:
    expression
