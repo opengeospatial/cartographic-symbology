@@ -67,7 +67,7 @@ Metadata is a container for descriptive information about a Style. It might incl
 
 === Styles
 
-A Style is the root concept of the Styles and Symbology Conceptual Model and consists of an ordered list of StylingRules.
+A Style is the root concept of the Cartographic Symbology Conceptual Model and consists of an ordered list of StylingRules.
 The StylingRules are to be applied in order so that rules selected later override earlier ones.
 This allows to compose styles in a cascading manner by inheriting from a base style then overriding some specific portrayal behaviors.
 
@@ -640,7 +640,7 @@ See also the _feature pass_ introduced in
 with different symbolizers before rendering the next feature.
 
 ////
-   Styles & Symbology Painter's algorithm
+   Cartographic Symbology Painter's algorithm
 
       For each viz.pass:
          For each distinct zOrder:
@@ -651,7 +651,7 @@ with different symbolizers before rendering the next feature.
                         Render feature symbolizer
 ////
 
-.Styles & Symbology Visual Ordering Constructs
+.Cartographic Symbology Visual Ordering Constructs
 [width="90%",options="header"]
 |===
 | Construct          | Construct type                   | Data type |Behavior description

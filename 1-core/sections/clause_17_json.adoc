@@ -1,9 +1,9 @@
 [[rc-json]]
-== Requirements Class "JSON Styles and Symbology"
+== Requirements Class "JSON Cartographic Symbology"
 
 === Overview
 
-This requirements class defines a JSON encoding for the Styles and Symbology Logical Model.
+This requirements class defines a JSON encoding for the Cartographic Symbology Logical Model.
 The primary objective of this encoding is to be readily parsable and writable by machines using a standard JSON parser.
 Styles encoded with this encoding are not easily hand-edited by cartographers.
 
