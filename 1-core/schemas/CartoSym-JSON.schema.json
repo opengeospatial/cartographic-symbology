@@ -545,7 +545,7 @@
        "properties":
        {
           "alter": { "type": "boolean" },
-          "uri": { "$ref": "#/$defs/characterExpression" },
+          "url": { "$ref": "#/$defs/characterExpression" },
           "path": { "$ref": "#/$defs/characterExpression" },
           "id": { "$ref": "#/$defs/characterExpression" },
           "type": { "$ref": "#/$defs/characterExpression" },
