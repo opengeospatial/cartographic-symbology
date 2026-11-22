@@ -17,7 +17,7 @@
             {
               "type": "Image",
               "image": {
-                "uri": "http://example.com/icons/hut.png",
+                "url": "http://example.com/icons/hut.png",
                 "path": "../icons/hut.png",
                 "type": "image/png"
               },

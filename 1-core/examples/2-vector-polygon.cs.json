@@ -275,7 +275,7 @@
                         "value": {
                           "type": "Image",
                           "image": {
-                            "uri": "http://example.com/icons/bog.svg",
+                            "url": "http://example.com/icons/bog.svg",
                             "path": "icons/bog.svg",
                             "id": "bog",
                             "type": "image/svg+xml",
@@ -319,7 +319,7 @@
                         "value": {
                           "type": "Image",
                           "image": {
-                            "uri": "http://example.com/icons/forest.svg",
+                            "url": "http://example.com/icons/forest.svg",
                             "path": "icons/forest.svg",
                             "id": "forest",
                             "type": "image/svg+xml",
@@ -363,7 +363,7 @@
                         "value": {
                           "type": "Image",
                           "image": {
-                            "uri": "http://example.com/icons/lake.svg",
+                            "url": "http://example.com/icons/lake.svg",
                             "path": "icons/lake.svg",
                             "id": "lake",
                             "type": "image/svg+xml",
