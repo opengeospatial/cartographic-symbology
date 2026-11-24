@@ -25,6 +25,7 @@ Style *-- Metadata
 
 Metadata : identifier: string[0..1]
 Metadata : title: string[0..1]
+Metadata : abstract: string[0..1]
 Metadata : description: string[0..1]
 Metadata : authors: string[0..*]
 Metadata : keywords: string[0..*]
@@ -59,6 +60,7 @@ Metadata is a container for descriptive information about a Style. It might incl
 | Name         | Definition                        | Data type and value | Multiplicity
 | identifier   | An identifier to reference the style | string              | 0..1
 | title        | Short human-readable title for the style               | string              | 0..1
+| abstract     | Short summary of the style                             | string              | 0..1
 | description  | Detailed description of the style         | string              | 0..1
 | authors      | Authors of the style                   | string              | 0..*
 | keywords     | List of keywords                  | string              | 0..*
