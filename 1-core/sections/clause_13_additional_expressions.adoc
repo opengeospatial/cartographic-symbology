@@ -50,6 +50,8 @@ ConditionalExpression *-- Expression
 | elseExp     | Expression resolving to when condition is false| Expression    | 1
 |===
 
+In CartoSym-CSS, a ConditionalExpression is written `condition ? thenExp : elseExp`. In CartoSym-JSON, it is an object with `op` set to `?:` and `args` an array of its `condition`, `thenExp` and `elseExp`, in that order.
+
 ==== Requirements
 
 include::../requirements/rc-conditional.adoc[]
