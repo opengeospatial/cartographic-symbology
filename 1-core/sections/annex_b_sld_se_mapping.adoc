@@ -84,60 +84,17 @@ Standard.
 | InstanceLiteral   | N/A
 |===
 
-// A compléter
-
 .Mapping of Relational Operators to SLD/SE constructs
 [width="90%",options="header"]
 |===
 | Construct         | SE Equivalent
 | equal             | `<ogc:PropertyIsEqualTo>`
 | notEqual          | `<ogc:PropertyIsNotEqualTo>`
-| is (null)         |
+| is (null)         | `<ogc:PropertyIsNull>`
 | lesser            | `<ogc:PropertyIsLessThan>`
 | greater           | `<ogc:PropertyIsGreaterThan>`
 | lesserEqual       | `<ogc:PropertyIsLessThanOrEqualTo>`
 | greaterEqual      | `<ogc:PropertyIsGreaterThanOrEqualTo>`
-|===
-
-// Reprendre à partir d'ici
-
-.Mapping of the "Core" requirements class to SLD/SE constructs
-[width="90%",options="header"]
-|===
-| Construct         | SE Equivalent
-| *Styling Rules*   | `<Rule>`
-| name              | `<Name>` inside `<Rule>`
-| Symbolizer        | `<PointSymbolizer>`, `<LineSymbolizer>`, `<PolygonSymbolizer>`, `<TextSymbolizer>`, `<RasterSymbolizer>`
-| Symbolizer opacity | `<Opacity>` inside `<RasterSymbolizer>` (no global opacity for vector symbolizers)
-| Selector          | `<ogc:Filter>`
-| nestedRules       | `<ElseFilter>` provides limited support for one use case of nested rules
-
-| *Expression*         |
-| LiteralExpression    | `<ogc:Literal>`
-| IdentifierExpression | `<ogc:PropertyName>` for feature properties, `<SourceChannelName>` for raster fields
-| InstanceExpression   | N/A
-| ArrayExpression      | N/A
-| OperationExpression  | Comparison operators (`<ogc:PropertyIsEqualTo>`, `<ogc:PropertyIsLessThan>`, etc.) with optional logical operators (`<ogc:And>`, `<ogc:Or>`, `<ogc:Not>`)
-
-| *Operation Expressions* |
-| RelationalOperator   | Comparison operators (`<ogc:PropertyIsEqualTo>`, `<ogc:PropertyIsLessThan>`, etc.)
-| LogicOperator        | Logical operators (`<ogc:And>`, `<ogc:Or>`, `<ogc:Not>`)
-|===
-
-.Mapping of the "Sytem Identifiers Expressions" requirements class to SLD/SE constructs
-[width="90%",options="header"]
-|===
-| Construct                      | SE Equivalent
-| visualization                  | N/A
-| visualization.scaleDenominator | `<MaxScaleDenominator>`, `<MinScaleDenominator>`
-| visualization.dateTime         | N/A
-| visualization.date             | N/A
-| visualization.timeOfDay        | N/A
-| visualization.pass             | Order of `<FeatureTypeStyles>` in a `<UserStyle>` (sortBy and sortByGroup vendor options in GeoServer for additional control)
-| feature.pass                   | Order of symbolizers in the `<Rule>`
-| dataLayer                      | N/A
-| dataLayer.identifier           | `<NamedLayer>` and `<Name>`
-| dataLayer.type                 | N/A
 |===
 
 .SLD Example encoding style using "Core" requirements class
