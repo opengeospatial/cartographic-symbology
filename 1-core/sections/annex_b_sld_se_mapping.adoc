@@ -613,7 +613,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
 ====
 [source,sld]
 ----
-?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <StyledLayerDescriptor
 xmlns="http://www.opengis.net/sld"
 xmlns:sld="http://www.opengis.net/sld"
@@ -638,12 +638,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
             <Fill>
               <GraphicFill>
                 <Graphic>
-                  <sld:ExternalGraphic>
-                    <sld:OnlineResource
-                    xlink:type="simple"
-                    xlink:href="./img/landmarks/area/grave_yard.png" />
-                    <sld:Format>image/png</sld:Format>
-                  </sld:ExternalGraphic>
+                  <Mark>
+                    <WellKnownName>shape://dot</WellKnownName>
+                    <Fill/>
+                    <Stroke>
+                      <CssParameter name="stroke">#ADD8E6</CssParameter>
+                      <CssParameter name="stroke-width">1.0</CssParameter>
+                    </Stroke>
+                  </Mark>
                 </Graphic>
               </GraphicFill>
             </Fill>
