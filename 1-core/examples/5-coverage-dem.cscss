@@ -1,5 +1,5 @@
 .title 'DEM with color map'
-.abstract 'Applying a color map to a Digital Elevation Model with Style & Symbology Basic Coverage Styling'
+.description 'Applying a color map to a Digital Elevation Model with Style & Symbology Basic Coverage Styling'
 
 Elevation[dataLayer.type = coverage]
 {

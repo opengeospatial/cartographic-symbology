@@ -25,7 +25,6 @@ Style *-- Metadata
 
 Metadata : identifier: string[0..1]
 Metadata : title: string[0..1]
-Metadata : abstract: string[0..1]
 Metadata : description: string[0..1]
 Metadata : authors: string[0..*]
 Metadata : keywords: string[0..*]
@@ -52,7 +51,7 @@ comes from the order of the rules.'/
 
 === Metadata
 
-Metadata is a container for descriptive information about a Style. It might includes a title, an abstract, a description, a list of authors, a list of keywords, and a list of geoDataClasses. All metadata elements are prefixed by a dot (`.`) as the first character of a line.
+Metadata is a container for descriptive information about a Style. It might include a title, a description, a list of authors, a list of keywords, and a list of geoDataClasses. All metadata elements are prefixed by a dot (`.`) as the first character of a line.
 
 .Metadata class
 [width="90%",options="header"]
@@ -60,7 +59,6 @@ Metadata is a container for descriptive information about a Style. It might incl
 | Name         | Definition                        | Data type and value | Multiplicity
 | identifier   | An identifier to reference the style | string              | 0..1
 | title        | Short human-readable title for the style               | string              | 0..1
-| abstract     | Short summary of the style                             | string              | 0..1
 | description  | Detailed description of the style         | string              | 0..1
 | authors      | Authors of the style                   | string              | 0..*
 | keywords     | List of keywords                  | string              | 0..*

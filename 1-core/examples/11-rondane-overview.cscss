@@ -1,5 +1,5 @@
 .title 'Rondane overview map'
-.abstract 'A map of the area around Rondane, Norway, from several N50 Kartdata layers and the elevation model'
+.description 'A map of the area around Rondane, Norway, from several N50 Kartdata layers and the elevation model'
 
 { visibility: false; }
 

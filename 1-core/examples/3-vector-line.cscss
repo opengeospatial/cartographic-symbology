@@ -1,5 +1,5 @@
 .title 'Styling line vector features'
-.abstract 'Basic vector features styling (lines): roads in Sel, Norway (N50 Kartdata), colored by road class'
+.description 'Basic vector features styling (lines): roads in Sel, Norway (N50 Kartdata), colored by road class'
 
 Roads[dataLayer.type = vector and dataLayer.featuresGeometryDimensions = 1]
 {

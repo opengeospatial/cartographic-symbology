@@ -1,5 +1,5 @@
 .title 'hill-shaded DEM with opacity and color map for shading intensity'
-.abstract 'Applying hill-shading a color map to a Digital Elevation Model with Style & Symbology Basic Coverage Styling'
+.description 'Applying hill-shading a color map to a Digital Elevation Model with Style & Symbology Basic Coverage Styling'
 
 // This type of intensity-based hill shading can be overlaid on top of imagery or vector maps
 

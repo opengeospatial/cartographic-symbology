@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Styling point vector features",
-    "abstract": "Basic vector features styling (points): tourist cabins in Dørålen, Rondane, Norway (N50 Kartdata)"
+    "description": "Basic vector features styling (points): tourist cabins in Dørålen, Rondane, Norway (N50 Kartdata)"
   },
   "stylingRules": [
     {
