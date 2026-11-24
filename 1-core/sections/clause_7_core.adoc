@@ -29,14 +29,13 @@ Metadata : keywords: string[0..*]
 Metadata : geoDataClasses: string[0..*]
 
 StylingRule : name: string[0..1]
-StylingRule : symbolizer: Symbolizer[0..1]
 StylingRule "1" *-- "0..*" StylingRule : nestedRules
 StylingRule "1" *-- "0..1" Expression : selector
 
 Symbolizer : visibility: boolean[0..1]
 Symbolizer : opacity: number[0..1]
 Symbolizer : zOrder: integer[0..1]
-Symbolizer --* StylingRule
+StylingRule "1" *-- "0..1" Symbolizer : symbolizer
 Symbolizer --> Expression : parameter values
 
 /'Note: zOrder needs discussion on whether it should be relative or float
@@ -379,8 +378,7 @@ ArrayExpression --|> Expression
 ArrayExpression "1" *-- "0..*" Expression : elements
 
 OperationExpression --|> Expression
-OperationExpression : operator: Operator
-OperationExpression *-- Operator
+OperationExpression *-- Operator : operator
 OperationExpression "1" *-- "0..1" Expression : operand1
 OperationExpression "1" *-- "1" Expression : operand2
 
@@ -459,18 +457,15 @@ SystemIdentifierExpression --> Visualization
 SystemIdentifierExpression --> DataLayer
 
 Visualization : scaleDenominator: number
-Visualization : date: Date
-Visualization : timeOfDay: TimeOfDay
 Visualization : pass: integer
 Visualization *-- TimeInstant : dateTime
 Visualization *-- TimeInterval : timeInterval
-Visualization --o Date
-Visualization --o TimeOfDay
+Visualization --o Date : date
+Visualization --o TimeOfDay : timeOfDay
 
 class DataLayer
 DataLayer : identifier: string
-DataLayer : type: DataLayerType
-DataLayer *-- DataLayerType
+DataLayer *-- DataLayerType : type
 
 enum DataLayerType
 DataLayerType : map
@@ -486,9 +481,8 @@ TimeInterval *-- TimeInstant : end
 
 class Date
 Date : year: integer
-Date : month: Month
 Date : day: integer
-Date *-- Month
+Date *-- Month : month
 
 class TimeOfDay
 TimeOfDay : hour: integer
