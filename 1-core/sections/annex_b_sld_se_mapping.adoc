@@ -10,6 +10,18 @@ Standard.
 
 === Requirements Class "Core"
 
+.Mapping of Metadata to SLD/SE constructs
+[width="90%",options="header"]
+|===
+| Construct         | SE Equivalent
+| identifier        | `<Name>` inside `<UserStyle>`
+| title             | `<Title>` inside `<UserStyle>` (SLD 1.0) or inside the `<se:Description>` of the `<UserStyle>` (SE 1.1)
+| description       | `<Abstract>` inside `<UserStyle>` (SLD 1.0) or inside the `<se:Description>` of the `<UserStyle>` (SE 1.1)
+| authors           | N/A
+| keywords          | N/A
+| geoDataClasses    | N/A
+|===
+
 .Mapping of Styling Rules to SLD/SE constructs
 [width="90%",options="header"]
 |===
