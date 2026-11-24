@@ -14,12 +14,8 @@ Standard.
 [width="90%",options="header"]
 |===
 | Construct         | SE Equivalent
-| identifier        | `<Name>` inside `<UserStyle>`
-| title             | `<Title>` inside `<UserStyle>` (SLD 1.0) or inside the `<se:Description>` of the `<UserStyle>` (SE 1.1)
-| description       | `<Abstract>` inside `<UserStyle>` (SLD 1.0) or inside the `<se:Description>` of the `<UserStyle>` (SE 1.1)
-| authors           | N/A
-| keywords          | N/A
-| geoDataClasses    | N/A
+| title             | `<Title>` inside `<UserStyle>` (inside its `<se:Description>` in SE 1.1)
+| description       | `<Abstract>` inside `<UserStyle>` (inside its `<se:Description>` in SE 1.1)
 |===
 
 .Mapping of Styling Rules to SLD/SE constructs
