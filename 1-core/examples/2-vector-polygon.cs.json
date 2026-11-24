@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Styling polygon vector features",
-    "abstract": "Basic vector features styling (polygons): land cover in Rondane, Norway (N50 Kartdata)"
+    "description": "Basic vector features styling (polygons): land cover in Rondane, Norway (N50 Kartdata)"
   },
   "stylingRules": [
     {

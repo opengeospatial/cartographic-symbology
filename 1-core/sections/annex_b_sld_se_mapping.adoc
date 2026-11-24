@@ -10,6 +10,14 @@ Standard.
 
 === Requirements Class "Core"
 
+.Mapping of Metadata to SLD/SE constructs
+[width="90%",options="header"]
+|===
+| Construct         | SE Equivalent
+| title             | `<Title>` inside `<UserStyle>` (inside its `<se:Description>` in SE 1.1)
+| description       | `<Abstract>` inside `<UserStyle>` (inside its `<se:Description>` in SE 1.1)
+|===
+
 .Mapping of Styling Rules to SLD/SE constructs
 [width="90%",options="header"]
 |===

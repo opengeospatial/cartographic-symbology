@@ -1,7 +1,6 @@
 {
   "metadata": {
     "title": "Styling a land cover layer",
-    "abstract": "Styling land cover data with Style & Symbology Core",
     "description": "This is a simple example of how to style a land cover layer using Style & Symbology Core."
   },
   "stylingRules": [
