@@ -1,0 +1,37 @@
+name: CartoSym-CSS grammar
+
+# Builds the parser from the grammar files and parses the .cscss examples.
+
+on:
+  pull_request:
+    paths:
+      - "1-core/schemas/*.g4"
+      - "1-core/examples/**/*.cscss"
+      - ".github/scripts/parse_cscss_examples.py"
+      - ".github/workflows/cartosym-css-grammar.yml"
+  push:
+    branches: [main]
+    paths:
+      - "1-core/schemas/*.g4"
+      - "1-core/examples/**/*.cscss"
+      - ".github/scripts/parse_cscss_examples.py"
+      - ".github/workflows/cartosym-css-grammar.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  parse-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install antlr4-tools==0.2.1 antlr4-python3-runtime==4.13.2
+      - run: python .github/scripts/parse_cscss_examples.py
