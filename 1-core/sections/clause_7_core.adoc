@@ -18,10 +18,8 @@ The requirements described in this section define the symbology core requirement
 [plantuml, target=diagram-classes, format=png]
 ....
 @startuml
-Style : stylingRules: StylingRule[0..*]
-Style *-- StylingRule
-Style : metadata: Metadata[0..1]
-Style *-- Metadata
+Style "1" *-- "0..*" StylingRule : stylingRules
+Style "1" *-- "0..1" Metadata : metadata
 
 Metadata : identifier: string[0..1]
 Metadata : title: string[0..1]
@@ -31,16 +29,13 @@ Metadata : keywords: string[0..*]
 Metadata : geoDataClasses: string[0..*]
 
 StylingRule : name: string[0..1]
-StylingRule : symbolizer: Symbolizer[0..1]
-StylingRule : selector: Expression[0..1]
-StylingRule : nestedRules: StylingRule[0..*]
-StylingRule *-- StylingRule
-StylingRule *-- Expression : selector
+StylingRule "1" *-- "0..*" StylingRule : nestedRules
+StylingRule "1" *-- "0..1" Expression : selector
 
 Symbolizer : visibility: boolean[0..1]
 Symbolizer : opacity: number[0..1]
 Symbolizer : zOrder: integer[0..1]
-Symbolizer --* StylingRule
+StylingRule "1" *-- "0..1" Symbolizer : symbolizer
 Symbolizer --> Expression : parameter values
 
 /'Note: zOrder needs discussion on whether it should be relative or float
@@ -380,15 +375,12 @@ InstanceExpression : members: map < string, Expression >
 InstanceExpression *-- Expression
 
 ArrayExpression --|> Expression
-ArrayExpression : elements: Expression[0..*]
-ArrayExpression *-- Expression
+ArrayExpression "1" *-- "0..*" Expression : elements
 
 OperationExpression --|> Expression
-OperationExpression : operand1: Expression[0..1]
-OperationExpression : operator: Operator
-OperationExpression : operand2: Expression
-OperationExpression *-- Operator
-OperationExpression *-- Expression
+OperationExpression *-- Operator : operator
+OperationExpression "1" *-- "0..1" Expression : operand1
+OperationExpression "1" *-- "1" Expression : operand2
 
 'class SubExpression
 'SubExpression --|> Expression -- Parentheses could be purely an encoding concept based on the need to maintain priority...
@@ -465,20 +457,15 @@ SystemIdentifierExpression --> Visualization
 SystemIdentifierExpression --> DataLayer
 
 Visualization : scaleDenominator: number
-Visualization : dateTime: TimeInstant
-Visualization : date: Date
-Visualization : timeOfDay: TimeOfDay
-Visualization : timeInterval: TimeInterval
 Visualization : pass: integer
-Visualization *-- TimeInstant
-Visualization *-- TimeInterval
-Visualization --o Date
-Visualization --o TimeOfDay
+Visualization *-- TimeInstant : dateTime
+Visualization *-- TimeInterval : timeInterval
+Visualization --o Date : date
+Visualization --o TimeOfDay : timeOfDay
 
 class DataLayer
 DataLayer : identifier: string
-DataLayer : type: DataLayerType
-DataLayer *-- DataLayerType
+DataLayer *-- DataLayerType : type
 
 enum DataLayerType
 DataLayerType : map
@@ -486,20 +473,16 @@ DataLayerType : vector
 DataLayerType : coverage
 
 class TimeInstant
-TimeInstant : date: Date
-TimeInstant : time: TimeOfDay
-TimeInstant *-- Date
-TimeInstant *-- TimeOfDay
+TimeInstant *-- Date : date
+TimeInstant *-- TimeOfDay : time
 
-TimeInterval : start: TimeInstant
-TimeInterval : end: TimeInstant
-TimeInterval *-- TimeInstant
+TimeInterval *-- TimeInstant : start
+TimeInterval *-- TimeInstant : end
 
 class Date
 Date : year: integer
-Date : month: Month
 Date : day: integer
-Date *-- Month
+Date *-- Month : month
 
 class TimeOfDay
 TimeOfDay : hour: integer
