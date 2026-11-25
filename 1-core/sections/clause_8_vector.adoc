@@ -51,18 +51,18 @@ An encoding must support an escaping mechanism in cases where the name of a feat
 class SystemIdentifierExpression <<extended>>
 SystemIdentifierExpression : feature
 SystemIdentifierExpression : feature.identifier
-SystemIdentifierExpression : feature.geometryDimensions
+SystemIdentifierExpression : feature.geometryDimension
 SystemIdentifierExpression : feature.pass
 SystemIdentifierExpression : dataLayer.features
-SystemIdentifierExpression : dataLayer.featuresGeometryDimensions
+SystemIdentifierExpression : dataLayer.featuresGeometryDimension
 SystemIdentifierExpression --> Feature
 SystemIdentifierExpression --> DataLayer
 
 Feature : identifier: string
-Feature : geometryDimensions: integer
+Feature : geometryDimension: integer
 
 DataLayer : features: Feature[*]
-DataLayer : featuresGeometryDimensions: integer
+DataLayer : featuresGeometryDimension: integer
 DataLayer *-- Feature
 @enduml
 ....

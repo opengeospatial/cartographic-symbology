@@ -1231,7 +1231,7 @@ include::../examples/requirements/core-default-values.adoc[]
 
 <<fig-example-1-core>> in the CartoSym-CSS clause shows the default values applied to land cover polygons.
 
-NOTE: The default Marker applies to features of every geometry type, so that every feature is visible by default. A style that sets no marker therefore draws a Dot at each point, at each vertex of a line and at the centroid of each polygon. A typical base style unsets the marker for lines and polygons, unless it wants this default behavior, for example with `[dataLayer.featuresGeometryDimensions > 0] { marker: null; }` in CSCSS. An empty list of elements (`marker: { elements: [] }`) also unsets it, while an empty `marker: { }` still yields the default Dot.
+NOTE: The default Marker applies to features of every geometry type, so that every feature is visible by default. A style that sets no marker therefore draws a Dot at each point, at each vertex of a line and at the centroid of each polygon. A typical base style unsets the marker for lines and polygons, unless it wants this default behavior, for example with `[dataLayer.featuresGeometryDimension > 0] { marker: null; }` in CSCSS. An empty list of elements (`marker: { elements: [] }`) also unsets it, while an empty `marker: { }` still yields the default Dot.
 
 === Vendor Extensions
 
