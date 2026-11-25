@@ -13,6 +13,6 @@ Places
    {
       visibility: true;
       label: { elements: [ Text { text: name, alignment: center middle,
-         font: { face: 'Arial', size: 10, color: #2b2b2b, outline: { size: 2, color: white } } } ] };
+         font: { face: 'Arial', size: 10 pt, color: #2b2b2b, outline: { size: 2, color: white } } } ] };
    }
 }

@@ -18,13 +18,15 @@ class Symbolizer <<extended>>
 Symbolizer : fill: Fill [0..1]
 Symbolizer : stroke: Stroke [0..1]
 Symbolizer : marker: Marker [0..1]
+Symbolizer : font: Font [0..1]
 Symbolizer *-- Fill
 Symbolizer *-- Stroke
 Symbolizer *-- Marker
+Symbolizer *-- Font
 @enduml
 ....
 
-The following three new Symbolizer properties are defined by this requirements class:
+The following four new Symbolizer properties are defined by this requirements class:
 
 .Symbolizer class (vector features extension)
 [width="90%",options="header"]
@@ -33,6 +35,7 @@ The following three new Symbolizer properties are defined by this requirements c
 | fill   | Fill to fill inside of geometries                                | Fill                 | 0..1
 | stroke | Stroke to render geometry outlines                               | Stroke               | 0..1
 | marker | Marker to render at geometries points or centroid (for polygons) | Marker               | 0..1
+| font   | Font of the Text graphics of the marker and label, for the properties they don't set (<<req-vector-font-inheritance>>) | Font | 0..1
 |===
 
 ==== Extended Identifiers for vector features
@@ -195,14 +198,13 @@ Therefore, properties where a unit of measure is relevant can be qualified with 
 
 Below is the list of allowed units of measure as per UCUM (except for pixel):
 
-* portrayal units: pixel, millimeter, inch, percentage; and
+* portrayal units: pixel, millimeter, inch, point, em, percentage; and
 * ground units: meter, foot.
 
 The portrayal unit “pixel” is the default unit of measure.
 If available, the pixel size depends on the viewer client resolution, otherwise it is equal to 0.28mm x 0.28mm (~ 90 DPI).
 
 // TODO: Review the list of supported units.
-//       Should we support 'pt' as well to scale with font sizes ? (e.g., large font accessibiity mode)
 //       Is percentage relevant?
 
 ////
@@ -222,7 +224,9 @@ Consequently, either the unit of measure is determined through the uom code dire
 Marker --|> MultiGraphic
 
 MultiGraphic : elements: Graphic [0..*]
+MultiGraphic : font: Font [0..1]
 MultiGraphic *-- Graphic
+MultiGraphic *-- Font
 
 Graphic : position: UnitPoint
 Graphic : opacity: number
@@ -236,6 +240,7 @@ A Marker inherits from a MultiGraphic which can contain multiple graphical eleme
 |===
 | Name      | Definition        | Data type and value   | Multiplicity
 | elements  | Children elements | Graphic               | 1..*
+| font      | Font of the Text graphics in it, for the properties they don't set (<<req-vector-font-inheritance>>) | Font | 0..1
 |===
 
 Without support for the _Multi Graphics and Transforms_ requirements class, a MultiGraphic cannot contain another MultiGraphic.
@@ -460,14 +465,14 @@ This allows to display the value of feature properties with a Text Marker.
 | bottom   | Bottom alignment
 |===
 
-The font property of a Text Graphic is defined uses the following _Font_ class:
+The `font` property of a Text Graphic, of a MultiGraphic and of the Symbolizer uses the following _Font_ class:
 
 .Font class
 [width="90%",options="header"]
 |===
 | Name           | Definition            | Data type and value   | Multiplicity
 | face           | Face name             | string                | 0..1
-| size           | Size of the font (pt) | number                | 0..1
+| size           | Size of the font      | number (uom-qualified) | 0..1
 | bold           | Use bold style        | boolean               | 0..1
 | italic         | Use italic style      | boolean               | 0..1
 |===

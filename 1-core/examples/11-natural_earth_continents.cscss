@@ -8,7 +8,7 @@ ne_10m_admin_0_countries
 
    label: { elements: [ Text { text: name,
                                font: { face: 'Tahoma',
-                                       size: 14,
+                                       size: 14 pt,
                                        outline: { size: 3,
                                                   opacity: 0.75,
                                                   color: white }
@@ -86,7 +86,7 @@ ne_10m_populated_places
          Text { text: NAME,
                 position: 10 -4,
                 font: { face: 'Tahoma',
-                        size: 12,
+                        size: 12 pt,
                         outline: { color: white,
                                    size: 3.5,
                                    opacity: 0.75 }
@@ -104,7 +104,7 @@ ne_10m_geography_regions_polys
    label: { elements: [ Text {
                   text: name,
                   font: { face: 'Times New Roman',
-                  size: 12,
+                  size: 12 pt,
                   italic: true,
                   color: papayaWhip,
                   outline: { size: 3,
@@ -309,7 +309,7 @@ ne_10m_geography_marine_polys
    {
       label: { elements: [ Text { text: name,
                                   font: { face: 'Tahoma',
-                                          size: 12,
+                                          size: 12 pt,
                                           color: dodgerBlue,
                                           italic: true,
                                           outline: { size: 3,

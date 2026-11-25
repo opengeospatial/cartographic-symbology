@@ -48,7 +48,7 @@ Landcover[dataLayer.type = vector and dataLayer.featuresGeometryDimensions = 2]
                alignment: left top;
                font: {
                   face: 'Arial';
-                  size: 14;
+                  size: 14 pt;
                   bold: false;
                   italic: true;
                   opacity: 1.0;

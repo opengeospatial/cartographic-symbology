@@ -28,7 +28,9 @@
               },
               "font": {
                 "face": "Tahoma",
-                "size": 14,
+                "size": {
+                  "pt": 14
+                },
                 "outline": {
                   "size": 3,
                   "opacity": 0.75,
@@ -303,7 +305,9 @@
                   },
                   "font": {
                     "face": "Tahoma",
-                    "size": 12,
+                    "size": {
+                      "pt": 12
+                    },
                     "outline": {
                       "color": "white",
                       "size": 3.5,
@@ -349,7 +353,9 @@
               },
               "font": {
                 "face": "Times New Roman",
-                "size": 12,
+                "size": {
+                  "pt": 12
+                },
                 "italic": true,
                 "color": "papayaWhip",
                 "outline": {
@@ -955,7 +961,9 @@
                   },
                   "font": {
                     "face": "Tahoma",
-                    "size": 12,
+                    "size": {
+                      "pt": 12
+                    },
                     "color": "dodgerBlue",
                     "italic": true,
                     "outline": {

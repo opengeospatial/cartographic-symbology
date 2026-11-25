@@ -93,7 +93,9 @@
                   ],
                   "font": {
                     "face": "Arial",
-                    "size": 13,
+                    "size": {
+                      "pt": 13
+                    },
                     "bold": true,
                     "italic": true,
                     "color": [
@@ -179,7 +181,9 @@
                   ],
                   "font": {
                     "face": "Arial",
-                    "size": 8.5,
+                    "size": {
+                      "pt": 8.5
+                    },
                     "italic": true,
                     "color": [
                       110,
@@ -259,7 +263,9 @@
                   ],
                   "font": {
                     "face": "Arial",
-                    "size": 8.5,
+                    "size": {
+                      "pt": 8.5
+                    },
                     "italic": true,
                     "color": [
                       126,
