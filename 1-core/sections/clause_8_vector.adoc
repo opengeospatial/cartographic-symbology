@@ -337,6 +337,7 @@ A Dot inherits from a Shape class allowing to define a `stroke` which controls t
 Image --|> Graphic
 Image  : image: Resource
 Image  : hotSpot: UnitPoint
+Image  : size: UnitPoint
 Image  : tint: Color
 Image  : blackTint: Color
 Image  : alphaThreshold: number
@@ -361,6 +362,7 @@ An Image is one type of graphic defined by this requirements class that can be u
 | Name           | Definition                      | Type                      | Multiplicity
 | image          | The image to use                | Resource                  | 1
 | hotSpot        | Point of the image placed at the position of the Graphic, from its top left corner (`0 0`) | UnitPoint (uom-qualified) | 1
+| size           | Width (`x`) and height (`y`) of the image as drawn; a single value sets both, and if only one is set, the other follows the aspect ratio of the image; by default, the image's own size | UnitPoint (uom-qualified) | 0..1
 | tint           | Color replacing white in the image | Color                  | 1
 | blackTint      | Color replacing black in the image | Color                  | 1
 | alphaThreshold | Lowest alpha value of a pixel considered part of the image for picking | number | 1

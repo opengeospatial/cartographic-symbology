@@ -389,6 +389,10 @@
                 "type": { "type": "string", "enum": [ "Image" ] },
                 "image": { "$ref": "#/$defs/resource" },
                 "hotSpot": { "$ref": "#/$defs/unitPoint" },
+                "size": {
+                   "$comment": "A single value sets the width and the height; a point sets the width (x) and the height (y), either of which can be left out.",
+                   "anyOf": [ { "$ref": "#/$defs/unitValue" }, { "$ref": "#/$defs/unitPoint" } ]
+                },
                 "tint": { "$ref": "#/$defs/color" },
                 "blackTint": { "$ref": "#/$defs/color" },
                 "alphaThreshold": { "$ref": "#/$defs/zeroToOne" }

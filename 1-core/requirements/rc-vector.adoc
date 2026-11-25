@@ -138,10 +138,11 @@ part:: A Renderer MAY draw a hairline outline, no wider than 1 pixel, around a D
 ====
 [%metadata]
 identifier:: /req/vector/image
-part:: An Encoding SHALL support defining an Image Graphic with an `image` property referencing an image resource, an optional uom-qualified `hotSpot` position within the image, optional `tint` and `blackTint` Colors, and an optional `alphaThreshold` real number between 0 and 1.
-part:: A Renderer SHALL support drawing the referenced image at its own size, one pixel of the image to one pixel of the map (for an SVG image, the size given by its `width` and `height`).
+part:: An Encoding SHALL support defining an Image Graphic with an `image` property referencing an image resource, an optional uom-qualified `hotSpot` position within the image, an optional uom-qualified `size` (a width and a height), optional `tint` and `blackTint` Colors, and an optional `alphaThreshold` real number between 0 and 1.
+part:: A Renderer SHALL support drawing the referenced image with the width and height given by its `size`: a single value sets both; a UnitPoint sets the width (`x`) and the height (`y`), and if only one of them is set, the other follows the aspect ratio of the image.
+part:: A Renderer SHALL support drawing the referenced image without a `size` at its own size, one pixel of the image to one pixel of the map (for an SVG image, the size given by its `width` and `height`).
 part:: A Renderer SHALL support drawing the referenced image so that its `hotSpot` (by default, its center, `50 pc 50 pc`) is located at the position of the Graphic.
-part:: A Renderer SHALL support interpreting the `hotSpot` in the coordinates of the image, from its top left corner (`0 0`) with `x` to the right and `y` downwards, where a number without a unit is in pixels of the image, a value in `pc` is a percentage of the image's width or height, and a value in another unit is a length from that corner.
+part:: A Renderer SHALL support interpreting the `hotSpot` in the coordinates of the image, from its top left corner (`0 0`) with `x` to the right and `y` downwards, where a number without a unit is in pixels of the image file (scaled with the image when it is drawn at another size), a value in `pc` is a percentage of the image's width or height, and a value in another unit is a length from that corner.
 part:: A Renderer SHALL support recoloring the image so that each red, green and blue component _v_ (between 0 and 1) of each pixel becomes `tint` × _v_ + `blackTint` × (1 − _v_), using the same component of `tint` and `blackTint`.
 ====
 
@@ -153,7 +154,7 @@ include::../examples/requirements/vector-image.adoc[]
 
 NOTE: SE 1.1 `AnchorPoint` gives fractions of the graphic's width and height and measures `AnchorPointY` from the bottom of the graphic: a `hotSpot` of `x pc y pc` is an `AnchorPointX` of _x_ / 100 and an `AnchorPointY` of 1 − _y_ / 100.
 
-// TODO(review): an image drawn at its own size in pixels is smaller on a display with smaller pixels; add a uom-qualified Image `size` (display units such as `mm` or `em`, and ground units such as `m` and `ft`), as a tuple allowing `size.y` alone, saying which dimension a single value sets and whether it also applies to Images in pattern fills and strokes (see #100).
+NOTE: An image drawn at its own size is smaller on a display with smaller pixels. A `size` in `mm` keeps it the same size on any display, and `size.x` or `size.y` alone sets its size without changing its aspect ratio.
 
 NOTE: With the default `tint` (white) and `blackTint` (black), the image is drawn unchanged. For a monochrome icon, `tint` sets the color of its white parts and `blackTint` the color of its black parts, so that one icon can be drawn in a different color per category.
 
