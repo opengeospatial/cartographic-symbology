@@ -14,20 +14,16 @@ as providing an option to apply a color and/or opacity map based on the values.
 ....
 @startuml
 class Symbolizer <<extended>>
-Symbolizer : colorChannels: Color -- IdentifierExpressions
 Symbolizer : alphaChannel: number -- IdentifierExpression
 Symbolizer : singleChannel: number -- IdentifierExpression
-Symbolizer : colorMap: ValueColor[*]
-Symbolizer : opacityMap: ValueOpacity[*]
-Symbolizer *-- ValueOpacity
-Symbolizer *-- ValueColor
-Symbolizer *-- Color
+Symbolizer *-- Color : colorChannels
+Symbolizer "1" *-- "*" ValueColor : colorMap
+Symbolizer "1" *-- "*" ValueOpacity : opacityMap
 Symbolizer --> IdentifierExpression
 
 ValueColor : value: number
-ValueColor : color: Color
 ValueColor : label: text
-ValueColor *-- Color
+ValueColor *-- Color : color
 
 ValueOpacity : value: number
 ValueOpacity : opacity: number
@@ -118,21 +114,16 @@ include::../requirements/rc-coverage.adoc[]
 [plantuml, target=diagram-classes, format=png]
 ....
 @startuml
-AzimuthElevation : azimuth: Angle
-AzimuthElevation : elevation: Angle
-AzimuthElevation --* Angle
+AzimuthElevation *-- Angle : azimuth
+AzimuthElevation *-- Angle : elevation
 
 HillShading : factor: number
-HillShading : sun: AzimuthElevation
-HillShading : colorMap: ValueColor[*]
-HillShading : opacityMap: ValueOpacity[*]
-HillShading *-- AzimuthElevation
-HillShading *-- ValueColor
-HillShading *-- ValueOpacity
+HillShading *-- AzimuthElevation : sun
+HillShading "1" *-- "*" ValueColor : colorMap
+HillShading "1" *-- "*" ValueOpacity : opacityMap
 
 class Symbolizer <<extended>>
-Symbolizer : hillShading: HillShading
-Symbolizer *-- HillShading
+Symbolizer *-- HillShading : hillShading
 @enduml
 ....
 

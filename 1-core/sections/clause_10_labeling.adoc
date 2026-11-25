@@ -10,12 +10,10 @@
 ....
 @startuml
 class Symbolizer <<extended>>
-Symbolizer : label: Label [0..1]
-Symbolizer *-- Label
+Symbolizer "1" *-- "0..1" Label : label
 
 Label --|> MultiGraphic
-Label : placement: LabelPlacement
-Label *-- LabelPlacement
+Label *-- LabelPlacement : placement
 
 LabelPlacement : priority: number
 LabelPlacement : minSpacing: number
@@ -66,8 +64,7 @@ include::../requirements/rc-labels.adoc[]
 [plantuml, target=diagram-classes, format=png]
 ....
 @startuml
-Font *-- FontOutline
-Font : outline: FontOutline
+Font *-- FontOutline : outline
 
 FontOutline : size: number
 FontOutline : opacity: number
