@@ -33,7 +33,7 @@
                 "op": "=",
                 "args": [
                   {
-                    "sysId": "dataLayer.featuresGeometryDimensions"
+                    "sysId": "dataLayer.featuresGeometryDimension"
                   },
                   2
                 ]
