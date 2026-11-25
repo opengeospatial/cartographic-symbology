@@ -3,7 +3,9 @@
 '
           'This style uses the protected areas of N50 Kartdata from the Norwegian Mapping Authority (Kartverket), available at https://kartkatalog.geonorge.no/metadata/n50-kartdata/ea192681-d039-42ec-b1bc-f3ce04c189ac'
 
-.keywords 'Protected area, National park, Norway'
+.keyword 'Protected area'
+.keyword 'National park'
+.keyword 'Norway'
 
 // A light tint over the context, a soft band along each boundary with a crisp line in its center,
 // and a texture for the kinds of protection other than the national park

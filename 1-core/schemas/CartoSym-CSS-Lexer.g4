@@ -56,6 +56,11 @@ NUMERIC_LITERAL :
         '.' [0-9]+ )
     ([eE] ('+'|'-')? [0-9]+)?;
 
+// A '-' that follows whitespace and comes directly before a number is the sign of that number, so that
+// `10 -4` is the tuple (10, -4), while `10 - 4` and `10-4` are subtractions. The whitespace is part of the
+// token: as the longest match, it wins over WS only where a number directly follows the '-'.
+NEGATIVE_NUMERIC_LITERAL : [ \t\r\n]+ '-' NUMERIC_LITERAL;
+
 // Character Literals
 
 fragment WHITESPACE:  '\u0009'  // Character tabulation
