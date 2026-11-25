@@ -62,6 +62,7 @@
          "stroke": { "$ref": "#/$defs/stroke" },
          "marker": { "$ref": "#/$defs/marker" },
          "label": { "$ref": "#/$defs/label" },
+         "font": { "$ref": "#/$defs/font" },
 
          "colorChannels": { "$ref": "#/$defs/color0to1" },
          "alphaChannel": { "$ref": "#/$defs/zeroToOne" },
@@ -238,7 +239,8 @@
              "required": [ "elements" ],
              "properties":
              {
-                "elements": { "$ref": "#/$defs/graphicArray" }
+                "elements": { "$ref": "#/$defs/graphicArray" },
+                "font": { "$ref": "#/$defs/font" }
              }
           }
        ]
