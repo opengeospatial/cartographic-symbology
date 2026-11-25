@@ -559,30 +559,30 @@ Capabilities   : vendor: VendorCapabilities
 ....
 
 .System Identifier capabilities
-[width="90%",options="header"]
+[cols="2,3,4,3",width="90%",options="header"]
 |===
-| Name                                          | Definition                                                      | Data type and value
-| capabilities                                  | Supported capabilities of the rendering engine                  | Capabilities
-| capabilities.vector                           | Support for <<rc-vector,Basic Vector Features Styling>>         | boolean (true if supported, false otherwise)
-| capabilities.coverage                         | Support for <<rc-coverage,Basic Coverage Styling>>              | boolean (true if supported, false otherwise)
-| capabilities.labels                           | Support for <<rc-labels,Basic Labeling>>                        | boolean (true if supported, false otherwise)
-| capabilities.hillshading                      | Support for <<rc-hill-shading,Hill Shading>>                     | boolean (true if supported, false otherwise)
-| capabilities.fontoutlines                     | Support for <<rc-font-outlines,Font Outlines>>                   | boolean (true if supported, false otherwise)
-| capabilities.hatches                          | Support for <<rc-hatches,Hatch Fills>>                          | boolean (true if supported, false otherwise)
-| capabilities.stipples                         | Support for <<rc-stipples, Stipple Fills>>                      | boolean (true if supported, false otherwise)
-| capabilities.dashes                           | Support for <<rc-dashes,Dashed Strokes>>                        | boolean (true if supported, false otherwise)
-| capabilities.casing                           | Support for <<rc-casing,Casing and Centerline>>                 | boolean (true if supported, false otherwise)
-| capabilities.parametervalues                  | Support for <<rc-parameter-values,Parameter Values>>             | boolean (true if supported, false otherwise)
-| capabilities.functions                        | Support for <<rc-functions,Function Expressions>>               | boolean (true if supported, false otherwise)
-| capabilities.math                             | Support for <<rc-math,Math Functions>>                          | boolean (true if supported, false otherwise)
-| capabilities.arrayrelations                   | Support for <<rc-array-relations,Array Relation Functions>>      | boolean (true if supported, false otherwise)
-| capabilities.textmanipulation                 | Support for <<rc-text-manipulation,Text Manipulation Functions>> | boolean (true if supported, false otherwise)
-| capabilities.arithmetic                       | Support for <<rc-arithmetic,Arithmetic Operators>>              | boolean (true if supported, false otherwise)
-| capabilities.textrelation                     | Support for <<rc-text-relation,Text Relation Operators and Functions>> | boolean (true if supported, false otherwise)
-| capabilities.righthand                        | Support for <<rc-right-hand,Any right-hand operands>>            | boolean (true if supported, false otherwise)
-| capabilities.conditional                      | Support for <<rc-conditional,Conditional Expressions>>          | boolean (true if supported, false otherwise)
-| capabilities.variables                        | Support for <<rc-variables,Variables>>                          | boolean (true if supported, false otherwise)
-| capabilities.vendor.<vendorName>.<capability> | Support for a capability defined by a vendor extension          | boolean (true if supported, false otherwise)
+| Concept | CartoSym-CSS / CartoSym-JSON | Definition | Data type and value
+| *Capabilities* | `capabilities` | Supported capabilities of the rendering engine | Capabilities
+| vector | `capabilities.vector` | Support for <<rc-vector,Basic Vector Features Styling>> | boolean (true if supported, false otherwise)
+| coverage | `capabilities.coverage` | Support for <<rc-coverage,Basic Coverage Styling>> | boolean (true if supported, false otherwise)
+| labels | `capabilities.labels` | Support for <<rc-labels,Basic Labeling>> | boolean (true if supported, false otherwise)
+| hillshading | `capabilities.hillshading` | Support for <<rc-hill-shading,Hill Shading>> | boolean (true if supported, false otherwise)
+| fontoutlines | `capabilities.fontoutlines` | Support for <<rc-font-outlines,Font Outlines>> | boolean (true if supported, false otherwise)
+| hatches | `capabilities.hatches` | Support for <<rc-hatches,Hatch Fills>> | boolean (true if supported, false otherwise)
+| stipples | `capabilities.stipples` | Support for <<rc-stipples, Stipple Fills>> | boolean (true if supported, false otherwise)
+| dashes | `capabilities.dashes` | Support for <<rc-dashes,Dashed Strokes>> | boolean (true if supported, false otherwise)
+| casing | `capabilities.casing` | Support for <<rc-casing,Casing and Centerline>> | boolean (true if supported, false otherwise)
+| parametervalues | `capabilities.parametervalues` | Support for <<rc-parameter-values,Parameter Values>> | boolean (true if supported, false otherwise)
+| functions | `capabilities.functions` | Support for <<rc-functions,Function Expressions>> | boolean (true if supported, false otherwise)
+| math | `capabilities.math` | Support for <<rc-math,Math Functions>> | boolean (true if supported, false otherwise)
+| arrayrelations | `capabilities.arrayrelations` | Support for <<rc-array-relations,Array Relation Functions>> | boolean (true if supported, false otherwise)
+| textmanipulation | `capabilities.textmanipulation` | Support for <<rc-text-manipulation,Text Manipulation Functions>> | boolean (true if supported, false otherwise)
+| arithmetic | `capabilities.arithmetic` | Support for <<rc-arithmetic,Arithmetic Operators>> | boolean (true if supported, false otherwise)
+| textrelation | `capabilities.textrelation` | Support for <<rc-text-relation,Text Relation Operators and Functions>> | boolean (true if supported, false otherwise)
+| righthand | `capabilities.righthand` | Support for <<rc-right-hand,Any right-hand operands>> | boolean (true if supported, false otherwise)
+| conditional | `capabilities.conditional` | Support for <<rc-conditional,Conditional Expressions>> | boolean (true if supported, false otherwise)
+| variables | `capabilities.variables` | Support for <<rc-variables,Variables>> | boolean (true if supported, false otherwise)
+| vendor capability | `capabilities.vendor.<vendorName>.<capability>` | Support for a capability defined by a vendor extension | boolean (true if supported, false otherwise)
 |===
 
 .CSCSS Example showcasing the use of a capability System Identifier with a fallback Styling Rule
@@ -600,16 +600,16 @@ Capabilities   : vendor: VendorCapabilities
 ====
 
 .Visualization System Identifiers
-[width="90%",options="header"]
+[cols="2,3,4,3",width="90%",options="header"]
 |===
-| Name                             | Definition                              | Data type and value
-| visualization                    | Current visualization state             | Visualization
-| visualization.scaleDenominator   | Current visualization scale denominator | number
-| visualization.dateTime           | Current visualization date and time     | DateTime
-| visualization.date               | Current visualization date              | Date
-| visualization.timeOfDay          | Current visualization time of day       | Time
-| visualization.timeInterval       | Current visualization time interval     | TimeInterval
-| visualization.pass               | Current visualization rendering pass    | integer
+| Concept | CartoSym-CSS / CartoSym-JSON | Definition | Data type and value
+| *Visualization* | `viz` | Current visualization state | Visualization
+| scaleDenominator | `viz.sd` | Current visualization scale denominator | number
+| dateTime | `viz.dateTime` | Current visualization date and time | DateTime
+| date | `viz.date` | Current visualization date | Date
+| timeOfDay | `viz.timeOfDay` | Current visualization time of day | Time
+| timeInterval | `viz.timeInterval` | Current visualization time interval | TimeInterval
+| pass | `viz.pass` | Current visualization rendering pass | integer
 |===
 
 .CSCSS Example showcasing scale-dependent selector using system identifiers
@@ -733,11 +733,12 @@ Landuse
 ====
 
 .Layer System Identifiers
-[width="90%",options="header"]
+[cols="2,3,4,3",width="90%",options="header"]
 |===
-| Name                                    | Definition                                               | Data type and value
-| dataLayer.identifier                    | Identifier of data layers                                | string
-| dataLayer.type                          | Data type of data layers                                 | enumeration: vector, coverage, ...
+| Concept | CartoSym-CSS / CartoSym-JSON | Definition | Data type and value
+| *Data layer* | `dataLayer` | Data layer being portrayed | DataLayer
+| identifier | `dataLayer.id` | Identifier of data layers | string
+| type | `dataLayer.type` | Data type of data layers | enumeration: vector, coverage, ...
 |===
 
 .CSCSS Example showcasing selectors depending on layer identifiers and data type using system identifiers
@@ -749,14 +750,14 @@ Landuse
    // Display vector layers at 60% opacity by default
    opacity: 0.6;
 
-   [dataLayer.identifier = 'Landuse']
+   [dataLayer.id = 'Landuse']
    {
       // Except for Landuse that should show at 80% opacity
       opacity: 0.8;
    }
 
    // In CSCSS, the <layerid> syntax is equivalent
-   // to [dataLayer.identifier = '<layerid>']
+   // to [dataLayer.id = '<layerid>']
    Roads
    {
       opacity = 1.0; // and roads at 100% opacity
