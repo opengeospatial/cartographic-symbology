@@ -970,6 +970,8 @@ This requirements class defines the following Logical Operators :
 | or                       | `or`            | binary | True if and only if either or both of the operands is true
 |===
 
+With a NULL operand, the logical operators follow CQL2: `false and null` is false, `true or null` is true, and `not null`, `true and null`, `false or null` and `null and null` are NULL.
+
 This requirements class defines the following Relational Operators:
 
 .Relational Operators
@@ -1026,6 +1028,8 @@ include::../examples/requirements/core-operations.adoc[]
 
 NOTE: The value of a Symbolizer property whose expression evaluates to null is specified by the <<rc-parameter-values,Parameter Values>> requirements class.
 
+NOTE: An operation whose result is not defined for its operands, such as a division by zero or the square root of a negative number, also evaluates to NULL, as specified in the <<rc-arithmetic,Arithmetic Operators>> and <<rc-math,Math Functions>> requirements classes.
+
 [[req-core-logical]]
 [requirement]
 ====
@@ -1048,6 +1052,9 @@ include::../examples/requirements/core-logical.adoc[]
 identifier:: /req/core/relational
 part:: An Encoding SHALL support defining operation expressions using the relational operators `equal`, `notEqual`, `is`, `isNot`, `lesser`, `greater`, `lesserEqual`, `greaterEqual`, `in`, `notIn`, `between` and `notBetween`.
 part:: A Renderer SHALL support evaluating the relational operators as defined in the Relational Operators table.
+part:: A Renderer SHALL support evaluating an `in` operation expression whose array has no elements to false, including when the first operand is NULL.
+part:: A Renderer SHALL support evaluating an `in` operation expression whose array has an element that is NULL to NULL, unless the first operand is equal to another element of the array.
+part:: A Renderer SHALL support evaluating a `notIn` operation expression as the negation (`not`) of the corresponding `in` operation expression.
 ====
 
 // Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
@@ -1055,6 +1062,8 @@ part:: A Renderer SHALL support evaluating the relational operators as defined i
 ====
 include::../examples/requirements/core-relational.adoc[]
 ====
+
+NOTE: An `in` operation expression with an empty array, such as `x in ()`, extends CQL2, whose grammar requires at least one element in the list. An unknown value cannot be one of no elements, so the result is false even for NULL. As in SQL, `5 in (1, null)` is NULL, since the NULL element could be 5, while `1 in (1, null)` is true.
 
 NOTE: The operands of a relational operator can be boolean expressions, e.g., `(a = 5) <> (b = 6)`. This extends CQL2, where an operand of a comparison can be a boolean literal but not a boolean expression (see https://github.com/opengeospatial/ogcapi-features/issues/914[OGC API - Features issue 914]).
 

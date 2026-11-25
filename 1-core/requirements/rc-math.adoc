@@ -32,6 +32,7 @@ part:: A Renderer SHALL support evaluating `abs(x)` as the absolute value of `x`
 identifier:: /req/math/acos
 part:: An Encoding SHALL support defining a call to the `acos` standard function taking one numeric argument.
 part:: A Renderer SHALL support evaluating `acos(x)` as the arc cosine of `x`, in radians, in the range [0, π].
+part:: A Renderer SHALL support evaluating `acos(x)` to NULL when `x` is less than -1 or greater than 1.
 ====
 
 [[req-math-asin]]
@@ -43,6 +44,7 @@ part:: A Renderer SHALL support evaluating `acos(x)` as the arc cosine of `x`, i
 identifier:: /req/math/asin
 part:: An Encoding SHALL support defining a call to the `asin` standard function taking one numeric argument.
 part:: A Renderer SHALL support evaluating `asin(x)` as the arc sine of `x`, in radians, in the range [-π/2, π/2].
+part:: A Renderer SHALL support evaluating `asin(x)` to NULL when `x` is less than -1 or greater than 1.
 ====
 
 [[req-math-atan]]
@@ -131,6 +133,7 @@ part:: A Renderer SHALL support evaluating `floor(x)` as the largest integer les
 identifier:: /req/math/log
 part:: An Encoding SHALL support defining a call to the `log` standard function taking one numeric argument.
 part:: A Renderer SHALL support evaluating `log(x)` as the natural (base _e_) logarithm of `x`.
+part:: A Renderer SHALL support evaluating `log(x)` to NULL when `x` is 0 or negative.
 ====
 
 [[req-math-log10]]
@@ -142,6 +145,7 @@ part:: A Renderer SHALL support evaluating `log(x)` as the natural (base _e_) lo
 identifier:: /req/math/log10
 part:: An Encoding SHALL support defining a call to the `log10` standard function taking one numeric argument.
 part:: A Renderer SHALL support evaluating `log10(x)` as the base 10 logarithm of `x`.
+part:: A Renderer SHALL support evaluating `log10(x)` to NULL when `x` is 0 or negative.
 ====
 
 [[req-math-max]]
@@ -175,6 +179,7 @@ part:: A Renderer SHALL support evaluating `min(x, y, ...)` as the smallest of i
 identifier:: /req/math/pow
 part:: An Encoding SHALL support defining a call to the `pow` standard function taking two numeric arguments.
 part:: A Renderer SHALL support evaluating `pow(x, y)` as `x` raised to the power of `y`.
+part:: A Renderer SHALL support evaluating `pow(x, y)` to NULL when `x` is 0 and `y` is negative, or when `x` is negative and `y` is not an integer.
 ====
 
 [[req-math-random]]
@@ -230,6 +235,7 @@ part:: A Renderer SHALL support evaluating `sinh(x)` as the hyperbolic sine of `
 identifier:: /req/math/sqrt
 part:: An Encoding SHALL support defining a call to the `sqrt` standard function taking one numeric argument.
 part:: A Renderer SHALL support evaluating `sqrt(x)` as the positive square root of `x`.
+part:: A Renderer SHALL support evaluating `sqrt(x)` to NULL when `x` is negative.
 ====
 
 [[req-math-tan]]
