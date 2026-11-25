@@ -195,14 +195,13 @@ Therefore, properties where a unit of measure is relevant can be qualified with 
 
 Below is the list of allowed units of measure as per UCUM (except for pixel):
 
-* portrayal units: pixel, millimeter, inch, percentage; and
+* portrayal units: pixel, millimeter, inch, point, percentage; and
 * ground units: meter, foot.
 
 The portrayal unit “pixel” is the default unit of measure.
 If available, the pixel size depends on the viewer client resolution, otherwise it is equal to 0.28mm x 0.28mm (~ 90 DPI).
 
 // TODO: Review the list of supported units.
-//       Should we support 'pt' as well to scale with font sizes ? (e.g., large font accessibiity mode)
 //       Is percentage relevant?
 
 ////
@@ -467,7 +466,7 @@ The font property of a Text Graphic is defined uses the following _Font_ class:
 |===
 | Name           | Definition            | Data type and value   | Multiplicity
 | face           | Face name             | string                | 0..1
-| size           | Size of the font (pt) | number                | 0..1
+| size           | Size of the font      | number (uom-qualified) | 0..1
 | bold           | Use bold style        | boolean               | 0..1
 | italic         | Use italic style      | boolean               | 0..1
 |===

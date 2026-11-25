@@ -79,7 +79,9 @@
                   ],
                   "font": {
                     "face": "Arial",
-                    "size": 8,
+                    "size": {
+                      "pt": 8
+                    },
                     "bold": true,
                     "color": [
                       184,

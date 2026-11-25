@@ -222,7 +222,7 @@ These are mainly used for _UnitPoint_ coordinates, as well as with distance valu
 | feet         | ft            | Real-world unit (0.3048 m)
 | percent      | pc            | Relative value whose meaning depends on context e.g., Image's _hotSpot_, _scaling_.
 | points       | pt            | One point is equal to 1/72 inch (0.3528 mm).
-| em           | em            | One em is equal to the target's selected or default font point size.
+| em           | em            | One em is equal to the target's selected or default font size.
 | screenInches | inch          | Display unit (25.4 mm); see http://docs.ogc.org/DRAFTS/20-058.html#rc_display-resolution[OGC _API - Maps_ "Display Resolution" requirements class] (`mm-per-pixel`) which defaults to 0.28 mm/pixel (~90.7142857 pixels/inch).
 | screenCM     | cm            | Display unit (10 mm); see http://docs.ogc.org/DRAFTS/20-058.html#rc_display-resolution[OGC _API - Maps_ "Display Resolution" requirements class] (`mm-per-pixel`) which defaults to 0.28 mm/pixel (0.028 cm/pixel).
 | screenMM     | mm            | Display unit; see http://docs.ogc.org/DRAFTS/20-058.html#rc_display-resolution[OGC _API - Maps_ "Display Resolution" requirements class] (`mm-per-pixel`) which defaults to 0.28 mm/pixel.

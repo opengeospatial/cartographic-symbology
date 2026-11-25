@@ -241,7 +241,9 @@
                       ],
                       "font": {
                         "face": "Arial",
-                        "size": 14,
+                        "size": {
+                          "pt": 14
+                        },
                         "bold": false,
                         "italic": true,
                         "opacity": 1.0,

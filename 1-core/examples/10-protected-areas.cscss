@@ -18,7 +18,7 @@ ProtectedAreas[dataLayer.type = vector]
       fill: { color: #4f8a3c; opacity: 0.12 };
       stroke: { color: #4f8a3c; width: 7 px; opacity: 0.45; center: { color: #2f5d2a; width: 1.2 px } };
       label: { elements: [ Text { text: name, alignment: center middle,
-                                 font: { face: 'Arial', size: 13, bold: true, italic: true, color: #2f5d2a,
+                                 font: { face: 'Arial', size: 13 pt, bold: true, italic: true, color: #2f5d2a,
                                          outline: { size: 2.5, opacity: 0.85, color: white } } } ],
                placement: { priority: 3; minSpacing: 500 } };
    }
@@ -27,7 +27,7 @@ ProtectedAreas[dataLayer.type = vector]
       fill: { color: #a8741a; opacity: 0.55; dotpattern: { distance: { horizontal: 7 px; vertical: 7 px } } };
       stroke: { color: #c99a3a; width: 5 px; opacity: 0.4; center: { color: #8a5e14; width: 1 px } };
       label: { elements: [ Text { text: name, alignment: center middle,
-                                 font: { face: 'Arial', size: 8.5, italic: true, color: #6e4a0e,
+                                 font: { face: 'Arial', size: 8.5 pt, italic: true, color: #6e4a0e,
                                          outline: { size: 2, opacity: 0.85, color: white } } } ] };
    }
    [class = 'natureReserve']
@@ -35,7 +35,7 @@ ProtectedAreas[dataLayer.type = vector]
       fill: { color: #b8442f; opacity: 0.6; hatch: { width: 1 px; angle: 45; distance: 5 px } };
       stroke: { color: #d0705a; width: 5 px; opacity: 0.4; center: { color: #9a3322; width: 1 px } };
       label: { elements: [ Text { text: name, alignment: center middle,
-                                 font: { face: 'Arial', size: 8.5, italic: true, color: #7e2a1c,
+                                 font: { face: 'Arial', size: 8.5 pt, italic: true, color: #7e2a1c,
                                          outline: { size: 2, opacity: 0.85, color: white } } } ] };
    }
 }
