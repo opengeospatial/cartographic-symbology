@@ -54,6 +54,7 @@ part:: A Renderer SHALL support evaluating a `mul` operation expression as the p
 identifier:: /req/arithmetic/div
 part:: An Encoding SHALL support defining a `div` operation expression taking two numeric operands.
 part:: A Renderer SHALL support evaluating a `div` operation expression as the real-valued quotient of the first operand divided by the second operand, including when both operands are integers.
+part:: A Renderer SHALL support evaluating a `div` operation expression whose second operand is 0 to NULL.
 ====
 
 [[req-arithmetic-int-div]]
@@ -65,6 +66,7 @@ part:: A Renderer SHALL support evaluating a `div` operation expression as the r
 identifier:: /req/arithmetic/int-div
 part:: An Encoding SHALL support defining an `intDiv` operation expression taking two numeric operands.
 part:: A Renderer SHALL support evaluating an `intDiv` operation expression as the integer quotient of the first operand divided by the second operand, truncated toward zero.
+part:: A Renderer SHALL support evaluating an `intDiv` operation expression whose second operand is 0 to NULL.
 ====
 
 [[req-arithmetic-mod]]
@@ -76,6 +78,7 @@ part:: A Renderer SHALL support evaluating an `intDiv` operation expression as t
 identifier:: /req/arithmetic/mod
 part:: An Encoding SHALL support defining a `mod` operation expression taking two numeric operands.
 part:: A Renderer SHALL support evaluating a `mod` operation expression as the remainder of the first operand divided by the second operand, consistent with the `intDiv` operator (i.e., the result has the sign of the first operand).
+part:: A Renderer SHALL support evaluating a `mod` operation expression whose second operand is 0 to NULL.
 ====
 
 [[req-arithmetic-pow]]
@@ -87,4 +90,5 @@ part:: A Renderer SHALL support evaluating a `mod` operation expression as the r
 identifier:: /req/arithmetic/pow
 part:: An Encoding SHALL support defining a `pow` operation expression taking two numeric operands.
 part:: A Renderer SHALL support evaluating a `pow` operation expression as the first operand raised to the power of the second operand.
+part:: A Renderer SHALL support evaluating a `pow` operation expression to NULL when its first operand is 0 and its second operand is negative, or when its first operand is negative and its second operand is not an integer.
 ====
