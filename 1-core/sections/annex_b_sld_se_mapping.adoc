@@ -15,7 +15,9 @@ Standard.
 |===
 | Construct         | SE Equivalent
 | StylingRule       | `<Rule>`
-| name              | `<Name>` inside `<Rule>`
+| id                | `<Name>` inside `<Rule>`
+| name              | `<Title>` inside `<Rule>`
+| description       | `<Abstract>` inside `<Rule>`
 | selector          | `<ogc:Filter>`
 | symbolizer        | `<PointSymbolizer>`, `<LineSymbolizer>`, `<PolygonSymbolizer>`, `<TextSymbolizer>`, `<RasterSymbolizer>`
 | nestedRules       | `<ElseFilter>` provides limited support for one use case of nested rules
