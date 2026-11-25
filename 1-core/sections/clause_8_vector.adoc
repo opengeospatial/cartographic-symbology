@@ -15,12 +15,9 @@ rendered at the exact location of point geometry, at the centroid of polygon geo
 ....
 @startuml
 class Symbolizer <<extended>>
-Symbolizer : fill: Fill [0..1]
-Symbolizer : stroke: Stroke [0..1]
-Symbolizer : marker: Marker [0..1]
-Symbolizer *-- Fill
-Symbolizer *-- Stroke
-Symbolizer *-- Marker
+Symbolizer "1" *-- "0..1" Fill : fill
+Symbolizer "1" *-- "0..1" Stroke : stroke
+Symbolizer "1" *-- "0..1" Marker : marker
 @enduml
 ....
 
@@ -61,9 +58,8 @@ SystemIdentifierExpression --> DataLayer
 Feature : identifier: string
 Feature : geometryDimensions: integer
 
-DataLayer : features: Feature[*]
 DataLayer : featuresGeometryDimensions: integer
-DataLayer *-- Feature
+DataLayer "1" *-- "*" Feature : features
 @enduml
 ....
 
@@ -120,9 +116,8 @@ The red, green and blue components of a Color express a color in the https://en.
 [plantuml, target=diagram-classes, format=png]
 ....
 @startuml
-Fill : color: Color
 Fill : opacity: number
-Fill *-- Color
+Fill *-- Color : color
 @enduml
 ....
 
@@ -147,12 +142,10 @@ Separate conformance classes can extend this Fill class with additional properti
 Stroke --|> StrokeStyling
 Stroke *-- StrokeStyling
 
-StrokeStyling : color: Color
 StrokeStyling : opacity: number
 StrokeStyling : width: number
-StrokeStyling : widthUnit: GraphicalUnit
-StrokeStyling *-- Color
-StrokeStyling *-- GraphicalUnit
+StrokeStyling *-- Color : color
+StrokeStyling *-- GraphicalUnit : widthUnit
 @enduml
 ....
 
@@ -221,8 +214,7 @@ Consequently, either the unit of measure is determined through the uom code dire
 @startuml
 Marker --|> MultiGraphic
 
-MultiGraphic : elements: Graphic [0..*]
-MultiGraphic *-- Graphic
+MultiGraphic "1" *-- "0..*" Graphic : elements
 
 Graphic : position: UnitPoint
 Graphic : opacity: number
@@ -295,16 +287,13 @@ or by a three-dimensional cube. The GraphicSize properties are documented in the
 ....
 @startuml
 Dot --|> Shape
-Dot : point: UnitPoint
 Dot : size: number
-Dot : color: Color
-Dot *-- UnitPoint
-Dot *-- Color
+Dot *-- UnitPoint : point
+Dot *-- Color : color
 
 abstract class Shape
 Shape --|> Graphic
-Shape : stroke: Stroke [0..1]
-Shape *-- Stroke
+Shape "1" *-- "0..1" Stroke : stroke
 @enduml
 ....
 
@@ -335,14 +324,11 @@ A Dot inherits from a Shape class allowing to define a `stroke` which controls t
 ....
 @startuml
 Image --|> Graphic
-Image  : image: Resource
-Image  : hotSpot: UnitPoint
-Image  : tint: Color
-Image  : blackTint: Color
 Image  : alphaThreshold: number
-Image *-- Resource
-Image *-- Color
-Image *-- UnitPoint
+Image *-- Resource : image
+Image *-- UnitPoint : hotSpot
+Image *-- Color : tint
+Image *-- Color : blackTint
 
 Resource : path: string[0..1]
 Resource : url: string[0..1]
@@ -389,10 +375,8 @@ The actual image content is defined by a Resource, which can be specified by one
 @startuml
 Text --|> Graphic
 Text : text: string -- IdentifierExpression
-Text : font: Font
-Text : alignment: TextAlignment
-Text *-- Font
-Text *-- TextAlignment
+Text *-- Font : font
+Text *-- TextAlignment : alignment
 Text --> IdentifierExpressions
 
 Font : face: string
@@ -400,14 +384,11 @@ Font : size: number
 Font : bold: boolean
 Font : italic: boolean
 Font : underline: boolean
-Font : color: Color
 Font : opacity: number
-Font *-- Color
+Font *-- Color : color
 
-TextAlignment : horizontal: HAlignment
-TextAlignment : vertical: VAlignment
-TextAlignment *-- HAlignment
-TextAlignment *-- VAlignment
+TextAlignment *-- HAlignment : horizontal
+TextAlignment *-- VAlignment : vertical
 
 enum HAlignment
 HAlignment : left
