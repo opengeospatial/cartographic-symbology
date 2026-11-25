@@ -95,7 +95,7 @@ betweenBound:
    | betweenBound arithmeticOperatorAdd betweenBound
    ;
 
-expConstant: NUMERIC_LITERAL UNIT? | HEX_LITERAL;
+expConstant: NUMERIC_LITERAL UNIT? | NEGATIVE_NUMERIC_LITERAL UNIT? | HEX_LITERAL;
 
 expString: CHARACTER_LITERAL;
 

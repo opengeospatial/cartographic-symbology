@@ -24,6 +24,32 @@ Because later rules allow to override earlier ones, this cascading allows to app
 
 A style sheet can also contain comments either using C-style multi-line comments (between `/\*` and `*/`) or C++-style single-line comments (starting with `//`).
 
+=== Metadata
+
+A style sheet can start with metadata lines, before its variables and styling rules. Each line is a dot (`.`), a name, and a value as a text literal (see <<cscss-text-literals>>). The line sets the Metadata property of the Style given in the following table. A property that has several values takes one line per value.
+
+.Metadata lines
+[width="90%",options="header"]
+|===
+| Line            | Metadata property | Values
+| `.identifier`   | `identifier`      | One line
+| `.title`        | `title`           | One line
+| `.description`  | `description`     | One line
+| `.author`       | `authors`         | One line per author
+| `.keyword`      | `keywords`        | One line per keyword
+| `.geoDataClass` | `geoDataClasses`  | One line per GeoDataClass URI
+|===
+
+For example, these lines set a title and three keywords, which are `"keywords": [ "Protected area", "National park", "Norway" ]` in CartoSym-JSON:
+
+[source,cscss]
+----
+.title 'Protected areas by class'
+.keyword 'Protected area'
+.keyword 'National park'
+.keyword 'Norway'
+----
+
 === Styling Rules and Symbolizers
 
 A styling rule applies zero or more symbolizer properties if its Selector is evaluated to _true_.
@@ -83,6 +109,11 @@ However, a number of extensions are introduced to cover the full range of capabi
 
 The first such extension is that in the context of a symbolizer property value, expressions are not limited to boolean predicates being
 evaluated as true or false, but can return any type of values such as numerical, text, or complex values, including geometry.
+
+[[cscss-text-literals]]
+==== Text literals
+
+A text literal is enclosed within single quotes (`'`). It can be split into several quoted parts separated by whitespace, for example to spread a long description over several lines. The parts are joined as they are, with nothing added between them: `'a' 'b'` is the text `ab`, and `'a ' 'b'` is the text `a b`.
 
 ==== Instance expressions
 
@@ -180,6 +211,8 @@ The following are some equivalent examples of valid definitions where a polygon 
   ) )`
 
 The element of tuples can be either numeric literals or identifiers.
+
+A `-` that follows whitespace and comes directly before a number is the sign of that number, which then starts a new element of the tuple, as in CSS: `position: 10 -4` is the point (10, -4). With whitespace after the `-`, as in `10 - 4`, or none before it, as in `10-4`, the `-` is a subtraction. In the grammar, the token `NEGATIVE_NUMERIC_LITERAL` makes this distinction.
 
 The classes defined in this Standard that can be encoded as tuples are:
 
