@@ -1,7 +1,7 @@
 {
   "stylingRules": [
     {
-      "$comment": "/req/vector/image: an Image marker on the cabins; the blue Dot marks the position of the Graphic",
+      "$comment": "/req/vector/image: an Image marker on the cabins, 10 mm wide and high; the blue Dot marks the position of the Graphic",
       "selector": {
         "op": "=",
         "args": [
@@ -29,6 +29,9 @@
                   "pc": 100
                 }
               ],
+              "size": {
+                "mm": 10
+              },
               "blackTint": [
                 184,
                 50,
