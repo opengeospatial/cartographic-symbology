@@ -7,7 +7,7 @@ Roads
    {
       visibility: true;
       stroke: { color: #d0483a; width: 2 px };
-      label: { elements: [ Text { text: number, alignment: center middle, font: { face: 'Arial', size: 8, bold: true, color: #b8322a,
+      label: { elements: [ Text { text: number, alignment: center middle, font: { face: 'Arial', size: 8 pt, bold: true, color: #b8322a,
                                                          outline: { size: 2, color: white } } } ],
                placement: { minSpacing: 150 } };
    }

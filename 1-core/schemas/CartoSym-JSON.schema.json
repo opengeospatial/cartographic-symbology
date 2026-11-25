@@ -464,7 +464,7 @@
           "properties": {
              "alter": { "type": "boolean" },
              "face": { "$ref": "#/$defs/characterExpression" },
-             "size": { "$ref": "#/$defs/numericExpression" },
+             "size": { "$ref": "#/$defs/unitValue" },
              "bold": { "$ref": "#/$defs/boolExpression" },
              "italic": { "$ref": "#/$defs/boolExpression" },
              "underline": { "$ref": "#/$defs/boolExpression" },

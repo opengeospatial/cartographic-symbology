@@ -13,7 +13,7 @@ Municipalities
    label: { elements: [ Text { text: name,
                                alignment: center middle,
                                font: { face: 'Tahoma',
-                                       size: 14,
+                                       size: 14 pt,
                                        outline: { size: 3,
                                                   opacity: 0.75,
                                                   color: white }
@@ -122,7 +122,7 @@ ProtectedAreas
       label: { elements: [ Text {
                      text: name,
                      font: { face: 'Times New Roman',
-                     size: 12,
+                     size: 12 pt,
                      italic: true,
                      color: papayaWhip,
                      outline: { size: 3,
@@ -149,7 +149,7 @@ Places
          Text { text: name,
                 position: 10 4,
                 font: { face: 'Tahoma',
-                        size: 12,
+                        size: 12 pt,
                         outline: { color: white,
                                    size: 3.5,
                                    opacity: 0.75 }

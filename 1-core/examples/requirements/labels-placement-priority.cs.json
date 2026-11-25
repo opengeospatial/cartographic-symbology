@@ -60,7 +60,9 @@
                   ],
                   "font": {
                     "face": "Arial",
-                    "size": 9,
+                    "size": {
+                      "pt": 9
+                    },
                     "color": [
                       43,
                       43,

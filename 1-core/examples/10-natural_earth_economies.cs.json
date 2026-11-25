@@ -52,7 +52,9 @@
               },
               "font": {
                 "face": "Arial",
-                "size": 8,
+                "size": {
+                  "pt": 8
+                },
                 "color": "black"
               }
             }

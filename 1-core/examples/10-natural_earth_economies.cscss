@@ -14,7 +14,7 @@ ne_10m_admin_0_countries[dataLayer.type = vector]
              text : NAME,
              font:{
              face:'Arial',
-             size:8,
+             size:8 pt,
              color:black
              }
                 }]

@@ -58,7 +58,7 @@ include::../examples/requirements/vector-stroke.adoc[]
 ====
 [%metadata]
 identifier:: /req/vector/units
-part:: An Encoding SHALL support qualifying distance properties identified as "uom-qualified" with a unit of measure (pixel, millimeter, inch, percentage, meter, foot).
+part:: An Encoding SHALL support qualifying distance properties identified as "uom-qualified" with a unit of measure (pixel, millimeter, inch, point, percentage, meter, foot).
 part:: A Renderer SHALL support applying the appropriate unit transformation when rendering elements specifying a uom-qualified distances.
 ====
 
@@ -200,7 +200,7 @@ include::../examples/requirements/vector-text.adoc[]
 ====
 [%metadata]
 identifier:: /req/vector/fonts
-part:: An Encoding SHALL support defining Fonts with a `face` property indicating the face name (also known as the font _family_), a `size` specified in _points_, a `bold` flag indicating to use a bold weight if true, and an `italic` flag indicating to use an italic style if true.
+part:: An Encoding SHALL support defining Fonts with a `face` property indicating the face name (also known as the font _family_), a uom-qualified `size` (in pixels when no unit is given, as for any uom-qualified property), a `bold` flag indicating to use a bold weight if true, and an `italic` flag indicating to use an italic style if true.
 part:: A Renderer SHALL support drawing text using the fonts specified.
 ====
 
