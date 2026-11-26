@@ -1,0 +1,126 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/labels/line: road numbers laid along the roads, the Text following the bends and the Dot in front of it",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "european"
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "national"
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "county"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                208,
+                72,
+                58
+              ],
+              "width": {
+                "px": 2.0
+              }
+            },
+            "label": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 7
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                },
+                {
+                  "position": {
+                    "x": 7.0,
+                    "y": 0.0
+                  },
+                  "type": "Text",
+                  "text": {
+                    "op": "concatenate",
+                    "args": [
+                      "Road ",
+                      {
+                        "property": "number"
+                      }
+                    ]
+                  },
+                  "alignment": [
+                    "left",
+                    "middle"
+                  ],
+                  "font": {
+                    "face": "Arial",
+                    "size": 8,
+                    "bold": true,
+                    "color": [
+                      184,
+                      50,
+                      42
+                    ],
+                    "outline": {
+                      "size": 2,
+                      "color": "white"
+                    }
+                  }
+                }
+              ],
+              "placement": {
+                "minSpacing": 150.0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

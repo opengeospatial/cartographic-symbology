@@ -26,6 +26,7 @@ LabelPlacement : maxSpacing: number
 This requirements class adds support for labels that are placed using a placement algorithm (and may not always be placed)
 drawn as a separate pass on top of styled vector features and coverages.
 Like Markers, Labels inherit from the MultiGraphic class and may contain multiple graphical elements.
+A label on a line is placed along the line, with its text following the curve of the line.
 
 .Extended Symbolizer Class
 [width="90%",options="header"]

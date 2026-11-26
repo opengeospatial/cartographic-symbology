@@ -1,0 +1,15 @@
+// /req/labels/line: road numbers laid along the roads, the Text following the bends and the Dot in front of it
+Roads
+{
+   marker: null;
+   visibility: false;
+   [class = 'european' or class = 'national' or class = 'county']
+   {
+      visibility: true;
+      stroke: { color: #d0483a; width: 2 px };
+      label: { elements: [ Dot { size: 7 px, color: #b8322a },
+                           Text { text: concatenate('Road ', number), position: 7 0, alignment: left middle,
+                                  font: { face: 'Arial', size: 8, bold: true, color: #b8322a, outline: { size: 2, color: white } } } ],
+               placement: { minSpacing: 150 } };
+   }
+}
