@@ -1,6 +1,6 @@
 == Scope
 
-This Standard presents the requirements that define version 2.0 of the _Styles and Symbology Model and Encodings - Part 1: Core_ (_"SymCore 2.0"_).
+This Standard presents the requirements that define version 2.0 of the _Cartographic Symbology - Part 1: Core Model and Encodings_ Standard (_"CartoSym 2.0 - Part 1: Core"_), a successor to the _OGC Symbology Conceptual Model: Core Part_ (_"SymCore 1.0"_).
 A Model for the portrayal of geographic data is defined at both the conceptual and logical levels, in a modular manner through the use of separate requirements classes and specific extension points.
 The requirements classes defined by this first part cover the most common use cases for portraying geospatial vector features and coverages.
 Several scenarios of varying complexity and the associated requirements classes enabling them are illustrated in an annex.

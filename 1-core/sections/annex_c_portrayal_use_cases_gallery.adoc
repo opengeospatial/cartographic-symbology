@@ -4,9 +4,9 @@
 
 This annex illustrates the capabilities of the different requirements classes defined in this standard
 with a map gallery of practical use cases alongside the styles used to generate the maps
-encoded in the _Cascading Styles and Symbology Stylesheets_ encoding defined in this Standard.
+encoded in the _Cartographic Symbology Cascading Style Sheets_ encoding defined in this Standard.
 
-See supplementary materials for same style sheets encoded using the JSON Styles & Symbology encoding.
+See supplementary materials for same style sheets encoded using the JSON Cartographic Symbology encoding.
 
 === Choropleth (graduated map)
 
@@ -145,7 +145,7 @@ image::figures/roads-group.png[]
 ====
 
 ////
-   Styles & Symbology Painter's algorithm
+   Cartographic Symbology Painter's algorithm
 
       For each viz.pass:
          For each distinct zOrder:
