@@ -1,0 +1,9 @@
+// /req/core/rules: a later rule overrides what earlier rules set, for the features it selects
+Landcover
+{
+   marker: null;
+   fill: { color: #e4e0d4 };
+   stroke: { color: #b8b2a2; width: 0.5 px };
+}
+Landcover[class = 'forest'] { fill.color: #93bf85; }
+Landcover[area < 50000] { fill.color: #e8c86a; }

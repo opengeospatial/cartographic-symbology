@@ -1,0 +1,59 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/expressions-field-identifiers: a selector on a property of each land cover feature",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "color": [
+            236,
+            233,
+            224
+          ]
+        },
+        "stroke": {
+          "color": [
+            201,
+            196,
+            184
+          ],
+          "width": {
+            "px": 0.5
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                94,
+                143,
+                82
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

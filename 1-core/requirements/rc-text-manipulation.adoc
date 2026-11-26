@@ -13,30 +13,30 @@ subject:: Style encodings and Renderers
 ====
 
 [[req-text-manipulation-case-insensitize]]
-===== Text `caseInsensitize` function
+===== Text `casei` function
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/text-manipulation/case-insensitize
-part:: An Encoding SHALL support defining a `caseInsensitize` function that makes a string suitable for case-insensitive comparison.
-part:: A Renderer SHALL support evaluating the `caseInsensitize` function such that two strings differing only in letter case compare as equal once both are case-insensitized (equivalent to the CQL2 `CASEI` function).
+part:: An Encoding SHALL support defining a `casei` function that makes a string suitable for case-insensitive comparison.
+part:: A Renderer SHALL support evaluating the `casei` function as the CQL2 `casei` function, such that two strings differing only in letter case compare as equal once `casei` is applied to both.
 ====
 
 [[req-text-manipulation-accent-insensitize]]
-===== Text `accentInsensitize` function
+===== Text `accenti` function
 
 [requirement]
 ====
 [%metadata]
 identifier:: /req/text-manipulation/accent-insensitize
-part:: An Encoding SHALL support defining an `accentInsensitize` function that strips accents and folds diacritics in a string.
-part:: A Renderer SHALL support evaluating the `accentInsensitize` function as the CQL2 `accenti` function, implementing accent stripping and diacritic folding.
+part:: An Encoding SHALL support defining an `accenti` function that strips accents and folds diacritics in a string.
+part:: A Renderer SHALL support evaluating the `accenti` function as the CQL2 `accenti` function, implementing accent stripping and diacritic folding.
 ====
 
 NOTE: CQL2 does not name a folding table, so implementations can differ on individual letters. Diacritic folding also folds letters that Unicode does not decompose, such as `Ø` to `O` and `Ł` to `L`, as libCartoSym does, while letters that would need a one-to-many folding, such as `ß` and `Æ`, stay as they are. As CQL2 recommends, the Japanese dakuten and handakuten are not removed. The closest published table is https://www.unicode.org/reports/tr30/datafiles/DiacriticFolding.txt[`DiacriticFolding.txt`] of Unicode Technical Report #30, a withdrawn draft with a few known errors.
 
-// TODO(review): align the names with the CQL2 `casei` and `accenti` used by the JSON schema and libCartoSym (see #140). Whether to link eC's table and its errata as well (see #152).
+// TODO(review): whether to link eC's table and its errata as well (see #152).
 
 [[req-text-manipulation-lower-case]]
 ===== Text `lowerCase` function

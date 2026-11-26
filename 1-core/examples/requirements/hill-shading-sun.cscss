@@ -1,0 +1,7 @@
+// /req/hill-shading/sun: the direction of the sun
+Elevation
+{
+   singleChannel: elevation;
+   colorMap: [ 0 #efece4, 2500 #efece4 ];
+   hillShading: { factor: 1; sun: { azimuth: 315; elevation: 45 } };
+}

@@ -1,0 +1,45 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/coverage/opacity-map, /rec/coverage/map-interpolation: the valleys fade out",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Elevation"
+        ]
+      },
+      "symbolizer": {
+        "singleChannel": {
+          "property": "elevation"
+        },
+        "colorMap": [
+          [
+            500.0,
+            "#7d9a6a"
+          ],
+          [
+            1300.0,
+            "#d6c79e"
+          ],
+          [
+            2100.0,
+            "#9c8f84"
+          ]
+        ],
+        "opacityMap": [
+          [
+            700.0,
+            0.0
+          ],
+          [
+            900.0,
+            1.0
+          ]
+        ]
+      }
+    }
+  ]
+}

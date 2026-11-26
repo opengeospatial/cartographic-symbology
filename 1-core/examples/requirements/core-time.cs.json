@@ -1,0 +1,100 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/time: roads updated within the visualization's time interval in red",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "stroke": {
+          "color": [
+            201,
+            196,
+            187
+          ],
+          "width": {
+            "px": 2.0
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "and",
+            "args": [
+              {
+                "op": ">=",
+                "args": [
+                  {
+                    "property": "validDate"
+                  },
+                  {
+                    "sysId": "viz.timeInterval.start.date"
+                  }
+                ]
+              },
+              {
+                "op": "<=",
+                "args": [
+                  {
+                    "property": "validDate"
+                  },
+                  {
+                    "sysId": "viz.timeInterval.end.date"
+                  }
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "stroke": {
+              "color": [
+                208,
+                72,
+                58
+              ],
+              "width": {
+                "px": 3.0
+              }
+            }
+          }
+        },
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "tractor"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": false
+          }
+        }
+      ]
+    }
+  ]
+}

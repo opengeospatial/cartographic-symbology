@@ -64,9 +64,9 @@ include::sections/clause_14_operations.adoc[]
 
 include::sections/clause_15_functions.adoc[]
 
-include::sections/clause_16_json.adoc[]
+include::sections/clause_16_cscss.adoc[]
 
-include::sections/clause_17_cscss.adoc[]
+include::sections/clause_17_json.adoc[]
 
 ////
 add or remove annexes after "A" as necessary

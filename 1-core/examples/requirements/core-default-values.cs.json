@@ -1,0 +1,88 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/default-values: the stroke of the roads, with some members left to their default values",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "or",
+                    "args": [
+                      {
+                        "op": "=",
+                        "args": [
+                          {
+                            "property": "class"
+                          },
+                          "municipal"
+                        ]
+                      },
+                      {
+                        "op": "=",
+                        "args": [
+                          {
+                            "property": "class"
+                          },
+                          "county"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "=",
+                    "args": [
+                      {
+                        "property": "class"
+                      },
+                      "european"
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "national"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "stroke": {
+              "color": [
+                208,
+                72,
+                58
+              ],
+              "width": {
+                "px": 3.0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

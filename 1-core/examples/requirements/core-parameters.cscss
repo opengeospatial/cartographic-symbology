@@ -1,0 +1,11 @@
+// /req/core/parameters: literal values for the size and the color of the Dot on each peak
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain']
+   {
+      visibility: true;
+      marker: { elements: [ Dot { size: 6 px, color: #b8322a } ] };
+   }
+}

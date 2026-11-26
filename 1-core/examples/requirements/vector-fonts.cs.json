@@ -1,0 +1,74 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/fonts: the size, weight and style of the font of the peak names",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "type"
+              },
+              "mountain"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 4
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": {
+                    "property": "name"
+                  },
+                  "alignment": [
+                    "center",
+                    "bottom"
+                  ],
+                  "position": {
+                    "x": 0.0,
+                    "y": -4.0
+                  },
+                  "font": {
+                    "face": "Arial",
+                    "size": 9,
+                    "color": [
+                      43,
+                      43,
+                      43
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

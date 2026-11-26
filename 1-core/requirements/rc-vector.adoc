@@ -23,6 +23,12 @@ part:: An Encoding SHALL support defining a `fill` Symbolizer property as an obj
 part:: A Renderer SHALL support filling vector geometry based on a `fill` property specifying a `color` and an `opacity`.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/fill`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-fill.adoc[]
+====
+
 .A shape area with fill properties (on the left a green color and 100% opacity, on the right 50% opacity)
 image::figures/fill_opacity.png[]
 
@@ -35,6 +41,14 @@ image::figures/fill_opacity.png[]
 identifier:: /req/vector/stroke
 part:: An Encoding SHALL support defining a `stroke` Symbolizer property as an object including a `color` and a units of measure-qualified ("uom-qualified") `width`.
 part:: A Renderer SHALL support drawing the stroke of vector geometry based on a `stroke` property specifying a `color` and a uom-qualified `width`.
+part:: A Renderer SHALL support drawing strokes with round caps at the ends of open lines and round joins at their vertices.
+part:: A Renderer SHALL support drawing nothing for a stroke whose `width` is 0 or less.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/stroke`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-stroke.adoc[]
 ====
 
 [[req-vector-units]]
@@ -48,6 +62,12 @@ part:: An Encoding SHALL support qualifying distance properties identified as "u
 part:: A Renderer SHALL support applying the appropriate unit transformation when rendering elements specifying a uom-qualified distances.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/units`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-units.adoc[]
+====
+
 [[req-vector-marker]]
 ===== Symbolizer `marker` property
 
@@ -59,6 +79,12 @@ part:: An Encoding SHALL support defining a `marker` Symbolizer property as an a
 part:: A Renderer SHALL support drawing the graphical elements of a marker at the points of vector geometry (for points and line strings) and at the centroid of polygons.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/marker`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-marker.adoc[]
+====
+
 [[req-vector-graphics]]
 ===== Graphics
 
@@ -68,6 +94,13 @@ part:: A Renderer SHALL support drawing the graphical elements of a marker at th
 identifier:: /req/vector/graphics
 part:: An Encoding SHALL support defining graphical elements (graphics) specifying a uom-qualified 2D real position offsetting the graphic from its original position.
 part:: A Renderer SHALL support drawing the Graphics at the specified uom-qualified 2D position offset relative to its original position.
+part:: A Renderer SHALL support interpreting a positive `x` of the position as an offset to the right and a positive `y` as an offset downwards on the map, as for screen coordinates.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/graphics`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-graphics.adoc[]
 ====
 
 [[req-vector-dot]]
@@ -79,10 +112,24 @@ part:: A Renderer SHALL support drawing the Graphics at the specified uom-qualif
 identifier:: /req/vector/dot
 part:: An Encoding SHALL support defining a Dot Graphic inheriting from a base Shape class specifying a stroke, with a uom-qualified `size` property and a `color` property that are the same values as the `width` and the `color` of its stroke.
 part:: A Renderer SHALL support setting the `width` and the `color` of the stroke of a Dot when its `size` and `color` are set, and the reverse, so that the value set last applies to both.
-part:: A Renderer SHALL support drawing a Dot Graphic as a filled circle whose diameter is its `size` (the `width` of its stroke), in its `color` (the `color` of its stroke).
+part:: A Renderer SHALL support drawing a Dot Graphic as a filled circle whose diameter is its `size` (the `width` of its stroke), in its `color` (the `color` of its stroke), and drawing nothing for a Dot whose `size` is 0 or less.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/dot`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-dot.adoc[]
 ====
 
 NOTE: A Dot is a stroke drawn on a single point, as if a pen were put down and lifted again. A Dot with an outline is drawn with two concentric Dots, the larger one first.
+
+[[per-vector-dot-outline]]
+[permission]
+====
+[%metadata]
+identifier:: /per/vector/dot-outline
+part:: A Renderer MAY draw a hairline outline, no wider than 1 pixel, around a Dot in a color that contrasts with the Dot's `color`, so that the Dot remains visible on a background of its own color (such as the default white Dot on a white map).
+====
 
 [[req-vector-image]]
 ===== Image Graphics
@@ -92,9 +139,21 @@ NOTE: A Dot is a stroke drawn on a single point, as if a pen were put down and l
 [%metadata]
 identifier:: /req/vector/image
 part:: An Encoding SHALL support defining an Image Graphic with an `image` property referencing an image resource, an optional uom-qualified `hotSpot` position within the image, optional `tint` and `blackTint` Colors, and an optional `alphaThreshold` real number between 0 and 1.
-part:: A Renderer SHALL support drawing the referenced image so that its `hotSpot` (by default, its center, `{ 0.5, 0.5 }`) is located at the position of the Graphic.
+part:: A Renderer SHALL support drawing the referenced image at its own size, one pixel of the image to one pixel of the map (for an SVG image, the size given by its `width` and `height`).
+part:: A Renderer SHALL support drawing the referenced image so that its `hotSpot` (by default, its center, `50 pc 50 pc`) is located at the position of the Graphic.
+part:: A Renderer SHALL support interpreting the `hotSpot` in the coordinates of the image, from its top left corner (`0 0`) with `x` to the right and `y` downwards, where a number without a unit is in pixels of the image, a value in `pc` is a percentage of the image's width or height, and a value in another unit is a length from that corner.
 part:: A Renderer SHALL support recoloring the image so that each red, green and blue component _v_ (between 0 and 1) of each pixel becomes `tint` × _v_ + `blackTint` × (1 − _v_), using the same component of `tint` and `blackTint`.
 ====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/image`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-image.adoc[]
+====
+
+NOTE: SE 1.1 `AnchorPoint` gives fractions of the graphic's width and height and measures `AnchorPointY` from the bottom of the graphic: a `hotSpot` of `x pc y pc` is an `AnchorPointX` of _x_ / 100 and an `AnchorPointY` of 1 − _y_ / 100.
+
+// TODO(review): an image drawn at its own size in pixels is smaller on a display with smaller pixels; add a uom-qualified Image `size` (display units such as `mm` or `em`, and ground units such as `m` and `ft`), as a tuple allowing `size.y` alone, saying which dimension a single value sets and whether it also applies to Images in pattern fills and strokes (see #100).
 
 NOTE: With the default `tint` (white) and `blackTint` (black), the image is drawn unchanged. For a monochrome icon, `tint` sets the color of its white parts and `blackTint` the color of its black parts, so that one icon can be drawn in a different color per category.
 
@@ -108,6 +167,14 @@ identifier:: /per/vector/image-alpha-test
 part:: A Renderer MAY use `alphaThreshold` as the threshold of an alpha test, by not drawing the pixels of the image whose alpha value is below it.
 ====
 
+[[per-vector-image-linear-light]]
+[permission]
+====
+[%metadata]
+identifier:: /per/vector/image-linear-light
+part:: A Renderer MAY convert the sRGB components of the image, `tint` and `blackTint` to linear light, recolor the image there, and convert the result back to sRGB for output.
+====
+
 [[req-vector-text]]
 ===== Text Graphics
 
@@ -117,6 +184,13 @@ part:: A Renderer MAY use `alphaThreshold` as the threshold of an alpha test, by
 identifier:: /req/vector/text
 part:: An Encoding SHALL support defining a Text Graphic with a `text` unicode string content, a `font`, and an `alignment` with a horizontal (`horzAlignment`: `left`, `right` or `center`) and vertical component (`vertAlignment`: `top`, `middle`, `bottom`).
 part:: A Renderer SHALL support drawing the `text` of a Text Graphic using the `font` and the `alignment` specified.
+part:: A Renderer SHALL support aligning the text so that the edge or center of its box named by the `alignment` is at the position of the Graphic: `left` puts the start of the text there, `right` its end, `top` the top of the font's ascent, `bottom` the bottom of its descent, and `middle` the point halfway between them; the default `alignment` is `left` `top`.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/text`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-text.adoc[]
 ====
 
 [[req-vector-fonts]]
@@ -128,6 +202,12 @@ part:: A Renderer SHALL support drawing the `text` of a Text Graphic using the `
 identifier:: /req/vector/fonts
 part:: An Encoding SHALL support defining Fonts with a `face` property indicating the face name (also known as the font _family_), a `size` specified in _points_, a `bold` flag indicating to use a bold weight if true, and an `italic` flag indicating to use an italic style if true.
 part:: A Renderer SHALL support drawing text using the fonts specified.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/vector/fonts`, in CartoSym-CSS
+====
+include::../examples/requirements/vector-fonts.adoc[]
 ====
 
 ////

@@ -1,0 +1,13 @@
+// /req/variables/definition: the minimum elevation of the highlighted peaks, a variable the application can set
+@minElevation = 1900;
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain']
+   {
+      visibility: true;
+      marker: { elements: [ Dot { size: 4 px, color: #9a958b } ] };
+      [elevation >= @minElevation] { marker: { elements: [ Dot { size: 7 px, color: #b8322a } ] }; }
+   }
+}

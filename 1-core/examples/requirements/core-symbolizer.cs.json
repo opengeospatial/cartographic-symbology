@@ -1,0 +1,49 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/symbolizer: what no selected rule sets, and what no rule selects, is portrayed with the default values",
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Landcover"
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "lake"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "color": [
+            127,
+            178,
+            217
+          ]
+        },
+        "stroke": {
+          "color": [
+            63,
+            127,
+            179
+          ],
+          "width": {
+            "px": 1.0
+          }
+        }
+      }
+    }
+  ]
+}

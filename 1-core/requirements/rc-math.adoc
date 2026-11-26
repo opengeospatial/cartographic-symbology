@@ -75,7 +75,7 @@ part:: A Renderer SHALL support evaluating `atan2(y, x)` as the angle, in radian
 [%metadata]
 identifier:: /req/math/ceil
 part:: An Encoding SHALL support defining a call to the `ceil` standard function taking one numeric argument.
-part:: A Renderer SHALL support evaluating `ceil(x)` as the smallest integral value greater than or equal to `x`.
+part:: A Renderer SHALL support evaluating `ceil(x)` as the smallest integer greater than or equal to `x`.
 ====
 
 [[req-math-cos]]
@@ -119,7 +119,7 @@ part:: A Renderer SHALL support evaluating `exp(x)` as Euler's number _e_ raised
 [%metadata]
 identifier:: /req/math/floor
 part:: An Encoding SHALL support defining a call to the `floor` standard function taking one numeric argument.
-part:: A Renderer SHALL support evaluating `floor(x)` as the largest integral value less than or equal to `x`.
+part:: A Renderer SHALL support evaluating `floor(x)` as the largest integer less than or equal to `x`.
 ====
 
 [[req-math-log]]
@@ -151,8 +151,8 @@ part:: A Renderer SHALL support evaluating `log10(x)` as the base 10 logarithm o
 ====
 [%metadata]
 identifier:: /req/math/max
-part:: An Encoding SHALL support defining a call to the `max` standard function taking two numeric arguments.
-part:: A Renderer SHALL support evaluating `max(x, y)` as the greater of `x` and `y`.
+part:: An Encoding SHALL support defining a call to the `max` standard function taking one or more numeric arguments.
+part:: A Renderer SHALL support evaluating `max(x, y, ...)` as the greatest of its arguments, so that `max(x)` is `x`.
 ====
 
 [[req-math-min]]
@@ -162,8 +162,8 @@ part:: A Renderer SHALL support evaluating `max(x, y)` as the greater of `x` and
 ====
 [%metadata]
 identifier:: /req/math/min
-part:: An Encoding SHALL support defining a call to the `min` standard function taking two numeric arguments.
-part:: A Renderer SHALL support evaluating `min(x, y)` as the smaller of `x` and `y`.
+part:: An Encoding SHALL support defining a call to the `min` standard function taking one or more numeric arguments.
+part:: A Renderer SHALL support evaluating `min(x, y, ...)` as the smallest of its arguments, so that `min(x)` is `x`.
 ====
 
 [[req-math-pow]]

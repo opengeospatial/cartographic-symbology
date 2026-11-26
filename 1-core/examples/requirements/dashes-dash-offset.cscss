@@ -1,0 +1,11 @@
+// /req/dashes/dash-offset: the dash pattern started at an offset at the beginning of each path
+Roads
+{
+   marker: null;
+   visibility: false;
+   [class = 'path']
+   {
+      visibility: true;
+      stroke: { color: #b8442f; width: 2.5 px; dashPattern: [ 10 px, 10 px ]; dashOffset: 5 px };
+   }
+}

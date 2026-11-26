@@ -1,0 +1,106 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/rules: a later rule overrides what earlier rules set, for the features it selects",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "color": [
+            228,
+            224,
+            212
+          ]
+        },
+        "stroke": {
+          "color": [
+            184,
+            178,
+            162
+          ],
+          "width": {
+            "px": 0.5
+          }
+        },
+        "marker": null
+      }
+    },
+    {
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Landcover"
+            ]
+          },
+          {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "alter": true,
+          "color": [
+            147,
+            191,
+            133
+          ]
+        }
+      }
+    },
+    {
+      "selector": {
+        "op": "and",
+        "args": [
+          {
+            "op": "=",
+            "args": [
+              {
+                "sysId": "dataLayer.id"
+              },
+              "Landcover"
+            ]
+          },
+          {
+            "op": "<",
+            "args": [
+              {
+                "property": "area"
+              },
+              50000
+            ]
+          }
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "alter": true,
+          "color": [
+            232,
+            200,
+            106
+          ]
+        }
+      }
+    }
+  ]
+}

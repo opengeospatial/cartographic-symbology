@@ -1,0 +1,62 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/parameter-values/expressions: the size of each Dot computed from the elevation of the spot height",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "SpotHeights"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": ">=",
+            "args": [
+              {
+                "property": "elevation"
+              },
+              1300
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "op": "/",
+                    "args": [
+                      {
+                        "op": "-",
+                        "args": [
+                          {
+                            "property": "elevation"
+                          },
+                          1000
+                        ]
+                      },
+                      80
+                    ]
+                  },
+                  "color": [
+                    138,
+                    90,
+                    58
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

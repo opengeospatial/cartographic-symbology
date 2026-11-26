@@ -1,0 +1,13 @@
+// /req/core/layers: a rule selecting by the identifier or the type of the data layer
+Roads
+{
+   marker: null;
+   stroke: { color: #9a958b; width: 2 px };
+   [class = 'path' or class = 'tractor'] { visibility: false; }
+}
+Rivers
+{
+   marker: null;
+   stroke: { color: #9a958b; width: 2 px };
+}
+[dataLayer.id = 'Rivers'] { stroke.color: #3f7fb3; }

@@ -1,0 +1,33 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/dot: the size and color of a Dot on each spot height",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "SpotHeights"
+        ]
+      },
+      "symbolizer": {
+        "marker": {
+          "elements": [
+            {
+              "type": "Dot",
+              "size": {
+                "px": 6
+              },
+              "color": [
+                138,
+                90,
+                58
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

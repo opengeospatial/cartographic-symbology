@@ -1,0 +1,84 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/expressions-system-identifiers: a hatch fill where the renderer supports hatches, a plain fill otherwise",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                147,
+                191,
+                133
+              ]
+            },
+            "stroke": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "width": {
+                "px": 0.5
+              }
+            }
+          },
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "=",
+                "args": [
+                  {
+                    "sysId": "capabilities.hatches"
+                  },
+                  true
+                ]
+              },
+              "symbolizer": {
+                "fill": {
+                  "color": [
+                    94,
+                    143,
+                    82
+                  ],
+                  "hatch": {
+                    "width": {
+                      "px": 1.0
+                    },
+                    "angle": 45.0,
+                    "distance": {
+                      "px": 6.0
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

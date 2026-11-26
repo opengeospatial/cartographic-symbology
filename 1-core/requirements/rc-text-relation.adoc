@@ -21,6 +21,7 @@ subject:: Style encodings and Renderers
 identifier:: /req/text-relation/like
 part:: An Encoding SHALL support defining a `like` operation expression taking a text operand and a text pattern operand, where `%` in the pattern matches any sequence of zero or more characters and `_` matches exactly one character.
 part:: A Renderer SHALL support evaluating a `like` operation expression to true if and only if the first operand matches the pattern specified by the second operand.
+part:: A Renderer SHALL support a backslash (`\`) in the pattern making the character that follows it match only itself, so that the pattern `'50\%'` matches the text `50%` and the pattern `'\\'` matches a single backslash.
 ====
 
 [[req-text-relation-not-like]]
@@ -69,4 +70,4 @@ part:: A Renderer SHALL support evaluating `endsWith(a, b)` to true if and only 
 
 NOTE: The negations of the `contains`, `startsWith` and `endsWith` functions are written using the `not` operator, e.g., `not contains(name, 'Oslo')`.
 
-// TODO(review): the JSON schema has no `notLike`: add it, or state that it is encoded as `not` applied to `like` (see #140).
+NOTE: In CartoSym-JSON, `notLike` is encoded as `not` applied to `like` (see <<req-json-expressions>>).

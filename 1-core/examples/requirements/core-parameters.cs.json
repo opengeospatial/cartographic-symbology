@@ -1,0 +1,51 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/parameters: literal values for the size and the color of the Dot on each peak",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Places"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "type"
+              },
+              "mountain"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "marker": {
+              "elements": [
+                {
+                  "type": "Dot",
+                  "size": {
+                    "px": 6
+                  },
+                  "color": [
+                    184,
+                    50,
+                    42
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -19,9 +19,9 @@ class Fill <<extended>>
 Fill : hatch: Hatch
 Fill *-- Hatch
 
-Hatch : width: float
-Hatch : angle: float
-Hatch : distance: float
+Hatch : width: number
+Hatch : angle: number
+Hatch : distance: number
 @enduml
 ....
 
@@ -45,8 +45,8 @@ Fill *-- Dotpattern
 Dotpattern : distance: Distance
 Dotpattern *-- Distance
 
-Distance : horizontal: float
-Distance : vertical: float
+Distance : horizontal: number
+Distance : vertical: number
 @enduml
 ....
 
@@ -70,8 +70,8 @@ This requirements class extends Fill capabilities by adding support for dot fill
 [width="90%",options="header"]
 |===
 | Name       | Definition      | Data type and value   | Multiplicity
-| horizontal    | Horizontal distance between rendered points in the fill.           | float                 | 0..1
-| vertical      | vertical distance between rendered points in the fill.           | float                 | 0..1
+| horizontal    | Horizontal distance between rendered points in the fill.           | number                | 0..1
+| vertical      | vertical distance between rendered points in the fill.           | number                | 0..1
 |===
 
 ==== Requirements

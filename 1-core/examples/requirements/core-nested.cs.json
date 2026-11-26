@@ -1,0 +1,82 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/nested: a nested rule is considered only for the features its parent rule selects",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "fill": {
+          "color": [
+            236,
+            233,
+            224
+          ]
+        },
+        "stroke": {
+          "color": [
+            201,
+            196,
+            184
+          ],
+          "width": {
+            "px": 0.5
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "fill": {
+              "alter": true,
+              "color": [
+                94,
+                143,
+                82
+              ]
+            }
+          },
+          "nestedRules": [
+            {
+              "selector": {
+                "op": "<",
+                "args": [
+                  {
+                    "property": "area"
+                  },
+                  50000
+                ]
+              },
+              "symbolizer": {
+                "fill": {
+                  "alter": true,
+                  "color": [
+                    232,
+                    200,
+                    106
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

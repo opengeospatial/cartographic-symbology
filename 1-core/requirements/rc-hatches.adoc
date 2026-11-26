@@ -18,7 +18,14 @@ subject:: Style encodings and Renderers
 [%metadata]
 identifier:: /req/hatches/hatch
 part:: An Encoding SHALL support defining a `hatch` property within the `Fill` class, defined as a `Hatch` class.
-part:: A Renderer SHALL support filling vector geometry with a pattern of parallel lines based on a `hatch` property.
+part:: A Renderer SHALL support filling vector geometry with a pattern of parallel lines based on a `hatch` property, drawn in the `color` and `opacity` of the Fill, without painting the area between the lines.
+part:: A Renderer SHALL support placing the hatch lines of all features on one pattern aligned with the map, with a line through the top left corner of the map, so that the hatches of neighbouring features line up.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hatches/hatch`, in CartoSym-CSS
+====
+include::../examples/requirements/hatches-hatch.adoc[]
 ====
 
 .Fill class extended for hatches
@@ -32,12 +39,12 @@ part:: A Renderer SHALL support filling vector geometry with a pattern of parall
 [width="90%",options="header"]
 |===
 | Name      | Definition       | Data type and value   | Multiplicity
-| width     | Thickness of hatch          | float                 | 0..1
-| angle     | Hatches orientation clockwise degree         | float                 | 0..1
-| distance  | Distance between two consecutive hatches     | float                 | 0..1
+| width     | Thickness of hatch          | number                | 0..1
+| angle     | Orientation of the hatch lines, in degrees, where 0 gives horizontal lines and angles turn counter-clockwise as seen on the map | number                | 0..1
+| distance  | Distance between the centers of two consecutive hatch lines, measured across the lines     | number                | 0..1
 |===
 
-// TODO(review): the table says the hatch `angle` turns clockwise, while other angles drawn on the map (such as the gradient `angle`) start at 0 pointing right and turn counter-clockwise. The hatch angle should probably do the same, to be checked against graphics toolkits (see #146).
+// TODO(review): the table said the hatch `angle` turns clockwise, but the figure of the default hatch (45 degrees) shows lines rising to the right, that is counter-clockwise, as for the gradient `angle`. The table now follows the figure (see #146).
 
 .Input shape to be hatched
 image::figures/hatches_empty.png[]
@@ -56,6 +63,12 @@ part:: An Encoding SHALL support defining a `width` property for the hatch fill 
 part:: A Renderer SHALL support fill hatching vector geometry based on a width property.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hatches/width`, in CartoSym-CSS
+====
+include::../examples/requirements/hatches-width.adoc[]
+====
+
 .A hatch lines with a width of 5px
 image::figures/hatches_width_5px.png[]
 
@@ -70,6 +83,12 @@ part:: An Encoding SHALL support defining an `angle` property for the hatch fill
 part:: A Renderer SHALL support fill hatching vector geometry based on an angle property.
 ====
 
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hatches/angle`, in CartoSym-CSS
+====
+include::../examples/requirements/hatches-angle.adoc[]
+====
+
 .A hatch lines with an angle of 0 degree
 image::figures/hatches_angle_0.png[]
 
@@ -82,6 +101,12 @@ image::figures/hatches_angle_0.png[]
 identifier:: /req/hatches/distance
 part:: An Encoding SHALL support defining a `distance` property for the hatch fill symbolizer.
 part:: A Renderer SHALL support fill hatching vector geometry based on a distance property.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/hatches/distance`, in CartoSym-CSS
+====
+include::../examples/requirements/hatches-distance.adoc[]
 ====
 
 .A hatch lines with a distance of 5px

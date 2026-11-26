@@ -1,0 +1,84 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/core/scale: the paths and tractor roads are hidden at scales smaller than 1:40 000",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Roads"
+        ]
+      },
+      "symbolizer": {
+        "stroke": {
+          "color": [
+            208,
+            72,
+            58
+          ],
+          "width": {
+            "px": 2.0
+          }
+        },
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "or",
+            "args": [
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "path"
+                ]
+              },
+              {
+                "op": "=",
+                "args": [
+                  {
+                    "property": "class"
+                  },
+                  "tractor"
+                ]
+              }
+            ]
+          },
+          "symbolizer": {
+            "stroke": {
+              "color": [
+                138,
+                106,
+                74
+              ],
+              "width": {
+                "px": 1.0
+              }
+            }
+          },
+          "nestedRules": [
+            {
+              "selector": {
+                "op": ">",
+                "args": [
+                  {
+                    "sysId": "viz.sd"
+                  },
+                  40000
+                ]
+              },
+              "symbolizer": {
+                "visibility": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

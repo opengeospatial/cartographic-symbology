@@ -1,0 +1,46 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/fill: the color and opacity of the fill of the lakes",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "lake"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                63,
+                127,
+                179
+              ]
+            },
+            "stroke": {
+              "width": 0.0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

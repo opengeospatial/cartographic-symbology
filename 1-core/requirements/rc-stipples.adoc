@@ -16,7 +16,7 @@ Implementations shall support all properties in the below table for style encodi
 [width="90%",options="header"]
 |===
 | Name   | Definition                                       | Type                   | Multiplicity
-| ratio  | Ratio of stippling dots according to area filled | float (between 0 and 1) | 0..1
+| ratio  | Ratio of stippling dots according to area filled | number (between 0 and 1) | 0..1
 |===
 
 [[req-stipples-ratio]]
@@ -27,10 +27,18 @@ Implementations shall support all properties in the below table for style encodi
 [%metadata]
 identifier:: /req/stipples/ratio
 part:: An Encoding SHALL support defining a ratio property for the stipple fill symbolizer.
-part:: A Renderer SHALL support stipple fill vector geometry based on a ratio property.
+part:: A Renderer SHALL support stipple fill vector geometry based on a ratio property, with dots in the `color` and `opacity` of the Fill covering the `ratio` fraction of the area, without painting the area between the dots.
 ====
 
-// TODO(review): define the size and color of the stipple dots (see #84).
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/stipples/ratio`, in CartoSym-CSS
+====
+include::../examples/requirements/stipples-ratio.adoc[]
+====
+
+NOTE: The size of the dots and their arrangement (a regular pattern or a random one) are left to the Renderer, so two Renderers need not draw the same dots; only the share of the area they cover is defined.
+
+// TODO(review): define the size and arrangement of the stipple dots, for example as a regular bitmap pattern of 8 × 8 pixels, and how stipples differ from dot patterns (see #84).
 
 .Fill a shape area with dots defined by a ratio (0.2, 0.5, 0.8)
 image::figures/stipples.png[]

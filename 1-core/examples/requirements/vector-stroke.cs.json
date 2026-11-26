@@ -1,0 +1,53 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/vector/stroke: the color and width of the stroke of the lakes",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "lake"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                219,
+                232,
+                241
+              ]
+            },
+            "stroke": {
+              "color": [
+                63,
+                127,
+                179
+              ],
+              "width": {
+                "px": 1.0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

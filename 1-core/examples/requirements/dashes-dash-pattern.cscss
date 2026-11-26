@@ -1,0 +1,11 @@
+// /req/dashes/dash-pattern: dash patterns on the paths
+Roads
+{
+   marker: null;
+   visibility: false;
+   [class = 'path']
+   {
+      visibility: true;
+      stroke: { color: #b8442f; width: 2.5 px; dashPattern: [ 10 px, 10 px ] };
+   }
+}

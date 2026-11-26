@@ -1,0 +1,15 @@
+// /req/vector/fonts: the size, weight and style of the font of the peak names
+Places
+{
+   visibility: false;
+   marker: null;
+   [type = 'mountain']
+   {
+      visibility: true;
+      marker: { elements: [
+         Dot { size: 4 px, color: #b8322a },
+         Text { text: name, alignment: center bottom, position: 0 -4,
+                font: { face: 'Arial', size: 9, color: #2b2b2b } }
+      ] };
+   }
+}

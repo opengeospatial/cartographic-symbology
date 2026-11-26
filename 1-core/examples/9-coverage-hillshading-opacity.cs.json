@@ -51,7 +51,7 @@
               "property": "elevation"
             },
             "hillShading": {
-              "factor": 56,
+              "factor": 3,
               "sun": {
                 "azimuth": 45.0,
                 "elevation": 60.0

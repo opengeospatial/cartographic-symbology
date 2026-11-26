@@ -1,0 +1,56 @@
+{
+  "stylingRules": [
+    {
+      "$comment": "/req/stipples/ratio: the fraction of the forest the stipple dots cover",
+      "selector": {
+        "op": "=",
+        "args": [
+          {
+            "sysId": "dataLayer.id"
+          },
+          "Landcover"
+        ]
+      },
+      "symbolizer": {
+        "visibility": false,
+        "marker": null
+      },
+      "nestedRules": [
+        {
+          "selector": {
+            "op": "=",
+            "args": [
+              {
+                "property": "class"
+              },
+              "forest"
+            ]
+          },
+          "symbolizer": {
+            "visibility": true,
+            "fill": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "stipple": {
+                "ratio": 0.3
+              }
+            },
+            "stroke": {
+              "color": [
+                94,
+                143,
+                82
+              ],
+              "width": {
+                "px": 0.5
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

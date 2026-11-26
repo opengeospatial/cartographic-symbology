@@ -1,0 +1,8 @@
+// /req/core/selector: the second rule applies only to the land cover its selector selects
+Landcover
+{
+   marker: null;
+   fill: { color: #ece9e0 };
+   stroke: { color: #c9c4b8; width: 0.5 px };
+}
+Landcover[class = 'forest'] { fill.color: #5e8f52; }

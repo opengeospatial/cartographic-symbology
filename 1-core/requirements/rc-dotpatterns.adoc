@@ -18,7 +18,14 @@ subject:: Style encodings and Renderers
 [%metadata]
 identifier:: /req/dot-patterns/dotpattern
 part:: An Encoding SHALL support defining a `dotpattern` property within the `Fill` class, defined as a `Dotpattern` class.
-part:: A Renderer SHALL support filling vector geometry with a regular grid of points based on a `dotpattern` property.
+part:: A Renderer SHALL support filling vector geometry with a regular grid of points based on a `dotpattern` property, each drawn as a filled circle with a diameter of 2 pixels in the `color` and `opacity` of the Fill, without painting the area between the points.
+part:: A Renderer SHALL support placing the points of all features on one grid aligned with the map, with its first point half the horizontal and half the vertical distance from the top left corner of the map.
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/dot-patterns/dotpattern`, in CartoSym-CSS
+====
+include::../examples/requirements/dot-patterns-dotpattern.adoc[]
 ====
 
 [[req-dot-patterns-distance]]
@@ -28,8 +35,14 @@ part:: A Renderer SHALL support filling vector geometry with a regular grid of p
 ====
 [%metadata]
 identifier:: /req/dot-patterns/distance
-part:: An Encoding SHALL support defining a `distance` Dotpattern property as a Distance object including a `horizontal` and a `vertical` float.
+part:: An Encoding SHALL support defining a `distance` Dotpattern property as a Distance object including a `horizontal` and a `vertical` number.
 part:: A Renderer SHALL support spacing the rendered points of a dot pattern fill horizontally by the `horizontal` distance and vertically by the `vertical` distance.
 ====
 
-// TODO(review): define the size and color of the rendered points (see #84).
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/dot-patterns/distance`, in CartoSym-CSS
+====
+include::../examples/requirements/dot-patterns-distance.adoc[]
+====
+
+// TODO(review): the 2 pixel diameter and the Fill color of the points are a proposal from the independent renders; confirm or change them (see #84).

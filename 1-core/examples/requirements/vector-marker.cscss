@@ -1,0 +1,12 @@
+// /req/vector/marker: the same marker at a point (the cabin), the vertices of a line (the path) and the centroid of a polygon (the lake)
+[dataLayer.type = vector] { marker: { elements: [ Dot { size: 7 px, color: white }, Dot { size: 4.5 px, color: #b8322a } ] }; }
+Landcover
+{
+   visibility: false;
+   [class = 'lake' and area > 20000] { visibility: true; fill: { color: #e2edf4 }; stroke: { width: 0 }; }
+}
+Roads
+{
+   visibility: false;
+   [class = 'path'][marked = true] { visibility: true; stroke: { color: #b8442f; width: 1 px }; }
+}

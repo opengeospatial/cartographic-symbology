@@ -1,0 +1,11 @@
+// /req/core/default-values: the stroke of the roads, with some members left to their default values
+Roads
+{
+   marker: null;
+   visibility: false;
+   [class = 'municipal' or class = 'county' or class = 'european' or class = 'national']
+   {
+      visibility: true;
+      stroke: { color: #d0483a; width: 3 px };
+   }
+}

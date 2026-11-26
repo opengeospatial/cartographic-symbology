@@ -1,0 +1,8 @@
+// /req/coverage/alpha-channel: the opacity of each cell of a Sentinel-2 scene over the relief
+"sentinel2-l2a"
+{
+   colorChannels.r: B04 / 2500;
+   colorChannels.g: B03 / 2500;
+   colorChannels.b: B02 / 2500;
+   alphaChannel: 0.5;
+}

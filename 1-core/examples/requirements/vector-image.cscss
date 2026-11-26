@@ -1,0 +1,11 @@
+// /req/vector/image: an Image marker on the cabins; the blue Dot marks the position of the Graphic
+Huts
+{
+   marker: { elements: [
+      Image {
+         image: { uri: 'http://example.com/icons/hut.png'; path: '../icons/hut.png'; type: 'image/png' };
+         hotSpot: 50 pc 100 pc; blackTint: #b8322a;
+      },
+      Dot { size: 5 px, color: #1f4e79 }
+   ] };
+}
