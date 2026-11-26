@@ -14,6 +14,13 @@ Presentation of information to humans (Note 1 to entry: Within the scope of this
 === Layer
 Abstraction of reality specified by a geographic data model (feature, coverage…​). A layer may be represented using a set of symbols (Style). A layer contributes to a single geographic subject and may be a theme.
 
+=== Data layer
+The features of one feature type, or the cells of one coverage, that a style addresses by one identifier.
+
+NOTE: An OGC API collection is one data layer, or one data layer per feature type when its features have several types. A feature's type is given by the property with `"x-ogc-role": "type"` in the logical schema (https://docs.ogc.org/is/23-058r2/23-058r2.html[OGC API - Features - Part 5 / OGC API - Common - Part 3: Schemas]), or by the `featureType` of https://docs.ogc.org/is/21-045r1/21-045r1.html[JSON-FG]. Otherwise, when the `featureTypes` of the collection description (https://docs.ogc.org/is/20-024/20-024.html[OGC API - Common - Part 2]) lists exactly one type, all the features of the collection have that type. Otherwise all the features of the collection, or of the file, are one data layer, and a collection's identifier serves as its feature type.
+
+NOTE: The features of one data layer can have different geometry types, such as points, lines and polygons. A style tells them apart in its selectors.
+
 === Style
 A sequence of rules of symbolizing instructions to be applied by a rendering engine on one or more features and/or coverages.
 
