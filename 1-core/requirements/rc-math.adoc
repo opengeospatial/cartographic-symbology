@@ -184,9 +184,12 @@ part:: A Renderer SHALL support evaluating `pow(x, y)` as `x` raised to the powe
 ====
 [%metadata]
 identifier:: /req/math/random
-part:: An Encoding SHALL support defining a call to the `random` standard function taking no argument.
-part:: A Renderer SHALL support evaluating `random()` as a pseudo-random real number greater than or equal to 0 and less than 1.
+part:: An Encoding SHALL support defining a call to the `random` standard function taking no argument, or one numeric argument (the seed).
+part:: A Renderer SHALL support evaluating `random()` as a pseudo-random real number greater than or equal to 0 and less than 1, whose value may differ between evaluations, tiles and renderings.
+part:: A Renderer SHALL support evaluating `random(seed)` as a pseudo-random real number greater than or equal to 0 and less than 1 that depends only on `seed` and on the identifier of the feature being rendered, so that the same seed and the same feature identifier give the same value.
 ====
+
+NOTE: A style that must render the same in every tile and every rendering passes a variable as the seed (for example `random(@seed)`); the name of that variable and its value are left to the style sheet or the application.
 
 [[req-math-round]]
 ===== Math `round` function
