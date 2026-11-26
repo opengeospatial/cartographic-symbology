@@ -4,7 +4,7 @@
 
 This annex illustrates the capabilities of the different requirements classes defined in this standard
 with a map gallery of practical use cases alongside the styles used to generate the maps
-encoded in the _CartoSym-CSS_ encoding defined in this Standard.
+encoded in the _Cartographic Symbology Cascading Style Sheets_ encoding defined in this Standard.
 
 See supplementary materials for same style sheets encoded using the JSON Cartographic Symbology encoding.
 
