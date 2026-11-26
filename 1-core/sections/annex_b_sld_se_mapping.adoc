@@ -381,6 +381,8 @@ Parameter Values are always supported everywhere in SLD/SE and you can assign an
 | Text (inside Label)          | `<Label>` inside `<TextSymbolizer>`
 | Label                        | `<Label>` inside `<TextSymbolizer>` (no support for image or shape labels in SLD 1.0.0)
 | LabelPlacement               | `<LabelPlacement>`
+| Label on a line geometry (`/req/labels/line`) | `<LinePlacement>` inside `<LabelPlacement>` inside `<TextSymbolizer>`, with `<IsAligned>true</IsAligned>` for SE 1.1.0; `<LinePlacement>` for SLD 1.0.0, which has no element for following the line
+| LabelPlacement minSpacing on a line geometry | `<IsRepeated>true</IsRepeated>` and `<Gap>` inside `<LinePlacement>` for SE 1.1.0 (SE calls `Gap` the distance between two labels but doesn't say where it is measured, while `minSpacing` is measured between the labels' positions, so the two match only approximately); N/A for SLD 1.0.0
 | ImageOutline                 | N/A
 | Font                         | `<Font>` with `<SvgParameter name="font-family">`, `<SvgParameter name="font-size">`, `<SvgParameter name="font-style">`, `<SvgParameter name="font-weight">`
 | FontOutline                  | `<Halo>`

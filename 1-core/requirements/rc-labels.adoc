@@ -37,6 +37,8 @@ identifier:: /rec/labels/overlap
 part:: A Renderer SHOULD omit labels which cannot be placed without overlapping other labels, unless a property of the Symbolizer allows the overlap.
 ====
 
+NOTE: A Marker's graphical elements are drawn at every place where the Marker applies, even where they overlap, as in the left panel of <<fig-example-labels-label>>. A label is by default left out where it would overlap another label (`/rec/labels/overlap`), and `priority` decides which of two conflicting labels is placed (`/req/labels/placement`). Which of two conflicting labels of the same `priority` is left out may differ between Renderers.
+
 NOTE: Whether labels that would extend beyond the edges of the map are placed is left to the Renderer, for example as a configuration option, considering use cases such as rendering a static map, a dynamic map or map tiles.
 
 [[req-labels-placement]]
@@ -65,3 +67,32 @@ include::../examples/requirements/labels-placement-spacing.adoc[]
 ====
 
 // TODO(review): confirm that a higher `priority` value means a higher priority (see #148).
+
+[[req-labels-line]]
+===== Labels along lines
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/labels/line
+part:: A Renderer SHALL support placing a label on a line geometry along that line, with each Text element of the label following the curve of the line, and each other graphical element turned to the direction of the line where it is placed.
+part:: A Renderer SHALL support placing a label along a line so that it reads from left to right and is never upside down, whatever the direction in which the line is defined.
+part:: A Renderer SHALL support joining, before placing their labels, the line geometries of a data layer that have the same label and meet at their end points, so that a line split into several features (such as a road) is labelled along the joined line.
+part:: A Renderer SHALL support placing all the graphical elements of a label along a line together, with the `x` of each element's `position` measured along the line in the direction in which the label reads, and its `y` perpendicular to the line, positive towards the bottom of the label, as a positive `y` is downwards for a label placed at a point (`/req/vector/graphics`).
+====
+
+// Vignette placed by cartosym-draft-check (tools/place_vignettes.py)
+.Example style for `/req/labels/line`, in CartoSym-CSS
+====
+include::../examples/requirements/labels-line.adoc[]
+====
+
+[[rec-labels-line]]
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/labels/line
+part:: A Renderer SHOULD omit a label along a line where the line is shorter than the label.
+====
+
+NOTE: How sharp a bend a label along a line may follow is left to the Renderer. This requirement does not turn labels on point and polygon geometries.
