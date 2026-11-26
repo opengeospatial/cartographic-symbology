@@ -84,7 +84,7 @@ MathFunctions : log10(x : number) number
 MathFunctions : max(x : number[1..*]) number
 MathFunctions : min(x : number[1..*]) number
 MathFunctions : pow(x : number, y : number) number
-MathFunctions : random() number
+MathFunctions : random(seed : number[0..1]) number
 MathFunctions : round(x : number) integer
 MathFunctions : sin(x : number) number
 MathFunctions : sinh(x : number) number
