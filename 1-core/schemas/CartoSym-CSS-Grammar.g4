@@ -58,7 +58,7 @@ expression:
 
    | LPAR expression RPAR
 
-   | expression LSBR expConstant RSBR  // Indexing
+   | expression LSBR expression RSBR  // Indexing
 
    // Operations
    | unaryArithmeticOperator expression
@@ -88,7 +88,7 @@ betweenBound:
    | variable
    | LPAR expression RPAR
    | betweenBound DOT IDENTIFIER
-   | betweenBound LSBR expConstant RSBR
+   | betweenBound LSBR expression RSBR
    | unaryArithmeticOperator betweenBound
    | betweenBound arithmeticOperatorExp betweenBound
    | betweenBound arithmeticOperatorMul betweenBound
